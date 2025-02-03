@@ -16805,8 +16805,8 @@ function renderProducts(filteredProducts) {
         // Apply sorting by sales
         if (salesSort === 'descending') {
     filteredProducts = filteredProducts.sort((a, b) => {
-        const salesA = salesJSON.find(sale => sale.vp_code === a.vp_code)?.Quantities || 0;
-        const salesB = salesJSON.find(sale => sale.vp_code === b.vp_code)?.Quantities || 0;
+        const salesA = salesJSON.find(sale => sale.vp_code === a.vp_code)?.quantity  || 0;
+        const salesB = salesJSON.find(sale => sale.vp_code === b.vp_code)?.quantity  || 0;
         return salesB - salesA; // Descending order: largest to smallest
     });
 }
