@@ -92,7 +92,7 @@
                 <th>Description</th>
                 <th>Manufacturer</th>
                 <th>Stock</th>
-                <th>DEC Sales</th>
+                <th>April Sales</th>
                 <!-- <th>Order New Inventory</th> -->
             </tr>
         </thead>
@@ -16766,7 +16766,7 @@ function renderProducts(filteredProducts) {
         filteredProducts.forEach(product => {
             // Match sales data with vp_code
             const salesData = salesJSON.find(sale => sale.vp_code === product.vp_code);
-            const salesQuantity = salesData ? salesData.Quantities : 0; // Default to 0 if no match
+            const salesQuantity = salesData ? salesData.quantity : 0; // Default to 0 if no match
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${product.vp_code}</td>
