@@ -1,4 +1,4 @@
-salesJSON = [
+sales1JSON = [
   {
     "Sku": "01-A1200",
     "quantities": 1,

@@ -75,8 +75,38 @@
             border-radius: 4px;
             border: 1px solid #ddd;
         }
+        input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4CAF50; /* Green checkbox when checked */
+    border-radius: 5px;
+}
 
+/* ✨ Hover Effect */
+input[type="checkbox"]:hover {
+    transform: scale(1.2); /* Slightly increase size */
+    transition: 0.2s ease-in-out;
+}
 
+/* 🏆 "Select All" Checkbox - Make It Stand Out */
+#select-all {
+    width: 22px;
+    height: 22px;
+    accent-color: #ffcc00; /* Yellow color */
+    border-radius: 3px;
+}
+
+/* 🎯 Selected Row Highlight */
+tr.selected {
+    background-color: rgba(0, 128, 0, 0.3) !important; /* Light green highlight */
+    transition: 0.2s ease-in-out;
+}
+
+/* 🎨 Dark Mode Checkbox Contrast */
+.table-dark input[type="checkbox"] {
+    filter: brightness(1.5); /* Makes checkboxes more visible on dark background */
+}
     </style>
     <body>
         <H1 class="heading">Inventory Cost/Sales Analysis</H1>
@@ -101,12 +131,14 @@
         </select>
         
 
-
     </div>
     
-    <table class="table table-striped table-dark table-hover ">
+    <button class="btn btn-success mb-3" onclick="downloadExcel()">Download Selected Products</button>
+
+    <table class="table table-striped table-dark table-hover">
         <thead>
             <tr>
+                <th>Select<input type="checkbox" id="select-all"></th>
                 <th>VP_code</th>
                 <th>Description</th>
                 <th>Manufacturer</th>
@@ -120,53 +152,137 @@
             <!-- Product rows will be dynamically inserted here -->
         </tbody>
     </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    
+        <tbody id="product-table">
+            <!-- Product rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    
 </div>
 <script src="product.js"></script>
 <script src="salesbyquantity.js"></script>
 <script>
+let lastChecked = null; // Track last checked checkbox
+
 function renderProducts(filteredProducts) {
     const tableBody = document.getElementById('product-table');
     tableBody.innerHTML = ''; // Clear previous rows
 
-    filteredProducts.forEach(product => {
-        // Fetch sales data using the new 'Sku' key
-        const salesData = salesJSON.find(sale => sale.Sku === product.vp_code);
-        const salesQuantity = salesData ? salesData.quantities : 0; // Default to 0 if no match
-        const totalSales = salesData ? salesData.Totalsales : 0; // Default to 0 if no match
+    filteredProducts.forEach((product, index) => {
+        const salesData = sales1JSON.find(sale => sale.Sku === product.vp_code);
+        const salesQuantity = salesData ? salesData.quantities : 0;
+        const totalSales = salesData ? salesData.Totalsales : 0;
 
-        // Log for debugging
-        console.log("Checking product:", product.vp_code);
-        console.log("Matched sales data:", salesData);
-
-        // Determine stock status classes
         let stockClass = '';
         if (product.old_count === 0) {
-            stockClass = 'out-of-stock'; // Highlight out of stock with red
+            stockClass = 'out-of-stock';
         } else if (product.old_count > 0 && product.old_count < 20) {
-            stockClass = 'low-stock'; // Highlight low stock with orange
+            stockClass = 'low-stock';
         }
 
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td><input type="checkbox" class="product-checkbox"></td>
             <td>${product.vp_code}</td>
             <td>${product.description}</td>
             <td>${product.manufacturer}</td>
-            <td class="${stockClass}">
-                ${product.old_count}
-            </td>
+            <td class="${stockClass}">${product.old_count}</td>
             <td>${salesQuantity}</td>
-           <td>$${totalSales.toFixed(2)}</td>
+            <td>$${totalSales.toFixed(2)}</td>
             <td>$${salesQuantity > 0 ? (totalSales / salesQuantity).toFixed(2) : 0}</td>
         `;
         tableBody.appendChild(row);
     });
+
+    addMultiSelect(); // Attach Shift-click selection
+    addSelectAllFunctionality(); // Attach Select All functionality
+}
+
+// 🏆 **Enable Multi-Select (Shift + Click)**
+function addMultiSelect() {
+    const checkboxes = document.querySelectorAll('.product-checkbox');
+
+    checkboxes.forEach((checkbox, index) => {
+        checkbox.addEventListener('click', function (event) {
+            if (lastChecked !== null && event.shiftKey) {
+                let start = Math.min(lastChecked, index);
+                let end = Math.max(lastChecked, index);
+                for (let i = start; i <= end; i++) {
+                    checkboxes[i].checked = true;
+                }
+            }
+            lastChecked = index; // Update last clicked index
+        });
+    });
+}
+
+// ✅ **Select All Checkbox Feature**
+function addSelectAllFunctionality() {
+    const selectAllCheckbox = document.getElementById('select-all');
+    const checkboxes = document.querySelectorAll('.product-checkbox');
+
+    selectAllCheckbox.addEventListener('change', function () {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    });
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            // If any checkbox is unchecked, uncheck Select All
+            if (!this.checked) {
+                selectAllCheckbox.checked = false;
+            }
+            // If all checkboxes are checked, check Select All
+            else if ([...checkboxes].every(cb => cb.checked)) {
+                selectAllCheckbox.checked = true;
+            }
+        });
+    });
+}
+
+// 📝 **Download Selected Products as Excel**
+function downloadExcel() {
+    let selectedProducts = [];
+    const checkboxes = document.querySelectorAll('.product-checkbox');
+    const rows = document.querySelectorAll('#product-table tr');
+
+    checkboxes.forEach((checkbox, index) => {
+        if (checkbox.checked) {
+            const cells = rows[index].querySelectorAll('td'); // Get the correct row
+            selectedProducts.push({
+                VP_Code: cells[1].innerText,
+                Description: cells[2].innerText,
+                Manufacturer: cells[3].innerText,
+                Stock: cells[4].innerText,
+                Jan_Sales: cells[5].innerText,
+            });
+        }
+    });
+
+    if (selectedProducts.length === 0) {
+        alert("Please select at least one product!");
+        return;
+    }
+
+    // 🗓 Get current date in YYYY-MM-DD format
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    // 📝 Create Excel file
+    const worksheet = XLSX.utils.json_to_sheet(selectedProducts);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Products");
+
+    // 📂 Download file with name: "Comparison_Table_YYYY-MM-DD.xlsx"
+    const fileName = `Order_Stock_File_${currentDate}.xlsx`;
+    XLSX.writeFile(workbook, fileName);
 }
 
 
-
-
-
-
+// Load products when page loads
+renderProducts(productsJSON);
 
 
     // Function to apply filters and sorting
@@ -193,11 +309,11 @@ function renderProducts(filteredProducts) {
     // Apply sorting by sales
     if (salesSort === 'descending') {
         filteredProducts = filteredProducts.sort((a, b) => {
-            const salesDataA = salesJSON.find(sale => sale.Sku === a.vp_code);
-            const salesDataB = salesJSON.find(sale => sale.Sku === b.vp_code);
+            const salesDataA = sales1JSON.find(sale => sale.Sku === a.vp_code);
+            const salesDataB = sales1JSON.find(sale => sale.Sku === b.vp_code);
             
-            const salesA = salesDataA ? salesDataA.quantities : 0;
-            const salesB = salesDataB ? salesDataB.quantities : 0;
+            const salesA = salesDataA ? salesDataA.Totalsales : 0;
+            const salesB = salesDataB ? salesDataB.Totalsales : 0;
             
             return salesB - salesA; // Descending order: largest to smallest
         });
