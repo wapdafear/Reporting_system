@@ -8,18 +8,18 @@
         body {
             font-family: "Poppins", sans-serif;
             text-align: center;
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 50px;
         }
         h1 {
-            color: #4a98f7;
+            color: #000000;
         }
         .btn-container {
             margin-top: 30px;
         }
         .btn {
             display: inline-block;
-            background: #4a98f7;
+            background: #efb34c;
             color: #fff;
             padding: 12px 20px;
             margin: 10px;
@@ -31,10 +31,86 @@
             text-decoration: none;
         }
         .btn:hover {
-            background: #357bd1;
+            background: #efb34c;
             transform: scale(1.1);
             box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
         }
+
+/* ya rafay ka gand ha  */
+        * {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  position: relative;
+  padding-top:150px ;
+  margin: auto;
+  width: 1300px ;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
     </style>
 </head>
 <body>
@@ -47,5 +123,60 @@
         <a href="Inventory-cost_backup.html" class="btn" disabled>Backup Sales/Cost</a>
         <a href="reports.html" class="btn">Reports</a>
     </div>
+
+    <!-- ya rafay ka gand ha -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="https://cdn.shopify.com/s/files/1/0664/1264/2529/files/Main_Title_Slides_for_Blog_2.webp?v=1737721364" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="https://cdn.shopify.com/s/files/1/0664/1264/2529/files/Main-Title-Slides-for-Blog_600x600.webp?v=1737040371" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="https://cdn.shopify.com/s/files/1/0664/1264/2529/files/2_6f580b0d-4b2b-4579-9761-2ff0cea71a93_480x480.svg?v=1736013828" style="width:100%">
+        </div>
+    </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        <script>
+            let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+setInterval(function() {
+  plusSlides(1);
+}, 3000); 
+        </script>
 </body>
 </html>
