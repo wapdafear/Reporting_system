@@ -131,13 +131,18 @@
             const correctPass = "Surgimac123";
 
             if (user === correctUser && pass === correctPass) {
-                localStorage.setItem("authenticated", "true"); // Store authentication flag
+                // Store authentication flag & timestamp
+                localStorage.setItem("authenticated", "true");
+                localStorage.setItem("loginTime", Date.now());
+
                 window.location.href = "index.html"; // Redirect to index page
             } else {
                 let errorMessage = document.getElementById("error-message");
                 errorMessage.style.display = "block";
             }
         }
+
+        // Allow pressing Enter to login
         document.addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
                 login();
