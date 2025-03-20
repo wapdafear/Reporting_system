@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title id="title">ShipStation Orders & Shipments Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50;
+            padding: 500;
+            padding-top: 100;
+            background-color: #353333;
+        }
+        .container {
+            max-width: 2000px;
+            background: rgb(11, 5, 31);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            margin: auto;
+            width: 100%;
+            padding-top: 1%;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .heading:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            color: rgb(58, 228, 32);
+            font-size: 20px;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: rgb(57, 1, 1);
+        }
+        select {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #4CAF50;
+            border-radius: 5px;
+        }
+        input[type="checkbox"]:hover {
+            transform: scale(1.2);
+            transition: 0.2s ease-in-out;
+        }
+        #select-all {
+            width: 22px;
+            height: 22px;
+            accent-color: #ffcc00;
+            border-radius: 3px;
+        }
+        tr.selected {
+            background-color: rgba(0, 128, 0, 0.3) !important;
+            transition: 0.2s ease-in-out;
+        }
+        .table-dark input[type="checkbox"] {
+            filter: brightness(1.5);
+        }
+        table td {
+            border-radius: 12px;
+            text-align: center;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        table td:hover {
+            border-color: #007bff;
+        }
+        /* Green text for columns 5 and onward in orders table (SKU, Description, Selling Price, Customer Paid Shipping, Label Cost) */
+        table#orders-table td:nth-child(n+5) {
+            color: #5cc46b !important;
+            font-weight: 500 !important;
+            font-size: larger;
+        }
+        /* Green text for columns 2 and onward in shipments table (Label Cost) */
+        table#shipments-table td:nth-child(n+2) {
+            color: #5cc46b !important;
+            font-weight: 500 !important;
+            font-size: larger;
+        }
+        /* Highlight label cost column */
+        table#orders-table td:nth-child(10),
+        table#shipments-table td:nth-child(2) {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffcc00 !important;
+            font-weight: bold !important;
+        }
+        /* Visualization container */
+        .visualization {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #222;
+            border-radius: 10px;
+            height: 400px; /* Set explicit height */
+            position: relative;
+        }
+        
+        /* Fix for chart canvas */
+        #profit-chart {
+            width: 100% !important;
+            height: 300px !important;
+            margin-top: 15px;
+        }
+        /* Loading indicator */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .loading:after {
+            content: " .";
+            animation: dots 1s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: " ."; }
+            40% { content: " .."; }
+            60% { content: " ..."; }
+            80%, 100% { content: " ...."; }
+        }
+        /* Controls container */
+        .controls-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        /* Filter group */
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .filter-group label {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        /* Custom select styling */
+        .custom-select {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: white;
+            font-size: 14px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .custom-select:hover {
+            background-color: #444;
+            border-color: #666;
+        }
+        /* Date inputs */
+        .date-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
+        /* Action button */
+        .action-btn {
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            align-self: flex-end;
+            margin-top: auto;
+        }
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        /* Store badge */
+        .store-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .store-badge.amazon {
+            background-color: #FF9900;
+            color: #000;
+        }
+        .store-badge.ebay {
+            background-color: #e53238;
+            color: white;
+        }
+        .store-badge.shopify {
+            background-color: #96bf48;
+            color: white;
+        }
+        .store-badge.walmart {
+            background-color: #0071ce;
+            color: white;
+        }
+        /* Statistics cards */
+        .stats-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #5cc46b;
+        }
+        .stat-title {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        /* Order groups - for orders with multiple items */
+        .order-group {
+            border-left: 4px solid #6a11cb !important;
+        }
+        .order-group.first-item {
+            border-top: 2px solid #6a11cb !important;
+        }
+        .order-group.last-item {
+            border-bottom: 2px solid #6a11cb !important;
+            margin-bottom: 8px;
+        }
+        .order-group td:first-child {
+            position: relative;
+        }
+        .order-group .item-count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #6a11cb;
+            color: white;
+            font-size: 10px;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        /* Repeated order info in multi-item orders will be less visible */
+        .order-group:not(.first-item) td:nth-child(1),
+        .order-group:not(.first-item) td:nth-child(2),
+        .order-group:not(.first-item) td:nth-child(3),
+        .order-group:not(.first-item) td:nth-child(4),
+        .order-group:not(.first-item) td:nth-child(5) {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <H1 class="heading">ShipStation Orders & Shipments Analysis</H1>
+    
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-title">Total Orders</div>
+            <div class="stat-value" id="total-orders">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Total Sales</div>
+            <div class="stat-value" id="total-sales">$0.00</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Total Profit</div>
+            <div class="stat-value" id="total-profit">$0.00</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Average Profit</div>
+            <div class="stat-value" id="avg-profit">$0.00</div>
+        </div>
+    </div>
+    
+    <div class="controls-container">
+        <div class="filter-group">
+            <label for="store-filter">Store Filter</label>
+            <select id="store-filter" class="custom-select">
+                <option value="all">All Stores</option>
+                <option value="amazon" selected>Amazon</option>
+                <option value="ebay">eBay</option>
+                <option value="shopify">Shopify</option>
+                <option value="walmart">Walmart</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="status-filter">Order Status</label>
+            <select id="status-filter" class="custom-select">
+                <option value="all">All Statuses</option>
+                <option value="shipped" selected>Shipped Only</option>
+                <option value="awaiting_shipment">Awaiting Shipment</option>
+                <option value="on_hold">On Hold</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="date-range">Date Range</label>
+            <select id="date-range" class="custom-select">
+                <option value="today" selected>Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="last7">Last 7 Days</option>
+                <option value="last30">Last 30 Days</option>
+                <option value="custom">Custom Range</option>
+            </select>
+        </div>
+        
+        <div class="filter-group" id="custom-date-container" style="display:none;">
+            <label for="start-date">Custom Date Range</label>
+            <input type="date" id="start-date" class="date-input">
+            <input type="date" id="end-date" class="date-input" style="margin-top:5px;">
+        </div>
+        
+        <div class="filter-group">
+            <button id="load-data" class="action-btn">Apply Filters</button>
+        </div>
+    </div>
+    
+    <div id="loading-indicator" class="loading" style="display:none;">Loading data</div>
+    
+    <table class="table table-striped table-dark table-hover" id="orders-table">
+        <thead>
+            <tr>
+                <th>Store</th>
+                <th>Order Number</th>
+                <th>Order Status</th>
+                <th>Order Date</th>
+                <th>SKU</th>
+                <th>Description</th>
+                <th>Selling Price ($)</th>
+                <th>Cost Price ($)</th>
+                <th>Quantity</th>
+                <th>MarketFee</th>
+                <th>Cost W/ Quantity</th>
+                <th>Shipping Cost ($)</th>
+                <th>Total Cost ($)</th>
+                <th>P/L($)</th>
+                <th>Customer Paid Shipping ($)</th>
+            </tr>
+        </thead>
+        <tbody id="shipstation-table">
+        </tbody>
+    </table>
+    
+    <div class="visualization">
+        <H1 class="heading">Order Profit Visualization</H1>
+        <canvas id="profit-chart"></canvas>
+    </div>
+
+    <script src="Cost-prices.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Direct Chart.js loading -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script type="module">
+        console.log("Script execution starting...");
+        
+        // Import functions from shipstation-api.js
+        import { fetchShipStationOrders, getLabelCost, fetchShipStationShipments } from './shipstation-api.js';
+        
+        // Check if productCosts is loaded properly
+        window.addEventListener('DOMContentLoaded', function() {
+            if (typeof product_cost !== 'undefined') {
+                console.log(`Cost prices loaded successfully. Found ${product_cost.length} SKUs with prices.`);
+                // Log first few items for debugging
+                if (product_cost.length > 0) {
+                    console.log("Sample cost prices:", product_cost.slice(0, 3));
+                }
+            } else {
+                console.error("Cost prices not loaded! Make sure Cost-prices.js is correctly loaded.");
+            }
+        });
+        
+        // Initialize UI elements
+        const dateRangeSelect = document.getElementById('date-range');
+        const customDateContainer = document.getElementById('custom-date-container');
+        const storeFilter = document.getElementById('store-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+        
+        // Chart reference
+        let profitChart = null;
+        
+        // Flag to track if data is currently being loaded
+        let isLoading = false;
+        
+        // Show/hide custom date range based on selection
+        if (dateRangeSelect) {
+            dateRangeSelect.addEventListener('change', function() {
+                console.log("Date range changed to:", this.value);
+                if (this.value === 'custom') {
+                    customDateContainer.style.display = 'flex';
+                } else {
+                    customDateContainer.style.display = 'none';
+                }
+            });
+        }
+        
+        // Function to show loading indicator
+        function showLoading(show) {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            if (loadingIndicator) {
+                loadingIndicator.style.display = show ? 'flex' : 'none';
+            }
+            // Update global loading state
+            isLoading = show;
+            
+            // Disable/enable load button
+            const loadDataBtn = document.getElementById('load-data');
+            if (loadDataBtn) {
+                loadDataBtn.disabled = show;
+                loadDataBtn.innerHTML = show ? 'Loading...' : 'Apply Filters';
+            }
+        }
+        
+        // Helper function to determine store type
+        function getStoreType(order) {
+            if (order.marketplaceId === "ATVPDKIKX0DER" || 
+                order.advancedOptions?.source === "amazon") {
+                return "amazon";
+            } else if (order.advancedOptions?.source === "ebay" || 
+                       order.advancedOptions?.channel === "eBay") {
+                return "ebay";
+            } else if (order.advancedOptions?.source === "shopify") {
+                return "shopify";
+            } else if (order.advancedOptions?.source === "walmart" || 
+                       order.advancedOptions?.channel === "Walmart") {
+                return "walmart";
+            }
+            return "other";
+        }
+        
+        // Function to get date range based on selection
+        function getDateRange() {
+            if (!dateRangeSelect) {
+                // If dateRangeSelect doesn't exist, return today's date range
+                const today = new Date();
+                const startDate = new Date(today);
+                startDate.setHours(0, 0, 0, 0);
+                const endDate = new Date(today);
+                endDate.setHours(23, 59, 59, 999);
+                
+                return {
+                    startDate: startDate.toISOString(),
+                    endDate: endDate.toISOString()
+                };
+            }
+            
+            const dateRangeValue = dateRangeSelect.value;
+            const today = new Date();
+            
+            let startDate, endDate;
+            
+            switch(dateRangeValue) {
+                case 'today':
+                    startDate = new Date(today);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'yesterday':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 1);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setDate(today.getDate() - 1);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'last7':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 7);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'last30':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 30);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'custom':
+                    startDate = new Date(startDateInput.value);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(endDateInput.value);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                default:
+                    startDate = new Date(today);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+            }
+            
+            return {
+                startDate: startDate.toISOString(),
+                endDate: endDate.toISOString()
+            };
+        }
+        
+        // Function to filter orders based on user selections
+        function filterOrders(orders) {
+            if (!storeFilter || !statusFilter) {
+                return orders;
+            }
+            
+            const storeType = storeFilter.value;
+            const orderStatus = statusFilter.value;
+            
+            return orders.filter(order => {
+                // Filter by store
+                if (storeType !== 'all') {
+                    const orderStore = getStoreType(order);
+                    if (storeType !== orderStore) return false;
+                }
+                
+                // Filter by status
+                if (orderStatus !== 'all' && order.orderStatus !== orderStatus) {
+                    return false;
+                }
+                
+                return true;
+            });
+        }
+
+        // Enhanced lookup function to find a product cost by SKU
+        function findProductCost(sku) {
+            if (!sku || typeof product_cost === 'undefined' || !Array.isArray(product_cost)) {
+                return null;
+            }
+
+            // Try direct match first (most efficient)
+            let match = product_cost.find(pc => String(pc.sku) === String(sku));
+            
+            // If no direct match, try case-insensitive matching
+            if (!match) {
+                const skuLower = String(sku).toLowerCase();
+                match = product_cost.find(pc => String(pc.sku).toLowerCase() === skuLower);
+            }
+            
+            // If still no match, try with trimmed values
+            if (!match) {
+                const skuTrimmed = String(sku).trim();
+                match = product_cost.find(pc => String(pc.sku).trim() === skuTrimmed);
+            }
+            
+            // If still no match, try with partial matching
+            if (!match) {
+                match = product_cost.find(pc => 
+                    String(sku).includes(String(pc.sku)) || 
+                    String(pc.sku).includes(String(sku))
+                );
+            }
+            
+            // Debug output if needed
+            if (!match) {
+                console.log(`No cost price found for SKU: ${sku}`);
+            }
+            
+            return match;
+        }
+        
+        // Function to update statistics
+        function updateStatistics(orders) {
+            let totalSales = 0;
+            let totalProfit = 0;
+            let totalOrders = 0;
+            
+            // Process each order for statistics
+            orders.forEach(order => {
+                order.items.forEach(item => {
+                    const sellingPrice = item.unitPrice * item.quantity;
+                    const productCost = findProductCost(item.sku);
+                    const costPrice = productCost ? productCost.cost_price : 0;
+                    const customerPaidShipping = order.shippingAmount || 0;
+                    
+                    const profit = sellingPrice - costPrice + customerPaidShipping;
+                    
+                    totalSales += sellingPrice;
+                    totalProfit += profit;
+                    totalOrders++;
+                });
+            });
+            
+            // Update stat elements if they exist
+            const totalOrdersEl = document.getElementById('total-orders');
+            const totalSalesEl = document.getElementById('total-sales');
+            const totalProfitEl = document.getElementById('total-profit');
+            const avgProfitEl = document.getElementById('avg-profit');
+            
+            if (totalOrdersEl) totalOrdersEl.textContent = totalOrders;
+            if (totalSalesEl) totalSalesEl.textContent = '$' + totalSales.toFixed(2);
+            if (totalProfitEl) {
+                totalProfitEl.textContent = '$' + totalProfit.toFixed(2);
+                totalProfitEl.style.color = totalProfit >= 0 ? '#5cc46b' : '#ff6b6b';
+            }
+            
+            const avgProfit = totalOrders > 0 ? totalProfit / totalOrders : 0;
+            if (avgProfitEl) {
+                avgProfitEl.textContent = '$' + avgProfit.toFixed(2);
+                avgProfitEl.style.color = avgProfit >= 0 ? '#5cc46b' : '#ff6b6b';
+            }
+        }
+        
+        // Function to display orders
+        async function displayOrders(orders) {
+            console.log("Displaying ShipStation Orders data:", orders);
+            const tableBody = document.getElementById("shipstation-table");
+            if (!tableBody) {
+                console.error("Table body with ID 'shipstation-table' not found.");
+                return;
+            }
+            tableBody.innerHTML = "";  // Clear previous data
+
+            if (!orders || orders.length === 0) {
+                console.log("No orders data available, showing fallback message");
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:red;">No orders data available</td></tr>`;
+                updateStatistics([]);
+                return;
+            }
+
+            // Filter orders based on user selections
+            const filteredOrders = filterOrders(orders);
+            
+            if (filteredOrders.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders match the selected filters</td></tr>`;
+                updateStatistics([]);
+                return;
+            }
+
+            // Get date range for shipments
+            const { startDate, endDate } = getDateRange();
+            
+            // Fetch all shipments for the date range
+            console.log("Fetching shipments for label costs...");
+            const shipments = await fetchShipStationShipments(startDate, endDate);
+            console.log(`Found ${shipments.length} shipments`);
+            
+            // Update statistics with filtered orders
+            updateStatistics(filteredOrders);
+            
+            // Data for chart visualization
+            const orderProfits = [];
+            
+            // Process orders and group by order number
+            for (const order of filteredOrders) {
+                // Get store type for display
+                const storeType = getStoreType(order);
+                
+                // Store display name and badge class
+                let storeBadge = '';
+                switch(storeType) {
+                    case 'amazon':
+                        storeBadge = '<span class="store-badge amazon">Amazon</span>';
+                        break;
+                    case 'ebay':
+                        storeBadge = '<span class="store-badge ebay">eBay</span>';
+                        break;
+                    case 'shopify':
+                        storeBadge = '<span class="store-badge shopify">Shopify</span>';
+                        break;
+                    case 'walmart':
+                        storeBadge = '<span class="store-badge walmart">Walmart</span>';
+                        break;
+                    default:
+                        storeBadge = '<span class="store-badge">Other</span>';
+                }
+                
+                // Check if this order has multiple items
+                const isMultiItemOrder = order.items.length > 1;
+                
+                // Get label cost for the order using the shipments data
+                const labelCost = await getLabelCost(order.orderNumber, shipments);
+                
+                // Process each item in the order
+                order.items.forEach((item, itemIndex) => {
+                    const row = document.createElement("tr");
+                    const sellingPrice = item.unitPrice * item.quantity;
+                    const customerPaidShipping = order.shippingAmount || 0;
+                    
+                    // Find product cost price with enhanced lookup
+                    const productCost = findProductCost(item.sku);
+                    const costPrice = productCost ? productCost.cost_price : 0;
+                    
+                    // Calculate profit with label cost
+                    const marketfee = parseFloat((sellingPrice * 0.15).toFixed(2));
+                    const total_cost_with_quantity = parseFloat((costPrice * item.quantity).toFixed(2));
+                    const Total_Cost = total_cost_with_quantity + marketfee + labelCost;
+                    const profit = (sellingPrice - Total_Cost) + customerPaidShipping;
+                    // Add to chart data
+                    orderProfits.push({
+                        orderNumber: order.orderNumber,
+                        profit: profit,
+                        store: storeType
+                    });
+                    
+                    // Add classes for multi-item orders
+                    if (isMultiItemOrder) {
+                        row.classList.add('order-group');
+                        
+                        // Add special classes for first and last items
+                        if (itemIndex === 0) {
+                            row.classList.add('first-item');
+                        }
+                        if (itemIndex === order.items.length - 1) {
+                            row.classList.add('last-item');
+                        }
+                    }
+                    
+                    row.innerHTML = `
+                        <td>${storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length} items</span>` : ''}</td>
+                        <td>${order.orderNumber || "N/A"}</td>
+                        <td>${order.orderStatus || "N/A"}</td>
+                        <td>${new Date(order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
+                        <td>${item.sku || "N/A"}</td>
+                        <td>${item.name || "N/A"}</td>
+                        <td>$${sellingPrice.toFixed(2)}</td>
+                        <td>${productCost ? `$${costPrice.toFixed(2)}` : '<span style="color: #ffcc00; font-weight: bold;">N/A</span>'}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${marketfee.toFixed(2)}</td>
+                        <td>$${total_cost_with_quantity.toFixed(2)}</td>
+                        <td>$${labelCost.toFixed(2)}</td>
+                        <td>$${Total_Cost.toFixed(2)}</td>
+                        <td style="color: ${profit >= 0 ? '#5cc46b' : '#ff6b6b'} !important;">$${profit.toFixed(2)}</td>
+                        <td style="color: ${customerPaidShipping > 0 ? '#ff9900' : 'inherit'} !important; font-weight: ${customerPaidShipping > 0 ? 'bold' : 'normal'};">$${customerPaidShipping.toFixed(2)}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+            
+            // Draw the chart
+            createProfitChart(orderProfits);
+        }
+        
+        // Simple chart creation function - basic implementation for reliability
+        function createProfitChart(orderProfits) {
+            const chartCanvas = document.getElementById('profit-chart');
+            if (!chartCanvas) return;
+            
+            // Clear any existing chart
+            if (profitChart) {
+                profitChart.destroy();
+            }
+            
+            // Group data by store
+            const storeData = {};
+            
+            orderProfits.forEach(item => {
+                const store = item.store || 'other';
+                if (!storeData[store]) {
+                    storeData[store] = {
+                        totalProfit: 0,
+                        count: 0
+                    };
+                }
+                storeData[store].totalProfit += item.profit;
+                storeData[store].count++;
+            });
+            
+            // Prepare data for chart
+            const labels = Object.keys(storeData);
+            const data = labels.map(store => storeData[store].totalProfit);
+            const counts = labels.map(store => storeData[store].count);
+            
+            // Colors for different stores
+            const colors = {
+                amazon: 'rgba(255, 153, 0, 0.7)',
+                ebay: 'rgba(229, 50, 56, 0.7)',
+                shopify: 'rgba(150, 191, 72, 0.7)',
+                walmart: 'rgba(0, 113, 206, 0.7)',
+                other: 'rgba(128, 128, 128, 0.7)'
+            };
+            
+            const backgroundColors = labels.map(label => 
+                colors[label] || (
+                    storeData[label].totalProfit >= 0 ? 
+                    'rgba(92, 196, 107, 0.7)' : 
+                    'rgba(255, 107, 107, 0.7)'
+                )
+            );
+            
+            // Format labels to show count
+            const formattedLabels = labels.map(label => 
+                label.charAt(0).toUpperCase() + label.slice(1) + 
+                ` (${storeData[label].count} orders)`
+            );
+            
+            // Create chart
+            profitChart = new Chart(chartCanvas, {
+                type: 'bar',
+                data: {
+                    labels: formattedLabels,
+                    datasets: [{
+                        label: 'Total Profit by Store ($)',
+                        data: data,
+                        backgroundColor: backgroundColors,
+                        borderColor: backgroundColors.map(color => color.replace('0.7', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#ffffff'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#ffffff'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Debounce function to prevent multiple rapid calls
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+        
+        // Function to load data with safety checks
+        async function loadData() {
+            // Prevent multiple concurrent API calls
+            if (isLoading) {
+                console.log("Data is already being loaded, ignoring duplicate request");
+                return;
+            }
+            
+            try {
+                showLoading(true);
+                console.log("Starting to load ShipStation data...");
+                
+                const tableBody = document.getElementById("shipstation-table");
+                if (tableBody) {
+                    tableBody.innerHTML = `<tr><td colspan="12" style="text-align:center;">Fetching orders, please wait...</td></tr>`;
+                }
+                
+                // Get date range based on user selection
+                const { startDate, endDate } = getDateRange();
+                
+                console.log(`Fetching orders from ${startDate} to ${endDate}`);
+                const orders = await fetchShipStationOrders(startDate, endDate);
+                console.log("Orders fetched:", orders);
+                
+                if (orders && orders.length > 0) {
+                    await displayOrders(orders);
+                } else {
+                    console.log("No orders found");
+                    const tableBody = document.getElementById("shipstation-table");
+                    if (tableBody) {
+                        tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders found for the selected date range</td></tr>`;
+                    }
+                }
+                
+                showLoading(false);
+            } catch (error) {
+                showLoading(false);
+                console.error("Failed to load ShipStation data:", error);
+                
+                const ordersTable = document.getElementById("shipstation-table");
+                if (ordersTable) {
+                    let errorMessage = `<tr><td colspan="12" style="color:red;">Failed to load ShipStation orders: ${error.message}</td></tr>`;
+                    
+                    // Show a more helpful message for CORS errors
+                    if (error.message.includes("CORS")) {
+                        errorMessage = `
+                            <tr>
+                                <td colspan="12" style="color:red; text-align:left; padding:15px;">
+                                    <strong>CORS Error Detected</strong><br><br>
+                                    Your browser's security policy (Same-Origin Policy) is preventing direct API calls to ShipStation.<br><br>
+                                    <strong>Solutions:</strong><br>
+                                    1. Use a server-side script to call the ShipStation API instead of making direct calls from the browser<br>
+                                    2. Create a simple backend proxy in Node.js, PHP, or another server-side language<br>
+                                    3. Check if you have cached data by refreshing the page (we store previous results)<br><br>
+                                    <em>Technical details: ${error.message}</em>
+                                </td>
+                            </tr>`;
+                    }
+                    
+                    ordersTable.innerHTML = errorMessage;
+                }
+            }
+        }
+        
+        // Debounced version of the loadData function to prevent multiple calls
+        const debouncedLoadData = debounce(loadData, 300);
+
+        // Load data when button is clicked
+        const loadDataBtn = document.getElementById('load-data');
+        if (loadDataBtn) {
+            loadDataBtn.addEventListener('click', function() {
+                console.log("Load button clicked");
+                debouncedLoadData();
+            });
+        }
+        
+        // Event listeners for filter changes that should trigger data filtering
+        if (storeFilter) {
+            storeFilter.addEventListener('change', function() {
+                console.log("Store filter changed");
+                // Only reload if we already have data in cache
+                if (isLocalCacheValid) {
+                    debouncedLoadData();
+                }
+            });
+        }
+        
+        if (statusFilter) {
+            statusFilter.addEventListener('change', function() {
+                console.log("Status filter changed");
+                // Only reload if we already have data in cache
+                if (isLocalCacheValid) {
+                    debouncedLoadData();
+                }
+            });
+        }
+        
+        // Function to check if cache is valid (simplified version of the one in shipstation-api.js)
+        function isLocalCacheValid(cacheKey) {
+            try {
+                const cacheData = localStorage.getItem(`shipstation_cache_${cacheKey}`);
+                return !!cacheData;
+            } catch (error) {
+                return false;
+            }
+        }
+        
+        // Auto-load on page load
+        console.log("Auto-loading data on page load");
+        debouncedLoadData();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

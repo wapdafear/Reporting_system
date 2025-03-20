@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title id="title">Veeqo Orders Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50;
+            padding: 500;
+            padding-top: 100;
+            background-color: #353333;
+        }
+        .container {
+            max-width: 2000px;
+            background: rgb(11, 5, 31);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            margin: auto;
+            width: 100%;
+            padding-top: 1%;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .heading:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            color: rgb(58, 228, 32);
+            font-size: 20px;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: rgb(57, 1, 1);
+        }
+        select {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #4CAF50;
+            border-radius: 5px;
+        }
+        input[type="checkbox"]:hover {
+            transform: scale(1.2);
+            transition: 0.2s ease-in-out;
+        }
+        #select-all {
+            width: 22px;
+            height: 22px;
+            accent-color: #ffcc00;
+            border-radius: 3px;
+        }
+        tr.selected {
+            background-color: rgba(0, 128, 0, 0.3) !important;
+            transition: 0.2s ease-in-out;
+        }
+        .table-dark input[type="checkbox"] {
+            filter: brightness(1.5);
+        }
+  
+        table td {
+            border-radius: 12px;
+            text-align: center;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        table td:hover {
+            border-color: #007bff;
+        }
+        /* New style for green text in columns 7 and onward */
+        table td:nth-child(n+7) {
+            color: #5cc46b !important; /* Bright green color */
+            font-weight: 500  !important;
+        font-size:larger;
+        }
+    </style>
+</head>
+<body>
+    <H1 class="heading">Veeqo Orders Analysis</H1>
+    <table class="table table-striped table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Order Status</th>
+                <th>Order Channel Name</th>
+                <th>Order SKU</th>
+                <th>Order Product Title</th>
+                <th>Order Created At</th>
+                <th>Order Subtotal ($)</th>
+                <th>Cost Price</th>
+                <th>Order Quantity</th>
+                <th>MarketPlace Fee</th>
+                <th>Product Cost W/ Quantity</th>
+                <th>Shipping Cost</th>
+                <th>Heavy Shipping</th>
+                <th>Total Cost</th>
+                <th>P/L</th>
+            </tr>
+        </thead>
+        <tbody id="product-table">
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="orders.js"></script>
+    <script>
+        // Ensure the script runs after the DOM is loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            function displayOrders(orders) {
+                console.log("Orders data:", orders); // Log the orders to check if they’re loaded
+                const tableBody = document.getElementById("product-table");
+                if (!tableBody) {
+                    console.error("Table body with ID 'product-table' not found.");
+                    console.log("HTML content:", document.documentElement.outerHTML); // Log full HTML to debug
+                    return;
+                }
+                tableBody.innerHTML = "";  // Clear previous data
+                orders.forEach(order => {
+                    const marketfee = order.subtotal_price * 0.18;
+                    const ProductCostWithQuantity = order.line_items[0].sellable.cost_price * order.line_items[0].quantity;
+                    const Shipping = order.delivery_method.cost;
+                    const Total = marketfee + ProductCostWithQuantity + Shipping;
+                    const HeavyShipping = order.delivery_cost - (order.delivery_cost * 0.02);
+
+                    // Robust date parsing and formatting for Eastern Time (ET)
+                    let formattedDate = "N/A"; // Fallback value
+                    try {
+                        const createdAtDate = new Date(order.created_at);
+
+                        const options = {
+                            timeZone: 'America/New_York',
+                            year: 'numeric',
+                            month: '2-digit',
+                            day: '2-digit',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true // 12-hour format with AM/PM
+                        };
+                        formattedDate = createdAtDate.toLocaleString('en-US', options).replace(',', '');
+                    } catch (error) {
+                        console.error(`Error formatting date for order ${order.number}:`, error);
+                        console.log("Raw date:", order.created_at);
+                    }
+
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${order.number}</td>
+                        <td>${order.status}</td>
+                        <td>${order.channel.name}</td>
+                        <td>${order.line_items[0].sellable.sku_code}</td>
+                        <td>${order.line_items[0].sellable.product_title}</td>
+                        <td>${formattedDate}</td>
+                        <td>$${order.subtotal_price}</td>
+                        <td>$${order.line_items[0].sellable.cost_price}</td>
+                        <td>${order.line_items[0].quantity}</td>
+                        <td>$${marketfee.toFixed(2)}</td>
+                        <td>$${ProductCostWithQuantity.toFixed(2)}</td>
+                        <td>${Shipping}</td>
+                        <td>$${HeavyShipping}</td>
+                        <td>$${Total.toFixed(2)}</td>
+                        <td>$${((order.subtotal_price - Total) + HeavyShipping).toFixed(2)}</td>
+                    `;
+
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // Check if veeqo_orders is defined before calling displayOrders
+            if (typeof veeqo_orders !== 'undefined' && Array.isArray(veeqo_orders)) {
+                displayOrders(veeqo_orders);
+            } else {
+                console.error("veeqo_orders is not defined or not an array:", veeqo_orders);
+                const tableBody = document.getElementById("product-table");
+                if (tableBody) {
+                    tableBody.innerHTML = `<tr><td colspan="15" style="color:red;">No orders data available</td></tr>`;
+                }
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
