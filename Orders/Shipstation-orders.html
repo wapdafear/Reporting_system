@@ -312,65 +312,8 @@
             color: #999;
             margin-bottom: 5px;
         }
-        /* Order groups - for orders with multiple items */
-        .order-group {
-            border-left: 5px solid #04d8fe !important;
-            position: relative;
-            background: linear-gradient(90deg, rgba(4, 216, 254, 0.12), rgba(4, 216, 254, 0.05), transparent) !important;
-            transition: all 0.2s ease;
-        }
-        .order-group:hover {
-            background: linear-gradient(90deg, rgba(4, 216, 254, 0.25), rgba(4, 216, 254, 0.1), transparent) !important;
-        }
-        .order-group.first-item {
-            border-top: 5px solid #04d8fe !important;
-            border-top-left-radius: 10px !important;
-            box-shadow: 0 -2px 8px rgba(4, 216, 254, 0.3);
-        }
-        .order-group.last-item {
-            border-bottom: 5px solid #04d8fe !important;
-            margin-bottom: 12px;
-            border-bottom-left-radius: 10px !important;
-            box-shadow: 0 2px 8px rgba(4, 216, 254, 0.3);
-        }
-        .order-group:not(.first-item):not(.last-item) {
-            border-right: 1px dashed rgba(4, 216, 254, 0.4) !important;
-        }
-        .order-group td:first-child {
-            position: relative;
-        }
-        .order-group .item-count {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #04d8fe;
-            color: black;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        /* Repeated order info in multi-item orders will be less visible */
-        .order-group:not(.first-item) td:nth-child(1),
-        .order-group:not(.first-item) td:nth-child(2),
-        .order-group:not(.first-item) td:nth-child(3),
-        .order-group:not(.first-item) td:nth-child(4),
-        .order-group:not(.first-item) td:nth-child(5) {
-            opacity: 0.4;
-        }
         /* Make table headers sticky */
         thead {
-            position: sticky;
-            top: 130px; /* Match the height of filters exactly */
-            z-index: 99;
             background-color: #1d1d1d;
             width: 100%;
             display: table-header-group;
@@ -378,13 +321,10 @@
         thead tr {
             background-color: #1d1d1d;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
-            position: relative;
         }
         thead th {
             background-color: #1d1d1d;
             border-bottom: 2px solid #333;
-            position: sticky;
-            top: 130px;
         }
         
         /* REMOVED: table-with-filters class */
@@ -395,6 +335,104 @@
             border-collapse: separate;
             border-spacing: 0;
             background-color: #1d1d1d;
+        }
+
+        /* Reset all table styling first */
+        #orders-table {
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+        }
+
+        /* Force table to use row borders correctly */
+        .table.table-dark.table-striped.table-hover tbody tr {
+            border-width: 0 !important;
+        }
+
+        /* Updated order group styles with bigger, brighter borders on all sides */
+        .table-dark tbody tr.order-group {
+            display: table-row !important;
+            border-width: 0 !important; 
+            position: relative !important;
+            background: transparent !important;
+            transition: none !important;
+            --bs-table-accent-bg: inherit !important;
+            box-shadow: none !important;
+        }
+
+        .table-dark tbody tr.order-group:hover {
+            background: inherit !important;
+        }
+
+        .table-dark tbody tr.order-group td {
+            border: 2px solid #3498db !important; /* Bright blue borders on all cells */
+        }
+
+        .table-dark tbody tr.order-group.first-item {
+            border-top-left-radius: 10px !important;
+            border-top-right-radius: 10px !important;
+        }
+
+        .table-dark tbody tr.order-group.first-item td:first-child {
+            border-top-left-radius: 8px !important;
+        }
+
+        .table-dark tbody tr.order-group.first-item td:last-child {
+            border-top-right-radius: 8px !important;
+        }
+
+        .table-dark tbody tr.order-group.last-item {
+            margin-bottom: 12px !important;
+            border-bottom-left-radius: 10px !important;
+            border-bottom-right-radius: 10px !important;
+        }
+
+        .table-dark tbody tr.order-group.last-item td:first-child {
+            border-bottom-left-radius: 8px !important;
+        }
+
+        .table-dark tbody tr.order-group.last-item td:last-child {
+            border-bottom-right-radius: 8px !important;
+        }
+
+        /* Fix adjoining cells to not have double borders */
+        .table-dark tbody tr.order-group:not(.first-item) td {
+            border-top: none !important;
+        }
+
+        .table-dark tbody tr.order-group:not(.last-item) td {
+            border-bottom: none !important;
+        }
+
+        /* Remove the item count badge that appears at the top of multi-item orders */
+        .table-dark tbody tr.order-group .item-count {
+            display: inline-block !important; /* Show the badge again */
+            position: absolute;
+            top: -10px;
+            left: 35px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        /* Repeated order info in multi-item orders will be less visible */
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(1),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(2),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(3),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(4),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(5) {
+            opacity: 1 !important;
+        }
+
+        /* Direct styling for td elements to ensure borders are visible */
+        .table-dark tbody tr.order-group td {
+            background-color: transparent !important;
         }
     </style>
 </head>
@@ -971,7 +1009,9 @@
                     const Brand = productBrand ? productBrand.brand : 0;
                     
                     // Calculate profit with label cost
-                    const marketfee = parseFloat((sellingPrice * 0.15).toFixed(2));
+                    const feePercentage = getPlatformFeePercentage(storeId);
+                    const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
+                    const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`; // Display "15%" or "18%"
                     const total_cost_with_quantity = parseFloat((costPrice * item.quantity).toFixed(2));
                     const Total_Cost = total_cost_with_quantity + marketfee + labelCost;
                     const profit = (sellingPrice - Total_Cost) + customerPaidShipping;
@@ -996,7 +1036,7 @@
                     }
                     
                     row.innerHTML = `
-                        <td>${storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length}</span>` : ''}</td>
+                        <td>${isMultiItemOrder && itemIndex > 0 ? '' : storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length}</span>` : ''}</td>
                         <td>${order.orderNumber || "N/A"}</td>
                         <td>${order.orderStatus || "N/A"}</td>
                         <td>${new Date(order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
@@ -1007,7 +1047,7 @@
                         <td>$${sellingPrice.toFixed(2)}</td>
                         <td>${productCost ? (costPrice > 0 ? `$${costPrice.toFixed(2)}` : '<span style="color: #ff9900; font-weight: bold;">$0.00</span>') : '<span style="color: #ffcc00; font-weight: bold;">N/A</span>'}</td>
                         <td>${item.quantity}</td>
-                        <td>$${marketfee.toFixed(2)}</td>
+                        <td>$${marketfee.toFixed(2)} </td>
                         <td>$${total_cost_with_quantity.toFixed(2)}</td>
                         <td>$${labelCost.toFixed(2)}</td>
                         <td>$${Total_Cost.toFixed(2)}</td>
@@ -1255,7 +1295,9 @@
                     const brand = productInfo ? productInfo.brand : '';
                     
                     // Calculate profit and other metrics
-                    const marketfee = parseFloat((sellingPrice * 0.15).toFixed(2));
+                    const feePercentage = getPlatformFeePercentage(storeId);
+                    const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
+                    const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`;
                     const total_cost_with_quantity = parseFloat((costPrice * item.quantity).toFixed(2));
                     const Total_Cost = total_cost_with_quantity + marketfee + labelCost;
                     const profit = (sellingPrice - Total_Cost) + customerPaidShipping;
@@ -1276,7 +1318,9 @@
                         total_cost_with_quantity,
                         Total_Cost,
                         profit,
-                        customerPaidShipping
+                        customerPaidShipping,
+                        feePercentage,
+                        feeDisplay
                     });
                 }
             }
@@ -1335,7 +1379,7 @@
                 }
                 
                 row.innerHTML = `
-                    <td>${item.storeBadge}${item.isMultiItemOrder && item.itemIndex === 0 ? `<span class="item-count">${item.order.items.length}</span>` : ''}</td>
+                    <td>${item.isMultiItemOrder && item.itemIndex > 0 ? '' : item.storeBadge}${item.isMultiItemOrder && item.itemIndex === 0 ? `<span class="item-count">${item.order.items.length}</span>` : ''}</td>
                     <td>${item.order.orderNumber || "N/A"}</td>
                     <td>${item.order.orderStatus || "N/A"}</td>
                     <td>${new Date(item.order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
@@ -1346,7 +1390,7 @@
                     <td>$${item.sellingPrice.toFixed(2)}</td>
                     <td>${item.costPrice > 0 ? `$${item.costPrice.toFixed(2)}` : '<span style="color: #ff9900; font-weight: bold;">$0.00</span>'}</td>
                     <td>${item.item.quantity}</td>
-                    <td>$${item.marketfee.toFixed(2)}</td>
+                    <td>$${item.marketfee.toFixed(2)} </td>
                     <td>$${item.total_cost_with_quantity.toFixed(2)}</td>
                     <td>$${item.labelCost.toFixed(2)}</td>
                     <td>$${item.Total_Cost.toFixed(2)}</td>
@@ -1630,6 +1674,18 @@
                         break;
                     }
                 }
+            }
+        }
+
+        // Add a function to determine the platform fee percentage based on store
+        function getPlatformFeePercentage(storeId) {
+            switch(storeId) {
+                case "452424": // Network (Net32)
+                    return 0.18; // 18%
+                case "373980": // SurgiMac Amazon Store
+                    return 0.15; // 15%
+                default:
+                    return 0.15; // 15% for all other stores
             }
         }
     </script>
