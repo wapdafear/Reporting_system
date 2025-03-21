@@ -5,23 +5,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navigation Bar with Search Box</title>
+    <title>SurgiMac Reporting System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- Unicons CSS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <script src="script.js" defer></script>
 <style>
      body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-            padding: 50px;
-            background: #f4f4f4;
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
+            from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
         }
 
@@ -40,54 +47,846 @@
             from { transform: translateY(-20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        .login-form {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            transform: translateY(20px);
+            animation: floatUp 1s forwards 0.5s;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .login-form h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .login-form h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 4px;
+            width: 50px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-align: left;
+            color: #555;
+            transition: all 0.3s;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .form-control:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.15);
+            outline: none;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 42px;
+            color: #aaa;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus + i {
+            color: #6a11cb;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.25);
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(90deg, #5a0fcb, #1565fc);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.35);
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(220, 53, 69, 0.1);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        .login-logo {
+            margin-bottom: 25px;
+            max-width: 180px;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Dashboard styles */
+        #main-content {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dashboard-container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            text-align: left;
+        }
+
+        .welcome-banner h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-banner p {
+            opacity: 0.9;
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: left;
+            border-top: 5px solid transparent;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .dashboard-card.reports {
+            border-top-color: #6a11cb;
+        }
+
+        .dashboard-card.amazon {
+            border-top-color: #FF9900;
+        }
+
+        .dashboard-card.orders {
+            border-top-color: #2575fc;
+        }
+
+        .dashboard-card.calculator {
+            border-top-color: #00C853;
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 15px;
+            background: #f5f7fa;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .reports .card-icon {
+            color: #6a11cb;
+            background: rgba(106, 17, 203, 0.1);
+        }
+
+        .amazon .card-icon {
+            color: #FF9900;
+            background: rgba(255, 153, 0, 0.1);
+        }
+
+        .orders .card-icon {
+            color: #2575fc;
+            background: rgba(37, 117, 252, 0.1);
+        }
+
+        .calculator .card-icon {
+            color: #00C853;
+            background: rgba(0, 200, 83, 0.1);
+        }
+
+        .dashboard-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .dashboard-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .stats-overview {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .stats-overview h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            padding: 15px;
+            border-radius: 10px;
+            background: #f5f7fa;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6a11cb;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 20px;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .welcome-banner {
+                padding: 20px;
+            }
+        }
+
+        /* Additional styles for purchasing dashboard */
+        .low-stock-alert {
+            display: none; /* Hidden by default */
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .low-stock-alert h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #d32f2f;
+            display: flex;
+            align-items: center;
+        }
+
+        .low-stock-alert h2 i {
+            margin-right: 10px;
+        }
+
+        .stock-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .stock-table th {
+            background-color: #f5f5f5;
+            color: #333;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .stock-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .stock-table tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .stock-level {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .stock-level.critical {
+            color: #d32f2f;
+        }
+
+        .stock-level.low {
+            color: #ff9800;
+        }
+
+        .stock-level.medium {
+            color: #2196f3;
+        }
+
+        .stock-level-indicator {
+            width: 100px;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .stock-level-indicator div {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .stock-level.critical .stock-level-indicator div {
+            width: 10%;
+            background-color: #d32f2f;
+        }
+
+        .stock-level.low .stock-level-indicator div {
+            width: 30%;
+            background-color: #ff9800;
+        }
+
+        .stock-level.medium .stock-level-indicator div {
+            width: 50%;
+            background-color: #2196f3;
+        }
+
+        .action-button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            background-color: #6a11cb;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-button:hover {
+            background-color: #5a0fcb;
+            transform: translateY(-2px);
+        }
+
+        .purchase-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .purchase-stat {
+            background-color: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .purchase-stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .purchase-stat.danger .purchase-stat-value {
+            color: #d32f2f;
+        }
+
+        .purchase-stat.warning .purchase-stat-value {
+            color: #ff9800;
+        }
+
+        .purchase-stat.info .purchase-stat-value {
+            color: #2196f3;
+        }
+
+        .purchase-stat-label {
+            color: #666;
+            font-size: 14px;
+        }
 </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="surgimac.png" alt="" width="300px">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Reports</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Amazon_Reports/Amazon_page.html">Amazon</a>
-              </li>
-          
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Orders/Shipstation-orders.html">Orders</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Repricer Calculator</a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li> -->
-            </ul>
-           
-          </div>
+    <div id="login-section">
+        <div class="login-form">
+            <img src="surgimac.png" alt="SurgiMac Logo" class="login-logo">
+            <h2>Login to Reporting System</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" class="form-control" placeholder="Enter username">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter password">
+                <i class="fas fa-lock"></i>
+            </div>
+            <button id="login-btn" class="btn-login">Login</button>
+            <div id="error-message" class="error-message">Invalid username or password</div>
         </div>
-      </nav>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script>
- 
-</script>  
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="surgimac.png" alt="" width="300px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" id="reports-link">
+                            <a class="nav-link active" aria-current="page" href="home.html">Reports</a>
+                        </li>
+                        <li class="nav-item" id="amazon-link">
+                            <a class="nav-link active" aria-current="page" href="Amazon_Reports/Amazon_page.html">Amazon</a>
+                        </li>
+                        <li class="nav-item" id="orders-link">
+                            <a class="nav-link active" aria-current="page" href="Orders/Shipstation-orders.html">Orders</a>
+                        </li>
+                        <li class="nav-item" id="calculator-link">
+                            <a class="nav-link" href="#">Repricer Calculator</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <span id="user-info" class="me-3" style="font-weight: bold;"></span>
+                        <button id="logout-btn" class="btn btn-outline-danger">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-container">
+            <div class="welcome-banner">
+                <h1>Welcome to the SurgiMac Reporting System</h1>
+                <p id="welcome-message">Access your reports and data analytics from the dashboard below.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="dashboard-card reports" id="card-reports">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Reports</h3>
+                    <p>View comprehensive business reports and analytics.</p>
+                </div>
+                
+                <div class="dashboard-card amazon" id="card-amazon">
+                    <div class="card-icon"><i class="fab fa-amazon"></i></div>
+                    <h3>Amazon</h3>
+                    <p>Amazon-specific sales data and performance metrics.</p>
+                </div>
+                
+                <div class="dashboard-card orders" id="card-orders">
+                    <div class="card-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>Orders</h3>
+                    <p>Track and manage customer orders from all channels.</p>
+                </div>
+                
+                <div class="dashboard-card calculator" id="card-calculator">
+                    <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Repricer Calculator</h3>
+                    <p>Calculate optimal pricing for products.</p>
+                </div>
+            </div>
+
+            <div class="stats-overview" id="general-stats">
+                <h2>System Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">152</div>
+                        <div class="stat-label">Orders This Month</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">$12,450</div>
+                        <div class="stat-label">Monthly Revenue</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94.3%</div>
+                        <div class="stat-label">Fulfillment Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Pending Reports</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purchasing-specific section for low stock items -->
+            <div class="low-stock-alert" id="purchasing-view">
+                <h2><i class="fas fa-exclamation-triangle"></i> Inventory Alert: Items Requiring Attention</h2>
+                
+                <div class="purchase-summary">
+                    <div class="purchase-stat danger">
+                        <div class="purchase-stat-value">12</div>
+                        <div class="purchase-stat-label">Out of Stock Items</div>
+                    </div>
+                    <div class="purchase-stat warning">
+                        <div class="purchase-stat-value">24</div>
+                        <div class="purchase-stat-label">Low Stock Items</div>
+                    </div>
+                    <div class="purchase-stat info">
+                        <div class="purchase-stat-value">36</div>
+                        <div class="purchase-stat-label">Items to Reorder Soon</div>
+                    </div>
+                    <div class="purchase-stat">
+                        <div class="purchase-stat-value">8</div>
+                        <div class="purchase-stat-label">High Demand Products</div>
+                    </div>
+                </div>
+                
+                <table class="stock-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Product Name</th>
+                            <th>Current Stock</th>
+                            <th>Status</th>
+                            <th>Reorder Level</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SM-4501</td>
+                            <td>Dental Impression Material</td>
+                            <td>
+                                <div class="stock-level critical">
+                                    <div class="stock-level-indicator"><div></div></div>
+                                    2 units
+                                </div>
+                            </td>
+                            <td>Critical</td>
+                            <td>20 units</td>
+                            <td><button class="action-button">Order Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>SM-2356</td>
+                            <td>Surgical Gloves (Medium)</td>
+                            <td>
+                                <div class="stock-level critical">
+                                    <div class="stock-level-indicator"><div></div></div>
+                                    0 units
+                                </div>
+                            </td>
+                            <td>Out of Stock</td>
+                            <td>50 boxes</td>
+                            <td><button class="action-button">Order Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>SM-8976</td>
+                            <td>Autoclave Sterilization Pouches</td>
+                            <td>
+                                <div class="stock-level low">
+                                    <div class="stock-level-indicator"><div></div></div>
+                                    12 packs
+                                </div>
+                            </td>
+                            <td>Low Stock</td>
+                            <td>30 packs</td>
+                            <td><button class="action-button">Order Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>SM-3254</td>
+                            <td>Dental Burs Set</td>
+                            <td>
+                                <div class="stock-level low">
+                                    <div class="stock-level-indicator"><div></div></div>
+                                    5 sets
+                                </div>
+                            </td>
+                            <td>Low Stock</td>
+                            <td>15 sets</td>
+                            <td><button class="action-button">Order Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>SM-7124</td>
+                            <td>Composite Filling Material</td>
+                            <td>
+                                <div class="stock-level medium">
+                                    <div class="stock-level-indicator"><div></div></div>
+                                    8 kits
+                                </div>
+                            </td>
+                            <td>Medium Stock</td>
+                            <td>12 kits</td>
+                            <td><button class="action-button">Order Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="text-align: right; margin-top: 15px;">
+                    <button class="action-button" style="background: linear-gradient(90deg, #6a11cb, #2575fc);">
+                        <i class="fas fa-file-export"></i> Export Inventory Report
+                    </button>
+                    <button class="action-button" style="background: linear-gradient(90deg, #11cb6a, #25fc84); margin-left: 10px;">
+                        <i class="fas fa-plus-circle"></i> Create Purchase Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+        // Hardcoded user credentials and their permissions
+        const users = {
+            "accountant": {
+                password: "acc123",
+                role: "Accountant",
+                permissions: ["orders"]
+            },
+            "purchasing": {
+                password: "pur123",
+                role: "Purchasing",
+                permissions: ["reports"]
+            },
+            "admin": {
+                password: "admin123",
+                role: "Admin",
+                permissions: ["reports", "amazon", "orders", "calculator"]
+            }
+        };
+
+        // DOM elements
+        const loginSection = document.getElementById('login-section');
+        const mainContent = document.getElementById('main-content');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginBtn = document.getElementById('login-btn');
+        const errorMessage = document.getElementById('error-message');
+        const userInfo = document.getElementById('user-info');
+        const logoutBtn = document.getElementById('logout-btn');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        // Navigation links
+        const reportsLink = document.getElementById('reports-link');
+        const amazonLink = document.getElementById('amazon-link');
+        const ordersLink = document.getElementById('orders-link');
+        const calculatorLink = document.getElementById('calculator-link');
+
+        // Dashboard cards
+        const cardReports = document.getElementById('card-reports');
+        const cardAmazon = document.getElementById('card-amazon');
+        const cardOrders = document.getElementById('card-orders');
+        const cardCalculator = document.getElementById('card-calculator');
+
+        // Add click handlers to dashboard cards
+        cardReports.addEventListener('click', function() {
+            if (reportsLink.style.display !== 'none') {
+                window.location.href = 'home.html';
+            }
+        });
+        
+        cardAmazon.addEventListener('click', function() {
+            if (amazonLink.style.display !== 'none') {
+                window.location.href = 'Amazon_Reports/Amazon_page.html';
+            }
+        });
+        
+        cardOrders.addEventListener('click', function() {
+            if (ordersLink.style.display !== 'none') {
+                window.location.href = 'Orders/Shipstation-orders.html';
+            }
+        });
+
+        // Check if user is already logged in
+        function checkLoggedInUser() {
+            const loggedInUser = localStorage.getItem('currentUser');
+            if (loggedInUser) {
+                try {
+                    const userData = JSON.parse(loggedInUser);
+                    showMainContent(userData);
+                } catch (e) {
+                    // Invalid user data in localStorage
+                    localStorage.removeItem('currentUser');
+                }
+            }
+        }
+
+        // Handle login
+        loginBtn.addEventListener('click', function() {
+            const username = usernameInput.value.trim().toLowerCase();
+            const password = passwordInput.value;
+
+            if (users[username] && users[username].password === password) {
+                // Login successful
+                const userData = {
+                    username: username,
+                    role: users[username].role,
+                    permissions: users[username].permissions
+                };
+                
+                // Save user data in localStorage
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+                
+                // Show main content
+                showMainContent(userData);
+                
+                // Clear form
+                usernameInput.value = '';
+                passwordInput.value = '';
+                errorMessage.style.display = 'none';
+            } else {
+                // Login failed
+                errorMessage.style.display = 'block';
+                passwordInput.value = '';
+            }
+        });
+
+        // Enter key for login
+        passwordInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                loginBtn.click();
+            }
+        });
+
+        // Handle logout
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('currentUser');
+            showLoginForm();
+        });
+
+        // Show main content based on user permissions
+        function showMainContent(userData) {
+            loginSection.style.display = 'none';
+            mainContent.style.display = 'block';
+            
+            // Set user info
+            userInfo.textContent = `Logged in as: ${userData.role}`;
+            welcomeMessage.textContent = `Welcome, ${userData.role}! Access your authorized modules below.`;
+            
+            // Set permissions for navigation links and cards
+            const hasReports = userData.permissions.includes('reports');
+            const hasAmazon = userData.permissions.includes('amazon');
+            const hasOrders = userData.permissions.includes('orders');
+            const hasCalculator = userData.permissions.includes('calculator');
+            
+            // Nav links
+            reportsLink.style.display = hasReports ? 'block' : 'none';
+            amazonLink.style.display = hasAmazon ? 'block' : 'none';
+            ordersLink.style.display = hasOrders ? 'block' : 'none';
+            calculatorLink.style.display = hasCalculator ? 'block' : 'none';
+            
+            // Dashboard cards
+            cardReports.style.display = hasReports ? 'block' : 'none';
+            cardAmazon.style.display = hasAmazon ? 'block' : 'none';
+            cardOrders.style.display = hasOrders ? 'block' : 'none';
+            cardCalculator.style.display = hasCalculator ? 'block' : 'none';
+            
+            // Show purchasing-specific view or general stats
+            const purchasingView = document.getElementById('purchasing-view');
+            const generalStats = document.getElementById('general-stats');
+            
+            if (userData.role === 'Purchasing') {
+                purchasingView.style.display = 'block';
+                generalStats.style.display = 'none';
+            } else {
+                purchasingView.style.display = 'none';
+                generalStats.style.display = 'block';
+            }
+        }
+
+        // Show login form
+        function showLoginForm() {
+            loginSection.style.display = 'block';
+            mainContent.style.display = 'none';
+        }
+
+        // Check user on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            checkLoggedInUser();
+        });
+    </script>  
 </body>
 </html>

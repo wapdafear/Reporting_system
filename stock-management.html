@@ -8,9 +8,8 @@
     <style>
        body {
             font-family: Arial, sans-serif;
-            margin: 50;
-            padding: 500;
-            padding-top: 100;
+            margin: 0;
+            padding: 0;
             background-color: #353333;
         }
         .container {
@@ -19,149 +18,147 @@
             padding: 1rem;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         .heading {
     margin: auto;
     width: 100%;
     padding-top: 1%;
     text-align: center;
-    font-size: 2rem; /* Adjust size as needed */
+            font-size: 2rem;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient background */
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
     padding: 20px;
-    
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Slight letter spacing for a stylish look */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .heading:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-}
-     header {
-            background: #007BFF;
-            color: white;
-            padding: 1rem;
-            text-align: center;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
+        
      table {
             width: 100%;
             border-collapse: collapse;
             margin: 1rem 0;
         }
+        
      table th, table td {
             padding: 0.75rem;
             border: 1px solid #ddd;
             text-align: left;
         }
+        
      table th {
-            
             color: rgb(58, 228, 32);
             font-size: 20px;
             font-weight: bolder;
-            text-decoration:underline;
+            text-decoration: underline;
         }
+        
+        .filters-container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
         .filters {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-bottom: 1rem;
-            color: rgb(57, 1, 1);
+            align-items: flex-end;
         }
-        select {
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        select, input {
             padding: 0.5rem;
             border-radius: 4px;
             border: 1px solid #ddd;
+            width: 100%;
+            background-color: #1a1a2e;
+            color: white;
         }
+        
         input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #4CAF50; /* Green checkbox when checked */
+            accent-color: #4CAF50;
     border-radius: 5px;
 }
 
-/* ✨ Hover Effect */
 input[type="checkbox"]:hover {
-    transform: scale(1.2); /* Slightly increase size */
+            transform: scale(1.2);
     transition: 0.2s ease-in-out;
 }
 
-/* 🏆 "Select All" Checkbox - Make It Stand Out */
 #select-all {
     width: 22px;
     height: 22px;
-    accent-color: #ffcc00; /* Yellow color */
+            accent-color: #ffcc00;
     border-radius: 3px;
 }
 
-/* 🎯 Selected Row Highlight */
 tr.selected {
-    background-color: rgba(0, 128, 0, 0.3) !important; /* Light green highlight */
+            background-color: rgba(0, 128, 0, 0.3) !important;
     transition: 0.2s ease-in-out;
 }
 
-/* 🎨 Dark Mode Checkbox Contrast */
 .table-dark input[type="checkbox"] {
-    filter: brightness(1.5); /* Makes checkboxes more visible on dark background */
-}
-.low-stock {
-    background-color: orange !important; /* Orange for low stock */
-    color: white !important;
-}
-
-.out-of-stock {
-    background-color: red !important; /* Red for out-of-stock */
-    color: white !important;
-}
-table td.low-stock {
-    background-color: orange; /* Orange for low stock */
+            filter: brightness(1.5);
+        }
+        
+        .low-stock {
+            background: linear-gradient(135deg, #ff9e2c, #ff6f00);
     color: white;
-}
-
-table td.out-of-stock {
-    background-color: red; /* Red for out-of-stock */
-    color: white;
-}
-/* Styling for low stock and out-of-stock */
-table td.low-stock {
-    background: linear-gradient(135deg, #ff9e2c, #ff6f00); /* Gradient orange for Low Stock */
-    color: white; /* White text */
     border-radius: 12px;
     padding: 0.75rem 1rem;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.4); /* Soft shadow for a gentle glow */
+            box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.4);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-table td.out-of-stock {
-    background: linear-gradient(135deg, #ff4e42, #e63946); /* Gradient red for Out of Stock */
-    color: white; /* White text */
+        .out-of-stock {
+            background: linear-gradient(135deg, #ff4e42, #e63946);
+            color: white;
     border-radius: 12px;
     padding: 0.75rem 1rem;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(230, 57, 70, 0.4); /* Soft shadow for a gentle glow */
+            box-shadow: 0px 4px 10px rgba(230, 57, 70, 0.4);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for low stock and out of stock */
-table td.low-stock:hover {
-    background: linear-gradient(135deg, #ffb447, #ff8200); /* Darker orange gradient */
-    box-shadow: 0px 6px 15px rgba(255, 165, 0, 0.6); /* More intense glow */
-    cursor: pointer; /* Change cursor on hover */
-}
+        .low-stock:hover {
+            background: linear-gradient(135deg, #ffb447, #ff8200);
+            box-shadow: 0px 6px 15px rgba(255, 165, 0, 0.6);
+            cursor: pointer;
+        }
 
-table td.out-of-stock:hover {
-    background: linear-gradient(135deg, #ff6768, #d90429); /* Darker red gradient */
-    box-shadow: 0px 6px 15px rgba(230, 57, 70, 0.6); /* More intense glow */
-    cursor: pointer; /* Change cursor on hover */
-}
+        .out-of-stock:hover {
+            background: linear-gradient(135deg, #ff6768, #d90429);
+            box-shadow: 0px 6px 15px rgba(230, 57, 70, 0.6);
+            cursor: pointer;
+        }
 
-/* General styling for all cells */
 table td {
     border-radius: 12px;
     text-align: center;
@@ -171,227 +168,589 @@ table td {
     transition: all 0.3s ease;
 }
 
-/* Add border effect on hover */
 table td:hover {
-    border-color: #007bff; /* Light blue border on hover */
-}
+            border-color: #007bff;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
+        .btn-custom {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+            color: white;
+        }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .auth-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: none;
+        }
     </style>
 </head>
-<body>
-    <H1 class="heading">Stock Management</H1>
-    <div class="container">
+    <body>
+        <H1 class="heading">Stock Management</H1>
+    
+    <!-- Authentication Section -->
+    <div class="container auth-section" id="auth-section">
+        <h3>ShipStation API Authentication</h3>
+        <p>Enter your ShipStation API credentials to access product and sales data.</p>
+        <div class="error-message" id="auth-error"></div>
         <div class="filters">
-            <!-- Filter by Stock -->
-            <select id="stockFilter" onchange="applyFilters()">
-                <option value="all">All Stock</option>
-                <option value="low-stock">Low Stock</option>
-                <option value="out-of-stock">Out of Stock</option>
-            </select>
-
-            <!-- Filter by Manufacturer -->
-            <select id="manufacturerFilter" onchange="applyFilters()">
-                <option value="all">All Manufacturers</option>
-            </select>
-
-            <select id="salesSort" onchange="applyFilters()">
-                <option value="none">No Sorting</option>
-                <option value="descending">Sales (Descending)</option>
-            </select>
+            <div class="filter-group">
+                <label for="api-key">API Key</label>
+                <input type="text" id="api-key" placeholder="Enter your ShipStation API Key">
+            </div>
+            <div class="filter-group">
+                <label for="api-secret">API Secret</label>
+                <input type="password" id="api-secret" placeholder="Enter your ShipStation API Secret">
+            </div>
+            <div>
+                <button class="btn btn-primary" id="connect-api">Connect to ShipStation</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="main-container" style="display: none;">
+        <div id="error-message" class="error-message"></div>
+        
+        <div class="filters-container">
+    <div class="filters">
+                <div class="filter-group">
+                    <label for="dateFrom">From Date</label>
+                    <input type="date" id="dateFrom">
+                </div>
+                <div class="filter-group">
+                    <label for="dateTo">To Date</label>
+                    <input type="date" id="dateTo">
+                </div>
+                <div class="filter-group">
+                    <label for="stockFilter">Stock Level</label>
+                    <select id="stockFilter">
+            <option value="all">All Stock</option>
+            <option value="low-stock">Low Stock</option>
+            <option value="out-of-stock">Out of Stock</option>
+        </select>
+                </div>
+                <div class="filter-group">
+                    <label for="manufacturerFilter">Manufacturer</label>
+                    <select id="manufacturerFilter">
+            <option value="all">All Manufacturers</option>
+        </select>
+                </div>
+                <div class="filter-group">
+                    <label for="salesSort">Sort By</label>
+                    <select id="salesSort">
+            <option value="none">No Sorting</option>
+            <option value="descending">Sales (Descending)</option>
+        </select>
+                </div>
+                <div>
+                    <button class="btn btn-primary" id="apply-filters">Apply Filters</button>
+                </div>
+            </div>
         </div>
         
-        <button class="btn btn-success mb-3" onclick="downloadExcel()">Download Selected Products</button>
-
-        <table class="table table-striped table-dark table-hover">
-            <thead>
-                <tr>
-                    <th>Select<input type="checkbox" id="select-all"></th>
-                    <th>VP_code</th>
-                    <th>Description</th>
-                    <th>Manufacturer</th>
-                    <th>Stock</th>
-                    <th>Jan Sales</th>
-                </tr>
-            </thead>
-            <tbody id="product-table">
-                <!-- Product rows will be dynamically inserted here -->
-            </tbody>
-        </table>
+        <div class="button-container">
+            <button class="btn btn-success" id="download-excel">Download Selected Products</button>
+            <button class="btn btn-info" id="refresh-data">Refresh Data</button>
     </div>
 
-    <!-- Load scripts in correct order -->
+    <table class="table table-striped table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Select<input type="checkbox" id="select-all"></th>
+                    <th>SKU</th>
+                    <th>Product Name</th>
+                <th>Manufacturer</th>
+                    <th>Stock Level</th>
+                    <th>Sales Quantity</th>
+                    <th>Sales Amount</th>
+            </tr>
+        </thead>
+        <tbody id="product-table">
+            <!-- Product rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p id="loading-text">Loading data from ShipStation...</p>
+    </div>
+
+    <!-- Load scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="product.js"></script>
-    <script src="salesbyquantity-dec.js"></script>
-    <script>
-        let lastChecked = null; // Track last checked checkbox
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+<script>
+        // Global variables
+        let products = [];
+        let salesData = {};
+        let credentials = null;
+let lastChecked = null; // Track last checked checkbox
 
-        function renderProducts(filteredProducts) {
-            const tableBody = document.getElementById('product-table');
-            tableBody.innerHTML = ''; // Clear previous rows
-
-            filteredProducts.forEach((product, index) => {
-                const salesData = sales2JSON.find(sale => sale.Sku === product.vp_code);
-                const salesQuantity = salesData ? salesData.quantities : 0;
-                const totalSales = salesData ? salesData.Totalsales : 0;
-
-                let stockClass = '';
-                if (product.old_count === 0) {
-                    stockClass = 'out-of-stock';
-                } else if (product.old_count > 0 && product.old_count < 20) {
-                    stockClass = 'low-stock';
+        // DOM Elements
+        const authSection = document.getElementById('auth-section');
+        const mainContainer = document.getElementById('main-container');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const loadingText = document.getElementById('loading-text');
+        const errorMessage = document.getElementById('error-message');
+        const authError = document.getElementById('auth-error');
+        
+        // Date inputs default to last 30 days
+        const today = new Date();
+        const thirtyDaysAgo = new Date(today);
+        thirtyDaysAgo.setDate(today.getDate() - 30);
+        
+        document.getElementById('dateFrom').valueAsDate = thirtyDaysAgo;
+        document.getElementById('dateTo').valueAsDate = today;
+        
+        // Event Listeners
+        document.getElementById('connect-api').addEventListener('click', connectToShipStation);
+        document.getElementById('apply-filters').addEventListener('click', applyFilters);
+        document.getElementById('refresh-data').addEventListener('click', fetchAllData);
+        document.getElementById('download-excel').addEventListener('click', downloadExcel);
+        
+        // Check if credentials are stored in localStorage
+        function checkStoredCredentials() {
+            const storedCredentials = localStorage.getItem('shipstation_credentials');
+            if (storedCredentials) {
+                try {
+                    credentials = JSON.parse(storedCredentials);
+                    authSection.style.display = 'none';
+                    mainContainer.style.display = 'block';
+                    fetchAllData();
+                } catch (error) {
+                    console.error('Error parsing stored credentials:', error);
+                    localStorage.removeItem('shipstation_credentials');
                 }
-
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><input type="checkbox" class="product-checkbox"></td>
-                    <td>${product.vp_code}</td>
-                    <td>${product.description}</td>
-                    <td>${product.manufacturer}</td>
-                    <td class="${stockClass}">${product.old_count}</td>
-                    <td>${salesQuantity}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-
-            addMultiSelect(); // Attach Shift-click selection
-            addSelectAllFunctionality(); // Attach Select All functionality
+            }
         }
-
-        // 🏆 **Enable Multi-Select (Shift + Click)**
-        function addMultiSelect() {
-            const checkboxes = document.querySelectorAll('.product-checkbox');
-
-            checkboxes.forEach((checkbox, index) => {
-                checkbox.addEventListener('click', function (event) {
-                    if (lastChecked !== null && event.shiftKey) {
-                        let start = Math.min(lastChecked, index);
-                        let end = Math.max(lastChecked, index);
-                        for (let i = start; i <= end; i++) {
-                            checkboxes[i].checked = true;
+        
+        // Connect to ShipStation API
+        async function connectToShipStation() {
+            const apiKey = document.getElementById('api-key').value.trim();
+            const apiSecret = document.getElementById('api-secret').value.trim();
+            
+            if (!apiKey || !apiSecret) {
+                showAuthError('Please enter both API Key and API Secret');
+                return;
+            }
+            
+            showLoading('Authenticating with ShipStation...');
+            
+            try {
+                // Test the credentials with a simple API call
+                const response = await fetch('https://ssapi.shipstation.com/accounts', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(apiKey + ':' + apiSecret),
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Authentication failed: ${response.status} ${response.statusText}`);
+                }
+                
+                // Store credentials in memory and localStorage
+                credentials = { apiKey, apiSecret };
+                localStorage.setItem('shipstation_credentials', JSON.stringify(credentials));
+                
+                // Hide auth section and show main container
+                authSection.style.display = 'none';
+                mainContainer.style.display = 'block';
+                
+                // Fetch data
+                await fetchAllData();
+                
+            } catch (error) {
+                console.error('Authentication error:', error);
+                hideLoading();
+                showAuthError('Authentication failed. Please check your API credentials and try again.');
+            }
+        }
+        
+        // Fetch all required data from ShipStation
+        async function fetchAllData() {
+            if (!credentials) {
+                showError('Not authenticated. Please enter your API credentials.');
+                return;
+            }
+            
+            try {
+                showLoading('Fetching products from ShipStation...');
+                await fetchProducts();
+                
+                showLoading('Fetching sales data from ShipStation...');
+                await fetchSalesData();
+                
+                hideLoading();
+                renderProducts(products);
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                hideLoading();
+                showError('Failed to fetch data from ShipStation. ' + error.message);
+            }
+        }
+        
+        // Fetch products from ShipStation API
+        async function fetchProducts() {
+            const response = await fetch('https://ssapi.shipstation.com/products?pageSize=500', {
+                method: 'GET',
+                headers: getAuthHeaders()
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            products = data.products || [];
+            
+            // Extract unique manufacturers
+            const manufacturers = [...new Set(products.map(product => product.manufacturer || 'Unknown'))];
+            populateManufacturers(manufacturers);
+            
+            return products;
+        }
+        
+        // Fetch order data to calculate sales by product
+        async function fetchSalesData() {
+            const dateFrom = document.getElementById('dateFrom').value;
+            const dateTo = document.getElementById('dateTo').value;
+            
+            if (!dateFrom || !dateTo) {
+                throw new Error('Please select a valid date range');
+            }
+            
+            const queryParams = new URLSearchParams({
+                orderDateStart: `${dateFrom} 00:00:00`,
+                orderDateEnd: `${dateTo} 23:59:59`,
+                pageSize: '500',
+                orderStatus: 'shipped'
+            });
+            
+            const response = await fetch(`https://ssapi.shipstation.com/orders?${queryParams}`, {
+                method: 'GET',
+                headers: getAuthHeaders()
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to fetch sales data: ${response.status} ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            const orders = data.orders || [];
+            
+            // Process orders to calculate sales by product
+            salesData = calculateSalesByProduct(orders);
+            
+            return salesData;
+        }
+        
+        // Calculate sales quantities and amounts by product SKU
+        function calculateSalesByProduct(orders) {
+            const sales = {};
+            
+            orders.forEach(order => {
+                if (order.items && Array.isArray(order.items)) {
+                    order.items.forEach(item => {
+                        const sku = item.sku;
+                        
+                        if (!sales[sku]) {
+                            sales[sku] = {
+                                quantity: 0,
+                                amount: 0
+                            };
                         }
-                    }
-                    lastChecked = index; // Update last clicked index
-                });
-            });
-        }
-
-        // ✅ **Select All Checkbox Feature**
-        function addSelectAllFunctionality() {
-            const selectAllCheckbox = document.getElementById('select-all');
-            const checkboxes = document.querySelectorAll('.product-checkbox');
-
-            selectAllCheckbox.addEventListener('change', function () {
-                checkboxes.forEach(checkbox => {
-                    checkbox.checked = selectAllCheckbox.checked;
-                });
-            });
-
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function () {
-                    // If any checkbox is unchecked, uncheck Select All
-                    if (!this.checked) {
-                        selectAllCheckbox.checked = false;
-                    }
-                    // If all checkboxes are checked, check Select All
-                    else if ([...checkboxes].every(cb => cb.checked)) {
-                        selectAllCheckbox.checked = true;
-                    }
-                });
-            });
-        }  
-
-        // 📝 **Download Selected Products as Excel**
-        function downloadExcel() {
-            let selectedProducts = [];
-            const checkboxes = document.querySelectorAll('.product-checkbox');
-            const rows = document.querySelectorAll('#product-table tr');
-
-            checkboxes.forEach((checkbox, index) => {
-                if (checkbox.checked) {
-                    const cells = rows[index].querySelectorAll('td'); // Get the correct row
-                    selectedProducts.push({
-                        VP_Code: cells[1].innerText,
-                        Description: cells[2].innerText,
-                        Manufacturer: cells[3].innerText,
-                        Stock: cells[4].innerText,
-                        Jan_Sales: cells[5].innerText,
+                        
+                        sales[sku].quantity += item.quantity || 0;
+                        sales[sku].amount += (item.unitPrice * item.quantity) || 0;
                     });
                 }
             });
-
-            if (selectedProducts.length === 0) {
-                alert("Please select at least one product!");
-                return;
-            }
-
-            // 🗓 Get current date in YYYY-MM-DD format
-            const currentDate = new Date().toISOString().split('T')[0];
-
-            // 📝 Create Excel file
-            const worksheet = XLSX.utils.json_to_sheet(selectedProducts);
-            const workbook = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(workbook, worksheet, "Products");
-
-            // 📂 Download file with name: "Comparison_Table_YYYY-MM-DD.xlsx"
-            const fileName = `Stock_Management_${currentDate}.xlsx`;
-            XLSX.writeFile(workbook, fileName);
+            
+            return sales;
         }
-
-        // Function to apply filters and sorting
+        
+        // Apply filters to the product list
         function applyFilters() {
             const stockFilter = document.getElementById('stockFilter').value;
             const manufacturerFilter = document.getElementById('manufacturerFilter').value;
             const salesSort = document.getElementById('salesSort').value;
-
-            let filteredProducts = productsJSON.filter(product => {
-                // Apply stock filter
-                let stockCondition = true;
-                if (stockFilter === 'low-stock') {
-                    stockCondition = product.old_count > 0 && product.old_count < 20;
-                } else if (stockFilter === 'out-of-stock') {
-                    stockCondition = product.old_count === 0;
-                }
-
-                // Apply manufacturer filter
-                const manufacturerCondition = manufacturerFilter === 'all' || product.manufacturer === manufacturerFilter;
-
-                return stockCondition && manufacturerCondition;
-            });
-
+            
+            let filteredProducts = [...products];
+            
+            // Apply stock filter
+            if (stockFilter === 'low-stock') {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.quantityAvailable > 0 && product.quantityAvailable < 20);
+            } else if (stockFilter === 'out-of-stock') {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.quantityAvailable <= 0);
+            }
+            
+            // Apply manufacturer filter
+            if (manufacturerFilter !== 'all') {
+                filteredProducts = filteredProducts.filter(product => 
+                    (product.manufacturer || 'Unknown') === manufacturerFilter);
+            }
+            
             // Apply sorting by sales
             if (salesSort === 'descending') {
-                filteredProducts = filteredProducts.sort((a, b) => {
-                    const salesDataA = sales2JSON.find(sale => sale.Sku === a.vp_code);
-                    const salesDataB = sales2JSON.find(sale => sale.Sku === b.vp_code);
-                    
-                    const salesA = salesDataA ? salesDataA.quantities : 0;
-                    const salesB = salesDataB ? salesDataB.quantities : 0;
-                    
-                    return salesB - salesA; // Descending order: largest to smallest
+                filteredProducts.sort((a, b) => {
+                    const salesA = salesData[a.sku] ? salesData[a.sku].quantity : 0;
+                    const salesB = salesData[b.sku] ? salesData[b.sku].quantity : 0;
+                    return salesB - salesA; // Descending order
                 });
             }
-
+            
             renderProducts(filteredProducts);
         }
+        
+        // Render products in the table
+        function renderProducts(productsToRender) {
+    const tableBody = document.getElementById('product-table');
+    tableBody.innerHTML = ''; // Clear previous rows
 
-        // Function to populate manufacturer options dynamically
-        function populateManufacturers() {
-            const manufacturers = [...new Set(productsJSON.map(product => product.manufacturer))];
-            const manufacturerFilter = document.getElementById('manufacturerFilter');
+            if (productsToRender.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="7" class="text-center">No products found</td></tr>';
+                return;
+            }
+            
+            productsToRender.forEach((product, index) => {
+                const sales = salesData[product.sku] || { quantity: 0, amount: 0 };
+                const stockLevel = product.quantityAvailable || 0;
 
-            manufacturers.forEach(manufacturer => {
-                const option = document.createElement('option');
-                option.value = manufacturer;
-                option.textContent = manufacturer;
-                manufacturerFilter.appendChild(option);
-            });
+        let stockClass = '';
+                if (stockLevel <= 0) {
+            stockClass = 'out-of-stock';
+                } else if (stockLevel < 20) {
+            stockClass = 'low-stock';
         }
 
-        // Initialize
-        populateManufacturers();
-        renderProducts(productsJSON);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><input type="checkbox" class="product-checkbox"></td>
+                    <td>${product.sku || 'N/A'}</td>
+                    <td>${product.name || 'N/A'}</td>
+                    <td>${product.manufacturer || 'Unknown'}</td>
+                    <td class="${stockClass}">${stockLevel}</td>
+                    <td>${sales.quantity}</td>
+                    <td>$${sales.amount.toFixed(2)}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+            addMultiSelect();
+            addSelectAllFunctionality();
+}
+
+        // Enable multi-select with Shift+Click
+function addMultiSelect() {
+    const checkboxes = document.querySelectorAll('.product-checkbox');
+
+    checkboxes.forEach((checkbox, index) => {
+                checkbox.addEventListener('click', function(event) {
+            if (lastChecked !== null && event.shiftKey) {
+                        const start = Math.min(lastChecked, index);
+                        const end = Math.max(lastChecked, index);
+                        
+                for (let i = start; i <= end; i++) {
+                    checkboxes[i].checked = true;
+                            checkboxes[i].closest('tr').classList.add('selected');
+                }
+                    } else {
+                        // Toggle selected class
+                        this.closest('tr').classList.toggle('selected', this.checked);
+            }
+                    
+                    lastChecked = index;
+        });
+    });
+}
+
+        // Add functionality for "Select All" checkbox
+function addSelectAllFunctionality() {
+    const selectAllCheckbox = document.getElementById('select-all');
+    const checkboxes = document.querySelectorAll('.product-checkbox');
+
+            selectAllCheckbox.addEventListener('change', function() {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+                    checkbox.closest('tr').classList.toggle('selected', selectAllCheckbox.checked);
+        });
+    });
+
+    checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    // If any checkbox is unchecked, uncheck "Select All"
+            if (!this.checked) {
+                selectAllCheckbox.checked = false;
+            }
+                    // If all checkboxes are checked, check "Select All"
+            else if ([...checkboxes].every(cb => cb.checked)) {
+                selectAllCheckbox.checked = true;
+            }
+        });
+    });
+}  
+
+        // Download selected products as Excel
+function downloadExcel() {
+            const checkboxes = document.querySelectorAll('.product-checkbox:checked');
+            
+            if (checkboxes.length === 0) {
+        alert("Please select at least one product!");
+        return;
+    }
+
+            const selectedProducts = [];
+            
+            checkboxes.forEach(checkbox => {
+                const row = checkbox.closest('tr');
+                const cells = row.cells;
+                
+                selectedProducts.push({
+                    SKU: cells[1].innerText,
+                    Product_Name: cells[2].innerText,
+                    Manufacturer: cells[3].innerText,
+                    Stock_Level: cells[4].innerText,
+                    Sales_Quantity: cells[5].innerText,
+                    Sales_Amount: cells[6].innerText
+                });
+            });
+            
+            // Get current date in YYYY-MM-DD format
+    const currentDate = new Date().toISOString().split('T')[0];
+
+            // Create Excel file
+    const worksheet = XLSX.utils.json_to_sheet(selectedProducts);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Products");
+
+            // Download file
+    const fileName = `Stock_Management_${currentDate}.xlsx`;
+    XLSX.writeFile(workbook, fileName);
+}
+
+        // Populate manufacturer filter options
+        function populateManufacturers(manufacturers) {
+            const manufacturerFilter = document.getElementById('manufacturerFilter');
+            
+            // Clear existing options (except "All Manufacturers")
+            while (manufacturerFilter.options.length > 1) {
+                manufacturerFilter.remove(1);
+            }
+            
+            // Add manufacturer options
+        manufacturers.forEach(manufacturer => {
+            const option = document.createElement('option');
+            option.value = manufacturer;
+            option.textContent = manufacturer;
+            manufacturerFilter.appendChild(option);
+        });
+    }
+
+        // Helper function to get authentication headers
+        function getAuthHeaders() {
+            if (!credentials) {
+                throw new Error('Not authenticated');
+            }
+            
+            return {
+                'Authorization': 'Basic ' + btoa(credentials.apiKey + ':' + credentials.apiSecret),
+                'Content-Type': 'application/json'
+            };
+        }
+        
+        // Show loading overlay
+        function showLoading(message = 'Loading...') {
+            loadingText.textContent = message;
+            loadingOverlay.style.display = 'flex';
+        }
+        
+        // Hide loading overlay
+        function hideLoading() {
+            loadingOverlay.style.display = 'none';
+        }
+        
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Show authentication error
+        function showAuthError(message) {
+            authError.textContent = message;
+            authError.style.display = 'block';
+            setTimeout(() => {
+                authError.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Initialize the page
+        checkStoredCredentials();
+</script>
+    </body>
 </html>
