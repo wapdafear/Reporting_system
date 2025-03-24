@@ -841,7 +841,7 @@ product_cost = [
     },
     {
       "sku": "13416-1",
-      "cost_price": 11.14,
+      "cost_price": 9.41,
       "brand": "Biofreeze"
     },
     {
