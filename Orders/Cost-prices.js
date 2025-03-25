@@ -21356,7 +21356,7 @@ product_cost_price = [
   },
   {
     "Sku": "SM-3116",
-    "cost_price": 0,
+    "cost_price": 1.80,
     "brand": "SurgiMac-MacSoft"
   },
   {
@@ -21366,7 +21366,7 @@ product_cost_price = [
   },
   {
     "Sku": "SM-3118",
-    "cost_price": 0,
+    "cost_price": 1.80,
     "brand": "SurgiMac-MacSoft"
   },
   {
