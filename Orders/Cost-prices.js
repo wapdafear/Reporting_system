@@ -1,23986 +1,23986 @@
-product_cost_price = [
+product_cost = [
   {
-    "Sku": 2.205e-7,
+    "sku": 2.205e-7,
     "cost_price": 0,
     "brand": 2.205e-7
   },
   {
-    "Sku": 90,
+    "sku": 90,
     "cost_price": 20.32,
     "brand": 90
   },
   {
-    "Sku": 220.5,
+    "sku": 220.5,
     "cost_price": 0,
     "brand": 220.5
   },
   {
-    "Sku": "3-1000-1",
+    "sku": "3-1000-1",
     "cost_price": 0,
     "brand": "3-1000-1"
   },
   {
-    "Sku": "VXA-BW",
+    "sku": "VXA-BW",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "VXA-P",
+    "sku": "VXA-P",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "VXA-A",
+    "sku": "VXA-A",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "MAPRG",
+    "sku": "MAPRG",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "JAF-2",
+    "sku": "JAF-2",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "JAR-2",
+    "sku": "JAR-2",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "JFN-CA2",
+    "sku": "JFN-CA2",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "PRST-UT",
+    "sku": "PRST-UT",
     "cost_price": 0,
     "brand": "3D Dental"
   },
   {
-    "Sku": "VXR-A",
+    "sku": "VXR-A",
     "cost_price": 1.95,
     "brand": "3D Dental"
   },
   {
-    "Sku": "VXR-BW",
+    "sku": "VXR-BW",
     "cost_price": 1.95,
     "brand": "3D Dental"
   },
   {
-    "Sku": "VXR-P",
+    "sku": "VXR-P",
     "cost_price": 1.95,
     "brand": "3D Dental"
   },
   {
-    "Sku": "PPCM",
+    "sku": "PPCM",
     "cost_price": 4.79,
     "brand": "3D Dental"
   },
   {
-    "Sku": "P-TSR",
+    "sku": "P-TSR",
     "cost_price": 10.95,
     "brand": "3D Dental"
   },
   {
-    "Sku": "P-GPC",
+    "sku": "P-GPC",
     "cost_price": 10.95,
     "brand": "3D Dental"
   },
   {
-    "Sku": "SBB1679",
+    "sku": "SBB1679",
     "cost_price": 14.1,
     "brand": "3D Dental"
   },
   {
-    "Sku": "PRST-WC",
+    "sku": "PRST-WC",
     "cost_price": 27.11,
     "brand": "3D Dental"
   },
   {
-    "Sku": "DFVSM",
+    "sku": "DFVSM",
     "cost_price": 33.27,
     "brand": "3D Dental"
   },
   {
-    "Sku": "BHG",
+    "sku": "BHG",
     "cost_price": 35.29,
     "brand": "3D Dental"
   },
   {
-    "Sku": 52500,
+    "sku": 52500,
     "cost_price": 8.1,
     "brand": "3M"
   },
   {
-    "Sku": 62200,
+    "sku": 62200,
     "cost_price": 8.17,
     "brand": "3M"
   },
   {
-    "Sku": 3355,
+    "sku": 3355,
     "cost_price": 45.15,
     "brand": "3M"
   },
   {
-    "Sku": "2083-3M",
+    "sku": "2083-3M",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "1584-3M",
+    "sku": "1584-3M",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "1584-3M- LOCAL",
+    "sku": "1584-3M- LOCAL",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "9222-EC",
+    "sku": "9222-EC",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "2083-3M- LOCAL",
+    "sku": "2083-3M- LOCAL",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": 1870,
+    "sku": 1870,
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "1870-20",
+    "sku": "1870-20",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "3525A",
+    "sku": "3525A",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "DD9205",
+    "sku": "DD9205",
     "cost_price": 0,
     "brand": "3M"
   },
   {
-    "Sku": "DDL031-118B5",
+    "sku": "DDL031-118B5",
     "cost_price": 0,
     "brand": "ACON Laboratories, Inc."
   },
   {
-    "Sku": "Air Wick - Orange- LOCAL",
+    "sku": "Air Wick - Orange- LOCAL",
     "cost_price": 0,
     "brand": "Air Wick"
   },
   {
-    "Sku": "Air Wick - Orange",
+    "sku": "Air Wick - Orange",
     "cost_price": 0,
     "brand": "Air Wick"
   },
   {
-    "Sku": "D34150- LOCAL",
+    "sku": "D34150- LOCAL",
     "cost_price": 0,
     "brand": "Always"
   },
   {
-    "Sku": "D34150",
+    "sku": "D34150",
     "cost_price": 0,
     "brand": "Always"
   },
   {
-    "Sku": "DD34150",
+    "sku": "DD34150",
     "cost_price": 0,
     "brand": "Always"
   },
   {
-    "Sku": "DD34150- LOCAL",
+    "sku": "DD34150- LOCAL",
     "cost_price": 0,
     "brand": "Always"
   },
   {
-    "Sku": "SM-NLG400",
+    "sku": "SM-NLG400",
     "cost_price": 0,
     "brand": "Ambitex"
   },
   {
-    "Sku": "Microflex-Small",
+    "sku": "Microflex-Small",
     "cost_price": 8.99,
     "brand": "Ansell"
   },
   {
-    "Sku": "39-732-L-Black",
+    "sku": "39-732-L-Black",
     "cost_price": 8.99,
     "brand": "Ansell"
   },
   {
-    "Sku": "39-732-L-Black- LOCAL",
+    "sku": "39-732-L-Black- LOCAL",
     "cost_price": 8.99,
     "brand": "Ansell"
   },
   {
-    "Sku": "MK-296-L-1",
+    "sku": "MK-296-L-1",
     "cost_price": 9.45,
     "brand": "Ansell"
   },
   {
-    "Sku": "6034302-1",
+    "sku": "6034302-1",
     "cost_price": 9.68,
     "brand": "Ansell"
   },
   {
-    "Sku": "93-732-L-5bx- LOCAL",
+    "sku": "93-732-L-5bx- LOCAL",
     "cost_price": 44.56,
     "brand": "Ansell"
   },
   {
-    "Sku": "MK-296-M",
+    "sku": "MK-296-M",
     "cost_price": 94.5,
     "brand": "Ansell"
   },
   {
-    "Sku": "MK-296-XL",
+    "sku": "MK-296-XL",
     "cost_price": 94.5,
     "brand": "Ansell"
   },
   {
-    "Sku": "MK-296-S",
+    "sku": "MK-296-S",
     "cost_price": 94.5,
     "brand": "Ansell"
   },
   {
-    "Sku": "MK-296-L",
+    "sku": "MK-296-L",
     "cost_price": 94.5,
     "brand": "Ansell"
   },
   {
-    "Sku": "Microflex-Med",
+    "sku": "Microflex-Med",
     "cost_price": 0,
     "brand": "Ansell"
   },
   {
-    "Sku": "93-732-L-5bx",
+    "sku": "93-732-L-5bx",
     "cost_price": 0,
     "brand": "Ansell"
   },
   {
-    "Sku": "6034512-1",
+    "sku": "6034512-1",
     "cost_price": 0,
     "brand": "Ansell"
   },
   {
-    "Sku": "6034511-1",
+    "sku": "6034511-1",
     "cost_price": 6.93,
     "brand": "Ansell"
   },
   {
-    "Sku": "XC-310-M-1",
+    "sku": "XC-310-M-1",
     "cost_price": 7.82,
     "brand": "Ansell"
   },
   {
-    "Sku": "XC-310-L-1",
+    "sku": "XC-310-L-1",
     "cost_price": 7.82,
     "brand": "Ansell"
   },
   {
-    "Sku": "6034303-1",
+    "sku": "6034303-1",
     "cost_price": 8.11,
     "brand": "Ansell"
   },
   {
-    "Sku": "3771-1",
+    "sku": "3771-1",
     "cost_price": 11.09,
     "brand": "Ansell"
   },
   {
-    "Sku": 3772,
+    "sku": 3772,
     "cost_price": 11.09,
     "brand": "Ansell"
   },
   {
-    "Sku": "XC-310-S-1",
+    "sku": "XC-310-S-1",
     "cost_price": 13.04,
     "brand": "Ansell"
   },
   {
-    "Sku": "7822PF-1",
+    "sku": "7822PF-1",
     "cost_price": 32.02,
     "brand": "Ansell"
   },
   {
-    "Sku": "7823PF-1",
+    "sku": "7823PF-1",
     "cost_price": 32.02,
     "brand": "Ansell"
   },
   {
-    "Sku": "7825PF-1",
+    "sku": "7825PF-1",
     "cost_price": 32.02,
     "brand": "Ansell"
   },
   {
-    "Sku": "8515-1",
+    "sku": "8515-1",
     "cost_price": 68.25,
     "brand": "Ansell"
   },
   {
-    "Sku": "8513-1",
+    "sku": "8513-1",
     "cost_price": 68.25,
     "brand": "Ansell"
   },
   {
-    "Sku": "8518-1",
+    "sku": "8518-1",
     "cost_price": 68.25,
     "brand": "Ansell"
   },
   {
-    "Sku": "AP-0001-Bx",
+    "sku": "AP-0001-Bx",
     "cost_price": 0,
     "brand": "AP-0001-Bx"
   },
   {
-    "Sku": 18264,
+    "sku": 18264,
     "cost_price": 0,
     "brand": "Aquasonic"
   },
   {
-    "Sku": "E8000-1",
+    "sku": "E8000-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L8002-1",
+    "sku": "L8002-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L7510-1",
+    "sku": "L7510-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L5100-1",
+    "sku": "L5100-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L5101-1",
+    "sku": "L5101-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L6101-01",
+    "sku": "L6101-01",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L7500-1",
+    "sku": "L7500-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L7511-1",
+    "sku": "L7511-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L8000-1",
+    "sku": "L8000-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L8001-1",
+    "sku": "L8001-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L8500-1",
+    "sku": "L8500-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "R5000-01-1",
+    "sku": "R5000-01-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "R5001-01-1",
+    "sku": "R5001-01-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L8502-1",
+    "sku": "L8502-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L5102-1",
+    "sku": "L5102-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L7501-1",
+    "sku": "L7501-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "R5200-01-1",
+    "sku": "R5200-01-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L6121-1",
+    "sku": "L6121-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L8501-01-1",
+    "sku": "L8501-01-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "R5201-01-1",
+    "sku": "R5201-01-1",
     "cost_price": 0,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L6120",
+    "sku": "L6120",
     "cost_price": 3.4,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L6100-1",
+    "sku": "L6100-1",
     "cost_price": 4.23,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "L7502",
+    "sku": "L7502",
     "cost_price": 4.72,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "R8006",
+    "sku": "R8006",
     "cost_price": 21.93,
     "brand": "B. Braun Medical"
   },
   {
-    "Sku": "2F7122-1",
+    "sku": "2F7122-1",
     "cost_price": 0,
     "brand": "Baxter"
   },
   {
-    "Sku": "2F7123-1",
+    "sku": "2F7123-1",
     "cost_price": 0,
     "brand": "Baxter"
   },
   {
-    "Sku": "2F7124-1",
+    "sku": "2F7124-1",
     "cost_price": 0,
     "brand": "Baxter"
   },
   {
-    "Sku": 326895,
+    "sku": 326895,
     "cost_price": 1.99,
     "brand": "BD"
   },
   {
-    "Sku": "367281-Bx",
+    "sku": "367281-Bx",
     "cost_price": 75,
     "brand": "BD"
   },
   {
-    "Sku": "367285-BX",
+    "sku": "367285-BX",
     "cost_price": 75.53,
     "brand": "BD"
   },
   {
-    "Sku": 367283,
+    "sku": 367283,
     "cost_price": 81.27,
     "brand": "BD"
   },
   {
-    "Sku": "381433-BX",
-    "cost_price": 96.07,
+    "sku": "381433-BX",
+    "cost_price": 107.08,
     "brand": "BD"
   },
   {
-    "Sku": "382523-Bx",
+    "sku": "382523-Bx",
     "cost_price": 107.99,
     "brand": "BD"
   },
   {
-    "Sku": "381512-Bx",
+    "sku": "381512-Bx",
     "cost_price": 114.58,
     "brand": "BD"
   },
   {
-    "Sku": 382523,
+    "sku": 382523,
     "cost_price": 390.99,
     "brand": "BD"
   },
   {
-    "Sku": 366667,
+    "sku": 366667,
     "cost_price": 0,
     "brand": "BD"
   },
   {
-    "Sku": 309647,
+    "sku": 309647,
     "cost_price": 0,
     "brand": "BD"
   },
   {
-    "Sku": 371163,
+    "sku": 371163,
     "cost_price": 0,
     "brand": "BD"
   },
   {
-    "Sku": "305785-BX-disc.",
+    "sku": "305785-BX-disc.",
     "cost_price": 0,
     "brand": "BD"
   },
   {
-    "Sku": "305487-1",
+    "sku": "305487-1",
     "cost_price": 2,
     "brand": "BD"
   },
   {
-    "Sku": "305635-1",
+    "sku": "305635-1",
     "cost_price": 2.84,
     "brand": "BD"
   },
   {
-    "Sku": "305488-1",
+    "sku": "305488-1",
     "cost_price": 3.46,
     "brand": "BD"
   },
   {
-    "Sku": "305444-1",
+    "sku": "305444-1",
     "cost_price": 4.59,
     "brand": "BD"
   },
   {
-    "Sku": "305196-BX",
+    "sku": "305196-BX",
     "cost_price": 6.61,
     "brand": "BD"
   },
   {
-    "Sku": "305195-BX",
+    "sku": "305195-BX",
     "cost_price": 6.61,
     "brand": "BD"
   },
   {
-    "Sku": "371615-BX",
+    "sku": "371615-BX",
     "cost_price": 7.38,
     "brand": "BD"
   },
   {
-    "Sku": "305491-1",
+    "sku": "305491-1",
     "cost_price": 9,
     "brand": "BD"
   },
   {
-    "Sku": "305122-BX",
+    "sku": "305122-BX",
     "cost_price": 9.24,
     "brand": "BD"
   },
   {
-    "Sku": "305127-BX",
+    "sku": "305127-BX",
     "cost_price": 9.24,
     "brand": "BD"
   },
   {
-    "Sku": "305180-BX",
+    "sku": "305180-BX",
     "cost_price": 11.13,
     "brand": "BD"
   },
   {
-    "Sku": "305198-BX",
+    "sku": "305198-BX",
     "cost_price": 14.49,
     "brand": "BD"
   },
   {
-    "Sku": "371215-BX",
+    "sku": "371215-BX",
     "cost_price": 14.54,
     "brand": "BD"
   },
   {
-    "Sku": "371211-BX",
+    "sku": "371211-BX",
     "cost_price": 14.83,
     "brand": "BD"
   },
   {
-    "Sku": "309570-BX",
+    "sku": "309570-BX",
     "cost_price": 15.54,
     "brand": "BD"
   },
   {
-    "Sku": "309577-BX",
+    "sku": "309577-BX",
     "cost_price": 15.64,
     "brand": "BD"
   },
   {
-    "Sku": "309571-BX",
+    "sku": "309571-BX",
     "cost_price": 15.75,
     "brand": "BD"
   },
   {
-    "Sku": "305917-BX",
+    "sku": "305917-BX",
     "cost_price": 15.8,
     "brand": "BD"
   },
   {
-    "Sku": "364815-BX",
+    "sku": "364815-BX",
     "cost_price": 16.28,
     "brand": "BD"
   },
   {
-    "Sku": "371110-1",
+    "sku": "371110-1",
     "cost_price": 16.71,
     "brand": "BD"
   },
   {
-    "Sku": "371115-BX",
+    "sku": "371115-BX",
     "cost_price": 16.71,
     "brand": "BD"
   },
   {
-    "Sku": "309657BX",
+    "sku": "309657BX",
     "cost_price": 16.76,
     "brand": "BD"
   },
   {
-    "Sku": "309626-Bx",
+    "sku": "309626-Bx",
     "cost_price": 17.74,
     "brand": "BD"
   },
   {
-    "Sku": "305128-BX",
+    "sku": "305128-BX",
     "cost_price": 26.25,
     "brand": "BD"
   },
   {
-    "Sku": "305106-BX",
+    "sku": "305106-BX",
     "cost_price": 26.25,
     "brand": "BD"
   },
   {
-    "Sku": "309659-BX",
+    "sku": "309659-BX",
     "cost_price": 34.65,
     "brand": "BD"
   },
   {
-    "Sku": "328468-Bx",
+    "sku": "328468-Bx",
     "cost_price": 37.8,
     "brand": "BD"
   },
   {
-    "Sku": "309628BX",
+    "sku": "309628BX",
     "cost_price": 45.95,
     "brand": "BD"
   },
   {
-    "Sku": "371716-Bx",
+    "sku": "371716-Bx",
     "cost_price": 65.52,
     "brand": "BD"
   },
   {
-    "Sku": "305270-BX",
+    "sku": "305270-BX",
     "cost_price": 74.86,
     "brand": "BD"
   },
   {
-    "Sku": "383323-BX",
+    "sku": "383323-BX",
     "cost_price": 82.68,
     "brand": "BD"
   },
   {
-    "Sku": "381423-BX",
+    "sku": "381423-BX",
     "cost_price": 96.18,
     "brand": "BD"
   },
   {
-    "Sku": "381412-50",
+    "sku": "381412-50",
     "cost_price": 96.18,
     "brand": "BD"
   },
   {
-    "Sku": 306545,
+    "sku": 306545,
     "cost_price": 218.98,
     "brand": "BD"
   },
   {
-    "Sku": 306546,
+    "sku": 306546,
     "cost_price": 224.04,
     "brand": "BD"
   },
   {
-    "Sku": "0283-0569-72",
+    "sku": "0283-0569-72",
     "cost_price": 0,
     "brand": "Beutlich"
   },
   {
-    "Sku": "0283-0998-31",
+    "sku": "0283-0998-31",
     "cost_price": 0,
     "brand": "Beutlich"
   },
   {
-    "Sku": "0283-0293-31",
+    "sku": "0283-0293-31",
     "cost_price": 6.95,
     "brand": "Beutlich"
   },
   {
-    "Sku": "0283-0886-31",
+    "sku": "0283-0886-31",
     "cost_price": 6.95,
     "brand": "Beutlich"
   },
   {
-    "Sku": "0283-0679-02",
+    "sku": "0283-0679-02",
     "cost_price": 27.38,
     "brand": "Beutlich"
   },
   {
-    "Sku": "0283-0679-60",
+    "sku": "0283-0679-60",
     "cost_price": 34.34,
     "brand": "Beutlich"
   },
   {
-    "Sku": "0283-0697-82",
+    "sku": "0283-0697-82",
     "cost_price": 36.02,
     "brand": "Beutlich"
   },
   {
-    "Sku": "BF90166B-1",
+    "sku": "BF90166B-1",
     "cost_price": 0,
     "brand": "BF90166B-1"
   },
   {
-    "Sku": 13410,
+    "sku": 13410,
     "cost_price": 7.33,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "13410-NY",
+    "sku": "13410-NY",
     "cost_price": 7.33,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "RKT3209976",
+    "sku": "RKT3209976",
     "cost_price": 7.33,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "13416-1",
+    "sku": "13416-1",
     "cost_price": 11.14,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "HPH13427",
+    "sku": "HPH13427",
     "cost_price": 24.99,
     "brand": "Biofreeze"
   },
   {
-    "Sku": 13440,
+    "sku": 13440,
     "cost_price": 26.17,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "13419-4",
+    "sku": "13419-4",
     "cost_price": 27.61,
     "brand": "Biofreeze"
   },
   {
-    "Sku": 13429,
+    "sku": 13429,
     "cost_price": 34.06,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "13433-1",
+    "sku": "13433-1",
     "cost_price": 100.72,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "RKT3210136",
+    "sku": "RKT3210136",
     "cost_price": 161.99,
     "brand": "Biofreeze"
   },
   {
-    "Sku": 13431,
+    "sku": 13431,
     "cost_price": 533.92,
     "brand": "Biofreeze"
   },
   {
-    "Sku": "NV803",
+    "sku": "NV803",
     "cost_price": 138.79,
     "brand": "Biotrol"
   },
   {
-    "Sku": "304971-2",
+    "sku": "304971-2",
     "cost_price": 3.5,
     "brand": "Bjs"
   },
   {
-    "Sku": "688665-1",
+    "sku": "688665-1",
     "cost_price": 5.03,
     "brand": "Bjs"
   },
   {
-    "Sku": "311825-2",
+    "sku": "311825-2",
     "cost_price": 5.49,
     "brand": "Bjs"
   },
   {
-    "Sku": 671836,
+    "sku": 671836,
     "cost_price": 5.83,
     "brand": "Bjs"
   },
   {
-    "Sku": "671836- LOCAL",
+    "sku": "671836- LOCAL",
     "cost_price": 5.83,
     "brand": "Bjs"
   },
   {
-    "Sku": "20509-1",
+    "sku": "20509-1",
     "cost_price": 7.5,
     "brand": "Bjs"
   },
   {
-    "Sku": "DD21438- LOCAL",
+    "sku": "DD21438- LOCAL",
     "cost_price": 8.5,
     "brand": "Bjs"
   },
   {
-    "Sku": "Lysol-Spray-190z-2",
+    "sku": "Lysol-Spray-190z-2",
     "cost_price": 8.66,
     "brand": "Bjs"
   },
   {
-    "Sku": 397849,
+    "sku": 397849,
     "cost_price": 10.79,
     "brand": "Bjs"
   },
   {
-    "Sku": 63412,
+    "sku": 63412,
     "cost_price": 10.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 233595,
+    "sku": 233595,
     "cost_price": 10.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 286164,
+    "sku": 286164,
     "cost_price": 10.99,
     "brand": "Bjs"
   },
   {
-    "Sku": "115927-1",
+    "sku": "115927-1",
     "cost_price": 11.83,
     "brand": "Bjs"
   },
   {
-    "Sku": 311825,
+    "sku": 311825,
     "cost_price": 11.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 151111,
+    "sku": 151111,
     "cost_price": 12.22,
     "brand": "Bjs"
   },
   {
-    "Sku": 139652,
+    "sku": 139652,
     "cost_price": 12.99,
     "brand": "Bjs"
   },
   {
-    "Sku": "299510-1",
+    "sku": "299510-1",
     "cost_price": 12.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 267369,
+    "sku": 267369,
     "cost_price": 15.99,
     "brand": "Bjs"
   },
   {
-    "Sku": "21247-1",
+    "sku": "21247-1",
     "cost_price": 16.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 32298,
+    "sku": 32298,
     "cost_price": 16.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 240687,
+    "sku": 240687,
     "cost_price": 18.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 244506,
+    "sku": 244506,
     "cost_price": 21.99,
     "brand": "Bjs"
   },
   {
-    "Sku": 329577,
+    "sku": 329577,
     "cost_price": 21.99,
     "brand": "Bjs"
   },
   {
-    "Sku": "102741-150",
+    "sku": "102741-150",
     "cost_price": 23.99,
     "brand": "Bjs"
   },
   {
-    "Sku": "20509-6",
+    "sku": "20509-6",
     "cost_price": 38.46,
     "brand": "Bjs"
   },
   {
-    "Sku": "RAC74828CT",
+    "sku": "RAC74828CT",
     "cost_price": 101.98,
     "brand": "Bjs"
   },
   {
-    "Sku": "DD21438",
+    "sku": "DD21438",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "286334-EC-1",
+    "sku": "286334-EC-1",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "240186-EC",
+    "sku": "240186-EC",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "286334-1",
+    "sku": "286334-1",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 289145,
+    "sku": 289145,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 21438,
+    "sku": 21438,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "21438-1",
+    "sku": "21438-1",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 286334,
+    "sku": 286334,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "N7-OUFD-7CVX",
+    "sku": "N7-OUFD-7CVX",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 240186,
+    "sku": 240186,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "286334-EC",
+    "sku": "286334-EC",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "289145-EC",
+    "sku": "289145-EC",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 285998,
+    "sku": 285998,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 151088,
+    "sku": 151088,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "172661-NY",
+    "sku": "172661-NY",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "Dura-AA-8",
+    "sku": "Dura-AA-8",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "240324-NY",
+    "sku": "240324-NY",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "PGC45113- LOCAL",
+    "sku": "PGC45113- LOCAL",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "688665-3",
+    "sku": "688665-3",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "Dura-AA-8- LOCAL",
+    "sku": "Dura-AA-8- LOCAL",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "PGC45113",
+    "sku": "PGC45113",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 256372,
+    "sku": 256372,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "217402-2",
+    "sku": "217402-2",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 873887,
+    "sku": 873887,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "873887- LOCAL",
+    "sku": "873887- LOCAL",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 286336,
+    "sku": 286336,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "286336-EC",
+    "sku": "286336-EC",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 91534,
+    "sku": 91534,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "DD207533- LOCAL",
+    "sku": "DD207533- LOCAL",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 252337,
+    "sku": 252337,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "DD207533",
+    "sku": "DD207533",
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": 21246,
+    "sku": 21246,
     "cost_price": 0,
     "brand": "Bjs"
   },
   {
-    "Sku": "NH-TOHT-27AZ- LOCAL",
+    "sku": "NH-TOHT-27AZ- LOCAL",
     "cost_price": 0,
     "brand": "Bonart"
   },
   {
-    "Sku": "NH-TOHT-27AZ",
+    "sku": "NH-TOHT-27AZ",
     "cost_price": 0,
     "brand": "Bonart"
   },
   {
-    "Sku": "8900SA-1",
+    "sku": "8900SA-1",
     "cost_price": 2.2,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Preppads",
+    "sku": "Preppads",
     "cost_price": 3.39,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Preppads- LOCAL",
+    "sku": "Preppads- LOCAL",
     "cost_price": 3.39,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": 5110,
+    "sku": 5110,
     "cost_price": 3.39,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "5110- LOCAL",
+    "sku": "5110- LOCAL",
     "cost_price": 3.39,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "5110-01-Rx",
+    "sku": "5110-01-Rx",
     "cost_price": 3.77,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": 8881676285,
+    "sku": 8881676285,
     "cost_price": 5.3,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "8881676285-1",
+    "sku": "8881676285-1",
     "cost_price": 5.9,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "5110-2",
+    "sku": "5110-2",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "5110-2- LOCAL",
+    "sku": "5110-2- LOCAL",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Small-Bx- LOCAL",
+    "sku": "Cardinal-Small-Bx- LOCAL",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Small-CS- LOCAL",
+    "sku": "Cardinal-Small-CS- LOCAL",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Large-BX",
+    "sku": "Cardinal-Large-BX",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Large-BX- LOCAL",
+    "sku": "Cardinal-Large-BX- LOCAL",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Large-CS",
+    "sku": "Cardinal-Large-CS",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Large-CS- LOCAL",
+    "sku": "Cardinal-Large-CS- LOCAL",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Small-CS",
+    "sku": "Cardinal-Small-CS",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "Cardinal-Small-Bx",
+    "sku": "Cardinal-Small-Bx",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "3Y-EHZP-DQM4",
+    "sku": "3Y-EHZP-DQM4",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "3Y-EHZP-DQM4- LOCAL",
+    "sku": "3Y-EHZP-DQM4- LOCAL",
     "cost_price": 0,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "SM-MI316",
+    "sku": "SM-MI316",
     "cost_price": 1.28,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "SM-6818",
+    "sku": "SM-6818",
     "cost_price": 2.1,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "DD-88TN02S",
+    "sku": "DD-88TN02S",
     "cost_price": 12.18,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "88TN04L",
+    "sku": "88TN04L",
     "cost_price": 12.5,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": "DD88TN03M",
+    "sku": "DD88TN03M",
     "cost_price": 13.14,
     "brand": "Cardinal Health"
   },
   {
-    "Sku": 8606873,
+    "sku": 8606873,
     "cost_price": 57.19,
     "brand": "Carestream Health"
   },
   {
-    "Sku": 1601,
+    "sku": 1601,
     "cost_price": 3.05,
     "brand": "Cargus"
   },
   {
-    "Sku": 1603,
+    "sku": 1603,
     "cost_price": 3.05,
     "brand": "Cargus"
   },
   {
-    "Sku": 1602,
+    "sku": 1602,
     "cost_price": 3.05,
     "brand": "Cargus"
   },
   {
-    "Sku": 9020,
+    "sku": 9020,
     "cost_price": 8.5,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1202",
+    "sku": "100-1202",
     "cost_price": 14.5,
     "brand": "Cargus"
   },
   {
-    "Sku": 7640,
+    "sku": 7640,
     "cost_price": 21.95,
     "brand": "Cargus"
   },
   {
-    "Sku": "SM-7102C",
+    "sku": "SM-7102C",
     "cost_price": 26.95,
     "brand": "Cargus"
   },
   {
-    "Sku": 9010,
+    "sku": 9010,
     "cost_price": 45.35,
     "brand": "Cargus"
   },
   {
-    "Sku": "SM-7103A",
+    "sku": "SM-7103A",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "SM-7104M",
+    "sku": "SM-7104M",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "P41-HB",
+    "sku": "P41-HB",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": 1628262,
+    "sku": 1628262,
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": 12130,
+    "sku": 12130,
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "1330PI",
+    "sku": "1330PI",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": 1619,
+    "sku": 1619,
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "p43",
+    "sku": "p43",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "P51",
+    "sku": "P51",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-2125",
+    "sku": "100-2125",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-8025",
+    "sku": "100-8025",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": 2106,
+    "sku": 2106,
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1557",
+    "sku": "100-1557",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1570",
+    "sku": "100-1570",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1558",
+    "sku": "100-1558",
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": 1584,
+    "sku": 1584,
     "cost_price": 0,
     "brand": "Cargus"
   },
   {
-    "Sku": 8584,
+    "sku": 8584,
     "cost_price": 1.76,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1971BL",
+    "sku": "100-1971BL",
     "cost_price": 2.25,
     "brand": "Cargus"
   },
   {
-    "Sku": "P40-HB",
+    "sku": "P40-HB",
     "cost_price": 2.45,
     "brand": "Cargus"
   },
   {
-    "Sku": "P42-HB",
+    "sku": "P42-HB",
     "cost_price": 2.5,
     "brand": "Cargus"
   },
   {
-    "Sku": "P50",
+    "sku": "P50",
     "cost_price": 2.5,
     "brand": "Cargus"
   },
   {
-    "Sku": "P40",
+    "sku": "P40",
     "cost_price": 2.5,
     "brand": "Cargus"
   },
   {
-    "Sku": "P44",
+    "sku": "P44",
     "cost_price": 2.5,
     "brand": "Cargus"
   },
   {
-    "Sku": "p41",
+    "sku": "p41",
     "cost_price": 2.52,
     "brand": "Cargus"
   },
   {
-    "Sku": "P42",
+    "sku": "P42",
     "cost_price": 2.67,
     "brand": "Cargus"
   },
   {
-    "Sku": 12508,
+    "sku": 12508,
     "cost_price": 3.63,
     "brand": "Cargus"
   },
   {
-    "Sku": 7799,
+    "sku": 7799,
     "cost_price": 4.29,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1973BL",
+    "sku": "100-1973BL",
     "cost_price": 4.35,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-7798",
+    "sku": "100-7798",
     "cost_price": 4.39,
     "brand": "Cargus"
   },
   {
-    "Sku": 5974,
+    "sku": 5974,
     "cost_price": 5.5,
     "brand": "Cargus"
   },
   {
-    "Sku": 8098,
+    "sku": 8098,
     "cost_price": 6.5,
     "brand": "Cargus"
   },
   {
-    "Sku": 8095,
+    "sku": 8095,
     "cost_price": 6.5,
     "brand": "Cargus"
   },
   {
-    "Sku": 8090,
+    "sku": 8090,
     "cost_price": 7,
     "brand": "Cargus"
   },
   {
-    "Sku": 9015,
+    "sku": 9015,
     "cost_price": 8.65,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-0096",
+    "sku": "100-0096",
     "cost_price": 10.29,
     "brand": "Cargus"
   },
   {
-    "Sku": 1427,
+    "sku": 1427,
     "cost_price": 11.05,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1630",
+    "sku": "100-1630",
     "cost_price": 11.36,
     "brand": "Cargus"
   },
   {
-    "Sku": 9093,
+    "sku": 9093,
     "cost_price": 12.5,
     "brand": "Cargus"
   },
   {
-    "Sku": 1562,
+    "sku": 1562,
     "cost_price": 13,
     "brand": "Cargus"
   },
   {
-    "Sku": 1564,
+    "sku": 1564,
     "cost_price": 13,
     "brand": "Cargus"
   },
   {
-    "Sku": 1560,
+    "sku": 1560,
     "cost_price": 13,
     "brand": "Cargus"
   },
   {
-    "Sku": "1574.Mark3",
+    "sku": "1574.Mark3",
     "cost_price": 13.07,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1561",
+    "sku": "100-1561",
     "cost_price": 13.5,
     "brand": "Cargus"
   },
   {
-    "Sku": 1620,
+    "sku": 1620,
     "cost_price": 13.63,
     "brand": "Cargus"
   },
   {
-    "Sku": 219,
+    "sku": 219,
     "cost_price": 14.99,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-1700",
+    "sku": "100-1700",
     "cost_price": 16.95,
     "brand": "Cargus"
   },
   {
-    "Sku": 5509,
+    "sku": 5509,
     "cost_price": 17.11,
     "brand": "Cargus"
   },
   {
-    "Sku": "242-100",
+    "sku": "242-100",
     "cost_price": 18.12,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-3015",
+    "sku": "100-3015",
     "cost_price": 22.95,
     "brand": "Cargus"
   },
   {
-    "Sku": 9008,
+    "sku": 9008,
     "cost_price": 23.17,
     "brand": "Cargus"
   },
   {
-    "Sku": "0219-4",
+    "sku": "0219-4",
     "cost_price": 23.73,
     "brand": "Cargus"
   },
   {
-    "Sku": "0220-4",
+    "sku": "0220-4",
     "cost_price": 24.18,
     "brand": "Cargus"
   },
   {
-    "Sku": 1686,
+    "sku": 1686,
     "cost_price": 25,
     "brand": "Cargus"
   },
   {
-    "Sku": 7101,
+    "sku": 7101,
     "cost_price": 25.95,
     "brand": "Cargus"
   },
   {
-    "Sku": "7100-HB",
+    "sku": "7100-HB",
     "cost_price": 26,
     "brand": "Cargus"
   },
   {
-    "Sku": 7102,
+    "sku": 7102,
     "cost_price": 26,
     "brand": "Cargus"
   },
   {
-    "Sku": 12200,
+    "sku": 12200,
     "cost_price": 27.21,
     "brand": "Cargus"
   },
   {
-    "Sku": 1200,
+    "sku": 1200,
     "cost_price": 30.24,
     "brand": "Cargus"
   },
   {
-    "Sku": 9012,
+    "sku": 9012,
     "cost_price": 45,
     "brand": "Cargus"
   },
   {
-    "Sku": 5352,
+    "sku": 5352,
     "cost_price": 64.58,
     "brand": "Cargus"
   },
   {
-    "Sku": 9013,
+    "sku": 9013,
     "cost_price": 70.64,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-3026",
+    "sku": "100-3026",
     "cost_price": 84.95,
     "brand": "Cargus"
   },
   {
-    "Sku": "100-247-500",
+    "sku": "100-247-500",
     "cost_price": 125.18,
     "brand": "Cargus"
   },
   {
-    "Sku": 1206,
+    "sku": 1206,
     "cost_price": 199.98,
     "brand": "Cargus"
   },
   {
-    "Sku": "SM-PSC128",
+    "sku": "SM-PSC128",
     "cost_price": 0,
     "brand": "Certol"
   },
   {
-    "Sku": "SM-PSC240",
+    "sku": "SM-PSC240",
     "cost_price": 0,
     "brand": "Certol"
   },
   {
-    "Sku": "SM-PSC240-15",
+    "sku": "SM-PSC240-15",
     "cost_price": 0,
     "brand": "Certol"
   },
   {
-    "Sku": "PSWSM",
+    "sku": "PSWSM",
     "cost_price": 0,
     "brand": "Certol"
   },
   {
-    "Sku": "SM1-PSWC",
+    "sku": "SM1-PSWC",
     "cost_price": 0,
     "brand": "Certol"
   },
   {
-    "Sku": "SM-PSWC",
+    "sku": "SM-PSWC",
     "cost_price": 0,
     "brand": "Certol"
   },
   {
-    "Sku": "CFW200SD-1",
+    "sku": "CFW200SD-1",
     "cost_price": 0,
     "brand": "CFW200SD-1"
   },
   {
-    "Sku": "CH-72",
+    "sku": "CH-72",
     "cost_price": 231.08,
     "brand": "CH-72"
   },
   {
-    "Sku": 81099,
+    "sku": 81099,
     "cost_price": 13.44,
     "brand": "Claritin"
   },
   {
-    "Sku": 11523719701,
+    "sku": 11523719701,
     "cost_price": 0,
     "brand": "Claritin"
   },
   {
-    "Sku": "81099-Rx",
+    "sku": "81099-Rx",
     "cost_price": 0,
     "brand": "Claritin"
   },
   {
-    "Sku": "R41558GC",
+    "sku": "R41558GC",
     "cost_price": 0,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": 60034436,
+    "sku": 60034436,
     "cost_price": 0,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H00819",
+    "sku": "H00819",
     "cost_price": 13.65,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H00820",
+    "sku": "H00820",
     "cost_price": 13.65,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "RCB379023",
+    "sku": "RCB379023",
     "cost_price": 25.43,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "UC32",
+    "sku": "UC32",
     "cost_price": 33.54,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": 462025,
+    "sku": 462025,
     "cost_price": 34.62,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H09945",
+    "sku": "H09945",
     "cost_price": 36.53,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": 6747,
+    "sku": 6747,
     "cost_price": 40.57,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": 60018460,
+    "sku": 60018460,
     "cost_price": 51.82,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H8250420",
+    "sku": "H8250420",
     "cost_price": 51.82,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H8250415",
+    "sku": "H8250415",
     "cost_price": 51.82,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H8250425",
+    "sku": "H8250425",
     "cost_price": 51.82,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H8250430",
+    "sku": "H8250430",
     "cost_price": 51.82,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H825ASST",
+    "sku": "H825ASST",
     "cost_price": 51.82,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "PF18155",
+    "sku": "PF18155",
     "cost_price": 52.75,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "H00822",
+    "sku": "H00822",
     "cost_price": 69.86,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": 5887,
+    "sku": 5887,
     "cost_price": 95.83,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "R100245C",
+    "sku": "R100245C",
     "cost_price": 135.1,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "R100557C",
+    "sku": "R100557C",
     "cost_price": 135.1,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "R100330C",
+    "sku": "R100330C",
     "cost_price": 135.1,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": 5885,
+    "sku": 5885,
     "cost_price": 208.38,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "P680T",
+    "sku": "P680T",
     "cost_price": 331.37,
     "brand": "Coltene/Whaledent"
   },
   {
-    "Sku": "592B",
+    "sku": "592B",
     "cost_price": 0,
     "brand": "corza medical"
   },
   {
-    "Sku": "785B",
+    "sku": "785B",
     "cost_price": 21.85,
     "brand": "corza medical"
   },
   {
-    "Sku": "781B",
+    "sku": "781B",
     "cost_price": 22.27,
     "brand": "corza medical"
   },
   {
-    "Sku": "594B",
+    "sku": "594B",
     "cost_price": 22.27,
     "brand": "corza medical"
   },
   {
-    "Sku": "784B",
+    "sku": "784B",
     "cost_price": 22.27,
     "brand": "corza medical"
   },
   {
-    "Sku": "SP116",
+    "sku": "SP116",
     "cost_price": 24.59,
     "brand": "corza medical"
   },
   {
-    "Sku": "560B",
+    "sku": "560B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "554B",
+    "sku": "554B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "525B",
+    "sku": "525B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "591B",
+    "sku": "591B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "557B",
+    "sku": "557B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "555B",
+    "sku": "555B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "559B",
+    "sku": "559B",
     "cost_price": 27.54,
     "brand": "corza medical"
   },
   {
-    "Sku": "994B",
+    "sku": "994B",
     "cost_price": 28.75,
     "brand": "corza medical"
   },
   {
-    "Sku": "922B",
+    "sku": "922B",
     "cost_price": 33.04,
     "brand": "corza medical"
   },
   {
-    "Sku": "422B",
+    "sku": "422B",
     "cost_price": 46.43,
     "brand": "corza medical"
   },
   {
-    "Sku": "SP119",
+    "sku": "SP119",
     "cost_price": 51.59,
     "brand": "corza medical"
   },
   {
-    "Sku": "1248B",
+    "sku": "1248B",
     "cost_price": 53,
     "brand": "corza medical"
   },
   {
-    "Sku": "8900SA-10",
+    "sku": "8900SA-10",
     "cost_price": 0,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": "8881400074-CASE",
+    "sku": "8881400074-CASE",
     "cost_price": 0,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": "8900SA",
+    "sku": "8900SA",
     "cost_price": 1.79,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": 8881676434,
+    "sku": 8881676434,
     "cost_price": 7.86,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": 8881400041,
+    "sku": 8881400041,
     "cost_price": 9.55,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": 8881401072,
+    "sku": 8881401072,
     "cost_price": 9.73,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": 8881400074,
+    "sku": 8881400074,
     "cost_price": 10.5,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": 8881513934,
+    "sku": 8881513934,
     "cost_price": 10.57,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": "8881412012-Bx",
+    "sku": "8881412012-Bx",
     "cost_price": 21.4,
     "brand": "Covidien / Kendall Healthcare"
   },
   {
-    "Sku": "3386-Bx",
+    "sku": "3386-Bx",
     "cost_price": 0,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3367-Bx",
+    "sku": "3367-Bx",
     "cost_price": 0,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "S3160K-Bx",
+    "sku": "S3160K-Bx",
     "cost_price": 6.43,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "CR8166NS-Bx",
+    "sku": "CR8166NS-Bx",
     "cost_price": 7,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "C2700SP-Bx",
+    "sku": "C2700SP-Bx",
     "cost_price": 7.55,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "C2700GG-Bx",
+    "sku": "C2700GG-Bx",
     "cost_price": 7.55,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "7816-Bx",
+    "sku": "7816-Bx",
     "cost_price": 7.97,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "C2900K-Bx",
+    "sku": "C2900K-Bx",
     "cost_price": 7.98,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3236-Bx",
+    "sku": "3236-Bx",
     "cost_price": 11.41,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3237-Bx",
+    "sku": "3237-Bx",
     "cost_price": 11.41,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3238-Bx",
+    "sku": "3238-Bx",
     "cost_price": 11.41,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3387-Bx",
+    "sku": "3387-Bx",
     "cost_price": 14.94,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3306-Bx",
+    "sku": "3306-Bx",
     "cost_price": 20.09,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "3307-Bx",
+    "sku": "3307-Bx",
     "cost_price": 20.09,
     "brand": "Cranberry USA"
   },
   {
-    "Sku": "GCFCXSSF",
+    "sku": "GCFCXSSF",
     "cost_price": 139.09,
     "brand": "Crosstex"
   },
   {
-    "Sku": "CST060-Bx",
+    "sku": "CST060-Bx",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "DNCB",
+    "sku": "DNCB",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "ZFF-Bx",
+    "sku": "ZFF-Bx",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SCS",
+    "sku": "SCS",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "DS503L",
+    "sku": "DS503L",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "GCFCXUSF",
+    "sku": "GCFCXUSF",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "GCFCXS-Bx",
+    "sku": "GCFCXS-Bx",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "GCFCXSF",
+    "sku": "GCFCXSF",
     "cost_price": 0,
     "brand": "Crosstex"
   },
   {
-    "Sku": "ZCWCP",
+    "sku": "ZCWCP",
     "cost_price": 4.19,
     "brand": "Crosstex"
   },
   {
-    "Sku": "ZWWCP",
+    "sku": "ZWWCP",
     "cost_price": 4.24,
     "brand": "Crosstex"
   },
   {
-    "Sku": "GPLUSWHSF-Bx",
+    "sku": "GPLUSWHSF-Bx",
     "cost_price": 10.3,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SCW2-Bx",
+    "sku": "SCW2-Bx",
     "cost_price": 11.36,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SW15-100",
+    "sku": "SW15-100",
     "cost_price": 11.86,
     "brand": "Crosstex"
   },
   {
-    "Sku": "BFBL",
+    "sku": "BFBL",
     "cost_price": 13.34,
     "brand": "Crosstex"
   },
   {
-    "Sku": "GCFCXSFSF-Bx",
+    "sku": "GCFCXSFSF-Bx",
     "cost_price": 15.55,
     "brand": "Crosstex"
   },
   {
-    "Sku": "M1030HVSE",
+    "sku": "M1030HVSE",
     "cost_price": 17.89,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SW20-100",
+    "sku": "SW20-100",
     "cost_price": 18.68,
     "brand": "Crosstex"
   },
   {
-    "Sku": "M1010SUSE",
+    "sku": "M1010SUSE",
     "cost_price": 25.86,
     "brand": "Crosstex"
   },
   {
-    "Sku": "UPCM",
+    "sku": "UPCM",
     "cost_price": 29.41,
     "brand": "Crosstex"
   },
   {
-    "Sku": "ML020127-1",
+    "sku": "ML020127-1",
     "cost_price": 32.08,
     "brand": "Crosstex"
   },
   {
-    "Sku": "M1000WHBU",
+    "sku": "M1000WHBU",
     "cost_price": 36.22,
     "brand": "Crosstex"
   },
   {
-    "Sku": "FDBL",
+    "sku": "FDBL",
     "cost_price": 39.36,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SW15",
+    "sku": "SW15",
     "cost_price": 59.33,
     "brand": "Crosstex"
   },
   {
-    "Sku": "CSBI25",
+    "sku": "CSBI25",
     "cost_price": 64.52,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SW20",
+    "sku": "SW20",
     "cost_price": 92.5,
     "brand": "Crosstex"
   },
   {
-    "Sku": "SW24",
+    "sku": "SW24",
     "cost_price": 125.75,
     "brand": "Crosstex"
   },
   {
-    "Sku": "DP365B",
+    "sku": "DP365B",
     "cost_price": 137.78,
     "brand": "Crosstex"
   },
   {
-    "Sku": "TPASSC5",
+    "sku": "TPASSC5",
     "cost_price": 167,
     "brand": "Crosstex"
   },
   {
-    "Sku": "33037-12",
+    "sku": "33037-12",
     "cost_price": 0,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "33035-16",
+    "sku": "33035-16",
     "cost_price": 62.4,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "33037-11",
+    "sku": "33037-11",
     "cost_price": 62.4,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "33015-3",
+    "sku": "33015-3",
     "cost_price": 93.73,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "33017-11",
+    "sku": "33017-11",
     "cost_price": 94,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "33017-1",
+    "sku": "33017-1",
     "cost_price": 94.185,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "33017-10",
+    "sku": "33017-10",
     "cost_price": 94.185,
     "brand": "Crosstex Accutron"
   },
   {
-    "Sku": "GCFCXSSF-Bx",
+    "sku": "GCFCXSSF-Bx",
     "cost_price": 14.08,
     "brand": "Crosstex International"
   },
   {
-    "Sku": "SM-2732",
+    "sku": "SM-2732",
     "cost_price": 0,
     "brand": "Cypress Medical Products"
   },
   {
-    "Sku": "SM-27-36",
+    "sku": "SM-27-36",
     "cost_price": 0,
     "brand": "Cypress Medical Products"
   },
   {
-    "Sku": "ST-1021",
+    "sku": "ST-1021",
     "cost_price": 4.71,
     "brand": "Defend"
   },
   {
-    "Sku": "CS-0200",
+    "sku": "CS-0200",
     "cost_price": 17.46,
     "brand": "Defend"
   },
   {
-    "Sku": "VP-8140T",
+    "sku": "VP-8140T",
     "cost_price": 21.28,
     "brand": "Defend"
   },
   {
-    "Sku": "BR-9002",
+    "sku": "BR-9002",
     "cost_price": 25.26,
     "brand": "Defend"
   },
   {
-    "Sku": "VP-9008",
+    "sku": "VP-9008",
     "cost_price": 32.7,
     "brand": "Defend"
   },
   {
-    "Sku": "VP-9011",
+    "sku": "VP-9011",
     "cost_price": 32.71,
     "brand": "Defend"
   },
   {
-    "Sku": "VP-9007",
+    "sku": "VP-9007",
     "cost_price": 32.71,
     "brand": "Defend"
   },
   {
-    "Sku": "UT-1000",
+    "sku": "UT-1000",
     "cost_price": 36.44,
     "brand": "Defend"
   },
   {
-    "Sku": "VP-8008",
+    "sku": "VP-8008",
     "cost_price": 49.69,
     "brand": "Defend"
   },
   {
-    "Sku": "CB-9001",
+    "sku": "CB-9001",
     "cost_price": 80.07,
     "brand": "Defend"
   },
   {
-    "Sku": 620414,
+    "sku": 620414,
     "cost_price": 8.82,
     "brand": "Denticator"
   },
   {
-    "Sku": "620414-10-RX",
+    "sku": "620414-10-RX",
     "cost_price": 8.82,
     "brand": "Denticator"
   },
   {
-    "Sku": "620414-3",
+    "sku": "620414-3",
     "cost_price": 0,
     "brand": "Denticator"
   },
   {
-    "Sku": "620414-50",
+    "sku": "620414-50",
     "cost_price": 0,
     "brand": "Denticator"
   },
   {
-    "Sku": "620414-20",
+    "sku": "620414-20",
     "cost_price": 0,
     "brand": "Denticator"
   },
   {
-    "Sku": 75156,
+    "sku": 75156,
     "cost_price": 36.75,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": 21520,
+    "sku": 21520,
     "cost_price": 44.88,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": 23071,
+    "sku": 23071,
     "cost_price": 47.59,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": 21132,
+    "sku": 21132,
     "cost_price": 53.6,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": 21521,
+    "sku": 21521,
     "cost_price": 72.43,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": 21135,
+    "sku": 21135,
     "cost_price": 117.14,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": 23075,
+    "sku": 23075,
     "cost_price": 206.04,
     "brand": "Dentsply Sirona"
   },
   {
-    "Sku": "Denture-Kit-1",
+    "sku": "Denture-Kit-1",
     "cost_price": 0,
     "brand": "Denture-Kit-1"
   },
   {
-    "Sku": "SM-7105VC",
+    "sku": "SM-7105VC",
     "cost_price": 19.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "7101-HB",
+    "sku": "7101-HB",
     "cost_price": 26.95,
     "brand": "Dharma Research"
   },
   {
-    "Sku": 7100,
+    "sku": 7100,
     "cost_price": 26.95,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00140",
+    "sku": "56-00140",
     "cost_price": 4.46,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00100",
+    "sku": "56-00100",
     "cost_price": 8.58,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "58-00225",
+    "sku": "58-00225",
     "cost_price": 9.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "58-00224",
+    "sku": "58-00224",
     "cost_price": 9.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "58-00208",
+    "sku": "58-00208",
     "cost_price": 9.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "58-00209",
+    "sku": "58-00209",
     "cost_price": 9.97,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00121",
+    "sku": "56-00121",
     "cost_price": 15.65,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00120",
+    "sku": "56-00120",
     "cost_price": 15.69,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00202",
+    "sku": "56-00202",
     "cost_price": 19.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00204",
+    "sku": "56-00204",
     "cost_price": 19.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00211",
+    "sku": "56-00211",
     "cost_price": 19.5,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00200",
+    "sku": "56-00200",
     "cost_price": 20.47,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00140C",
+    "sku": "56-00140C",
     "cost_price": 53.55,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00141",
+    "sku": "56-00141",
     "cost_price": 54.54,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00204C",
+    "sku": "56-00204C",
     "cost_price": 234,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00200C",
+    "sku": "56-00200C",
     "cost_price": 234,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00202C",
+    "sku": "56-00202C",
     "cost_price": 234,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "56-00211C",
+    "sku": "56-00211C",
     "cost_price": 234,
     "brand": "Dharma Research"
   },
   {
-    "Sku": "2340084014-1",
+    "sku": "2340084014-1",
     "cost_price": 2.83,
     "brand": "Dial"
   },
   {
-    "Sku": "2340082834-1",
+    "sku": "2340082834-1",
     "cost_price": 3.11,
     "brand": "Dial"
   },
   {
-    "Sku": "2340081075-1",
+    "sku": "2340081075-1",
     "cost_price": 4.29,
     "brand": "Dial"
   },
   {
-    "Sku": "2340082838-1",
+    "sku": "2340082838-1",
     "cost_price": 16.79,
     "brand": "Dial"
   },
   {
-    "Sku": "2340088047-1",
+    "sku": "2340088047-1",
     "cost_price": 8.89,
     "brand": "Dial Corporation"
   },
   {
-    "Sku": 2340088047,
+    "sku": 2340088047,
     "cost_price": 35.56,
     "brand": "Dial Corporation"
   },
   {
-    "Sku": "DIA04029",
+    "sku": "DIA04029",
     "cost_price": 0,
     "brand": "Dial Corporation"
   },
   {
-    "Sku": "DIA06042CT-1",
+    "sku": "DIA06042CT-1",
     "cost_price": 0,
     "brand": "Dial Corporation"
   },
   {
-    "Sku": "DIA82838-1",
+    "sku": "DIA82838-1",
     "cost_price": 0,
     "brand": "Dial Corporation"
   },
   {
-    "Sku": "DIA02936EA",
+    "sku": "DIA02936EA",
     "cost_price": 0,
     "brand": "Dial Corporation"
   },
   {
-    "Sku": "DD4599516",
+    "sku": "DD4599516",
     "cost_price": 0,
     "brand": "Diversey"
   },
   {
-    "Sku": "DD4599516-CS",
+    "sku": "DD4599516-CS",
     "cost_price": 0,
     "brand": "Diversey"
   },
   {
-    "Sku": 989831,
+    "sku": 989831,
     "cost_price": 61.75,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 999831,
+    "sku": 999831,
     "cost_price": 62.04,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 989832,
+    "sku": 989832,
     "cost_price": 64.53,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 993334,
+    "sku": 993334,
     "cost_price": 78.55,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 989838,
+    "sku": 989838,
     "cost_price": 90.71,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 213334,
+    "sku": 213334,
     "cost_price": 131.6,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 213336,
+    "sku": 213336,
     "cost_price": 131.6,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 220400,
+    "sku": 220400,
     "cost_price": 155.56,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 220402,
+    "sku": 220402,
     "cost_price": 155.56,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 999537,
+    "sku": 999537,
     "cost_price": 164.25,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 213331,
+    "sku": 213331,
     "cost_price": 182.95,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 120974,
+    "sku": 120974,
     "cost_price": 266.51,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 120970,
+    "sku": 120970,
     "cost_price": 266.51,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 220403,
+    "sku": 220403,
     "cost_price": 489,
     "brand": "DMG America (Zenith)"
   },
   {
-    "Sku": 199223,
+    "sku": 199223,
     "cost_price": 31.93,
     "brand": "Dr. Fresh"
   },
   {
-    "Sku": 214,
+    "sku": 214,
     "cost_price": 9.94,
     "brand": "Dukal"
   },
   {
-    "Sku": 8517,
+    "sku": 8517,
     "cost_price": 13.17,
     "brand": "Dukal"
   },
   {
-    "Sku": 9850,
+    "sku": 9850,
     "cost_price": 14.28,
     "brand": "Dukal"
   },
   {
-    "Sku": 603,
+    "sku": 603,
     "cost_price": 19.27,
     "brand": "Dukal"
   },
   {
-    "Sku": "MR3350-60",
+    "sku": "MR3350-60",
     "cost_price": 19.32,
     "brand": "Dukal"
   },
   {
-    "Sku": "SC110-12",
+    "sku": "SC110-12",
     "cost_price": 20.6,
     "brand": "Dukal"
   },
   {
-    "Sku": 304,
+    "sku": 304,
     "cost_price": 23.79,
     "brand": "Dukal"
   },
   {
-    "Sku": 212,
+    "sku": 212,
     "cost_price": 24.13,
     "brand": "Dukal"
   },
   {
-    "Sku": "502LF",
+    "sku": "502LF",
     "cost_price": 24.55,
     "brand": "Dukal"
   },
   {
-    "Sku": 2102,
+    "sku": 2102,
     "cost_price": 24.59,
     "brand": "Dukal"
   },
   {
-    "Sku": "AW8150",
+    "sku": "AW8150",
     "cost_price": 25.51,
     "brand": "Dukal"
   },
   {
-    "Sku": 260,
+    "sku": 260,
     "cost_price": 26.46,
     "brand": "Dukal"
   },
   {
-    "Sku": 127,
+    "sku": 127,
     "cost_price": 26.65,
     "brand": "Dukal"
   },
   {
-    "Sku": "SP05-500",
+    "sku": "SP05-500",
     "cost_price": 27.28,
     "brand": "Dukal"
   },
   {
-    "Sku": 261,
+    "sku": 261,
     "cost_price": 29.37,
     "brand": "Dukal"
   },
   {
-    "Sku": "1058-24",
+    "sku": "1058-24",
     "cost_price": 29.99,
     "brand": "Dukal"
   },
   {
-    "Sku": 271,
+    "sku": 271,
     "cost_price": 30.12,
     "brand": "Dukal"
   },
   {
-    "Sku": 216,
+    "sku": 216,
     "cost_price": 30.17,
     "brand": "Dukal"
   },
   {
-    "Sku": "BP35",
+    "sku": "BP35",
     "cost_price": 31.61,
     "brand": "Dukal"
   },
   {
-    "Sku": "8035T",
+    "sku": "8035T",
     "cost_price": 32.65,
     "brand": "Dukal"
   },
   {
-    "Sku": 110,
+    "sku": 110,
     "cost_price": 33.39,
     "brand": "Dukal"
   },
   {
-    "Sku": "PSC70",
+    "sku": "PSC70",
     "cost_price": 33.78,
     "brand": "Dukal"
   },
   {
-    "Sku": 262,
+    "sku": 262,
     "cost_price": 33.91,
     "brand": "Dukal"
   },
   {
-    "Sku": "503LF",
+    "sku": "503LF",
     "cost_price": 34.46,
     "brand": "Dukal"
   },
   {
-    "Sku": 206,
+    "sku": 206,
     "cost_price": 34.47,
     "brand": "Dukal"
   },
   {
-    "Sku": "10-0012",
+    "sku": "10-0012",
     "cost_price": 35.53,
     "brand": "Dukal"
   },
   {
-    "Sku": "RD15",
+    "sku": "RD15",
     "cost_price": 36.54,
     "brand": "Dukal"
   },
   {
-    "Sku": "SP15-250",
+    "sku": "SP15-250",
     "cost_price": 36.64,
     "brand": "Dukal"
   },
   {
-    "Sku": 1298033,
+    "sku": 1298033,
     "cost_price": 38.8,
     "brand": "Dukal"
   },
   {
-    "Sku": 706,
+    "sku": 706,
     "cost_price": 39.78,
     "brand": "Dukal"
   },
   {
-    "Sku": 213,
+    "sku": 213,
     "cost_price": 40.51,
     "brand": "Dukal"
   },
   {
-    "Sku": 9016,
+    "sku": 9016,
     "cost_price": 40.87,
     "brand": "Dukal"
   },
   {
-    "Sku": 7605,
+    "sku": 7605,
     "cost_price": 41.95,
     "brand": "Dukal"
   },
   {
-    "Sku": "301BL",
+    "sku": "301BL",
     "cost_price": 43.26,
     "brand": "Dukal"
   },
   {
-    "Sku": "504LF",
+    "sku": "504LF",
     "cost_price": 43.5,
     "brand": "Dukal"
   },
   {
-    "Sku": 8507,
+    "sku": 8507,
     "cost_price": 45.07,
     "brand": "Dukal"
   },
   {
-    "Sku": "10-0018",
+    "sku": "10-0018",
     "cost_price": 47.82,
     "brand": "Dukal"
   },
   {
-    "Sku": "PB01C",
+    "sku": "PB01C",
     "cost_price": 49.05,
     "brand": "Dukal"
   },
   {
-    "Sku": 8508,
+    "sku": 8508,
     "cost_price": 50.85,
     "brand": "Dukal"
   },
   {
-    "Sku": "HC08",
+    "sku": "HC08",
     "cost_price": 51.18,
     "brand": "Dukal"
   },
   {
-    "Sku": "382XXL",
+    "sku": "382XXL",
     "cost_price": 55.16,
     "brand": "Dukal"
   },
   {
-    "Sku": 8503,
+    "sku": 8503,
     "cost_price": 55.27,
     "brand": "Dukal"
   },
   {
-    "Sku": 7444,
+    "sku": 7444,
     "cost_price": 57.05,
     "brand": "Dukal"
   },
   {
-    "Sku": 4076,
+    "sku": 4076,
     "cost_price": 58.01,
     "brand": "Dukal"
   },
   {
-    "Sku": "514LF",
+    "sku": "514LF",
     "cost_price": 60.21,
     "brand": "Dukal"
   },
   {
-    "Sku": 9006,
+    "sku": 9006,
     "cost_price": 60.56,
     "brand": "Dukal"
   },
   {
-    "Sku": "CT-04B",
+    "sku": "CT-04B",
     "cost_price": 60.72,
     "brand": "Dukal"
   },
   {
-    "Sku": 7224,
+    "sku": 7224,
     "cost_price": 62.29,
     "brand": "Dukal"
   },
   {
-    "Sku": "PS10",
+    "sku": "PS10",
     "cost_price": 63.34,
     "brand": "Dukal"
   },
   {
-    "Sku": 8645,
+    "sku": 8645,
     "cost_price": 65.31,
     "brand": "Dukal"
   },
   {
-    "Sku": 8509,
+    "sku": 8509,
     "cost_price": 65.66,
     "brand": "Dukal"
   },
   {
-    "Sku": "506LF",
+    "sku": "506LF",
     "cost_price": 65.79,
     "brand": "Dukal"
   },
   {
-    "Sku": 5945,
+    "sku": 5945,
     "cost_price": 66.06,
     "brand": "Dukal"
   },
   {
-    "Sku": 123,
+    "sku": 123,
     "cost_price": 67.24,
     "brand": "Dukal"
   },
   {
-    "Sku": "TNC3299",
+    "sku": "TNC3299",
     "cost_price": 76.32,
     "brand": "Dukal"
   },
   {
-    "Sku": 175,
+    "sku": 175,
     "cost_price": 77.97,
     "brand": "Dukal"
   },
   {
-    "Sku": 5590,
+    "sku": 5590,
     "cost_price": 78.41,
     "brand": "Dukal"
   },
   {
-    "Sku": 5875,
+    "sku": 5875,
     "cost_price": 78.98,
     "brand": "Dukal"
   },
   {
-    "Sku": 841,
+    "sku": 841,
     "cost_price": 83.48,
     "brand": "Dukal"
   },
   {
-    "Sku": "SC3756",
+    "sku": "SC3756",
     "cost_price": 85.59,
     "brand": "Dukal"
   },
   {
-    "Sku": "516LF",
+    "sku": "516LF",
     "cost_price": 88.86,
     "brand": "Dukal"
   },
   {
-    "Sku": 545,
+    "sku": 545,
     "cost_price": 89.56,
     "brand": "Dukal"
   },
   {
-    "Sku": 7470,
+    "sku": 7470,
     "cost_price": 90.42,
     "brand": "Dukal"
   },
   {
-    "Sku": "SC15",
+    "sku": "SC15",
     "cost_price": 103.7,
     "brand": "Dukal"
   },
   {
-    "Sku": 645,
+    "sku": 645,
     "cost_price": 111.1,
     "brand": "Dukal"
   },
   {
-    "Sku": "HB01",
+    "sku": "HB01",
     "cost_price": 113.2,
     "brand": "Dukal"
   },
   {
-    "Sku": 5810,
+    "sku": 5810,
     "cost_price": 133.36,
     "brand": "Dukal"
   },
   {
-    "Sku": "UBC-8028-1",
+    "sku": "UBC-8028-1",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 151,
+    "sku": 151,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 150,
+    "sku": 150,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 226,
+    "sku": 226,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 861,
+    "sku": 861,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "HC08- LOCAL",
+    "sku": "HC08- LOCAL",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 9003,
+    "sku": 9003,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "HP8111",
+    "sku": "HP8111",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "B07SXH1HDQ",
+    "sku": "B07SXH1HDQ",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 69.95,
+    "sku": 69.95,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "855 BZK",
+    "sku": "855 BZK",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 120,
+    "sku": 120,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": 27605,
+    "sku": 27605,
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "UPP-225",
+    "sku": "UPP-225",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "UPP-2710",
+    "sku": "UPP-2710",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "UPP-3510",
+    "sku": "UPP-3510",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "UPP-5211",
+    "sku": "UPP-5211",
     "cost_price": 0,
     "brand": "Dukal"
   },
   {
-    "Sku": "27607-1",
+    "sku": "27607-1",
     "cost_price": 0,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "6122-1",
+    "sku": "6122-1",
     "cost_price": 0.72,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "TBDEN-12",
+    "sku": "TBDEN-12",
     "cost_price": 1.57,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "4423L",
+    "sku": "4423L",
     "cost_price": 2.49,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "4423M",
+    "sku": "4423M",
     "cost_price": 2.5,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "UBC-8028",
+    "sku": "UBC-8028",
     "cost_price": 3.35,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "324B",
+    "sku": "324B",
     "cost_price": 7.77,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "4404S",
+    "sku": "4404S",
     "cost_price": 7.86,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "4404L",
+    "sku": "4404L",
     "cost_price": 7.86,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "4404XL",
+    "sku": "4404XL",
     "cost_price": 7.98,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "4404M",
+    "sku": "4404M",
     "cost_price": 8,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "UDA-4001",
+    "sku": "UDA-4001",
     "cost_price": 10.6,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "TBDEN-BX-144",
+    "sku": "TBDEN-BX-144",
     "cost_price": 19.03,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": 6122,
+    "sku": 6122,
     "cost_price": 43.12,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": 6124,
+    "sku": 6124,
     "cost_price": 45.02,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "TBDEN-CS",
+    "sku": "TBDEN-CS",
     "cost_price": 190.39,
     "brand": "Dukal Corporation"
   },
   {
-    "Sku": "DDDuracell-9V-72",
+    "sku": "DDDuracell-9V-72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDDuracell-C72",
+    "sku": "DDDuracell-C72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "MN1300",
+    "sku": "MN1300",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "MN1500BKD",
+    "sku": "MN1500BKD",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "MN2400BKD",
+    "sku": "MN2400BKD",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDProcell-9V-72",
+    "sku": "DDProcell-9V-72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDProcell-AAA-144",
+    "sku": "DDProcell-AAA-144",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDProcell-C72",
+    "sku": "DDProcell-C72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDProcell-D72",
+    "sku": "DDProcell-D72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "PC1500",
+    "sku": "PC1500",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDIntense-9V-72",
+    "sku": "DDIntense-9V-72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDIntense-AA-144",
+    "sku": "DDIntense-AA-144",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDIntense-C-72",
+    "sku": "DDIntense-C-72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "DDIntense-D-72",
+    "sku": "DDIntense-D-72",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "PX2400",
+    "sku": "PX2400",
     "cost_price": 0,
     "brand": "DURACELL"
   },
   {
-    "Sku": "1191-1- LOCAL",
+    "sku": "1191-1- LOCAL",
     "cost_price": 0.79,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191-1",
+    "sku": "1191-1",
     "cost_price": 0.79,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3222-1",
+    "sku": "3222-1",
     "cost_price": 0.8,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3253- LOCAL",
+    "sku": "3253- LOCAL",
     "cost_price": 1.4,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3104-1",
+    "sku": "3104-1",
     "cost_price": 1.43,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1113,
+    "sku": 1113,
     "cost_price": 1.49,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1157-1",
+    "sku": "1157-1",
     "cost_price": 2.07,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3254-1pk",
+    "sku": "3254-1pk",
     "cost_price": 2.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10202,
+    "sku": 10202,
     "cost_price": 2.63,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4313-1- LOCAL",
+    "sku": "4313-1- LOCAL",
     "cost_price": 2.9,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4313-1",
+    "sku": "4313-1",
     "cost_price": 2.9,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4461-1",
+    "sku": "4461-1",
     "cost_price": 3.53,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2101-100- LOCAL",
+    "sku": "2101-100- LOCAL",
     "cost_price": 3.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2101-100",
+    "sku": "2101-100",
     "cost_price": 3.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2141bx",
+    "sku": "2141bx",
     "cost_price": 3.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4110- LOCAL",
+    "sku": "4110- LOCAL",
     "cost_price": 3.83,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4110-BX",
+    "sku": "4110-BX",
     "cost_price": 3.83,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4110-BX- LOCAL",
+    "sku": "4110-BX- LOCAL",
     "cost_price": 3.83,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4115- LOCAL",
+    "sku": "4115- LOCAL",
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4110,
+    "sku": 4110,
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4121,
+    "sku": 4121,
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4121- LOCAL",
+    "sku": "4121- LOCAL",
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4111- LOCAL",
+    "sku": "4111- LOCAL",
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4111,
+    "sku": 4111,
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2203-1",
+    "sku": "2203-1",
     "cost_price": 4,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3254-2",
+    "sku": "3254-2",
     "cost_price": 4.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4462-1",
+    "sku": "4462-1",
     "cost_price": 4.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4462- LOCAL",
+    "sku": "4462- LOCAL",
     "cost_price": 4.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1202-2",
+    "sku": "1202-2",
     "cost_price": 4.95,
     "brand": "Dynarex"
   },
   {
-    "Sku": "9004-1",
+    "sku": "9004-1",
     "cost_price": 5.01,
     "brand": "Dynarex"
   },
   {
-    "Sku": 67618015017,
+    "sku": 67618015017,
     "cost_price": 5.24,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4312-1",
+    "sku": "4312-1",
     "cost_price": 5.4,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4311-1",
+    "sku": "4311-1",
     "cost_price": 5.4,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4302-1000",
+    "sku": "4302-1000",
     "cost_price": 5.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4302K",
+    "sku": "4302K",
     "cost_price": 5.6,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3036-1",
+    "sku": "3036-1",
     "cost_price": 6.8,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4463-HB",
+    "sku": "4463-HB",
     "cost_price": 6.91,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10270,
+    "sku": 10270,
     "cost_price": 7,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10269,
+    "sku": 10269,
     "cost_price": 7,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4511-EC",
+    "sku": "4511-EC",
     "cost_price": 7.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4511,
+    "sku": 4511,
     "cost_price": 7.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4511-1",
+    "sku": "4511-1",
     "cost_price": 7.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4511-EC-1",
+    "sku": "4511-EC-1",
     "cost_price": 7.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10263,
+    "sku": 10263,
     "cost_price": 8,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4464-HB",
+    "sku": "4464-HB",
     "cost_price": 8.06,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4463-NY",
+    "sku": "4463-NY",
     "cost_price": 8.3,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10305,
+    "sku": 10305,
     "cost_price": 9,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10133,
+    "sku": 10133,
     "cost_price": 9,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3254-4",
+    "sku": "3254-4",
     "cost_price": 9,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3250-1-HB",
+    "sku": "3250-1-HB",
     "cost_price": 9.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3641-EC",
+    "sku": "3641-EC",
     "cost_price": 9.69,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3286,
+    "sku": 3286,
     "cost_price": 9.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3276,
+    "sku": 3276,
     "cost_price": 9.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3281,
+    "sku": 3281,
     "cost_price": 9.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3296,
+    "sku": 3296,
     "cost_price": 9.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10311,
+    "sku": 10311,
     "cost_price": 11,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10301,
+    "sku": 10301,
     "cost_price": 11,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10300,
+    "sku": 10300,
     "cost_price": 11,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3104,
+    "sku": 3104,
     "cost_price": 11,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3254-5-hcs",
+    "sku": "3254-5-hcs",
     "cost_price": 11.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10312,
+    "sku": 10312,
     "cost_price": 12,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10309,
+    "sku": 10309,
     "cost_price": 12,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10302,
+    "sku": 10302,
     "cost_price": 12,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10303,
+    "sku": 10303,
     "cost_price": 12,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10136,
+    "sku": 10136,
     "cost_price": 12.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1113-RX",
+    "sku": "1113-RX",
     "cost_price": 12.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1113CS",
+    "sku": "1113CS",
     "cost_price": 12.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1113-NY",
+    "sku": "1113-NY",
     "cost_price": 12.75,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10313,
+    "sku": 10313,
     "cost_price": 13,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10314,
+    "sku": 10314,
     "cost_price": 13,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10315,
+    "sku": 10315,
     "cost_price": 14,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10103,
+    "sku": 10103,
     "cost_price": 14,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10100,
+    "sku": 10100,
     "cost_price": 14,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10101,
+    "sku": 10101,
     "cost_price": 14,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4465-HB",
+    "sku": "4465-HB",
     "cost_price": 14.2,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4465-NY",
+    "sku": "4465-NY",
     "cost_price": 14.2,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3252,
+    "sku": 3252,
     "cost_price": 14.7,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3252- LOCAL",
+    "sku": "3252- LOCAL",
     "cost_price": 14.7,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10135,
+    "sku": 10135,
     "cost_price": 14.9,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10268,
+    "sku": 10268,
     "cost_price": 15,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10267,
+    "sku": 10267,
     "cost_price": 15,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1116,
+    "sku": 1116,
     "cost_price": 15,
     "brand": "Dynarex"
   },
   {
-    "Sku": 106150,
+    "sku": 106150,
     "cost_price": 15.19,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512-1CS- LOCAL",
+    "sku": "4512-1CS- LOCAL",
     "cost_price": 15.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512-1CS",
+    "sku": "4512-1CS",
     "cost_price": 15.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512-5x9",
+    "sku": "4512-5x9",
     "cost_price": 15.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10139,
+    "sku": 10139,
     "cost_price": 15.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10260,
+    "sku": 10260,
     "cost_price": 17,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10623,
+    "sku": 10623,
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2102CS",
+    "sku": "2102CS",
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2101,
+    "sku": 2101,
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2101- LOCAL",
+    "sku": "2101- LOCAL",
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10620,
+    "sku": 10620,
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10351,
+    "sku": 10351,
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10137,
+    "sku": 10137,
     "cost_price": 19,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10621,
+    "sku": 10621,
     "cost_price": 19,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10624,
+    "sku": 10624,
     "cost_price": 20,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10362,
+    "sku": 10362,
     "cost_price": 20,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2239C",
+    "sku": "2239C",
     "cost_price": 20,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10138,
+    "sku": 10138,
     "cost_price": 20.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2220,
+    "sku": 2220,
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10632,
+    "sku": 10632,
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1147,
+    "sku": 1147,
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2222C",
+    "sku": "2222C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2221C",
+    "sku": "2221C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2220C",
+    "sku": "2220C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2223C",
+    "sku": "2223C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2227C",
+    "sku": "2227C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2224C",
+    "sku": "2224C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2228C",
+    "sku": "2228C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2226C",
+    "sku": "2226C",
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3273,
+    "sku": 3273,
     "cost_price": 21.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3272,
+    "sku": 3272,
     "cost_price": 21.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3212,
+    "sku": 3212,
     "cost_price": 21.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4875,
+    "sku": 4875,
     "cost_price": 21.95,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10341,
+    "sku": 10341,
     "cost_price": 22,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10324,
+    "sku": 10324,
     "cost_price": 22,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3254,
+    "sku": 3254,
     "cost_price": 22.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10622,
+    "sku": 10622,
     "cost_price": 23,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10104,
+    "sku": 10104,
     "cost_price": 23,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2141,
+    "sku": 2141,
     "cost_price": 23,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10633,
+    "sku": 10633,
     "cost_price": 23,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10271,
+    "sku": 10271,
     "cost_price": 24,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1303,
+    "sku": 1303,
     "cost_price": 24,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4254-RX",
+    "sku": "4254-RX",
     "cost_price": 24,
     "brand": "Dynarex"
   },
   {
-    "Sku": "DD4254",
+    "sku": "DD4254",
     "cost_price": 24,
     "brand": "Dynarex"
   },
   {
-    "Sku": "DD4254- LOCAL",
+    "sku": "DD4254- LOCAL",
     "cost_price": 24,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1171,
+    "sku": 1171,
     "cost_price": 24.05,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1157,
+    "sku": 1157,
     "cost_price": 24.84,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10307-3",
+    "sku": "10307-3",
     "cost_price": 25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10750MS",
+    "sku": "10750MS",
     "cost_price": 25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10266,
+    "sku": 10266,
     "cost_price": 26,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10160,
+    "sku": 10160,
     "cost_price": 27,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10162,
+    "sku": 10162,
     "cost_price": 27,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10161,
+    "sku": 10161,
     "cost_price": 27,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10163,
+    "sku": 10163,
     "cost_price": 27,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10308-3",
+    "sku": "10308-3",
     "cost_price": 28,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10323,
+    "sku": 10323,
     "cost_price": 28,
     "brand": "Dynarex"
   },
   {
-    "Sku": 7044,
+    "sku": 7044,
     "cost_price": 28,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3253,
+    "sku": 3253,
     "cost_price": 28.05,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10311-3",
+    "sku": "10311-3",
     "cost_price": 29,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10301-3",
+    "sku": "10301-3",
     "cost_price": 29,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4313-Case",
+    "sku": "4313-Case",
     "cost_price": 29,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4313-Case- LOCAL",
+    "sku": "4313-Case- LOCAL",
     "cost_price": 29,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10164,
+    "sku": 10164,
     "cost_price": 30,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10312-3",
+    "sku": "10312-3",
     "cost_price": 30,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4480,
+    "sku": 4480,
     "cost_price": 30,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4480-EC",
+    "sku": "4480-EC",
     "cost_price": 30,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4314Case- LOCAL",
+    "sku": "4314Case- LOCAL",
     "cost_price": 30,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10309-3",
+    "sku": "10309-3",
     "cost_price": 31,
     "brand": "Dynarex"
   },
   {
-    "Sku": -10360,
+    "sku": -10360,
     "cost_price": 31,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1152,
+    "sku": 1152,
     "cost_price": 31.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10302-3",
+    "sku": "10302-3",
     "cost_price": 32,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10303-3",
+    "sku": "10303-3",
     "cost_price": 32,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10314-3",
+    "sku": "10314-3",
     "cost_price": 34,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10313-3",
+    "sku": "10313-3",
     "cost_price": 34,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10350,
+    "sku": 10350,
     "cost_price": 34,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3232,
+    "sku": 3232,
     "cost_price": 34.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4305,
+    "sku": 4305,
     "cost_price": 35,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4258-1",
+    "sku": "4258-1",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2012-Small- LOCAL",
+    "sku": "2012-Small- LOCAL",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2012-Small",
+    "sku": "2012-Small",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10320,
+    "sku": 10320,
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2072- LOCAL",
+    "sku": "2072- LOCAL",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2073-3- LOCAL",
+    "sku": "2073-3- LOCAL",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2073-3",
+    "sku": "2073-3",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2073- LOCAL",
+    "sku": "2073- LOCAL",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4258cs",
+    "sku": "4258cs",
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2073,
+    "sku": 2073,
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10304-3",
+    "sku": "10304-3",
     "cost_price": 37,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10360,
+    "sku": 10360,
     "cost_price": 37,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3611,
+    "sku": 3611,
     "cost_price": 37.3,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10265,
+    "sku": 10265,
     "cost_price": 38,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3035- LOCAL",
+    "sku": "3035- LOCAL",
     "cost_price": 38,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3035,
+    "sku": 3035,
     "cost_price": 38,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10363,
+    "sku": 10363,
     "cost_price": 38,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10138-2",
+    "sku": "10138-2",
     "cost_price": 39,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1151,
+    "sku": 1151,
     "cost_price": 40,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1150,
+    "sku": 1150,
     "cost_price": 40,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3243,
+    "sku": 3243,
     "cost_price": 40.69,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10352,
+    "sku": 10352,
     "cost_price": 41.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10165,
+    "sku": 10165,
     "cost_price": 43,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10322,
+    "sku": 10322,
     "cost_price": 43,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10167,
+    "sku": 10167,
     "cost_price": 43,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3223,
+    "sku": 3223,
     "cost_price": 44.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10205-NY",
+    "sku": "10205-NY",
     "cost_price": 45,
     "brand": "Dynarex"
   },
   {
-    "Sku": 8940,
+    "sku": 8940,
     "cost_price": 45,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1161,
+    "sku": 1161,
     "cost_price": 47.09,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1201,
+    "sku": 1201,
     "cost_price": 49.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1201-1",
+    "sku": "1201-1",
     "cost_price": 49.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10325,
+    "sku": 10325,
     "cost_price": 50,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10133-6",
+    "sku": "10133-6",
     "cost_price": 51.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4312,
+    "sku": 4312,
     "cost_price": 54,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10166,
+    "sku": 10166,
     "cost_price": 54,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4311,
+    "sku": 4311,
     "cost_price": 54,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10462,
+    "sku": 10462,
     "cost_price": 55,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10321,
+    "sku": 10321,
     "cost_price": 55,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4302,
+    "sku": 4302,
     "cost_price": 56,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10362-3",
+    "sku": "10362-3",
     "cost_price": 57,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191-72",
+    "sku": "1191-72",
     "cost_price": 57.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191-72- LOCAL",
+    "sku": "1191-72- LOCAL",
     "cost_price": 57.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191CS",
+    "sku": "1191CS",
     "cost_price": 57.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191-CS-H- LOCAL",
+    "sku": "1191-CS-H- LOCAL",
     "cost_price": 57.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191CS- LOCAL",
+    "sku": "1191CS- LOCAL",
     "cost_price": 57.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1191-CS-H",
+    "sku": "1191-CS-H",
     "cost_price": 57.25,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2221,
+    "sku": 2221,
     "cost_price": 58.11,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2224,
+    "sku": 2224,
     "cost_price": 58.11,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10364-3",
+    "sku": "10364-3",
     "cost_price": 59,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10463,
+    "sku": 10463,
     "cost_price": 60,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10135-6",
+    "sku": "10135-6",
     "cost_price": 60,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10112,
+    "sku": 10112,
     "cost_price": 60.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10110,
+    "sku": 10110,
     "cost_price": 60.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10111,
+    "sku": 10111,
     "cost_price": 60.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10468,
+    "sku": 10468,
     "cost_price": 62,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4256-500",
+    "sku": "4256-500",
     "cost_price": 65,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4256-500- LOCAL",
+    "sku": "4256-500- LOCAL",
     "cost_price": 65,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4256- LOCAL",
+    "sku": "4256- LOCAL",
     "cost_price": 65,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4256,
+    "sku": 4256,
     "cost_price": 65,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4256-RX",
+    "sku": "4256-RX",
     "cost_price": 65,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3036Cs",
+    "sku": "3036Cs",
     "cost_price": 68,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3036Cs- LOCAL",
+    "sku": "3036Cs- LOCAL",
     "cost_price": 68,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10200,
+    "sku": 10200,
     "cost_price": 71,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10206,
+    "sku": 10206,
     "cost_price": 71,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10136-4",
+    "sku": "10136-4",
     "cost_price": 71,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10351-4",
+    "sku": "10351-4",
     "cost_price": 74,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10328,
+    "sku": 10328,
     "cost_price": 75,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1155,
+    "sku": 1155,
     "cost_price": 75.35,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10137-4",
+    "sku": "10137-4",
     "cost_price": 76,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10204,
+    "sku": 10204,
     "cost_price": 78,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10329,
+    "sku": 10329,
     "cost_price": 80,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10324-4",
+    "sku": "10324-4",
     "cost_price": 80,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10201PK",
+    "sku": "10201PK",
     "cost_price": 80,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10201BK",
+    "sku": "10201BK",
     "cost_price": 80,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10201RD",
+    "sku": "10201RD",
     "cost_price": 80,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10201BL",
+    "sku": "10201BL",
     "cost_price": 80,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10625-4",
+    "sku": "10625-4",
     "cost_price": 81,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10361-3",
+    "sku": "10361-3",
     "cost_price": 81,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10374,
+    "sku": 10374,
     "cost_price": 82,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10620-5",
+    "sku": "10620-5",
     "cost_price": 84,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10623-5",
+    "sku": "10623-5",
     "cost_price": 89,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10621-5",
+    "sku": "10621-5",
     "cost_price": 89,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10139-6",
+    "sku": "10139-6",
     "cost_price": 89,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10200,
+    "sku": 10200,
     "cost_price": 89.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4462,
+    "sku": 4462,
     "cost_price": 92,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10624-5",
+    "sku": "10624-5",
     "cost_price": 94,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10634-5",
+    "sku": "10634-5",
     "cost_price": 94,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10632-5",
+    "sku": "10632-5",
     "cost_price": 94,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10300,
+    "sku": 10300,
     "cost_price": 95,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1173,
+    "sku": 1173,
     "cost_price": 96.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2072,
+    "sku": 2072,
     "cost_price": 97.58,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2213,
+    "sku": 2213,
     "cost_price": 100,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10320-4",
+    "sku": "10320-4",
     "cost_price": 103,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10323-4",
+    "sku": "10323-4",
     "cost_price": 103,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10102-8",
+    "sku": "10102-8",
     "cost_price": 104,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10100-8",
+    "sku": "10100-8",
     "cost_price": 104,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10101-8",
+    "sku": "10101-8",
     "cost_price": 104,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10103-8",
+    "sku": "10103-8",
     "cost_price": 104,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1178,
+    "sku": 1178,
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10162-4",
+    "sku": "10162-4",
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10161-4",
+    "sku": "10161-4",
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10433,
+    "sku": 10433,
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10160-4",
+    "sku": "10160-4",
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10242,
+    "sku": 10242,
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10243,
+    "sku": 10243,
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10163-4",
+    "sku": "10163-4",
     "cost_price": 105,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3222,
+    "sku": 3222,
     "cost_price": 106,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10363-3",
+    "sku": "10363-3",
     "cost_price": 108,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10622-5",
+    "sku": "10622-5",
     "cost_price": 108,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4424,
+    "sku": 4424,
     "cost_price": 108.49,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10420,
+    "sku": 10420,
     "cost_price": 115,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3641,
+    "sku": 3641,
     "cost_price": 116.39,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3641- LOCAL",
+    "sku": "3641- LOCAL",
     "cost_price": 116.39,
     "brand": "Dynarex"
   },
   {
-    "Sku": "DD3641",
+    "sku": "DD3641",
     "cost_price": 116.39,
     "brand": "Dynarex"
   },
   {
-    "Sku": "DD3641- LOCAL",
+    "sku": "DD3641- LOCAL",
     "cost_price": 116.39,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10215,
+    "sku": 10215,
     "cost_price": 125,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4466-1",
+    "sku": "4466-1",
     "cost_price": 129.93,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10203,
+    "sku": 10203,
     "cost_price": 130,
     "brand": "Dynarex"
   },
   {
-    "Sku": 5620,
+    "sku": 5620,
     "cost_price": 136.87,
     "brand": "Dynarex"
   },
   {
-    "Sku": 5621,
+    "sku": 5621,
     "cost_price": 136.87,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6536,
+    "sku": 6536,
     "cost_price": 145,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10375,
+    "sku": 10375,
     "cost_price": 145,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10254,
+    "sku": 10254,
     "cost_price": 145,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6533,
+    "sku": 6533,
     "cost_price": 145,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10352-4",
+    "sku": "10352-4",
     "cost_price": 149,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10325-4",
+    "sku": "10325-4",
     "cost_price": 158,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10342-6",
+    "sku": "10342-6",
     "cost_price": 169,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10248,
+    "sku": 10248,
     "cost_price": 180,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10340-6",
+    "sku": "10340-6",
     "cost_price": 181,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10231,
+    "sku": 10231,
     "cost_price": 195,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10277,
+    "sku": 10277,
     "cost_price": 205,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10275,
+    "sku": 10275,
     "cost_price": 205,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10321-4",
+    "sku": "10321-4",
     "cost_price": 210,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10373-4",
+    "sku": "10373-4",
     "cost_price": 220,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10238,
+    "sku": 10238,
     "cost_price": 240,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10239,
+    "sku": 10239,
     "cost_price": 240,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10240,
+    "sku": 10240,
     "cost_price": 240,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10326-4",
+    "sku": "10326-4",
     "cost_price": 245,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10233,
+    "sku": 10233,
     "cost_price": 249.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10234,
+    "sku": 10234,
     "cost_price": 249.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10431,
+    "sku": 10431,
     "cost_price": 270,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10328-4",
+    "sku": "10328-4",
     "cost_price": 285,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10220,
+    "sku": 10220,
     "cost_price": 289.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10221,
+    "sku": 10221,
     "cost_price": 289.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10222,
+    "sku": 10222,
     "cost_price": 289.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10223,
+    "sku": 10223,
     "cost_price": 289.99,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10432,
+    "sku": 10432,
     "cost_price": 295,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10241,
+    "sku": 10241,
     "cost_price": 300,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10110-6",
+    "sku": "10110-6",
     "cost_price": 325,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10111-6",
+    "sku": "10111-6",
     "cost_price": 325,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10112-6",
+    "sku": "10112-6",
     "cost_price": 325,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10290,
+    "sku": 10290,
     "cost_price": 540,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10291,
+    "sku": 10291,
     "cost_price": 570,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10292,
+    "sku": 10292,
     "cost_price": 590,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2223-1",
+    "sku": "2223-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2225-1",
+    "sku": "2225-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1190,
+    "sku": 1190,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10467,
+    "sku": 10467,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10446,
+    "sku": 10446,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10465,
+    "sku": 10465,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10261,
+    "sku": 10261,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10262,
+    "sku": 10262,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10445,
+    "sku": 10445,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "10341-4",
+    "sku": "10341-4",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "DY4511",
+    "sku": "DY4511",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1505,
+    "sku": 1505,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6621,
+    "sku": 6621,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4086,
+    "sku": 4086,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "6716 - X-Small",
+    "sku": "6716 - X-Small",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6718,
+    "sku": 6718,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6719,
+    "sku": 6719,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6717,
+    "sku": 6717,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4313_Case",
+    "sku": "4313_Case",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512- LOCAL",
+    "sku": "4512- LOCAL",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4512,
+    "sku": 4512,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4511-NY",
+    "sku": "4511-NY",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "D4511",
+    "sku": "D4511",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6721,
+    "sku": 6721,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1317,
+    "sku": 1317,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512CS",
+    "sku": "4512CS",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4893,
+    "sku": 4893,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4313_Case- LOCAL",
+    "sku": "4313_Case- LOCAL",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512CS- LOCAL",
+    "sku": "4512CS- LOCAL",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 5610,
+    "sku": 5610,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6505,
+    "sku": 6505,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10208,
+    "sku": 10208,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6722,
+    "sku": 6722,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1195,
+    "sku": 1195,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10209,
+    "sku": 10209,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4891,
+    "sku": 4891,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6612,
+    "sku": 6612,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1201-1PK",
+    "sku": "1201-1PK",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4895,
+    "sku": 4895,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6622,
+    "sku": 6622,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6825,
+    "sku": 6825,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6815,
+    "sku": 6815,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4335-1",
+    "sku": "4335-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 8941,
+    "sku": 8941,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "32-52",
+    "sku": "32-52",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6625,
+    "sku": 6625,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 5611,
+    "sku": 5611,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1239,
+    "sku": 1239,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6530,
+    "sku": 6530,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10216,
+    "sku": 10216,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1202-1",
+    "sku": "1202-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2203,
+    "sku": 2203,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 3249,
+    "sku": 3249,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4312-4",
+    "sku": "4312-4",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1191,
+    "sku": 1191,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6624,
+    "sku": 6624,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10559,
+    "sku": 10559,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1192,
+    "sku": 1192,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512-24- LOCAL",
+    "sku": "4512-24- LOCAL",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4512-24",
+    "sku": "4512-24",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6724,
+    "sku": 6724,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 6723,
+    "sku": 6723,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3253-1- LOCAL",
+    "sku": "3253-1- LOCAL",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3253-1",
+    "sku": "3253-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "ZCBI-1000",
+    "sku": "ZCBI-1000",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "ZCBI-1000- LOCAL",
+    "sku": "ZCBI-1000- LOCAL",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4462-HB",
+    "sku": "4462-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4462-NY",
+    "sku": "4462-NY",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4464-NY",
+    "sku": "4464-NY",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2229C",
+    "sku": "2229C",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2235C",
+    "sku": "2235C",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2238C",
+    "sku": "2238C",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2234C",
+    "sku": "2234C",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4222-HB",
+    "sku": "4222-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4258-5-HB",
+    "sku": "4258-5-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4258-10-HB",
+    "sku": "4258-10-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4258-3-HB",
+    "sku": "4258-3-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "SM4311",
+    "sku": "SM4311",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2269-3",
+    "sku": "2269-3",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2262-3",
+    "sku": "2262-3",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "SM4313-1",
+    "sku": "SM4313-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "SM4313",
+    "sku": "SM4313",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2239-1",
+    "sku": "2239-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2235-1",
+    "sku": "2235-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2238-1",
+    "sku": "2238-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2222-1",
+    "sku": "2222-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "SM4311-1",
+    "sku": "SM4311-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2220-1",
+    "sku": "2220-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2221-1",
+    "sku": "2221-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2234-1",
+    "sku": "2234-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2224-1",
+    "sku": "2224-1",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3250-10-HB",
+    "sku": "3250-10-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3250-5-HB",
+    "sku": "3250-5-HB",
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4135,
+    "sku": 4135,
     "cost_price": 0,
     "brand": "Dynarex"
   },
   {
-    "Sku": "4460-1",
+    "sku": "4460-1",
     "cost_price": 1.72,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2219-1",
+    "sku": "2219-1",
     "cost_price": 2.1,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4314,
+    "sku": 4314,
     "cost_price": 3,
     "brand": "Dynarex"
   },
   {
-    "Sku": "2141-PK",
+    "sku": "2141-PK",
     "cost_price": 3.63,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4115,
+    "sku": 4115,
     "cost_price": 3.85,
     "brand": "Dynarex"
   },
   {
-    "Sku": "DDCV-200",
+    "sku": "DDCV-200",
     "cost_price": 5,
     "brand": "Dynarex"
   },
   {
-    "Sku": "1150-1",
+    "sku": "1150-1",
     "cost_price": 6.66,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4165,
+    "sku": 4165,
     "cost_price": 7,
     "brand": "Dynarex"
   },
   {
-    "Sku": "3250-1",
+    "sku": "3250-1",
     "cost_price": 9.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4131,
+    "sku": 4131,
     "cost_price": 10,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4130,
+    "sku": 4130,
     "cost_price": 10,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4132,
+    "sku": 4132,
     "cost_price": 10.1,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2263,
+    "sku": 2263,
     "cost_price": 15.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 2260,
+    "sku": 2260,
     "cost_price": 15.5,
     "brand": "Dynarex"
   },
   {
-    "Sku": 1308,
+    "sku": 1308,
     "cost_price": 18,
     "brand": "Dynarex"
   },
   {
-    "Sku": 8171,
+    "sku": 8171,
     "cost_price": 21,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4222,
+    "sku": 4222,
     "cost_price": 34,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4258,
+    "sku": 4258,
     "cost_price": 36,
     "brand": "Dynarex"
   },
   {
-    "Sku": 4336,
+    "sku": 4336,
     "cost_price": 56,
     "brand": "Dynarex"
   },
   {
-    "Sku": 10522,
+    "sku": 10522,
     "cost_price": 400,
     "brand": "Dynarex Corporation"
   },
   {
-    "Sku": "BE2500-Bx",
+    "sku": "BE2500-Bx",
     "cost_price": 0,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE201-Pk",
+    "sku": "BE201-Pk",
     "cost_price": 3.55,
     "brand": "EcoBee"
   },
   {
-    "Sku": "DD1118-Bx",
+    "sku": "DD1118-Bx",
     "cost_price": 5.9,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE306-Pk",
+    "sku": "BE306-Pk",
     "cost_price": 6.43,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE2530-Bx",
+    "sku": "BE2530-Bx",
     "cost_price": 7.7,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE1146-Bx",
+    "sku": "BE1146-Bx",
     "cost_price": 14.3,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE602RA-Bx",
+    "sku": "BE602RA-Bx",
     "cost_price": 19.48,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE601-Bx",
+    "sku": "BE601-Bx",
     "cost_price": 19.48,
     "brand": "EcoBee"
   },
   {
-    "Sku": "BE606SA-Bx",
+    "sku": "BE606SA-Bx",
     "cost_price": 22.12,
     "brand": "EcoBee"
   },
   {
-    "Sku": "364815-RX",
+    "sku": "364815-RX",
     "cost_price": 62,
     "brand": "Everready First Aid"
   },
   {
-    "Sku": 29081,
+    "sku": 29081,
     "cost_price": 0,
     "brand": "EXELINT International"
   },
   {
-    "Sku": 29083,
+    "sku": 29083,
     "cost_price": 0,
     "brand": "EXELINT International"
   },
   {
-    "Sku": "29508-1",
+    "sku": "29508-1",
     "cost_price": 0,
     "brand": "EXELINT International"
   },
   {
-    "Sku": "26751BX",
+    "sku": "26751BX",
     "cost_price": 0,
     "brand": "EXELINT International"
   },
   {
-    "Sku": "26742-1",
+    "sku": "26742-1",
     "cost_price": 41.1,
     "brand": "EXELINT International"
   },
   {
-    "Sku": 442500,
+    "sku": 442500,
     "cost_price": 80.79,
     "brand": "GC Corporation"
   },
   {
-    "Sku": 422614,
+    "sku": 422614,
     "cost_price": 132,
     "brand": "GC Corporation"
   },
   {
-    "Sku": "102505036-hb",
+    "sku": "102505036-hb",
     "cost_price": 0,
     "brand": "Generic"
   },
   {
-    "Sku": "640-776",
+    "sku": "640-776",
     "cost_price": 0,
     "brand": "Generic brand"
   },
   {
-    "Sku": "IC752",
+    "sku": "IC752",
     "cost_price": 0,
     "brand": "Generic brand"
   },
   {
-    "Sku": 99000065,
+    "sku": 99000065,
     "cost_price": 0,
     "brand": "Generic brand"
   },
   {
-    "Sku": "PCXRSPHB",
+    "sku": "PCXRSPHB",
     "cost_price": 0,
     "brand": "Generic brand"
   },
   {
-    "Sku": "BIBSBL",
+    "sku": "BIBSBL",
     "cost_price": 0,
     "brand": "Generic brand"
   },
   {
-    "Sku": 23000,
+    "sku": 23000,
     "cost_price": 41.33,
     "brand": "Georgia Pacific"
   },
   {
-    "Sku": 26301,
+    "sku": 26301,
     "cost_price": 47.81,
     "brand": "Georgia Pacific"
   },
   {
-    "Sku": 30240,
+    "sku": 30240,
     "cost_price": 0,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "12172m",
+    "sku": "12172m",
     "cost_price": 0,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "10120m",
+    "sku": "10120m",
     "cost_price": 9.64,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "1117tm",
+    "sku": "1117tm",
     "cost_price": 10.1,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "10105m",
+    "sku": "10105m",
     "cost_price": 10.38,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "10170m",
+    "sku": "10170m",
     "cost_price": 10.48,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "12170m",
+    "sku": "12170m",
     "cost_price": 10.48,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "10171m",
+    "sku": "10171m",
     "cost_price": 10.48,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 12116,
+    "sku": 12116,
     "cost_price": 11.66,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 13114,
+    "sku": 13114,
     "cost_price": 13.4,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 10145,
+    "sku": 10145,
     "cost_price": 13.69,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 30210,
+    "sku": 30210,
     "cost_price": 14.76,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 30200,
+    "sku": 30200,
     "cost_price": 15.29,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 30220,
+    "sku": 30220,
     "cost_price": 21.02,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": "20118s",
+    "sku": "20118s",
     "cost_price": 21.39,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 13115,
+    "sku": 13115,
     "cost_price": 27.49,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 30500,
+    "sku": 30500,
     "cost_price": 27.76,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 20111,
+    "sku": 20111,
     "cost_price": 36.46,
     "brand": "Gingi-Pak"
   },
   {
-    "Sku": 60000000000000,
+    "sku": 60000000000000,
     "cost_price": 36.41,
     "brand": "GlaxoSmithKline"
   },
   {
-    "Sku": "08434G",
+    "sku": "08434G",
     "cost_price": 42.57,
     "brand": "GlaxoSmithKline"
   },
   {
-    "Sku": "60000000135856 - 36 pack",
+    "sku": "60000000135856 - 36 pack",
     "cost_price": 42.57,
     "brand": "GlaxoSmithKline"
   },
   {
-    "Sku": 6214,
+    "sku": 6214,
     "cost_price": 81.49,
     "brand": "GlaxoSmithKline"
   },
   {
-    "Sku": 38470,
+    "sku": 38470,
     "cost_price": 81.66,
     "brand": "GlaxoSmithKline"
   },
   {
-    "Sku": "53894-1",
+    "sku": "53894-1",
     "cost_price": 0,
     "brand": "Global Supply Outlet"
   },
   {
-    "Sku": "7720-01",
+    "sku": "7720-01",
     "cost_price": 0.1,
     "brand": "GOJO"
   },
   {
-    "Sku": 2718288,
+    "sku": 2718288,
     "cost_price": 6.99,
     "brand": "GOJO"
   },
   {
-    "Sku": "9651-24",
+    "sku": "9651-24",
     "cost_price": 22.6,
     "brand": "GOJO"
   },
   {
-    "Sku": "7763-02",
+    "sku": "7763-02",
     "cost_price": 25.99,
     "brand": "GOJO"
   },
   {
-    "Sku": "7785-02",
+    "sku": "7785-02",
     "cost_price": 33.72,
     "brand": "GOJO"
   },
   {
-    "Sku": "7785-02-RX",
+    "sku": "7785-02-RX",
     "cost_price": 33.72,
     "brand": "GOJO"
   },
   {
-    "Sku": "9342-06",
+    "sku": "9342-06",
     "cost_price": 46.01,
     "brand": "GOJO"
   },
   {
-    "Sku": "9113-06",
+    "sku": "9113-06",
     "cost_price": 46.83,
     "brand": "GOJO"
   },
   {
-    "Sku": "7751-02",
+    "sku": "7751-02",
     "cost_price": 49.14,
     "brand": "GOJO"
   },
   {
-    "Sku": "4163-08",
+    "sku": "4163-08",
     "cost_price": 72.2,
     "brand": "GOJO"
   },
   {
-    "Sku": "9020-4M",
+    "sku": "9020-4M",
     "cost_price": 107.9,
     "brand": "GOJO"
   },
   {
-    "Sku": "9652-1",
+    "sku": "9652-1",
     "cost_price": 0,
     "brand": "GOJO"
   },
   {
-    "Sku": "7763-02-Rx",
+    "sku": "7763-02-Rx",
     "cost_price": 0,
     "brand": "GOJO"
   },
   {
-    "Sku": "7763-02-Utah",
+    "sku": "7763-02-Utah",
     "cost_price": 0,
     "brand": "GOJO"
   },
   {
-    "Sku": "Gojo-9606-24",
+    "sku": "Gojo-9606-24",
     "cost_price": 0,
     "brand": "GOJO"
   },
   {
-    "Sku": "7763-02-EC",
+    "sku": "7763-02-EC",
     "cost_price": 0,
     "brand": "GOJO"
   },
   {
-    "Sku": "5362-02 case",
+    "sku": "5362-02 case",
     "cost_price": 0,
     "brand": "Gojo"
   },
   {
-    "Sku": "9020-4M-300",
+    "sku": "9020-4M-300",
     "cost_price": 0,
     "brand": "Gojo"
   },
   {
-    "Sku": "9684-04",
+    "sku": "9684-04",
     "cost_price": 0,
     "brand": "Gojo"
   },
   {
-    "Sku": "9606-24",
+    "sku": "9606-24",
     "cost_price": 0,
     "brand": "Gojo"
   },
   {
-    "Sku": "3659-1",
+    "sku": "3659-1",
     "cost_price": 2.43,
     "brand": "Gojo"
   },
   {
-    "Sku": "9022-10",
+    "sku": "9022-10",
     "cost_price": 3.22,
     "brand": "Gojo"
   },
   {
-    "Sku": 826758,
+    "sku": 826758,
     "cost_price": 9.3,
     "brand": "Gojo"
   },
   {
-    "Sku": 892014,
+    "sku": 892014,
     "cost_price": 9.52,
     "brand": "Gojo"
   },
   {
-    "Sku": "1303-01",
+    "sku": "1303-01",
     "cost_price": 19.41,
     "brand": "Gojo"
   },
   {
-    "Sku": "5053-02",
+    "sku": "5053-02",
     "cost_price": 25.6,
     "brand": "Gojo"
   },
   {
-    "Sku": "7763-01",
+    "sku": "7763-01",
     "cost_price": 26.8,
     "brand": "Gojo"
   },
   {
-    "Sku": "3659-12-CS",
+    "sku": "3659-12-CS",
     "cost_price": 30.11,
     "brand": "Gojo"
   },
   {
-    "Sku": 1859,
+    "sku": 1859,
     "cost_price": 40.34,
     "brand": "Gojo"
   },
   {
-    "Sku": "1905-02",
+    "sku": "1905-02",
     "cost_price": 40.35,
     "brand": "Gojo"
   },
   {
-    "Sku": "7753-02",
+    "sku": "7753-02",
     "cost_price": 46.8,
     "brand": "Gojo"
   },
   {
-    "Sku": "9636-12",
+    "sku": "9636-12",
     "cost_price": 55.86,
     "brand": "Gojo"
   },
   {
-    "Sku": "DD9606-24",
+    "sku": "DD9606-24",
     "cost_price": 20.9,
     "brand": "GOJO - Commercial"
   },
   {
-    "Sku": 43446,
+    "sku": 43446,
     "cost_price": 19,
     "brand": "Graham Medical"
   },
   {
-    "Sku": 43445,
+    "sku": 43445,
     "cost_price": 19.33,
     "brand": "Graham Medical"
   },
   {
-    "Sku": 43447,
+    "sku": 43447,
     "cost_price": 19.43,
     "brand": "Graham Medical"
   },
   {
-    "Sku": "KN95-PowecomDD",
+    "sku": "KN95-PowecomDD",
     "cost_price": 0,
     "brand": "Guangzhou Powecom Labor Insurance Supplies Co., LTD"
   },
   {
-    "Sku": "DD-GB2626-2019",
+    "sku": "DD-GB2626-2019",
     "cost_price": 1,
     "brand": "Guangzhou Powecom Labor Insurance Supplies Co., LTD"
   },
   {
-    "Sku": "600PYC-6",
+    "sku": "600PYC-6",
     "cost_price": 0,
     "brand": "GUM"
   },
   {
-    "Sku": "872PA",
+    "sku": "872PA",
     "cost_price": 0,
     "brand": "GUM"
   },
   {
-    "Sku": 30316023325,
+    "sku": 30316023325,
     "cost_price": 3.85,
     "brand": "Haleon"
   },
   {
-    "Sku": 99284,
+    "sku": 99284,
     "cost_price": 69,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 44794,
+    "sku": 44794,
     "cost_price": 0,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "52819-1",
+    "sku": "52819-1",
     "cost_price": 0,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "00152-Bx",
+    "sku": "00152-Bx",
     "cost_price": 5.08,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "47107-1",
+    "sku": "47107-1",
     "cost_price": 8.88,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "52816-1",
+    "sku": "52816-1",
     "cost_price": 8.89,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "52820-1",
+    "sku": "52820-1",
     "cost_price": 8.89,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "52817-1",
+    "sku": "52817-1",
     "cost_price": 8.89,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 43933,
+    "sku": 43933,
     "cost_price": 9.89,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 55082,
+    "sku": 55082,
     "cost_price": 15.28,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 44793,
+    "sku": 44793,
     "cost_price": 16.95,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "43932-1",
+    "sku": "43932-1",
     "cost_price": 19.78,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "43934-1",
+    "sku": "43934-1",
     "cost_price": 19.78,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 10712,
+    "sku": 10712,
     "cost_price": 27.21,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 1804,
+    "sku": 1804,
     "cost_price": 45.97,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 1510,
+    "sku": 1510,
     "cost_price": 49.72,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "DD46827",
+    "sku": "DD46827",
     "cost_price": 50.75,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 1700,
+    "sku": 1700,
     "cost_price": 51.39,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 10715,
+    "sku": 10715,
     "cost_price": 56.04,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 7805,
+    "sku": 7805,
     "cost_price": 70.31,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 4460,
+    "sku": 4460,
     "cost_price": 78.73,
     "brand": "Halyard Health"
   },
   {
-    "Sku": 10720,
+    "sku": 10720,
     "cost_price": 95.54,
     "brand": "Halyard Health"
   },
   {
-    "Sku": "31759-1",
+    "sku": "31759-1",
     "cost_price": 0,
     "brand": "Healthlink"
   },
   {
-    "Sku": 15949,
+    "sku": 15949,
     "cost_price": 32.54,
     "brand": "Healthlink"
   },
   {
-    "Sku": "999-IC920- LOCAL",
+    "sku": "999-IC920- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "999-IC920",
+    "sku": "999-IC920",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM150S",
+    "sku": "SM150S",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM151S",
+    "sku": "SM151S",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM16-552",
+    "sku": "SM16-552",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-306-MA",
+    "sku": "10-306-MA",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-351",
+    "sku": "10-351",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-412-S-HB",
+    "sku": "10-412-S-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-603 HB",
+    "sku": "11-603 HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-619-hb",
+    "sku": "11-619-hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-630-E-HB",
+    "sku": "11-630-E-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-689-HB-HB",
+    "sku": "11-689-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1962- HB",
+    "sku": "12-1962- HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "15-SG13-14",
+    "sku": "15-SG13-14",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2602s-HB",
+    "sku": "16-2602s-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2802 HB",
+    "sku": "16-2802 HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "19-004-80DD",
+    "sku": "19-004-80DD",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "20-E303",
+    "sku": "20-E303",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "20-RBL30-HB",
+    "sku": "20-RBL30-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "324-324",
+    "sku": "324-324",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "345-987",
+    "sku": "345-987",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "500-425",
+    "sku": "500-425",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "640-811",
+    "sku": "640-811",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "675-411S",
+    "sku": "675-411S",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "675-412S",
+    "sku": "675-412S",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "680-105",
+    "sku": "680-105",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DDVinylM",
+    "sku": "DDVinylM",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC910",
+    "sku": "IC910",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "P51-HB",
+    "sku": "P51-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-340-120",
+    "sku": "SM-340-120",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-413-HB",
+    "sku": "10-413-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "5116-L-HB-1",
+    "sku": "5116-L-HB-1",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-353-HB",
+    "sku": "10-353-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "346-3457",
+    "sku": "346-3457",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "7102-HB",
+    "sku": "7102-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-412-HB",
+    "sku": "10-412-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-501-hb",
+    "sku": "10-501-hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-503-hb",
+    "sku": "10-503-hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-504-hb",
+    "sku": "10-504-hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-506-HB-1",
+    "sku": "10-506-HB-1",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "1155-HB",
+    "sku": "1155-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-603-s",
+    "sku": "11-603-s",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-610-hb",
+    "sku": "11-610-hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-623-hb",
+    "sku": "11-623-hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-686-HB",
+    "sku": "11-686-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-765",
+    "sku": "11-765",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1909-HB",
+    "sku": "12-1909-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1909-S-HB",
+    "sku": "12-1909-S-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-930-HB",
+    "sku": "12-930-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "1308-HB",
+    "sku": "1308-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1110",
+    "sku": "13-1110",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1113 HB",
+    "sku": "13-1113 HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 1397,
+    "sku": 1397,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 1400,
+    "sku": 1400,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "15-PW-HBsm",
+    "sku": "15-PW-HBsm",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "15-SU15-33/4-HB",
+    "sku": "15-SU15-33/4-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2521-House brand",
+    "sku": "16-2521-House brand",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2522-HB-HB",
+    "sku": "16-2522-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2603-HB",
+    "sku": "16-2603-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2621-HB",
+    "sku": "16-2621-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "18-50094698-HB",
+    "sku": "18-50094698-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 2228,
+    "sku": 2228,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 2261,
+    "sku": 2261,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "2435-245",
+    "sku": "2435-245",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 2731004,
+    "sku": 2731004,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 2731005,
+    "sku": 2731005,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "2731006Q-HB",
+    "sku": "2731006Q-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "345-549",
+    "sku": "345-549",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "380-765",
+    "sku": "380-765",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "403201-6-HB",
+    "sku": "403201-6-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "435-345",
+    "sku": "435-345",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "435-483",
+    "sku": "435-483",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "4462-1-HB",
+    "sku": "4462-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "4465-1-HB",
+    "sku": "4465-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "452-435",
+    "sku": "452-435",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "500-180",
+    "sku": "500-180",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "525-225",
+    "sku": "525-225",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "555-045",
+    "sku": "555-045",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "555-302",
+    "sku": "555-302",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "635-764",
+    "sku": "635-764",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "640-108",
+    "sku": "640-108",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "665-947",
+    "sku": "665-947",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "670-150",
+    "sku": "670-150",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "670-725",
+    "sku": "670-725",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "675-408",
+    "sku": "675-408",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "675-446",
+    "sku": "675-446",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "87-3994",
+    "sku": "87-3994",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "876-876",
+    "sku": "876-876",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "898-983",
+    "sku": "898-983",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "AN301",
+    "sku": "AN301",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "AN303",
+    "sku": "AN303",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "AN305",
+    "sku": "AN305",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD1006015",
+    "sku": "DD1006015",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD-101-1201",
+    "sku": "DD-101-1201",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD20-NHHB-HB",
+    "sku": "DD20-NHHB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD5815",
+    "sku": "DD5815",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD670-151",
+    "sku": "DD670-151",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DDHB-201",
+    "sku": "DDHB-201",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DDHB-202",
+    "sku": "DDHB-202",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DDIN19-4000",
+    "sku": "DDIN19-4000",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "HB-203dd",
+    "sku": "HB-203dd",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IM303",
+    "sku": "IM303",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IN11-204",
+    "sku": "IN11-204",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Â MAC-6504-10 pack",
+    "sku": "Â MAC-6504-10 pack",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "mac-barnhart5-6",
+    "sku": "mac-barnhart5-6",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MAC-s6s7",
+    "sku": "MAC-s6s7",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MC-10-1222-HB",
+    "sku": "MC-10-1222-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MF300M",
+    "sku": "MF300M",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NITBLUES-250",
+    "sku": "NITBLUES-250",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "P00558-HB",
+    "sku": "P00558-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "P43-HB",
+    "sku": "P43-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Q-1229-HB",
+    "sku": "Q-1229-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM04-404",
+    "sku": "SM04-404",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM11-612",
+    "sku": "SM11-612",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-15-S204SD",
+    "sku": "SM-15-S204SD",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM32-007",
+    "sku": "SM32-007",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM71-695",
+    "sku": "SM71-695",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SMSF150",
+    "sku": "SMSF150",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SMSF151",
+    "sku": "SMSF151",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-SF88R",
+    "sku": "SM-SF88R",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-VPFGL",
+    "sku": "SM-VPFGL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-VPFGS",
+    "sku": "SM-VPFGS",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-VPFGXL",
+    "sku": "SM-VPFGXL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SP-001",
+    "sku": "SP-001",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SP-GW02-HB",
+    "sku": "SP-GW02-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SU502",
+    "sku": "SU502",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "8118-XL-HB",
+    "sku": "8118-XL-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-562-HB",
+    "sku": "12-562-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "P0431-3-HB",
+    "sku": "P0431-3-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "18-50094952-HB",
+    "sku": "18-50094952-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "18-50094954-HB",
+    "sku": "18-50094954-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "18-50094955-HB",
+    "sku": "18-50094955-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IM301CHM",
+    "sku": "IM301CHM",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IM301S",
+    "sku": "IM301S",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "PR1043x10",
+    "sku": "PR1043x10",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-507-H-HB-HB",
+    "sku": "10-507-H-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-511P-HB",
+    "sku": "10-511P-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "2101052-HB",
+    "sku": "2101052-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1913-P-HB",
+    "sku": "12-1913-P-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2651-HB",
+    "sku": "16-2651-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2655-HB",
+    "sku": "16-2655-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "99184-1-HB",
+    "sku": "99184-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-610P-HB",
+    "sku": "11-610P-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-470s-HB-HB",
+    "sku": "10-470s-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-314s-HB",
+    "sku": "10-314s-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "5116-S-HB-1",
+    "sku": "5116-S-HB-1",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "08-304010-HB",
+    "sku": "08-304010-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 101200,
+    "sku": 101200,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 101202,
+    "sku": 101202,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 101203,
+    "sku": 101203,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 101204,
+    "sku": 101204,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 101205,
+    "sku": 101205,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-500005-HB",
+    "sku": "12-500005-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "19-9035-HB",
+    "sku": "19-9035-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 35053,
+    "sku": 35053,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "3WAN",
+    "sku": "3WAN",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "3W-AST",
+    "sku": "3W-AST",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "3WFU",
+    "sku": "3WFU",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "3WQU",
+    "sku": "3WQU",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "3WSLPO",
+    "sku": "3WSLPO",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 433,
+    "sku": 433,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50937,
+    "sku": 50937,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50938,
+    "sku": 50938,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50939,
+    "sku": 50939,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50940,
+    "sku": 50940,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50948,
+    "sku": 50948,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50949,
+    "sku": 50949,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50950,
+    "sku": 50950,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 50954,
+    "sku": 50954,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "72-2385D",
+    "sku": "72-2385D",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "72-7885D",
+    "sku": "72-7885D",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "801L-018C",
+    "sku": "801L-018C",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "856.016SC",
+    "sku": "856.016SC",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 9000401,
+    "sku": 9000401,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 9000402,
+    "sku": 9000402,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 9000405,
+    "sku": 9000405,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "999-IN355",
+    "sku": "999-IN355",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BF1000",
+    "sku": "BF1000",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BF2000",
+    "sku": "BF2000",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Blue medium lab coat",
+    "sku": "Blue medium lab coat",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "CAPD",
+    "sku": "CAPD",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "CD01B",
+    "sku": "CD01B",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "CD02W",
+    "sku": "CD02W",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DB09ASS",
+    "sku": "DB09ASS",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DB-500",
+    "sku": "DB-500",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI653",
+    "sku": "DI653",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI722",
+    "sku": "DI722",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI723",
+    "sku": "DI723",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI724",
+    "sku": "DI724",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EV2200",
+    "sku": "EV2200",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EV2300",
+    "sku": "EV2300",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EV2350",
+    "sku": "EV2350",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EV5501",
+    "sku": "EV5501",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EV5503",
+    "sku": "EV5503",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "FT-M",
+    "sku": "FT-M",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "HB-ISO-Y",
+    "sku": "HB-ISO-Y",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC169",
+    "sku": "IC169",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC741",
+    "sku": "IC741",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC742",
+    "sku": "IC742",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC751",
+    "sku": "IC751",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IG-100",
+    "sku": "IG-100",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IM889",
+    "sku": "IM889",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MA335",
+    "sku": "MA335",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MI400",
+    "sku": "MI400",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MI410",
+    "sku": "MI410",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "PR204",
+    "sku": "PR204",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "PR401",
+    "sku": "PR401",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "PR402",
+    "sku": "PR402",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "UC-EP04",
+    "sku": "UC-EP04",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "UC-EP05",
+    "sku": "UC-EP05",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "UC-PW11",
+    "sku": "UC-PW11",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "XCP ENDO",
+    "sku": "XCP ENDO",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "XR200",
+    "sku": "XR200",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaLo.016x.022",
+    "sku": "NaLo.016x.022",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Pink",
+    "sku": "Pink",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "070-230",
+    "sku": "070-230",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "08-001-05",
+    "sku": "08-001-05",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "090-140",
+    "sku": "090-140",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "090-230",
+    "sku": "090-230",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 1081,
+    "sku": 1081,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 1083,
+    "sku": 1083,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "135-260",
+    "sku": "135-260",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "19-008-04",
+    "sku": "19-008-04",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "1A5103",
+    "sku": "1A5103",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "225X4SP",
+    "sku": "225X4SP",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "247-501",
+    "sku": "247-501",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "260-380",
+    "sku": "260-380",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "300-460",
+    "sku": "300-460",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "48-00067",
+    "sku": "48-00067",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "48-00071",
+    "sku": "48-00071",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 9003399,
+    "sku": 9003399,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "999-IC30",
+    "sku": "999-IC30",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "999-PR700",
+    "sku": "999-PR700",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "AVA-1091",
+    "sku": "AVA-1091",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BA01B",
+    "sku": "BA01B",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSAQ",
+    "sku": "BIBSAQ",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSDR",
+    "sku": "BIBSDR",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSGR",
+    "sku": "BIBSGR",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSLV",
+    "sku": "BIBSLV",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSP",
+    "sku": "BIBSP",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSP3",
+    "sku": "BIBSP3",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSPK",
+    "sku": "BIBSPK",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSSG",
+    "sku": "BIBSSG",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSW",
+    "sku": "BIBSW",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BIBSYEL",
+    "sku": "BIBSYEL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Black",
+    "sku": "Black",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Clear",
+    "sku": "Clear",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DPAH-144",
+    "sku": "DPAH-144",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EV402",
+    "sku": "EV402",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "HB-310POUCH",
+    "sku": "HB-310POUCH",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC181",
+    "sku": "IC181",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC182",
+    "sku": "IC182",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC905",
+    "sku": "IC905",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC943",
+    "sku": "IC943",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC945",
+    "sku": "IC945",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KFSS2520",
+    "sku": "KFSS2520",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KFSS258",
+    "sku": "KFSS258",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MA01F",
+    "sku": "MA01F",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MA01R",
+    "sku": "MA01R",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MA01R4",
+    "sku": "MA01R4",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MA-101",
+    "sku": "MA-101",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MA-102",
+    "sku": "MA-102",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MAT-03",
+    "sku": "MAT-03",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaLo.016",
+    "sku": "NaLo.016",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaLo.017x.025",
+    "sku": "NaLo.017x.025",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaLo.018",
+    "sku": "NaLo.018",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaUp.012",
+    "sku": "NaUp.012",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaUp.014",
+    "sku": "NaUp.014",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaUp.016",
+    "sku": "NaUp.016",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "NaUp.016x.022",
+    "sku": "NaUp.016x.022",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "SqUp.016x.022",
+    "sku": "SqUp.016x.022",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "UMA-9011S",
+    "sku": "UMA-9011S",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "UMA-9012F",
+    "sku": "UMA-9012F",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 151332,
+    "sku": 151332,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "45-0041",
+    "sku": "45-0041",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 5006,
+    "sku": 5006,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 5188,
+    "sku": 5188,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 9003396,
+    "sku": 9003396,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 9003398,
+    "sku": 9003398,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "A5193",
+    "sku": "A5193",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI802",
+    "sku": "DI802",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI804",
+    "sku": "DI804",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DI806",
+    "sku": "DI806",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "EN-PR2",
+    "sku": "EN-PR2",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IBT800-100",
+    "sku": "IBT800-100",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC760",
+    "sku": "IC760",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2106",
+    "sku": "KF-2106",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2108",
+    "sku": "KF-2108",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2110",
+    "sku": "KF-2110",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2115",
+    "sku": "KF-2115",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2120",
+    "sku": "KF-2120",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2506",
+    "sku": "KF-2506",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2508",
+    "sku": "KF-2508",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2510",
+    "sku": "KF-2510",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2515",
+    "sku": "KF-2515",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-251540",
+    "sku": "KF-251540",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2520",
+    "sku": "KF-2520",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2525",
+    "sku": "KF-2525",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-2530",
+    "sku": "KF-2530",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-254580",
+    "sku": "KF-254580",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-3106",
+    "sku": "KF-3106",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-3108",
+    "sku": "KF-3108",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-3110",
+    "sku": "KF-3110",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-3115",
+    "sku": "KF-3115",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-311540",
+    "sku": "KF-311540",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-3120",
+    "sku": "KF-3120",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KF-3125",
+    "sku": "KF-3125",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "KFL-2515-40",
+    "sku": "KFL-2515-40",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "PPASF",
+    "sku": "PPASF",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "TC1200",
+    "sku": "TC1200",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "TC1206",
+    "sku": "TC1206",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IC210",
+    "sku": "IC210",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1253-HB",
+    "sku": "13-1253-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "A90126MC-HB",
+    "sku": "A90126MC-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "C6011-1-HB",
+    "sku": "C6011-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "A90143-L-1-HB",
+    "sku": "A90143-L-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "A9011-WW-1-HB",
+    "sku": "A9011-WW-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "A9015-HB",
+    "sku": "A9015-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "p5014-1-HB",
+    "sku": "p5014-1-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1951-HB",
+    "sku": "12-1951-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1952-HB",
+    "sku": "12-1952-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1203-P-HB",
+    "sku": "13-1203-P-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1401-HB",
+    "sku": "13-1401-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2655-HB-HB",
+    "sku": "16-2655-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "OS-1000-HB",
+    "sku": "OS-1000-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "A9011-CB-1-HB-HB",
+    "sku": "A9011-CB-1-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-1504-10-HB",
+    "sku": "10-1504-10-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1361-HB",
+    "sku": "13-1361-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-630-HB",
+    "sku": "11-630-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1008-HB",
+    "sku": "13-1008-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MIR04-SS-HB",
+    "sku": "MIR04-SS-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-372-Hb",
+    "sku": "10-372-Hb",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "1A2705",
+    "sku": "1A2705",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "IM770",
+    "sku": "IM770",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": 5014,
+    "sku": 5014,
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1112s-HB",
+    "sku": "13-1112s-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1112s-HB-HB",
+    "sku": "13-1112s-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-612-HB",
+    "sku": "11-612-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2614-HB-HB",
+    "sku": "16-2614-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-711-HB-HB",
+    "sku": "11-711-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-691-HB",
+    "sku": "11-691-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-462-HB",
+    "sku": "10-462-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "MC-10-4115-HB",
+    "sku": "MC-10-4115-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "11-610P-HB-HB",
+    "sku": "11-610P-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "555-165",
+    "sku": "555-165",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "12-803-H-HB",
+    "sku": "12-803-H-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1253-HB-HB",
+    "sku": "13-1253-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-308-HB-HB",
+    "sku": "10-308-HB-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10-505-HB",
+    "sku": "10-505-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1015-A-HB",
+    "sku": "13-1015-A-HB",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "4116-XS-HB-1",
+    "sku": "4116-XS-HB-1",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "4116-XS-HB-HB-1",
+    "sku": "4116-XS-HB-HB-1",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "65-675",
+    "sku": "65-675",
     "cost_price": 0.8,
     "brand": "House brand"
   },
   {
-    "Sku": "Q48060-HB",
+    "sku": "Q48060-HB",
     "cost_price": 0.83,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1355-HB",
+    "sku": "13-1355-HB",
     "cost_price": 1,
     "brand": "House brand"
   },
   {
-    "Sku": "11-699-HB",
+    "sku": "11-699-HB",
     "cost_price": 1,
     "brand": "House brand"
   },
   {
-    "Sku": "11-696-HB",
+    "sku": "11-696-HB",
     "cost_price": 1,
     "brand": "House brand"
   },
   {
-    "Sku": "13-1154-HB",
+    "sku": "13-1154-HB",
     "cost_price": 1,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1911-P-HB",
+    "sku": "12-1911-P-HB",
     "cost_price": 1.2,
     "brand": "House brand"
   },
   {
-    "Sku": "A9020G-1-HB",
+    "sku": "A9020G-1-HB",
     "cost_price": 1.25,
     "brand": "House brand"
   },
   {
-    "Sku": "Mac20-6r HB",
+    "sku": "Mac20-6r HB",
     "cost_price": 1.45,
     "brand": "House brand"
   },
   {
-    "Sku": "Mac20-7r HB",
+    "sku": "Mac20-7r HB",
     "cost_price": 1.45,
     "brand": "House brand"
   },
   {
-    "Sku": "40-306",
+    "sku": "40-306",
     "cost_price": 1.45,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2515",
+    "sku": "16-2515",
     "cost_price": 1.5,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2515-HB",
+    "sku": "16-2515-HB",
     "cost_price": 1.5,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2522-HB",
+    "sku": "16-2522-HB",
     "cost_price": 1.5,
     "brand": "House brand"
   },
   {
-    "Sku": "10-4115C-HB",
+    "sku": "10-4115C-HB",
     "cost_price": 1.85,
     "brand": "House brand"
   },
   {
-    "Sku": "STP-7002-B-1-HB",
+    "sku": "STP-7002-B-1-HB",
     "cost_price": 1.95,
     "brand": "House brand"
   },
   {
-    "Sku": "11-603-SD-HB",
+    "sku": "11-603-SD-HB",
     "cost_price": 2,
     "brand": "House brand"
   },
   {
-    "Sku": "11-631-HB",
+    "sku": "11-631-HB",
     "cost_price": 2,
     "brand": "House brand"
   },
   {
-    "Sku": "11-631-HB-HB",
+    "sku": "11-631-HB-HB",
     "cost_price": 2,
     "brand": "House brand"
   },
   {
-    "Sku": "10-512-B-HB",
+    "sku": "10-512-B-HB",
     "cost_price": 2,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1930-HB",
+    "sku": "12-1930-HB",
     "cost_price": 2,
     "brand": "House brand"
   },
   {
-    "Sku": "10-512-B-HB-HB",
+    "sku": "10-512-B-HB-HB",
     "cost_price": 2,
     "brand": "House brand"
   },
   {
-    "Sku": "10-4112-P-HB",
+    "sku": "10-4112-P-HB",
     "cost_price": 2.1,
     "brand": "House brand"
   },
   {
-    "Sku": "A9011-CB-1-HB",
+    "sku": "A9011-CB-1-HB",
     "cost_price": 2.1,
     "brand": "House brand"
   },
   {
-    "Sku": "A9011-WW-1-HB-HB",
+    "sku": "A9011-WW-1-HB-HB",
     "cost_price": 2.1,
     "brand": "House brand"
   },
   {
-    "Sku": "10-504-HB-HB",
+    "sku": "10-504-HB-HB",
     "cost_price": 2.2,
     "brand": "House brand"
   },
   {
-    "Sku": "10-372-HB-HB",
+    "sku": "10-372-HB-HB",
     "cost_price": 2.2,
     "brand": "House brand"
   },
   {
-    "Sku": "P50-HB",
+    "sku": "P50-HB",
     "cost_price": 2.45,
     "brand": "House brand"
   },
   {
-    "Sku": "435-4526",
+    "sku": "435-4526",
     "cost_price": 2.5,
     "brand": "House brand"
   },
   {
-    "Sku": "P44-HB",
+    "sku": "P44-HB",
     "cost_price": 2.5,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2613-HB",
+    "sku": "16-2613-HB",
     "cost_price": 2.5,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2614-HB",
+    "sku": "16-2614-HB",
     "cost_price": 2.5,
     "brand": "House brand"
   },
   {
-    "Sku": 2731001,
+    "sku": 2731001,
     "cost_price": 2.55,
     "brand": "House brand"
   },
   {
-    "Sku": "P5010-1-HB",
+    "sku": "P5010-1-HB",
     "cost_price": 2.63,
     "brand": "House brand"
   },
   {
-    "Sku": "12-2101-HB",
+    "sku": "12-2101-HB",
     "cost_price": 2.8,
     "brand": "House brand"
   },
   {
-    "Sku": "12-2101-HB-HB",
+    "sku": "12-2101-HB-HB",
     "cost_price": 2.8,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2651-HB-HB",
+    "sku": "16-2651-HB-HB",
     "cost_price": 2.8,
     "brand": "House brand"
   },
   {
-    "Sku": "STP-7004-D-1-HB",
+    "sku": "STP-7004-D-1-HB",
     "cost_price": 2.83,
     "brand": "House brand"
   },
   {
-    "Sku": "16-2510-E-HB",
+    "sku": "16-2510-E-HB",
     "cost_price": 2.85,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-1A2704",
+    "sku": "SM-1A2704",
     "cost_price": 3,
     "brand": "House brand"
   },
   {
-    "Sku": "10-531-H-HB",
+    "sku": "10-531-H-HB",
     "cost_price": 3,
     "brand": "House brand"
   },
   {
-    "Sku": "15-SH5-33",
+    "sku": "15-SH5-33",
     "cost_price": 3,
     "brand": "House brand"
   },
   {
-    "Sku": "P907032-1",
+    "sku": "P907032-1",
     "cost_price": 3.05,
     "brand": "House brand"
   },
   {
-    "Sku": "12-933-HB",
+    "sku": "12-933-HB",
     "cost_price": 3.25,
     "brand": "House brand"
   },
   {
-    "Sku": "12-932-HB",
+    "sku": "12-932-HB",
     "cost_price": 3.3,
     "brand": "House brand"
   },
   {
-    "Sku": "STP-7001-A-1-HB",
+    "sku": "STP-7001-A-1-HB",
     "cost_price": 3.4,
     "brand": "House brand"
   },
   {
-    "Sku": "MC-10-5212-HB",
+    "sku": "MC-10-5212-HB",
     "cost_price": 3.66,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1910-HB",
+    "sku": "12-1910-HB",
     "cost_price": 4,
     "brand": "House brand"
   },
   {
-    "Sku": "MIR05-CS-HB",
+    "sku": "MIR05-CS-HB",
     "cost_price": 4,
     "brand": "House brand"
   },
   {
-    "Sku": "HL65822HB",
+    "sku": "HL65822HB",
     "cost_price": 4.25,
     "brand": "House brand"
   },
   {
-    "Sku": "7799-HB",
+    "sku": "7799-HB",
     "cost_price": 4.29,
     "brand": "House brand"
   },
   {
-    "Sku": "12178-2-HB-HB",
+    "sku": "12178-2-HB-HB",
     "cost_price": 4.54,
     "brand": "House brand"
   },
   {
-    "Sku": "12178-2-HB",
+    "sku": "12178-2-HB",
     "cost_price": 4.54,
     "brand": "House brand"
   },
   {
-    "Sku": "P5016XL-Bx",
+    "sku": "P5016XL-Bx",
     "cost_price": 4.58,
     "brand": "House brand"
   },
   {
-    "Sku": 779777,
+    "sku": 779777,
     "cost_price": 5.06,
     "brand": "House brand"
   },
   {
-    "Sku": 326207,
+    "sku": 326207,
     "cost_price": 5.79,
     "brand": "House brand"
   },
   {
-    "Sku": "10-1503-10-HB",
+    "sku": "10-1503-10-HB",
     "cost_price": 5.95,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1752 HB",
+    "sku": "12-1752 HB",
     "cost_price": 6,
     "brand": "House brand"
   },
   {
-    "Sku": "SM05-130",
+    "sku": "SM05-130",
     "cost_price": 6,
     "brand": "House brand"
   },
   {
-    "Sku": "29-3403-HB",
+    "sku": "29-3403-HB",
     "cost_price": 6,
     "brand": "House brand"
   },
   {
-    "Sku": "5F45CX26-HB",
+    "sku": "5F45CX26-HB",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "5G45CX16-HB",
+    "sku": "5G45CX16-HB",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "5F45CX20-HB",
+    "sku": "5F45CX20-HB",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1102-HB",
+    "sku": "12-1102-HB",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "11-1181-HB",
+    "sku": "11-1181-HB",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "P5014-1-HB-HB",
+    "sku": "P5014-1-HB-HB",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "A90125CW-HB",
+    "sku": "A90125CW-HB",
     "cost_price": 7.5,
     "brand": "House brand"
   },
   {
-    "Sku": "A90141-S-1-HB",
+    "sku": "A90141-S-1-HB",
     "cost_price": 7.5,
     "brand": "House brand"
   },
   {
-    "Sku": "A90143-L-1-HB-HB",
+    "sku": "A90143-L-1-HB-HB",
     "cost_price": 7.5,
     "brand": "House brand"
   },
   {
-    "Sku": "12-1744 HB",
+    "sku": "12-1744 HB",
     "cost_price": 7.6,
     "brand": "House brand"
   },
   {
-    "Sku": "C6013-1-HB",
+    "sku": "C6013-1-HB",
     "cost_price": 8.33,
     "brand": "House brand"
   },
   {
-    "Sku": "P5018-1-HB",
+    "sku": "P5018-1-HB",
     "cost_price": 9.1,
     "brand": "House brand"
   },
   {
-    "Sku": "LAB100S-SKY-1-HB",
+    "sku": "LAB100S-SKY-1-HB",
     "cost_price": 12,
     "brand": "House brand"
   },
   {
-    "Sku": 993444,
+    "sku": 993444,
     "cost_price": 16.37,
     "brand": "House brand"
   },
   {
-    "Sku": "CFW200SD-HB",
+    "sku": "CFW200SD-HB",
     "cost_price": 16.5,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-3118-CS",
+    "sku": "SM-3118-CS",
     "cost_price": 17,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-3117-CS",
+    "sku": "SM-3117-CS",
     "cost_price": 20,
     "brand": "House brand"
   },
   {
-    "Sku": 779785,
+    "sku": 779785,
     "cost_price": 22.4,
     "brand": "House brand"
   },
   {
-    "Sku": "9010-6-HB",
+    "sku": "9010-6-HB",
     "cost_price": 26.48,
     "brand": "House brand"
   },
   {
-    "Sku": "SM-VPFGM",
+    "sku": "SM-VPFGM",
     "cost_price": 27,
     "brand": "House brand"
   },
   {
-    "Sku": "18200-HB",
+    "sku": "18200-HB",
     "cost_price": 27.35,
     "brand": "House brand"
   },
   {
-    "Sku": "840PQA-HB",
+    "sku": "840PQA-HB",
     "cost_price": 29,
     "brand": "House brand"
   },
   {
-    "Sku": "4748-346",
+    "sku": "4748-346",
     "cost_price": 29.75,
     "brand": "House brand"
   },
   {
-    "Sku": "10-1502-50",
+    "sku": "10-1502-50",
     "cost_price": 34.25,
     "brand": "House brand"
   },
   {
-    "Sku": "QUIN-100030K-HB",
+    "sku": "QUIN-100030K-HB",
     "cost_price": 49.92,
     "brand": "House brand"
   },
   {
-    "Sku": "QUIN-10030K-HB",
+    "sku": "QUIN-10030K-HB",
     "cost_price": 49.92,
     "brand": "House brand"
   },
   {
-    "Sku": "QUIN-100025K-HB",
+    "sku": "QUIN-100025K-HB",
     "cost_price": 50,
     "brand": "House brand"
   },
   {
-    "Sku": 201,
+    "sku": 201,
     "cost_price": 0,
     "brand": "HR Pharmaceuticals"
   },
   {
-    "Sku": 207,
+    "sku": 207,
     "cost_price": 7.18,
     "brand": "HR Pharmaceuticals"
   },
   {
-    "Sku": "UI30SD10",
+    "sku": "UI30SD10",
     "cost_price": 172.53,
     "brand": "Hu-Friedy"
   },
   {
-    "Sku": "UI30SD1000",
+    "sku": "UI30SD1000",
     "cost_price": 172.53,
     "brand": "Hu-Friedy"
   },
   {
-    "Sku": "UI30SD100",
+    "sku": "UI30SD100",
     "cost_price": 172.53,
     "brand": "Hu-Friedy"
   },
   {
-    "Sku": "PulseM-1- LOCAL",
+    "sku": "PulseM-1- LOCAL",
     "cost_price": 5.94,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177202-1-LOCAL",
+    "sku": "177202-1-LOCAL",
     "cost_price": 5.94,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177202-1",
+    "sku": "177202-1",
     "cost_price": 6.4,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": 177302,
+    "sku": 177302,
     "cost_price": 58.58,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "Pulse-1- LOCAL",
+    "sku": "Pulse-1- LOCAL",
     "cost_price": 0,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "Pulse-1",
+    "sku": "Pulse-1",
     "cost_price": 0,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "PulseM-1",
+    "sku": "PulseM-1",
     "cost_price": 0,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177302- LOCAL",
+    "sku": "177302- LOCAL",
     "cost_price": 0,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "106200-Bx",
+    "sku": "106200-Bx",
     "cost_price": 0,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": 193102,
+    "sku": 193102,
     "cost_price": 0,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177052-1",
+    "sku": "177052-1",
     "cost_price": 5.94,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177302-1",
+    "sku": "177302-1",
     "cost_price": 5.94,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177102-1",
+    "sku": "177102-1",
     "cost_price": 5.94,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "108100-1",
+    "sku": "108100-1",
     "cost_price": 17.56,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": 177202,
+    "sku": 177202,
     "cost_price": 59.43,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "177102-",
+    "sku": "177102-",
     "cost_price": 59.43,
     "brand": "Innovative Healthcare"
   },
   {
-    "Sku": "NGPF_1046",
+    "sku": "NGPF_1046",
     "cost_price": 0,
     "brand": "Intco"
   },
   {
-    "Sku": "AdvanCare-L- LOCAL",
+    "sku": "AdvanCare-L- LOCAL",
     "cost_price": 0,
     "brand": "Intco"
   },
   {
-    "Sku": "AdvanCare-L",
+    "sku": "AdvanCare-L",
     "cost_price": 0,
     "brand": "Intco"
   },
   {
-    "Sku": "NGPF-7002",
+    "sku": "NGPF-7002",
     "cost_price": 0,
     "brand": "Intco"
   },
   {
-    "Sku": "NGPF1046",
+    "sku": "NGPF1046",
     "cost_price": 0,
     "brand": "Intco"
   },
   {
-    "Sku": "NGPF7002-1",
+    "sku": "NGPF7002-1",
     "cost_price": 0,
     "brand": "Intco Medical Technology"
   },
   {
-    "Sku": "NGPF-7002-CS",
+    "sku": "NGPF-7002-CS",
     "cost_price": 0,
     "brand": "Intco Medical Technology"
   },
   {
-    "Sku": "1690zz",
+    "sku": "1690zz",
     "cost_price": 262.97,
     "brand": "Integra Lifesciences"
   },
   {
-    "Sku": "65-28",
+    "sku": "65-28",
     "cost_price": 3.92,
     "brand": "Integra Miltex"
   },
   {
-    "Sku": "3-1001",
+    "sku": "3-1001",
     "cost_price": 10.85,
     "brand": "Integra Miltex"
   },
   {
-    "Sku": "4-100",
+    "sku": "4-100",
     "cost_price": 13.06,
     "brand": "Integra Miltex"
   },
   {
-    "Sku": "3-1000",
+    "sku": "3-1000",
     "cost_price": 13.08,
     "brand": "Integra Miltex"
   },
   {
-    "Sku": "3-720",
+    "sku": "3-720",
     "cost_price": 93,
     "brand": "Integra Miltex"
   },
   {
-    "Sku": "62-202",
+    "sku": "62-202",
     "cost_price": 109.42,
     "brand": "Integra Miltex"
   },
   {
-    "Sku": "BF90166B",
+    "sku": "BF90166B",
     "cost_price": 0,
     "brand": "iSmile Dental Products"
   },
   {
-    "Sku": "DTCA1-5",
+    "sku": "DTCA1-5",
     "cost_price": 46,
     "brand": "Itena"
   },
   {
-    "Sku": "CPTYS-A3",
+    "sku": "CPTYS-A3",
     "cost_price": 56.66,
     "brand": "Itena"
   },
   {
-    "Sku": "CPTYS-A1",
+    "sku": "CPTYS-A1",
     "cost_price": 56.66,
     "brand": "Itena"
   },
   {
-    "Sku": "1636G",
+    "sku": "1636G",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "634G",
+    "sku": "634G",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "636H",
+    "sku": "636H",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "MCP493G",
+    "sku": "MCP493G",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "MCP426H",
+    "sku": "MCP426H",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "682G",
+    "sku": "682G",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "523521600/ F4709141",
+    "sku": "523521600/ F4709141",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "MS0005",
+    "sku": "MS0005",
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 1974,
+    "sku": 1974,
     "cost_price": 0,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "523521700-1",
+    "sku": "523521700-1",
     "cost_price": 4.01,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "42834-1",
+    "sku": "42834-1",
     "cost_price": 6.88,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "42755-1",
+    "sku": "42755-1",
     "cost_price": 7.3,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 42795,
+    "sku": 42795,
     "cost_price": 8.68,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "42750-1",
+    "sku": "42750-1",
     "cost_price": 18.18,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "523521800/ F4709111",
+    "sku": "523521800/ F4709111",
     "cost_price": 24.4,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 42750,
+    "sku": 42750,
     "cost_price": 36.55,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 42755,
+    "sku": 42755,
     "cost_price": 38.99,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 42834,
+    "sku": 42834,
     "cost_price": 41.29,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 42855,
+    "sku": 42855,
     "cost_price": 43.83,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "685G",
+    "sku": "685G",
     "cost_price": 81.66,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 43455,
+    "sku": 43455,
     "cost_price": 109.83,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 1972,
+    "sku": 1972,
     "cost_price": 157.96,
     "brand": "J&J Dental"
   },
   {
-    "Sku": 1969,
+    "sku": 1969,
     "cost_price": 172.65,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "698G",
+    "sku": "698G",
     "cost_price": 190.84,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "1665G",
+    "sku": "1665G",
     "cost_price": 195.8,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "697G",
+    "sku": "697G",
     "cost_price": 216.58,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "J489G",
+    "sku": "J489G",
     "cost_price": 227.7,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "8698G",
+    "sku": "8698G",
     "cost_price": 232.34,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "8681G",
+    "sku": "8681G",
     "cost_price": 255.67,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "8682G",
+    "sku": "8682G",
     "cost_price": 263.02,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "669H",
+    "sku": "669H",
     "cost_price": 296.17,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "VR496",
+    "sku": "VR496",
     "cost_price": 303.6,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "VR493",
+    "sku": "VR493",
     "cost_price": 317.73,
     "brand": "J&J Dental"
   },
   {
-    "Sku": "27-1100",
+    "sku": "27-1100",
     "cost_price": 0,
     "brand": "J. Morita"
   },
   {
-    "Sku": "24-7503661",
+    "sku": "24-7503661",
     "cost_price": 0,
     "brand": "J. Morita"
   },
   {
-    "Sku": "16-5350522",
+    "sku": "16-5350522",
     "cost_price": 0,
     "brand": "J. Morita"
   },
   {
-    "Sku": "28-100100",
+    "sku": "28-100100",
     "cost_price": 1,
     "brand": "J. Morita"
   },
   {
-    "Sku": "20-25GL",
+    "sku": "20-25GL",
     "cost_price": 6.3,
     "brand": "J. Morita"
   },
   {
-    "Sku": "20-30GL",
+    "sku": "20-30GL",
     "cost_price": 6.3,
     "brand": "J. Morita"
   },
   {
-    "Sku": "20-27GS",
+    "sku": "20-27GS",
     "cost_price": 6.3,
     "brand": "J. Morita"
   },
   {
-    "Sku": "20-27GL",
+    "sku": "20-27GL",
     "cost_price": 6.36,
     "brand": "J. Morita"
   },
   {
-    "Sku": "20-30GS",
+    "sku": "20-30GS",
     "cost_price": 6.98,
     "brand": "J. Morita"
   },
   {
-    "Sku": "24-5010201",
+    "sku": "24-5010201",
     "cost_price": 23.18,
     "brand": "J. Morita"
   },
   {
-    "Sku": "21-300925",
+    "sku": "21-300925",
     "cost_price": 28.18,
     "brand": "J. Morita"
   },
   {
-    "Sku": "24-107043",
+    "sku": "24-107043",
     "cost_price": 41.69,
     "brand": "J. Morita"
   },
   {
-    "Sku": "27-500200",
+    "sku": "27-500200",
     "cost_price": 269,
     "brand": "J. Morita"
   },
   {
-    "Sku": "27-500150",
+    "sku": "27-500150",
     "cost_price": 281.48,
     "brand": "J. Morita"
   },
   {
-    "Sku": "27-500100",
+    "sku": "27-500100",
     "cost_price": 281.48,
     "brand": "J. Morita"
   },
   {
-    "Sku": "24-5357934",
+    "sku": "24-5357934",
     "cost_price": 665.24,
     "brand": "J. Morita"
   },
   {
-    "Sku": "24-5336392",
+    "sku": "24-5336392",
     "cost_price": 742.81,
     "brand": "J. Morita"
   },
   {
-    "Sku": "4731160-1",
+    "sku": "4731160-1",
     "cost_price": 0,
     "brand": "Kerr"
   },
   {
-    "Sku": 34614,
+    "sku": 34614,
     "cost_price": 0,
     "brand": "Kerr"
   },
   {
-    "Sku": 60256,
+    "sku": 60256,
     "cost_price": 0,
     "brand": "Kerr"
   },
   {
-    "Sku": "13-1100-12",
+    "sku": "13-1100-12",
     "cost_price": 54.022,
     "brand": "Kerr"
   },
   {
-    "Sku": 118,
+    "sku": 118,
     "cost_price": 7,
     "brand": "Keystone (EPR Industries)"
   },
   {
-    "Sku": 9602550,
+    "sku": 9602550,
     "cost_price": 0,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 9614830,
+    "sku": 9614830,
     "cost_price": 0,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "36-01022",
+    "sku": "36-01022",
     "cost_price": 2.6,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "03-01719",
+    "sku": "03-01719",
     "cost_price": 5.27,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 6120600,
+    "sku": 6120600,
     "cost_price": 7.05,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 16691,
+    "sku": 16691,
     "cost_price": 15.05,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-02277",
+    "sku": "24-02277",
     "cost_price": 16.94,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 1670091,
+    "sku": 1670091,
     "cost_price": 18.45,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-02677",
+    "sku": "24-02677",
     "cost_price": 18.65,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-02777",
+    "sku": "24-02777",
     "cost_price": 18.65,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-07577",
+    "sku": "24-07577",
     "cost_price": 18.94,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-03077",
+    "sku": "24-03077",
     "cost_price": 18.98,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-11777",
+    "sku": "24-11777",
     "cost_price": 19.08,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-15977",
+    "sku": "24-15977",
     "cost_price": 19.09,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-13077",
+    "sku": "24-13077",
     "cost_price": 30,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 1880240,
+    "sku": 1880240,
     "cost_price": 30.5,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": "24-13377",
+    "sku": "24-13377",
     "cost_price": 34.5,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 6120300,
+    "sku": 6120300,
     "cost_price": 42.6,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 921775,
+    "sku": 921775,
     "cost_price": 63.88,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 9614816,
+    "sku": 9614816,
     "cost_price": 76.7,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 921307,
+    "sku": 921307,
     "cost_price": 103.75,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4220003,
+    "sku": 4220003,
     "cost_price": 112.35,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4220001,
+    "sku": 4220001,
     "cost_price": 166.4,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4200004,
+    "sku": 4200004,
     "cost_price": 183.05,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4200005,
+    "sku": 4200005,
     "cost_price": 183.05,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4240010,
+    "sku": 4240010,
     "cost_price": 198.75,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4240009,
+    "sku": 4240009,
     "cost_price": 200.73,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 6120590,
+    "sku": 6120590,
     "cost_price": 246.95,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4220008,
+    "sku": 4220008,
     "cost_price": 255.85,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 4220005,
+    "sku": 4220005,
     "cost_price": 318.25,
     "brand": "Keystone Industries"
   },
   {
-    "Sku": 53358,
+    "sku": 53358,
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "53358-1",
+    "sku": "53358-1",
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "DD01701",
+    "sku": "DD01701",
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "DD13254",
+    "sku": "DD13254",
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "DD21195",
+    "sku": "DD21195",
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "DD21400",
+    "sku": "DD21400",
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "DD04442",
+    "sku": "DD04442",
     "cost_price": 0,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": 3076,
+    "sku": 3076,
     "cost_price": 26.11,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": 1890,
+    "sku": 1890,
     "cost_price": 41.45,
     "brand": "Kimberly-Clark"
   },
   {
-    "Sku": "01804-250- LOCAL",
+    "sku": "01804-250- LOCAL",
     "cost_price": 3.19,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-250",
+    "sku": "01804-250",
     "cost_price": 3.19,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-2- LOCAL",
+    "sku": "01804-2- LOCAL",
     "cost_price": 5.55,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-2",
+    "sku": "01804-2",
     "cost_price": 5.81,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 13607,
+    "sku": 13607,
     "cost_price": 29.16,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 67805,
+    "sku": 67805,
     "cost_price": 32.16,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 21400,
+    "sku": 21400,
     "cost_price": 47.99,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 4007,
+    "sku": 4007,
     "cost_price": 52.62,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 17713,
+    "sku": 17713,
     "cost_price": 56.34,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 1980,
+    "sku": 1980,
     "cost_price": 57.69,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 1500,
+    "sku": 1500,
     "cost_price": 60.25,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01980Scott",
+    "sku": "01980Scott",
     "cost_price": 61.97,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 21270,
+    "sku": 21270,
     "cost_price": 68.92,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 21606,
+    "sku": 21606,
     "cost_price": 84,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607Kim",
+    "sku": "13607Kim",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC 01980",
+    "sku": "KCC 01980",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "SCOTT13607",
+    "sku": "SCOTT13607",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01980-3CS- LOCAL",
+    "sku": "01980-3CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-3cs- LOCAL",
+    "sku": "67805-3cs- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "SCOTT13607- LOCAL",
+    "sku": "SCOTT13607- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01980-3CS",
+    "sku": "01980-3CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC 01980- LOCAL",
+    "sku": "KCC 01980- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-3CS",
+    "sku": "67805-3CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC01980-6- LOCAL",
+    "sku": "KCC01980-6- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC01980-6",
+    "sku": "KCC01980-6",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "5M-F7LB-FMH7",
+    "sku": "5M-F7LB-FMH7",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "5M-F7LB-FMH7- LOCAL",
+    "sku": "5M-F7LB-FMH7- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "21606-CS- LOCAL",
+    "sku": "21606-CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KIM13607",
+    "sku": "KIM13607",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713-60-A",
+    "sku": "17713-60-A",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607-3CS",
+    "sku": "13607-3CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713-60-D- LOCAL",
+    "sku": "17713-60-D- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713-60-A- LOCAL",
+    "sku": "17713-60-A- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KIM13607- LOCAL",
+    "sku": "KIM13607- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805- LOCAL",
+    "sku": "67805- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713- LOCAL",
+    "sku": "17713- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01500-16",
+    "sku": "01500-16",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01500-16- LOCAL",
+    "sku": "01500-16- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607-3CS- LOCAL",
+    "sku": "13607-3CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "03076-36- LOCAL",
+    "sku": "03076-36- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "03076-12- LOCAL",
+    "sku": "03076-12- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "03076-12",
+    "sku": "03076-12",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "21400- LOCAL",
+    "sku": "21400- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "21606- LOCAL",
+    "sku": "21606- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13254-25",
+    "sku": "13254-25",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "21270- LOCAL",
+    "sku": "21270- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "50606- Kleenex",
+    "sku": "50606- Kleenex",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "03076-36",
+    "sku": "03076-36",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713-60-D",
+    "sku": "17713-60-D",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "03076-12-1",
+    "sku": "03076-12-1",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "03076-12-1- LOCAL",
+    "sku": "03076-12-1- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "1500- LOCAL",
+    "sku": "1500- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01890-48- LOCAL",
+    "sku": "01890-48- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01890-48",
+    "sku": "01890-48",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "46651-2",
+    "sku": "46651-2",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607-3",
+    "sku": "13607-3",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607CS",
+    "sku": "13607CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC13607-",
+    "sku": "KCC13607-",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607-3- LOCAL",
+    "sku": "13607-3- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607CS- LOCAL",
+    "sku": "13607CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-1- LOCAL",
+    "sku": "67805-1- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-1",
+    "sku": "67805-1",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC13607-- LOCAL",
+    "sku": "KCC13607-- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-1",
+    "sku": "01804-1",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607-CS",
+    "sku": "13607-CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott03148- LOCAL",
+    "sku": "Scott03148- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-2CS",
+    "sku": "01804-2CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13607-CS- LOCAL",
+    "sku": "13607-CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "05102CT- LOCAL",
+    "sku": "05102CT- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-16",
+    "sku": "01804-16",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC07006",
+    "sku": "KCC07006",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-1- LOCAL",
+    "sku": "01804-1- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-12- LOCAL",
+    "sku": "67805-12- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "07805-3",
+    "sku": "07805-3",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-2cases- LOCAL",
+    "sku": "67805-2cases- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC13607-2",
+    "sku": "KCC13607-2",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 13648,
+    "sku": 13648,
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "DD693713- LOCAL",
+    "sku": "DD693713- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC 01980-M",
+    "sku": "KCC 01980-M",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-48- LOCAL",
+    "sku": "01804-48- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Sc13607- LOCAL",
+    "sku": "Sc13607- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "13648-Local",
+    "sku": "13648-Local",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "07805-12",
+    "sku": "07805-12",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott 03148- LOCAL",
+    "sku": "Scott 03148- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott 03148",
+    "sku": "Scott 03148",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "07805-3- LOCAL",
+    "sku": "07805-3- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "44519-Dispenser- LOCAL",
+    "sku": "44519-Dispenser- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott.13607",
+    "sku": "Scott.13607",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott 01980",
+    "sku": "Scott 01980",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "04460-12",
+    "sku": "04460-12",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott-13607- LOCAL",
+    "sku": "Scott-13607- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott-13607",
+    "sku": "Scott-13607",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott.13607- LOCAL",
+    "sku": "Scott.13607- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-2CS- LOCAL",
+    "sku": "67805-2CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-2CS",
+    "sku": "67805-2CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "1980- LOCAL",
+    "sku": "1980- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805CS- LOCAL",
+    "sku": "67805CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805CS",
+    "sku": "67805CS",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "4007- LOCAL",
+    "sku": "4007- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-2CS- LOCAL",
+    "sku": "01804-2CS- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "0-1510-12- LOCAL",
+    "sku": "0-1510-12- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-2cases",
+    "sku": "67805-2cases",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01700-16- LOCAL",
+    "sku": "01700-16- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "44519-Dispenser",
+    "sku": "44519-Dispenser",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-48",
+    "sku": "01804-48",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805-12",
+    "sku": "67805-12",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott.01980- LOCAL",
+    "sku": "Scott.01980- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01700-16",
+    "sku": "01700-16",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01040-12- LOCAL",
+    "sku": "01040-12- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC 01980-M- LOCAL",
+    "sku": "KCC 01980-M- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott 01980- LOCAL",
+    "sku": "Scott 01980- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "0-1510-12",
+    "sku": "0-1510-12",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Scott03148",
+    "sku": "Scott03148",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "DD693713",
+    "sku": "DD693713",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "01804-16- LOCAL",
+    "sku": "01804-16- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "KCC13607-2- LOCAL",
+    "sku": "KCC13607-2- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "Private-Quote-7649-B083RBZB1P-7122024163",
+    "sku": "Private-Quote-7649-B083RBZB1P-7122024163",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "328467-Local",
+    "sku": "328467-Local",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 328467,
+    "sku": 328467,
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "67805DD",
+    "sku": "67805DD",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713-60-J- LOCAL",
+    "sku": "17713-60-J- LOCAL",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": "17713-60-J",
+    "sku": "17713-60-J",
     "cost_price": 0,
     "brand": "Kimberly-Clark Professional"
   },
   {
-    "Sku": 107,
+    "sku": 107,
     "cost_price": 33.37,
     "brand": "L & R Manufacturing"
   },
   {
-    "Sku": "211896300-1",
+    "sku": "211896300-1",
     "cost_price": 3.3,
     "brand": "LG H&H"
   },
   {
-    "Sku": "211896500-1",
+    "sku": "211896500-1",
     "cost_price": 4.58,
     "brand": "LG H&H"
   },
   {
-    "Sku": "211896300-2",
+    "sku": "211896300-2",
     "cost_price": 6.6,
     "brand": "LG H&H"
   },
   {
-    "Sku": 211896800,
+    "sku": 211896800,
     "cost_price": 61.54,
     "brand": "LG H&H"
   },
   {
-    "Sku": 211896700,
+    "sku": 211896700,
     "cost_price": 61.54,
     "brand": "LG H&H"
   },
   {
-    "Sku": 211896600,
+    "sku": 211896600,
     "cost_price": 61.54,
     "brand": "LG H&H"
   },
   {
-    "Sku": "SM-211896300-1",
+    "sku": "SM-211896300-1",
     "cost_price": 0,
     "brand": "LG H&H"
   },
   {
-    "Sku": "200273600-1",
+    "sku": "200273600-1",
     "cost_price": 4.68,
     "brand": "LG H&H"
   },
   {
-    "Sku": "Lysol-1- LOCAL",
+    "sku": "Lysol-1- LOCAL",
     "cost_price": 4.33,
     "brand": "Lysol"
   },
   {
-    "Sku": "DD259737",
+    "sku": "DD259737",
     "cost_price": 51.99,
     "brand": "Lysol"
   },
   {
-    "Sku": "DD259737- LOCAL",
+    "sku": "DD259737- LOCAL",
     "cost_price": 52,
     "brand": "Lysol"
   },
   {
-    "Sku": 259737,
+    "sku": 259737,
     "cost_price": 52,
     "brand": "Lysol"
   },
   {
-    "Sku": "259737-12",
+    "sku": "259737-12",
     "cost_price": 52,
     "brand": "Lysol"
   },
   {
-    "Sku": "Lysol-1",
+    "sku": "Lysol-1",
     "cost_price": 0,
     "brand": "Lysol"
   },
   {
-    "Sku": "259737-UT",
+    "sku": "259737-UT",
     "cost_price": 0,
     "brand": "Lysol"
   },
   {
-    "Sku": "19200-99783-00",
+    "sku": "19200-99783-00",
     "cost_price": 0,
     "brand": "Lysol"
   },
   {
-    "Sku": "19200-99783-00- LOCAL",
+    "sku": "19200-99783-00- LOCAL",
     "cost_price": 0,
     "brand": "Lysol"
   },
   {
-    "Sku": "51-H980-91-1",
+    "sku": "51-H980-91-1",
     "cost_price": 0.34,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-TBDEN",
+    "sku": "16-TBDEN",
     "cost_price": 0.39,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66202",
+    "sku": "16-66202",
     "cost_price": 0.49,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53121-1",
+    "sku": "16-53121-1",
     "cost_price": 0.55,
     "brand": "McKesson"
   },
   {
-    "Sku": "053-1",
+    "sku": "053-1",
     "cost_price": 0.58,
     "brand": "McKesson"
   },
   {
-    "Sku": "6051-Single Unit",
+    "sku": "6051-Single Unit",
     "cost_price": 0.78,
     "brand": "McKesson"
   },
   {
-    "Sku": "6049-Single Unit",
+    "sku": "6049-Single Unit",
     "cost_price": 0.78,
     "brand": "McKesson"
   },
   {
-    "Sku": "6048-Single Unit",
+    "sku": "6048-Single Unit",
     "cost_price": 0.89,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5862-1",
+    "sku": "25-5862-1",
     "cost_price": 1.04,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3202-1",
+    "sku": "16-3202-1",
     "cost_price": 1.09,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4304-1",
+    "sku": "16-4304-1",
     "cost_price": 1.27,
     "brand": "McKesson"
   },
   {
-    "Sku": "6050-Single Unit",
+    "sku": "6050-Single Unit",
     "cost_price": 1.33,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1311-1",
+    "sku": "16-1311-1",
     "cost_price": 1.47,
     "brand": "McKesson"
   },
   {
-    "Sku": "056-1",
+    "sku": "056-1",
     "cost_price": 1.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1312-1",
+    "sku": "16-1312-1",
     "cost_price": 1.59,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1316-1",
+    "sku": "16-1316-1",
     "cost_price": 1.63,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5818",
+    "sku": "25-5818",
     "cost_price": 1.69,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1313-1",
+    "sku": "16-1313-1",
     "cost_price": 1.72,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5890-1",
+    "sku": "25-5890-1",
     "cost_price": 1.72,
     "brand": "McKesson"
   },
   {
-    "Sku": "02571567009-1",
+    "sku": "02571567009-1",
     "cost_price": 1.74,
     "brand": "McKesson"
   },
   {
-    "Sku": 41081001,
+    "sku": 41081001,
     "cost_price": 1.88,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3404-1",
+    "sku": "16-3404-1",
     "cost_price": 2.02,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53343-1",
+    "sku": "16-53343-1",
     "cost_price": 2.1,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5840-1",
+    "sku": "25-5840-1",
     "cost_price": 2.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "100123-1",
+    "sku": "100123-1",
     "cost_price": 2.26,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-662025",
+    "sku": "16-662025",
     "cost_price": 2.3,
     "brand": "McKesson"
   },
   {
-    "Sku": 12442000,
+    "sku": 12442000,
     "cost_price": 2.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4246",
+    "sku": "16-4246",
     "cost_price": 2.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66204-5",
+    "sku": "16-66204-5",
     "cost_price": 2.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66203-5",
+    "sku": "16-66203-5",
     "cost_price": 2.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53444-1",
+    "sku": "16-53444-1",
     "cost_price": 2.62,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1310-1",
+    "sku": "16-1310-1",
     "cost_price": 2.72,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-660BKGM-1",
+    "sku": "01-660BKGM-1",
     "cost_price": 2.82,
     "brand": "McKesson"
   },
   {
-    "Sku": "43-2-010-RX",
+    "sku": "43-2-010-RX",
     "cost_price": 2.86,
     "brand": "McKesson"
   },
   {
-    "Sku": "43-2-010",
+    "sku": "43-2-010",
     "cost_price": 2.86,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50409-1",
+    "sku": "16-50409-1",
     "cost_price": 3.05,
     "brand": "McKesson"
   },
   {
-    "Sku": 85140900700,
+    "sku": 85140900700,
     "cost_price": 3.06,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-42446",
+    "sku": "16-42446",
     "cost_price": 3.1,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-1S-1",
+    "sku": "24-106-1S-1",
     "cost_price": 3.15,
     "brand": "McKesson"
   },
   {
-    "Sku": "047-1",
+    "sku": "047-1",
     "cost_price": 3.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-660RBGM-1",
+    "sku": "01-660RBGM-1",
     "cost_price": 3.31,
     "brand": "McKesson"
   },
   {
-    "Sku": "308341-30-RX",
+    "sku": "308341-30-RX",
     "cost_price": 3.39,
     "brand": "McKesson"
   },
   {
-    "Sku": "R5000-01",
+    "sku": "R5000-01",
     "cost_price": 3.45,
     "brand": "McKesson"
   },
   {
-    "Sku": "065-3",
+    "sku": "065-3",
     "cost_price": 3.48,
     "brand": "McKesson"
   },
   {
-    "Sku": "85140900700-1",
+    "sku": "85140900700-1",
     "cost_price": 3.53,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3303-1",
+    "sku": "16-3303-1",
     "cost_price": 3.74,
     "brand": "McKesson"
   },
   {
-    "Sku": 46581011020,
+    "sku": 46581011020,
     "cost_price": 3.76,
     "brand": "McKesson"
   },
   {
-    "Sku": 3345,
+    "sku": 3345,
     "cost_price": 3.85,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53646-1",
+    "sku": "16-53646-1",
     "cost_price": 3.96,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-2S-Bx",
+    "sku": "24-106-2S-Bx",
     "cost_price": 4,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50412-1",
+    "sku": "16-50412-1",
     "cost_price": 4.03,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50609-1",
+    "sku": "16-50609-1",
     "cost_price": 4.28,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66201-5",
+    "sku": "16-66201-5",
     "cost_price": 4.3,
     "brand": "McKesson"
   },
   {
-    "Sku": "308341-30",
+    "sku": "308341-30",
     "cost_price": 4.32,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50612-1",
+    "sku": "16-50612-1",
     "cost_price": 4.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66202-10",
+    "sku": "16-66202-10",
     "cost_price": 4.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670HBKGM-1",
+    "sku": "01-670HBKGM-1",
     "cost_price": 4.69,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670TLGM-1",
+    "sku": "01-670TLGM-1",
     "cost_price": 4.78,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5840-10",
+    "sku": "25-5840-10",
     "cost_price": 4.9,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670RGM-1",
+    "sku": "01-670RGM-1",
     "cost_price": 4.95,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66204-10",
+    "sku": "16-66204-10",
     "cost_price": 5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66203-10",
+    "sku": "16-66203-10",
     "cost_price": 5,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4019-1",
+    "sku": "63-4019-1",
     "cost_price": 5.07,
     "brand": "McKesson"
   },
   {
-    "Sku": "A10129-1",
+    "sku": "A10129-1",
     "cost_price": 5.81,
     "brand": "McKesson"
   },
   {
-    "Sku": "30-057",
+    "sku": "30-057",
     "cost_price": 5.81,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670RBGM-1",
+    "sku": "01-670RBGM-1",
     "cost_price": 6.27,
     "brand": "McKesson"
   },
   {
-    "Sku": 63736023824,
+    "sku": 63736023824,
     "cost_price": 6.36,
     "brand": "McKesson"
   },
   {
-    "Sku": "671MM-1",
+    "sku": "671MM-1",
     "cost_price": 6.41,
     "brand": "McKesson"
   },
   {
-    "Sku": "4013-1",
+    "sku": "4013-1",
     "cost_price": 6.78,
     "brand": "McKesson"
   },
   {
-    "Sku": "30-057-RX",
+    "sku": "30-057-RX",
     "cost_price": 6.79,
     "brand": "McKesson"
   },
   {
-    "Sku": 4138800730,
+    "sku": 4138800730,
     "cost_price": 6.9,
     "brand": "McKesson"
   },
   {
-    "Sku": "641NGRMM-1",
+    "sku": "641NGRMM-1",
     "cost_price": 7.05,
     "brand": "McKesson"
   },
   {
-    "Sku": "641NOMM-1",
+    "sku": "641NOMM-1",
     "cost_price": 7.05,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4013-1",
+    "sku": "63-4013-1",
     "cost_price": 7.06,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-Bx",
+    "sku": "24-106-Bx",
     "cost_price": 7.22,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-34-1",
+    "sku": "01-34-1",
     "cost_price": 7.31,
     "brand": "McKesson"
   },
   {
-    "Sku": 46581011060,
+    "sku": 46581011060,
     "cost_price": 7.47,
     "brand": "McKesson"
   },
   {
-    "Sku": "6049-10",
+    "sku": "6049-10",
     "cost_price": 7.77,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS980-10-Rx",
+    "sku": "MS980-10-Rx",
     "cost_price": 8.1,
     "brand": "McKesson"
   },
   {
-    "Sku": "4012-1",
+    "sku": "4012-1",
     "cost_price": 8.22,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4012-1",
+    "sku": "63-4012-1",
     "cost_price": 8.22,
     "brand": "McKesson"
   },
   {
-    "Sku": 46581083006,
+    "sku": 46581083006,
     "cost_price": 8.49,
     "brand": "McKesson"
   },
   {
-    "Sku": "6051-10",
+    "sku": "6051-10",
     "cost_price": 8.9,
     "brand": "McKesson"
   },
   {
-    "Sku": "6048-10-RX",
+    "sku": "6048-10-RX",
     "cost_price": 8.9,
     "brand": "McKesson"
   },
   {
-    "Sku": "6048-10",
+    "sku": "6048-10",
     "cost_price": 8.9,
     "brand": "McKesson"
   },
   {
-    "Sku": "047-3",
+    "sku": "047-3",
     "cost_price": 9.03,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-486-Pk",
+    "sku": "18-486-Pk",
     "cost_price": 9.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-640BKMCE-1",
+    "sku": "01-640BKMCE-1",
     "cost_price": 9.33,
     "brand": "McKesson"
   },
   {
-    "Sku": "R5000-01-3",
+    "sku": "R5000-01-3",
     "cost_price": 9.81,
     "brand": "McKesson"
   },
   {
-    "Sku": "4008-1",
+    "sku": "4008-1",
     "cost_price": 9.88,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS990-10",
+    "sku": "MS990-10",
     "cost_price": 10.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS990-10-RX",
+    "sku": "MS990-10-RX",
     "cost_price": 10.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "6050-10",
+    "sku": "6050-10",
     "cost_price": 12.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "UGJ-6500-XXL",
+    "sku": "UGJ-6500-XXL",
     "cost_price": 13.62,
     "brand": "McKesson"
   },
   {
-    "Sku": "UGJ-6500-XL",
+    "sku": "UGJ-6500-XL",
     "cost_price": 13.62,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53121",
+    "sku": "16-53121",
     "cost_price": 16.54,
     "brand": "McKesson"
   },
   {
-    "Sku": "26-34",
+    "sku": "26-34",
     "cost_price": 16.93,
     "brand": "McKesson"
   },
   {
-    "Sku": 2634,
+    "sku": 2634,
     "cost_price": 16.93,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-104",
+    "sku": "18-104",
     "cost_price": 17.15,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-890",
+    "sku": "18-890",
     "cost_price": 18.02,
     "brand": "McKesson"
   },
   {
-    "Sku": "B9909-10",
+    "sku": "B9909-10",
     "cost_price": 18.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-842",
+    "sku": "18-842",
     "cost_price": 20.34,
     "brand": "McKesson"
   },
   {
-    "Sku": 4019,
+    "sku": 4019,
     "cost_price": 21.01,
     "brand": "McKesson"
   },
   {
-    "Sku": "4014-1",
+    "sku": "4014-1",
     "cost_price": 21.73,
     "brand": "McKesson"
   },
   {
-    "Sku": 4014,
+    "sku": 4014,
     "cost_price": 21.73,
     "brand": "McKesson"
   },
   {
-    "Sku": "UGJ-6500-M",
+    "sku": "UGJ-6500-M",
     "cost_price": 22.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "UGJ-6500-L-3",
+    "sku": "UGJ-6500-L-3",
     "cost_price": 22.66,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4476",
+    "sku": "16-4476",
     "cost_price": 23.59,
     "brand": "McKesson"
   },
   {
-    "Sku": "UGJ-6500-S",
+    "sku": "UGJ-6500-S",
     "cost_price": 23.6,
     "brand": "McKesson"
   },
   {
-    "Sku": 80862,
+    "sku": 80862,
     "cost_price": 23.8,
     "brand": "McKesson"
   },
   {
-    "Sku": 42332000,
+    "sku": 42332000,
     "cost_price": 25,
     "brand": "McKesson"
   },
   {
-    "Sku": 42222000,
+    "sku": 42222000,
     "cost_price": 25,
     "brand": "McKesson"
   },
   {
-    "Sku": 42448000,
+    "sku": 42448000,
     "cost_price": 25,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-973",
+    "sku": "18-973",
     "cost_price": 25,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-976",
+    "sku": "18-976",
     "cost_price": 25,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4019",
+    "sku": "63-4019",
     "cost_price": 25.35,
     "brand": "McKesson"
   },
   {
-    "Sku": 4012,
+    "sku": 4012,
     "cost_price": 28.66,
     "brand": "McKesson"
   },
   {
-    "Sku": 967954,
+    "sku": 967954,
     "cost_price": 30.19,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-981418",
+    "sku": "Mac-18-981418",
     "cost_price": 30.73,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-982818",
+    "sku": "Mac-18-982818",
     "cost_price": 30.73,
     "brand": "McKesson"
   },
   {
-    "Sku": 3368,
+    "sku": 3368,
     "cost_price": 31,
     "brand": "McKesson"
   },
   {
-    "Sku": 703,
+    "sku": 703,
     "cost_price": 35.66,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N201",
+    "sku": "16-N201",
     "cost_price": 35.7,
     "brand": "McKesson"
   },
   {
-    "Sku": 4017,
+    "sku": 4017,
     "cost_price": 36.11,
     "brand": "McKesson"
   },
   {
-    "Sku": 1048672,
+    "sku": 1048672,
     "cost_price": 36.79,
     "brand": "McKesson"
   },
   {
-    "Sku": 80863,
+    "sku": 80863,
     "cost_price": 37.01,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N2705",
+    "sku": "16-N2705",
     "cost_price": 37.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N22105",
+    "sku": "16-N22105",
     "cost_price": 37.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N231",
+    "sku": "16-N231",
     "cost_price": 38.3,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4303",
+    "sku": "16-4303",
     "cost_price": 38.4,
     "brand": "McKesson"
   },
   {
-    "Sku": 917916,
+    "sku": 917916,
     "cost_price": 39.06,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3202",
+    "sku": "16-3202",
     "cost_price": 39.13,
     "brand": "McKesson"
   },
   {
-    "Sku": 704,
+    "sku": 704,
     "cost_price": 39.57,
     "brand": "McKesson"
   },
   {
-    "Sku": 4013,
+    "sku": 4013,
     "cost_price": 40.78,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1316-Bx",
+    "sku": "16-1316-Bx",
     "cost_price": 41.45,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1309-Bx",
+    "sku": "16-1309-Bx",
     "cost_price": 41.45,
     "brand": "McKesson"
   },
   {
-    "Sku": 81234749,
+    "sku": 81234749,
     "cost_price": 41.46,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1317-Bx",
+    "sku": "16-1317-Bx",
     "cost_price": 41.47,
     "brand": "McKesson"
   },
   {
-    "Sku": "6049-50",
+    "sku": "6049-50",
     "cost_price": 41.48,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4013",
+    "sku": "63-4013",
     "cost_price": 42.39,
     "brand": "McKesson"
   },
   {
-    "Sku": 4008,
+    "sku": 4008,
     "cost_price": 42.73,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N211",
+    "sku": "16-N211",
     "cost_price": 42.9,
     "brand": "McKesson"
   },
   {
-    "Sku": 11507,
+    "sku": 11507,
     "cost_price": 43.46,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1314-Bx",
+    "sku": "16-1314-Bx",
     "cost_price": 43.61,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1315-Bx",
+    "sku": "16-1315-Bx",
     "cost_price": 43.61,
     "brand": "McKesson"
   },
   {
-    "Sku": 969415,
+    "sku": 969415,
     "cost_price": 43.7,
     "brand": "McKesson"
   },
   {
-    "Sku": 9552,
+    "sku": 9552,
     "cost_price": 43.86,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66201-50",
+    "sku": "16-66201-50",
     "cost_price": 43.93,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1313-Bx",
+    "sku": "16-1313-Bx",
     "cost_price": 44.31,
     "brand": "McKesson"
   },
   {
-    "Sku": "6051-50",
+    "sku": "6051-50",
     "cost_price": 44.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "6048-50-RX",
+    "sku": "6048-50-RX",
     "cost_price": 44.64,
     "brand": "McKesson"
   },
   {
-    "Sku": "6048-50",
+    "sku": "6048-50",
     "cost_price": 44.64,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53444",
+    "sku": "16-53444",
     "cost_price": 47.08,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-2S",
+    "sku": "24-106-2S",
     "cost_price": 47.4,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53646",
+    "sku": "16-53646",
     "cost_price": 47.56,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS990",
+    "sku": "MS990",
     "cost_price": 47.8,
     "brand": "McKesson"
   },
   {
-    "Sku": 402,
+    "sku": 402,
     "cost_price": 48.24,
     "brand": "McKesson"
   },
   {
-    "Sku": 1387983,
+    "sku": 1387983,
     "cost_price": 49.38,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53343",
+    "sku": "16-53343",
     "cost_price": 50.28,
     "brand": "McKesson"
   },
   {
-    "Sku": 453,
+    "sku": 453,
     "cost_price": 51.12,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-981521",
+    "sku": "Mac-18-981521",
     "cost_price": 51.12,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5862",
+    "sku": "25-5862",
     "cost_price": 52.21,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-490-BX-1",
+    "sku": "18-490-BX-1",
     "cost_price": 52.24,
     "brand": "McKesson"
   },
   {
-    "Sku": 914629,
+    "sku": 914629,
     "cost_price": 52.28,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N18105",
+    "sku": "16-N18105",
     "cost_price": 52.4,
     "brand": "McKesson"
   },
   {
-    "Sku": 7010,
+    "sku": 7010,
     "cost_price": 54,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N2558",
+    "sku": "16-N2558",
     "cost_price": 56.4,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-2118182",
+    "sku": "16-2118182",
     "cost_price": 57.11,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS994",
+    "sku": "MS994",
     "cost_price": 57.92,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS994-FB",
+    "sku": "MS994-FB",
     "cost_price": 57.92,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS994-RX",
+    "sku": "MS994-RX",
     "cost_price": 57.92,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N25105",
+    "sku": "16-N25105",
     "cost_price": 59.99,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4304",
+    "sku": "16-4304",
     "cost_price": 60.77,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50409",
+    "sku": "16-50409",
     "cost_price": 60.97,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-1065263",
+    "sku": "Mac-1065263",
     "cost_price": 61.03,
     "brand": "McKesson"
   },
   {
-    "Sku": "6050-50",
+    "sku": "6050-50",
     "cost_price": 62.79,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N221",
+    "sku": "16-N221",
     "cost_price": 63.4,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1308-Bx",
+    "sku": "16-1308-Bx",
     "cost_price": 63.69,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N181",
+    "sku": "16-N181",
     "cost_price": 64,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-2112121",
+    "sku": "16-2112121",
     "cost_price": 64.33,
     "brand": "McKesson"
   },
   {
-    "Sku": 6412,
+    "sku": 6412,
     "cost_price": 64.43,
     "brand": "McKesson"
   },
   {
-    "Sku": 44082000,
+    "sku": 44082000,
     "cost_price": 65,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4248",
+    "sku": "16-4248",
     "cost_price": 65.52,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-1065264",
+    "sku": "Mac-1065264",
     "cost_price": 65.96,
     "brand": "McKesson"
   },
   {
-    "Sku": 964667,
+    "sku": 964667,
     "cost_price": 66.79,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91",
+    "sku": "51-H980-91",
     "cost_price": 67.9,
     "brand": "McKesson"
   },
   {
-    "Sku": 33122000,
+    "sku": 33122000,
     "cost_price": 68.76,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N2605",
+    "sku": "16-N2605",
     "cost_price": 68.8,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-103",
+    "sku": "24-103",
     "cost_price": 69.44,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-SN3C22105S3",
+    "sku": "102-SN3C22105S3",
     "cost_price": 70.92,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-SN3C251S3",
+    "sku": "102-SN3C251S3",
     "cost_price": 70.92,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1312-Bx",
+    "sku": "16-1312-Bx",
     "cost_price": 71.55,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3606",
+    "sku": "16-3606",
     "cost_price": 72,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106",
+    "sku": "24-106",
     "cost_price": 72.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "B9909",
+    "sku": "B9909",
     "cost_price": 76,
     "brand": "McKesson"
   },
   {
-    "Sku": 4084,
+    "sku": 4084,
     "cost_price": 78.86,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-489-Pk",
+    "sku": "18-489-Pk",
     "cost_price": 79.27,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-SN3C231S3",
+    "sku": "102-SN3C231S3",
     "cost_price": 80.56,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50412",
+    "sku": "16-50412",
     "cost_price": 80.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS980",
+    "sku": "MS980",
     "cost_price": 80.8,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-2118181",
+    "sku": "16-2118181",
     "cost_price": 83.33,
     "brand": "McKesson"
   },
   {
-    "Sku": "MS980-100",
+    "sku": "MS980-100",
     "cost_price": 83.83,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50609",
+    "sku": "16-50609",
     "cost_price": 85.68,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5890",
+    "sku": "25-5890",
     "cost_price": 86.09,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-143-70007N",
+    "sku": "Mac-143-70007N",
     "cost_price": 86.36,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N251",
+    "sku": "16-N251",
     "cost_price": 88.4,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-486",
+    "sku": "18-486",
     "cost_price": 92.04,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50612",
+    "sku": "16-50612",
     "cost_price": 92.06,
     "brand": "McKesson"
   },
   {
-    "Sku": "B9909-50",
+    "sku": "B9909-50",
     "cost_price": 92.76,
     "brand": "McKesson"
   },
   {
-    "Sku": 6842,
+    "sku": 6842,
     "cost_price": 100.3,
     "brand": "McKesson"
   },
   {
-    "Sku": 134,
+    "sku": 134,
     "cost_price": 101.1,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1103",
+    "sku": "16-1103",
     "cost_price": 106.9,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5840",
+    "sku": "25-5840",
     "cost_price": 109.75,
     "brand": "McKesson"
   },
   {
-    "Sku": 100123,
+    "sku": 100123,
     "cost_price": 113.09,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N251S3",
+    "sku": "102-N251S3",
     "cost_price": 115.76,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N25105S3",
+    "sku": "102-N25105S3",
     "cost_price": 115.76,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N2558S3",
+    "sku": "102-N2558S3",
     "cost_price": 115.76,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N3005",
+    "sku": "16-N3005",
     "cost_price": 118.8,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP218FA-SF",
+    "sku": "146-SSP218FA-SF",
     "cost_price": 122.15,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP218DDA-SF",
+    "sku": "146-SSP218DDA-SF",
     "cost_price": 122.48,
     "brand": "McKesson"
   },
   {
-    "Sku": 2187,
+    "sku": 2187,
     "cost_price": 125,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP220DDA-ELR",
+    "sku": "146-SSP220DDA-ELR",
     "cost_price": 125.93,
     "brand": "McKesson"
   },
   {
-    "Sku": "SM2-3W",
+    "sku": "SM2-3W",
     "cost_price": 133.84,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP220DDA-SF",
+    "sku": "146-SSP220DDA-SF",
     "cost_price": 138.76,
     "brand": "McKesson"
   },
   {
-    "Sku": "641NGRMM",
+    "sku": "641NGRMM",
     "cost_price": 141,
     "brand": "McKesson"
   },
   {
-    "Sku": "641NOMM",
+    "sku": "641NOMM",
     "cost_price": 141,
     "brand": "McKesson"
   },
   {
-    "Sku": 44802000,
+    "sku": 44802000,
     "cost_price": 142.2,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1312",
+    "sku": "16-1312",
     "cost_price": 158.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-ATC19-BK",
+    "sku": "146-ATC19-BK",
     "cost_price": 159.5,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1316",
+    "sku": "16-1316",
     "cost_price": 162.72,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP218FA-ELR",
+    "sku": "146-SSP218FA-ELR",
     "cost_price": 164.66,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1313",
+    "sku": "16-1313",
     "cost_price": 171.76,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1314",
+    "sku": "16-1314",
     "cost_price": 174.45,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP216DDA-SF",
+    "sku": "146-SSP216DDA-SF",
     "cost_price": 176.26,
     "brand": "McKesson"
   },
   {
-    "Sku": "DFL19-BLK",
+    "sku": "DFL19-BLK",
     "cost_price": 181.74,
     "brand": "McKesson"
   },
   {
-    "Sku": "671MM",
+    "sku": "671MM",
     "cost_price": 192.31,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-STD22ECDDA-ELR",
+    "sku": "146-STD22ECDDA-ELR",
     "cost_price": 225.99,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670HBKGM",
+    "sku": "01-670HBKGM",
     "cost_price": 234.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-STD24ECDDA-ELR",
+    "sku": "146-STD24ECDDA-ELR",
     "cost_price": 235.96,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-STD22ECDDA-SF",
+    "sku": "146-STD22ECDDA-SF",
     "cost_price": 240.6,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1308",
+    "sku": "16-1308",
     "cost_price": 254.75,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-490",
+    "sku": "18-490",
     "cost_price": 261.19,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP20RBDDA",
+    "sku": "146-SSP20RBDDA",
     "cost_price": 270.83,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-STD24ECDDA-SF",
+    "sku": "146-STD24ECDDA-SF",
     "cost_price": 280.56,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K318ADDA-ELR",
+    "sku": "146-K318ADDA-ELR",
     "cost_price": 319.54,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K320ADDA-ELR",
+    "sku": "146-K320ADDA-ELR",
     "cost_price": 319.54,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13117J",
+    "sku": "182-13117J",
     "cost_price": 331.98,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13114E",
+    "sku": "182-13114E",
     "cost_price": 355.44,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13115F",
+    "sku": "182-13115F",
     "cost_price": 386.76,
     "brand": "McKesson"
   },
   {
-    "Sku": 3085,
+    "sku": 3085,
     "cost_price": 400,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13116G",
+    "sku": "182-13116G",
     "cost_price": 415.44,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13112C",
+    "sku": "182-13112C",
     "cost_price": 462.24,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13113D",
+    "sku": "182-13113D",
     "cost_price": 495,
     "brand": "McKesson"
   },
   {
-    "Sku": 7135,
+    "sku": 7135,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4304-5",
+    "sku": "16-4304-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PB-IV4X-J62G- LOCAL",
+    "sku": "PB-IV4X-J62G- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 80300000,
+    "sku": 80300000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "EN-CQDG-ZJ4G",
+    "sku": "EN-CQDG-ZJ4G",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "EN-CQDG-ZJ4G- LOCAL",
+    "sku": "EN-CQDG-ZJ4G- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3558-BX",
+    "sku": "3558-BX",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 80200000,
+    "sku": 80200000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PB-IV4X-J62G",
+    "sku": "PB-IV4X-J62G",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-020",
+    "sku": "16-020",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "703-1",
+    "sku": "703-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "KN-VA4J-1T0S",
+    "sku": "KN-VA4J-1T0S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "81400000-1",
+    "sku": "81400000-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 441407,
+    "sku": 441407,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC5B-5",
+    "sku": "16-PDC5B-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC5B-1",
+    "sku": "16-PDC5B-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC5B-2",
+    "sku": "16-PDC5B-2",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC5B-10",
+    "sku": "16-PDC5B-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 416104,
+    "sku": 416104,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 89411035116,
+    "sku": 89411035116,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4062",
+    "sku": "16-4062",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 6716,
+    "sku": 6716,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1801,
+    "sku": 1801,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 3324,
+    "sku": 3324,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4063",
+    "sku": "16-4063",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 441106,
+    "sku": 441106,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 2733,
+    "sku": 2733,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1892,
+    "sku": 1892,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 442212,
+    "sku": 442212,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 2835,
+    "sku": 2835,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 30642000,
+    "sku": 30642000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4262",
+    "sku": "16-4262",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13116G-1",
+    "sku": "182-13116G-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13115F-1",
+    "sku": "182-13115F-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13113D-1",
+    "sku": "182-13113D-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13114E-1",
+    "sku": "182-13114E-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13117J-1",
+    "sku": "182-13117J-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "182-13112C-1",
+    "sku": "182-13112C-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 441000,
+    "sku": 441000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 42422000,
+    "sku": 42422000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 416816,
+    "sku": 416816,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 16442000,
+    "sku": 16442000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 2252,
+    "sku": 2252,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 2146,
+    "sku": 2146,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 44162000,
+    "sku": 44162000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 3332,
+    "sku": 3332,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 12332000,
+    "sku": 12332000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 22082000,
+    "sku": 22082000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 90408,
+    "sku": 90408,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 22122000,
+    "sku": 22122000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 441001,
+    "sku": 441001,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 33082000,
+    "sku": 33082000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 2556,
+    "sku": 2556,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 12222000,
+    "sku": 12222000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 397110,
+    "sku": 397110,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 22802000,
+    "sku": 22802000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-42846",
+    "sku": "16-42846",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 3381,
+    "sku": 3381,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "42-72",
+    "sku": "42-72",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 2346,
+    "sku": 2346,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 6318,
+    "sku": 6318,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 7317,
+    "sku": 7317,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 6735,
+    "sku": 6735,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 441204,
+    "sku": 441204,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 15713135,
+    "sku": 15713135,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4228",
+    "sku": "16-4228",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 44122000,
+    "sku": 44122000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 6309,
+    "sku": 6309,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 82408,
+    "sku": 82408,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4221",
+    "sku": "16-4221",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 4422141,
+    "sku": 4422141,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 5614,
+    "sku": 5614,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4224",
+    "sku": "16-4224",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-607623",
+    "sku": "16-607623",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 7087,
+    "sku": 7087,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-06",
+    "sku": "18-06",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1806,
+    "sku": 1806,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "00041081001-2",
+    "sku": "00041081001-2",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010330",
+    "sku": "3G010330",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67282050,
+    "sku": 67282050,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "67282050R",
+    "sku": "67282050R",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010320",
+    "sku": "3G010320",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67282230,
+    "sku": 67282230,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "67342250R",
+    "sku": "67342250R",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 703016,
+    "sku": 703016,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67242230,
+    "sku": 67242230,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "67242030R",
+    "sku": "67242030R",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 56281850,
+    "sku": 56281850,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67222030,
+    "sku": 67222030,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "67262030R",
+    "sku": "67262030R",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "930XL",
+    "sku": "930XL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "67342050R",
+    "sku": "67342050R",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010350",
+    "sku": "3G010350",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 56261850,
+    "sku": 56261850,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67242250,
+    "sku": 67242250,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67282020,
+    "sku": 67282020,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010520",
+    "sku": "3G010520",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "047-5",
+    "sku": "047-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "2269-1",
+    "sku": "2269-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "2269-5",
+    "sku": "2269-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "2262-5",
+    "sku": "2262-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "2262-1",
+    "sku": "2262-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "065-5",
+    "sku": "065-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "02571567006-1",
+    "sku": "02571567006-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "67375-1",
+    "sku": "67375-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "02571567433-1",
+    "sku": "02571567433-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "70027L-1",
+    "sku": "70027L-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67302230,
+    "sku": 67302230,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "T420RDAP",
+    "sku": "T420RDAP",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 11097,
+    "sku": 11097,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 11084,
+    "sku": 11084,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP220DDA-ELR",
+    "sku": "SSP220DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD20ECDFAHD-ELR",
+    "sku": "STD20ECDFAHD-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "T424RFAP",
+    "sku": "T424RFAP",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 67342030,
+    "sku": 67342030,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PL412RBDDA",
+    "sku": "PL412RBDDA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP218DFA-SF",
+    "sku": "SSP218DFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BLS18FBD-SF",
+    "sku": "BLS18FBD-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "9000 XDT",
+    "sku": "9000 XDT",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "TRSX5",
+    "sku": "TRSX5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "JAZZY600ES2S-SS",
+    "sku": "JAZZY600ES2S-SS",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 936735,
+    "sku": 936735,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3F020230",
+    "sku": "3F020230",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G020500",
+    "sku": "3G020500",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "AK516ADA-ASF",
+    "sku": "AK516ADA-ASF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD24DDA-ELR",
+    "sku": "STD24DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 11591,
+    "sku": 11591,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP218FA-ELR",
+    "sku": "SSP218FA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 703102,
+    "sku": 703102,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BLS18FBD-ELR",
+    "sku": "BLS18FBD-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 552715,
+    "sku": 552715,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K316DFA-SF",
+    "sku": "K316DFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "761SFR",
+    "sku": "761SFR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K318DDA-SF",
+    "sku": "146-K318DDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "761SFL",
+    "sku": "761SFL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1497,
+    "sku": 1497,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "TRSX58FBFP",
+    "sku": "TRSX58FBFP",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1133306,
+    "sku": 1133306,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3F020220",
+    "sku": "3F020220",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "T422RFAP",
+    "sku": "T422RFAP",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD20ECDFAHD-SF",
+    "sku": "STD20ECDFAHD-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1192386,
+    "sku": 1192386,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 56261830,
+    "sku": 56261830,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP218DFA-ELR",
+    "sku": "SSP218DFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1193601,
+    "sku": 1193601,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "5PX10830",
+    "sku": "5PX10830",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K316ADDA-ELR",
+    "sku": "K316ADDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 565467,
+    "sku": 565467,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BLS16FBD-SF",
+    "sku": "BLS16FBD-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "DFL19-BL",
+    "sku": "DFL19-BL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "WB1400-2GJB",
+    "sku": "WB1400-2GJB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "AK518ADA-ASF",
+    "sku": "AK518ADA-ASF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3F020320",
+    "sku": "3F020320",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP218DDA-ELR",
+    "sku": "146-SSP218DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3K010350",
+    "sku": "3K010350",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 703015,
+    "sku": 703015,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BLS16FBD-ELR",
+    "sku": "BLS16FBD-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "T4X24RDAP",
+    "sku": "T4X24RDAP",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1192387,
+    "sku": 1192387,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 565464,
+    "sku": 565464,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "6C-3WCA-HU8Z",
+    "sku": "6C-3WCA-HU8Z",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1193463,
+    "sku": 1193463,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3F020120",
+    "sku": "3F020120",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 78083,
+    "sku": 78083,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP20RBDFA",
+    "sku": "SSP20RBDFA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3K010150",
+    "sku": "3K010150",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 552716,
+    "sku": 552716,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "CX418ADDA-SF",
+    "sku": "CX418ADDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "761FL",
+    "sku": "761FL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "5PX10820",
+    "sku": "5PX10820",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "AK518ADA-AELR",
+    "sku": "AK518ADA-AELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PLA420RBDFA",
+    "sku": "PLA420RBDFA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-1065265",
+    "sku": "Mac-1065265",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-1065266",
+    "sku": "Mac-1065266",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "FHD-133-II",
+    "sku": "FHD-133-II",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "6180S",
+    "sku": "6180S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "T4",
+    "sku": "T4",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "352B",
+    "sku": "352B",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-42026",
+    "sku": "16-42026",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81400000,
+    "sku": 81400000,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 965397,
+    "sku": 965397,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-487",
+    "sku": "18-487",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-487-Pk",
+    "sku": "18-487-Pk",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-488",
+    "sku": "18-488",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-488-Pk",
+    "sku": "18-488-Pk",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 1041002,
+    "sku": 1041002,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-03M-1",
+    "sku": "84-03M-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-04M-1",
+    "sku": "84-04M-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-02M-1",
+    "sku": "84-02M-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-01M-1",
+    "sku": "84-01M-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-02M",
+    "sku": "84-02M",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-04M",
+    "sku": "84-04M",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-01M-3",
+    "sku": "84-01M-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-02M-3",
+    "sku": "84-02M-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-03M",
+    "sku": "84-03M",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "84-01M",
+    "sku": "84-01M",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4010-Parent",
+    "sku": "63-4010-Parent",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-489",
+    "sku": "18-489",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4011-Parent",
+    "sku": "63-4011-Parent",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BWK6KITMW-NY",
+    "sku": "BWK6KITMW-NY",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BWK6KITMW",
+    "sku": "BWK6KITMW",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "4017-1",
+    "sku": "4017-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "63-4012",
+    "sku": "63-4012",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "4019-1",
+    "sku": "4019-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4202-1",
+    "sku": "16-4202-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4202-3",
+    "sku": "16-4202-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4202-10",
+    "sku": "16-4202-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4202",
+    "sku": "16-4202",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4202-5",
+    "sku": "16-4202-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3404-5",
+    "sku": "16-3404-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3404-3",
+    "sku": "16-3404-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3404-10",
+    "sku": "16-3404-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3404",
+    "sku": "16-3404",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3202-10",
+    "sku": "16-3202-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3202-5",
+    "sku": "16-3202-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3202-3",
+    "sku": "16-3202-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3101-3-HB",
+    "sku": "16-3101-3-HB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3101-HB",
+    "sku": "16-3101-HB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3101-5-HB",
+    "sku": "16-3101-5-HB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3101-1-HB",
+    "sku": "16-3101-1-HB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3101-10-HB",
+    "sku": "16-3101-10-HB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4303-10",
+    "sku": "16-4303-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4303-1",
+    "sku": "16-4303-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4303-3",
+    "sku": "16-4303-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4303-5",
+    "sku": "16-4303-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53121-10",
+    "sku": "16-53121-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3303-10",
+    "sku": "16-3303-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3303-5",
+    "sku": "16-3303-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3303-3",
+    "sku": "16-3303-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3303",
+    "sku": "16-3303",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53121-5",
+    "sku": "16-53121-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53121-3",
+    "sku": "16-53121-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4304-10",
+    "sku": "16-4304-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4304-3",
+    "sku": "16-4304-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4476-5",
+    "sku": "16-4476-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4476-3",
+    "sku": "16-4476-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4476-10",
+    "sku": "16-4476-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3606-10",
+    "sku": "16-3606-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4476-1",
+    "sku": "16-4476-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3606-3",
+    "sku": "16-3606-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-3606-5",
+    "sku": "16-3606-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53444-5",
+    "sku": "16-53444-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53343-3",
+    "sku": "16-53343-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53343-10",
+    "sku": "16-53343-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53444-10",
+    "sku": "16-53444-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53444-3",
+    "sku": "16-53444-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53646-3",
+    "sku": "16-53646-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53646-5",
+    "sku": "16-53646-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-53646-10",
+    "sku": "16-53646-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N181S3",
+    "sku": "102-N181S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N211S3",
+    "sku": "102-N211S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N251S",
+    "sku": "16-N251S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C211",
+    "sku": "16-SN3C211",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "306608-1",
+    "sku": "306608-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N221S3",
+    "sku": "102-N221S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306613,
+    "sku": 306613,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306612,
+    "sku": 306612,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306609,
+    "sku": 306609,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN10C201",
+    "sku": "16-SN10C201",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-842- LOCAL",
+    "sku": "18-842- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-890- LOCAL",
+    "sku": "18-890- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-104- LOCAL",
+    "sku": "18-104- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-973- LOCAL",
+    "sku": "18-973- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "18-976- LOCAL",
+    "sku": "18-976- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N18105S3",
+    "sku": "102-N18105S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306619,
+    "sku": 306619,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306614,
+    "sku": 306614,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C2558",
+    "sku": "16-SN3C2558",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-SN3C2558S3",
+    "sku": "102-SN3C2558S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306611,
+    "sku": 306611,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C22105",
+    "sku": "16-SN3C22105",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C2558S",
+    "sku": "16-SN3C2558S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C251S",
+    "sku": "16-SN3C251S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306615,
+    "sku": 306615,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C221",
+    "sku": "16-SN3C221",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306617,
+    "sku": 306617,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N2705S3",
+    "sku": "102-N2705S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C251",
+    "sku": "16-SN3C251",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N21105S3",
+    "sku": "102-N21105S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C201",
+    "sku": "16-SN3C201",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N231S3",
+    "sku": "102-N231S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N3005S3",
+    "sku": "102-N3005S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306616,
+    "sku": 306616,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N22105S3",
+    "sku": "102-N22105S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306610,
+    "sku": 306610,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N23105S3",
+    "sku": "102-N23105S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-N2558S",
+    "sku": "16-N2558S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-SN3C231",
+    "sku": "16-SN3C231",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-SN3C221S3",
+    "sku": "102-SN3C221S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "102-N201S3",
+    "sku": "102-N201S3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 306618,
+    "sku": 306618,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-16-TBDEN-1",
+    "sku": "51-H980-91-16-TBDEN-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-16-TBDEN-3",
+    "sku": "51-H980-91-16-TBDEN-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-10",
+    "sku": "51-H980-91-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-16-TBDEN-10",
+    "sku": "51-H980-91-16-TBDEN-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-16-TBDEN-5",
+    "sku": "51-H980-91-16-TBDEN-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-3",
+    "sku": "51-H980-91-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "51-H980-91-5",
+    "sku": "51-H980-91-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC7-1",
+    "sku": "16-PDC7-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-981518",
+    "sku": "Mac-18-981518",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81184555,
+    "sku": 81184555,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "531-Bx",
+    "sku": "531-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "520-Bx",
+    "sku": "520-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "529-Bx",
+    "sku": "529-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81234756,
+    "sku": 81234756,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 529,
+    "sku": 529,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "532-Bx",
+    "sku": "532-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81184548,
+    "sku": 81184548,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "530-Bx",
+    "sku": "530-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-981718",
+    "sku": "Mac-18-981718",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-3220",
+    "sku": "Mac-18-3220",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 531,
+    "sku": 531,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 532,
+    "sku": 532,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-914",
+    "sku": "Mac-18-914",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-101",
+    "sku": "Mac-101",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-6218",
+    "sku": "Mac-18-6218",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-811",
+    "sku": "Mac-18-811",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-801",
+    "sku": "Mac-18-801",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-3213",
+    "sku": "Mac-18-3213",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-10891",
+    "sku": "Mac-18-10891",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-100",
+    "sku": "Mac-100",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-1004",
+    "sku": "Mac-18-1004",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-099",
+    "sku": "Mac-099",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-18-31383",
+    "sku": "Mac-18-31383",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 520,
+    "sku": 520,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 530,
+    "sku": 530,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "056-3",
+    "sku": "056-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "052-5",
+    "sku": "052-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "054-10",
+    "sku": "054-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "052-10",
+    "sku": "052-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "052-50",
+    "sku": "052-50",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 56,
+    "sku": 56,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "054-5",
+    "sku": "054-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "053-3",
+    "sku": "053-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "056-10",
+    "sku": "056-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "053-10",
+    "sku": "053-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "052-1",
+    "sku": "052-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "054-3",
+    "sku": "054-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "052-3",
+    "sku": "052-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "056-5",
+    "sku": "056-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 54,
+    "sku": 54,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 53,
+    "sku": 53,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "054-1",
+    "sku": "054-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 80861,
+    "sku": 80861,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "80864-10",
+    "sku": "80864-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "80863-10",
+    "sku": "80863-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "80861-10",
+    "sku": "80861-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "80862-10",
+    "sku": "80862-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50409-5",
+    "sku": "16-50409-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50612-10",
+    "sku": "16-50612-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50612-5",
+    "sku": "16-50612-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50412-3",
+    "sku": "16-50412-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50409-3",
+    "sku": "16-50409-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50609-10",
+    "sku": "16-50609-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50609-3",
+    "sku": "16-50609-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50612-3",
+    "sku": "16-50612-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50409-10",
+    "sku": "16-50409-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50609-5",
+    "sku": "16-50609-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50412-5",
+    "sku": "16-50412-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-50412-10",
+    "sku": "16-50412-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146231-1",
+    "sku": "08146231-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146231-10",
+    "sku": "08146231-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146241-10",
+    "sku": "08146241-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146241-3",
+    "sku": "08146241-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146231-3",
+    "sku": "08146231-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146241-1",
+    "sku": "08146241-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146231-5",
+    "sku": "08146231-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC9-2",
+    "sku": "16-PDC9-2",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC7-10",
+    "sku": "16-PDC7-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC9-10",
+    "sku": "16-PDC9-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC7-2",
+    "sku": "16-PDC7-2",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC9-1",
+    "sku": "16-PDC9-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC9-5",
+    "sku": "16-PDC9-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-PDC7-5",
+    "sku": "16-PDC7-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18-894",
+    "sku": "mac-18-894",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18-978",
+    "sku": "mac-18-978",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8825-1",
+    "sku": "25-8825-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8821-10",
+    "sku": "25-8821-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "100123-10",
+    "sku": "100123-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8821",
+    "sku": "25-8821",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5862-10",
+    "sku": "25-5862-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5862-3",
+    "sku": "25-5862-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5840-3",
+    "sku": "25-5840-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8825-10",
+    "sku": "25-8825-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "100123-3",
+    "sku": "100123-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18-824",
+    "sku": "mac-18-824",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81234764,
+    "sku": 81234764,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8821-1",
+    "sku": "25-8821-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18-826",
+    "sku": "mac-18-826",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5890-3",
+    "sku": "25-5890-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18--827",
+    "sku": "mac-18--827",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-5890-10",
+    "sku": "25-5890-10",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-57931-3",
+    "sku": "25-57931-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8825-3",
+    "sku": "25-8825-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18-975",
+    "sku": "mac-18-975",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8825",
+    "sku": "25-8825",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "25-8821-3",
+    "sku": "25-8821-3",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "mac-18-825",
+    "sku": "mac-18-825",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81184522,
+    "sku": 81184522,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "55985506-Bx",
+    "sku": "55985506-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670BKGM-1",
+    "sku": "01-670BKGM-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "01-670HBKGM-Bx",
+    "sku": "01-670HBKGM-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 8146231,
+    "sku": 8146231,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146241-5",
+    "sku": "08146241-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "08146241-12",
+    "sku": "08146241-12",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "650PA-5",
+    "sku": "650PA-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD26ECDFA-ELR",
+    "sku": "STD26ECDFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "065-3-RX",
+    "sku": "065-3-RX",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD20ECDDAHD-SF",
+    "sku": "STD20ECDDAHD-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PL414RBDDA",
+    "sku": "PL414RBDDA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD26ECDDA-ELR",
+    "sku": "STD26ECDDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD28ECDDA-ELR",
+    "sku": "STD28ECDDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "FCM22-BK-BKC",
+    "sku": "FCM22-BK-BKC",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K318ADDA-SF",
+    "sku": "146-K318ADDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD24ECDFA-SF",
+    "sku": "STD24ECDFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K320ADDA-SF",
+    "sku": "146-K320ADDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD22DDA-ELR",
+    "sku": "STD22DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD30ECDDA-SF",
+    "sku": "STD30ECDDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PLA418RBDFA",
+    "sku": "PLA418RBDFA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-STD22ECDFA-SF",
+    "sku": "146-STD22ECDFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K318DFA-ELR",
+    "sku": "K318DFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K316DDA-SF",
+    "sku": "146-K316DDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K316ADDA-SF",
+    "sku": "K316ADDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD26ECDDA-SF",
+    "sku": "STD26ECDDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K320DFA-ELR",
+    "sku": "K320DFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010420",
+    "sku": "3G010420",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD22ECDFA-ELR",
+    "sku": "STD22ECDFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "081234749-1",
+    "sku": "081234749-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD24ECDFA-ELR",
+    "sku": "STD24ECDFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K318DDA-ELR",
+    "sku": "146-K318DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010450",
+    "sku": "3G010450",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K320DFA-SF",
+    "sku": "K320DFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PLA418RBDDA",
+    "sku": "PLA418RBDDA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD30ECDDA",
+    "sku": "STD30ECDDA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010440",
+    "sku": "3G010440",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BTR20-R",
+    "sku": "BTR20-R",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD30ECDFA",
+    "sku": "STD30ECDFA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD28ECDFA",
+    "sku": "STD28ECDFA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD20ECDDAHD-ELR",
+    "sku": "STD20ECDDAHD-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010540",
+    "sku": "3G010540",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K316DDA-ELR",
+    "sku": "146-K316DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81234772,
+    "sku": 81234772,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD26ECDFA",
+    "sku": "STD26ECDFA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "RTLREB18DDA-SF",
+    "sku": "RTLREB18DDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K320DDA-ELR",
+    "sku": "146-K320DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81184530,
+    "sku": 81184530,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K316DFA-ELR",
+    "sku": "K316DFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "80734958-5",
+    "sku": "80734958-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "K318DFA-SF",
+    "sku": "K318DFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "T4X22RDAP",
+    "sku": "T4X22RDAP",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD26ECDDA",
+    "sku": "STD26ECDDA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-K320DDA-SF",
+    "sku": "146-K320DDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "L412DDA-ELR",
+    "sku": "L412DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3G010530",
+    "sku": "3G010530",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 82246,
+    "sku": 82246,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BLS20FBD-SF",
+    "sku": "BLS20FBD-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "EJ784-1",
+    "sku": "EJ784-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "PLA420FBUARAD-SF",
+    "sku": "PLA420FBUARAD-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD22ECDFA-SF",
+    "sku": "STD22ECDFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "MDS806300RBY",
+    "sku": "MDS806300RBY",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "146-SSP216DDA-ELR",
+    "sku": "146-SSP216DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3656L",
+    "sku": "3656L",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 706142,
+    "sku": 706142,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66204-50",
+    "sku": "16-66204-50",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "L414DDA-ELR",
+    "sku": "L414DDA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3K010330",
+    "sku": "3K010330",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "MDS806250NVY",
+    "sku": "MDS806250NVY",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 90763022,
+    "sku": 90763022,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP118FA-SF",
+    "sku": "SSP118FA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "HDELR",
+    "sku": "HDELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "L414DDA-SF",
+    "sku": "L414DDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "EXP19LTBL",
+    "sku": "EXP19LTBL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "TRSX5RC",
+    "sku": "TRSX5RC",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3K010130",
+    "sku": "3K010130",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP220DFA-ELR",
+    "sku": "SSP220DFA-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "MDS806140PD",
+    "sku": "MDS806140PD",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 81537703,
+    "sku": 81537703,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "3K010230",
+    "sku": "3K010230",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "FCP18-BK",
+    "sku": "FCP18-BK",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "L412DDA-SF",
+    "sku": "L412DDA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 926543,
+    "sku": 926543,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "4650MR",
+    "sku": "4650MR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "BLS20FBD-ELR",
+    "sku": "BLS20FBD-ELR",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "FCP18-BK-L",
+    "sku": "FCP18-BK-L",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "4000MRQ2",
+    "sku": "4000MRQ2",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "STD22RBDDA",
+    "sku": "STD22RBDDA",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "SSP220DFA-SF",
+    "sku": "SSP220DFA-SF",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "10-1492-1",
+    "sku": "10-1492-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "530212-1",
+    "sku": "530212-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "10-1493-1",
+    "sku": "10-1493-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 530212,
+    "sku": 530212,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "B0-PAJT-8EML",
+    "sku": "B0-PAJT-8EML",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "B0-PAJT-8EML- LOCAL",
+    "sku": "B0-PAJT-8EML- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "RU-5YUP-ADU6- LOCAL",
+    "sku": "RU-5YUP-ADU6- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "AT-IYY7-UEPI- LOCAL",
+    "sku": "AT-IYY7-UEPI- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "AT-IYY7-UEPI",
+    "sku": "AT-IYY7-UEPI",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "JG-W6R1-STSB- LOCAL",
+    "sku": "JG-W6R1-STSB- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "TBDEN",
+    "sku": "TBDEN",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4192",
+    "sku": "Mac-4192",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419130",
+    "sku": "Mac-419130",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4195",
+    "sku": "Mac-4195",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419101",
+    "sku": "Mac-419101",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419124",
+    "sku": "Mac-419124",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419148",
+    "sku": "Mac-419148",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419153",
+    "sku": "Mac-419153",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419117",
+    "sku": "Mac-419117",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419121",
+    "sku": "Mac-419121",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419129",
+    "sku": "Mac-419129",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419141",
+    "sku": "Mac-419141",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4196",
+    "sku": "Mac-4196",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4191103",
+    "sku": "Mac-4191103",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4199",
+    "sku": "Mac-4199",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4198",
+    "sku": "Mac-4198",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419149",
+    "sku": "Mac-419149",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419106",
+    "sku": "Mac-419106",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419158",
+    "sku": "Mac-419158",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419110",
+    "sku": "Mac-419110",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419134",
+    "sku": "Mac-419134",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419154",
+    "sku": "Mac-419154",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419128",
+    "sku": "Mac-419128",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419139",
+    "sku": "Mac-419139",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419147",
+    "sku": "Mac-419147",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419144",
+    "sku": "Mac-419144",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419125",
+    "sku": "Mac-419125",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419105",
+    "sku": "Mac-419105",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419146",
+    "sku": "Mac-419146",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419123",
+    "sku": "Mac-419123",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419115",
+    "sku": "Mac-419115",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419151",
+    "sku": "Mac-419151",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4197",
+    "sku": "Mac-4197",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66202-5",
+    "sku": "16-66202-5",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-66203-50",
+    "sku": "16-66203-50",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "WV-XWUV-543D- LOCAL",
+    "sku": "WV-XWUV-543D- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "OS-EEKE-FYFB- LOCAL",
+    "sku": "OS-EEKE-FYFB- LOCAL",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "OS-EEKE-FYFB",
+    "sku": "OS-EEKE-FYFB",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-146-10305-7",
+    "sku": "Mac-146-10305-7",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-146-10305-6",
+    "sku": "Mac-146-10305-6",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-146-10305-8",
+    "sku": "Mac-146-10305-8",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac146-10305-9",
+    "sku": "Mac146-10305-9",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-1",
+    "sku": "24-106-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-2S-1",
+    "sku": "24-106-2S-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "13262-2S-1",
+    "sku": "13262-2S-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-1S",
+    "sku": "24-106-1S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-103-Bx",
+    "sku": "24-103-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-106-1S-Bx",
+    "sku": "24-106-1S-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "13262-2S-Bx",
+    "sku": "13262-2S-Bx",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "13262-2S",
+    "sku": "13262-2S",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "24-103-1",
+    "sku": "24-103-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419143",
+    "sku": "Mac-419143",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419120",
+    "sku": "Mac-419120",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419116",
+    "sku": "Mac-419116",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419140",
+    "sku": "Mac-419140",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419122",
+    "sku": "Mac-419122",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419119",
+    "sku": "Mac-419119",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4193",
+    "sku": "Mac-4193",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4191",
+    "sku": "Mac-4191",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419145",
+    "sku": "Mac-419145",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-4191104",
+    "sku": "Mac-4191104",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419100",
+    "sku": "Mac-419100",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419152",
+    "sku": "Mac-419152",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "Mac-419127",
+    "sku": "Mac-419127",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": 100126,
+    "sku": 100126,
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-4276",
+    "sku": "16-4276",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "16-1069-1",
+    "sku": "16-1069-1",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "14-118",
+    "sku": "14-118",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "WPWU48",
+    "sku": "WPWU48",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "WPW96-Pk",
+    "sku": "WPW96-Pk",
     "cost_price": 0,
     "brand": "McKesson"
   },
   {
-    "Sku": "1016-ST30",
+    "sku": "1016-ST30",
     "cost_price": 0,
     "brand": "Medicom"
   },
   {
-    "Sku": 5593,
+    "sku": 5593,
     "cost_price": 0,
     "brand": "Medicom"
   },
   {
-    "Sku": "205316-BX",
+    "sku": "205316-BX",
     "cost_price": 0,
     "brand": "Medicom"
   },
   {
-    "Sku": "2046-Bx",
+    "sku": "2046-Bx",
     "cost_price": 0,
     "brand": "Medicom"
   },
   {
-    "Sku": "711-Pk",
+    "sku": "711-Pk",
     "cost_price": 3.78,
     "brand": "Medicom"
   },
   {
-    "Sku": "205314-Bx",
+    "sku": "205314-Bx",
     "cost_price": 3.86,
     "brand": "Medicom"
   },
   {
-    "Sku": "712-Pk",
+    "sku": "712-Pk",
     "cost_price": 3.93,
     "brand": "Medicom"
   },
   {
-    "Sku": "205315-Bx",
+    "sku": "205315-Bx",
     "cost_price": 4.79,
     "brand": "Medicom"
   },
   {
-    "Sku": "205317-BX",
+    "sku": "205317-BX",
     "cost_price": 4.79,
     "brand": "Medicom"
   },
   {
-    "Sku": "40006-Bx",
+    "sku": "40006-Bx",
     "cost_price": 5.16,
     "brand": "Medicom"
   },
   {
-    "Sku": "88000-4-Bx",
+    "sku": "88000-4-Bx",
     "cost_price": 6.63,
     "brand": "Medicom"
   },
   {
-    "Sku": "2042-BX",
+    "sku": "2042-BX",
     "cost_price": 7.58,
     "brand": "Medicom"
   },
   {
-    "Sku": "88020-4",
+    "sku": "88020-4",
     "cost_price": 7.68,
     "brand": "Medicom"
   },
   {
-    "Sku": "88010-4B-Bx",
+    "sku": "88010-4B-Bx",
     "cost_price": 15.61,
     "brand": "Medicom"
   },
   {
-    "Sku": "10011-US",
+    "sku": "10011-US",
     "cost_price": 23.49,
     "brand": "Medicom"
   },
   {
-    "Sku": 30045,
+    "sku": 30045,
     "cost_price": 30.48,
     "brand": "Medicom"
   },
   {
-    "Sku": 30055,
+    "sku": 30055,
     "cost_price": 33.99,
     "brand": "Medicom"
   },
   {
-    "Sku": 30060,
+    "sku": 30060,
     "cost_price": 33.99,
     "brand": "Medicom"
   },
   {
-    "Sku": "4900-STAT",
+    "sku": "4900-STAT",
     "cost_price": 40.56,
     "brand": "Medicom"
   },
   {
-    "Sku": 205315,
+    "sku": 205315,
     "cost_price": 47.99,
     "brand": "Medicom"
   },
   {
-    "Sku": "1011-BG200",
+    "sku": "1011-BG200",
     "cost_price": 128.08,
     "brand": "Medicom"
   },
   {
-    "Sku": "1016-M200",
+    "sku": "1016-M200",
     "cost_price": 140,
     "brand": "Medicom"
   },
   {
-    "Sku": "1015-WB250",
+    "sku": "1015-WB250",
     "cost_price": 246.5,
     "brand": "Medicom"
   },
   {
-    "Sku": "CUR8104",
+    "sku": "CUR8104",
     "cost_price": 0,
     "brand": "Medline"
   },
   {
-    "Sku": "CUR8105",
+    "sku": "CUR8105",
     "cost_price": 0,
     "brand": "Medline"
   },
   {
-    "Sku": "DDCUR8106H",
+    "sku": "DDCUR8106H",
     "cost_price": 0,
     "brand": "Medline"
   },
   {
-    "Sku": "DDCUR9316",
+    "sku": "DDCUR9316",
     "cost_price": 0,
     "brand": "Medline"
   },
   {
-    "Sku": "NON024220",
+    "sku": "NON024220",
     "cost_price": 0,
     "brand": "Medline"
   },
   {
-    "Sku": 632000,
+    "sku": 632000,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 633000,
+    "sku": 633000,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 634000,
+    "sku": 634000,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 402030,
+    "sku": 402030,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 404000,
+    "sku": 404000,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 304990,
+    "sku": 304990,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 309990,
+    "sku": 309990,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 311100,
+    "sku": 311100,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 311000,
+    "sku": 311000,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 312000,
+    "sku": 312000,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 312030,
+    "sku": 312030,
     "cost_price": 0,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 307991,
+    "sku": 307991,
     "cost_price": 4,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 306991,
+    "sku": 306991,
     "cost_price": 6.07,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 301002,
+    "sku": 301002,
     "cost_price": 12.2,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": "302002-1",
+    "sku": "302002-1",
     "cost_price": 13,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 312020,
+    "sku": 312020,
     "cost_price": 13.21,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 310991,
+    "sku": 310991,
     "cost_price": 13.33,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 3030002,
+    "sku": 3030002,
     "cost_price": 20,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": 316002,
+    "sku": 316002,
     "cost_price": 25,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": "026-210",
+    "sku": "026-210",
     "cost_price": 248,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": "EQV033",
+    "sku": "EQV033",
     "cost_price": 813.2,
     "brand": "Meta Biomed"
   },
   {
-    "Sku": "14-1100-1",
+    "sku": "14-1100-1",
     "cost_price": 4.88,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1224-1",
+    "sku": "13-1224-1",
     "cost_price": 5.57,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5100-1",
+    "sku": "13-5100-1",
     "cost_price": 6,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5150-1",
+    "sku": "13-5150-1",
     "cost_price": 6.02,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1100-1",
+    "sku": "13-1100-1",
     "cost_price": 7.1,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-9100",
+    "sku": "13-9100",
     "cost_price": 10,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1150-1",
+    "sku": "13-1150-1",
     "cost_price": 10.4,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-4100-1",
+    "sku": "10-4100-1",
     "cost_price": 32.97,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000-4",
+    "sku": "13-1000-4",
     "cost_price": 54.15,
     "brand": "Metrex"
   },
   {
-    "Sku": "14-1100",
+    "sku": "14-1100",
     "cost_price": 62.73,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5100",
+    "sku": "13-5100",
     "cost_price": 63,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000-3",
+    "sku": "13-1000-3",
     "cost_price": 70.62,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000-3- LOCAL",
+    "sku": "13-1000-3- LOCAL",
     "cost_price": 70.63,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1024",
+    "sku": "13-1024",
     "cost_price": 99.99,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1224",
+    "sku": "13-1224",
     "cost_price": 100,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5100-DD2",
+    "sku": "13-5100-DD2",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000-M- LOCAL",
+    "sku": "13-1000-M- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000-M",
+    "sku": "13-1000-M",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000b- LOCAL",
+    "sku": "13-1000b- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000b",
+    "sku": "13-1000b",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5100-DD2- LOCAL",
+    "sku": "13-5100-DD2- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1100-4",
+    "sku": "13-1100-4",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-4100-1- LOCAL",
+    "sku": "10-4100-1- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "SH-JCD9-XMTP- LOCAL",
+    "sku": "SH-JCD9-XMTP- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1024- LOCAL",
+    "sku": "13-1024- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1024-1B",
+    "sku": "13-1024-1B",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "X3-KLJP-KSDS",
+    "sku": "X3-KLJP-KSDS",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "14-1100- LOCAL",
+    "sku": "14-1100- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1024-1B- LOCAL",
+    "sku": "13-1024-1B- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-4100EA",
+    "sku": "10-4100EA",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-4100-Case",
+    "sku": "10-4100-Case",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "X3-KLJP-KSDS- LOCAL",
+    "sku": "X3-KLJP-KSDS- LOCAL",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "SH-JCD9-XMTP",
+    "sku": "SH-JCD9-XMTP",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1024-NY",
+    "sku": "13-1024-NY",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5025-1",
+    "sku": "13-5025-1",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-4224-1",
+    "sku": "10-4224-1",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-1400-DD",
+    "sku": "10-1400-DD",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-1518",
+    "sku": "10-1518",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "DD10-1800",
+    "sku": "DD10-1800",
     "cost_price": 0,
     "brand": "Metrex"
   },
   {
-    "Sku": "DD10-1158",
+    "sku": "DD10-1158",
     "cost_price": 6.73,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1024-1",
+    "sku": "13-1024-1",
     "cost_price": 8.89,
     "brand": "Metrex"
   },
   {
-    "Sku": "16-1100-1",
+    "sku": "16-1100-1",
     "cost_price": 9.32,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-9100-1",
+    "sku": "13-9100-1",
     "cost_price": 9.96,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-2001-1",
+    "sku": "10-2001-1",
     "cost_price": 14.61,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-2860-1",
+    "sku": "10-2860-1",
     "cost_price": 21,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-2800-1",
+    "sku": "10-2800-1",
     "cost_price": 21.34,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000-1",
+    "sku": "13-1000-1",
     "cost_price": 23.2,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-3260-1",
+    "sku": "10-3260-1",
     "cost_price": 23.45,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-3200-1",
+    "sku": "10-3200-1",
     "cost_price": 24.21,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5000-1",
+    "sku": "13-5000-1",
     "cost_price": 25.47,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-8100-1",
+    "sku": "10-8100-1",
     "cost_price": 27.13,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-1800-1",
+    "sku": "10-1800-1",
     "cost_price": 28.16,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-6000-1",
+    "sku": "10-6000-1",
     "cost_price": 28.41,
     "brand": "Metrex"
   },
   {
-    "Sku": 913382,
+    "sku": 913382,
     "cost_price": 33.21,
     "brand": "Metrex"
   },
   {
-    "Sku": "DD13-1155",
+    "sku": "DD13-1155",
     "cost_price": 33.57,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1025-1",
+    "sku": "13-1025-1",
     "cost_price": 42,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-2500-1",
+    "sku": "10-2500-1",
     "cost_price": 47.58,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-1800-2",
+    "sku": "10-1800-2",
     "cost_price": 58.3,
     "brand": "Metrex"
   },
   {
-    "Sku": "DD10-303",
+    "sku": "DD10-303",
     "cost_price": 68.83,
     "brand": "Metrex"
   },
   {
-    "Sku": "10-304",
+    "sku": "10-304",
     "cost_price": 68.84,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1000",
+    "sku": "13-1000",
     "cost_price": 72,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5150",
+    "sku": "13-5150",
     "cost_price": 79,
     "brand": "Metrex"
   },
   {
-    "Sku": 350909,
+    "sku": 350909,
     "cost_price": 83.73,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1025",
+    "sku": "13-1025",
     "cost_price": 84,
     "brand": "Metrex"
   },
   {
-    "Sku": 328994,
+    "sku": 328994,
     "cost_price": 85.36,
     "brand": "Metrex"
   },
   {
-    "Sku": 497006,
+    "sku": 497006,
     "cost_price": 93.81,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1150",
+    "sku": "13-1150",
     "cost_price": 95,
     "brand": "Metrex"
   },
   {
-    "Sku": 475091,
+    "sku": 475091,
     "cost_price": 96.84,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5000C",
+    "sku": "13-5000C",
     "cost_price": 102,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-1100",
+    "sku": "13-1100",
     "cost_price": 102.87,
     "brand": "Metrex"
   },
   {
-    "Sku": "13-5025",
+    "sku": "13-5025",
     "cost_price": 118.59,
     "brand": "Metrex"
   },
   {
-    "Sku": "DD10-4100C",
+    "sku": "DD10-4100C",
     "cost_price": 131.22,
     "brand": "Metrex"
   },
   {
-    "Sku": "SFR 87529-B-N-PF-DD",
+    "sku": "SFR 87529-B-N-PF-DD",
     "cost_price": 0,
     "brand": "Mexpo International"
   },
   {
-    "Sku": 93898,
+    "sku": 93898,
     "cost_price": 0,
     "brand": "Mexpo International"
   },
   {
-    "Sku": "DD 6228-LTX-PF",
+    "sku": "DD 6228-LTX-PF",
     "cost_price": 0,
     "brand": "Mexpo International"
   },
   {
-    "Sku": "DD-BM 6227-LTX-PF",
+    "sku": "DD-BM 6227-LTX-PF",
     "cost_price": 0,
     "brand": "Mexpo International"
   },
   {
-    "Sku": "SFR 87526-B-N-PF",
+    "sku": "SFR 87526-B-N-PF",
     "cost_price": 0,
     "brand": "Mexpo International"
   },
   {
-    "Sku": "M60034",
+    "sku": "M60034",
     "cost_price": 7.13,
     "brand": "Micro Scientific Industries"
   },
   {
-    "Sku": "M60034- LOCAL",
+    "sku": "M60034- LOCAL",
     "cost_price": 0,
     "brand": "Micro Scientific Industries"
   },
   {
-    "Sku": "M60034-2",
+    "sku": "M60034-2",
     "cost_price": 0,
     "brand": "Micro Scientific Industries"
   },
   {
-    "Sku": "M60034-2-LOCAL",
+    "sku": "M60034-2-LOCAL",
     "cost_price": 0,
     "brand": "Micro Scientific Industries"
   },
   {
-    "Sku": "MRA400",
+    "sku": "MRA400",
     "cost_price": 0,
     "brand": "Microbrush"
   },
   {
-    "Sku": "MK-296-S-LOCAL",
+    "sku": "MK-296-S-LOCAL",
     "cost_price": 0,
     "brand": "MICROFLEX"
   },
   {
-    "Sku": "MK-295-S",
+    "sku": "MK-295-S",
     "cost_price": 0,
     "brand": "MICROFLEX"
   },
   {
-    "Sku": "MK-296-L-1-LOCAL",
+    "sku": "MK-296-L-1-LOCAL",
     "cost_price": 0,
     "brand": "MICROFLEX"
   },
   {
-    "Sku": "UF-524-XS",
+    "sku": "UF-524-XS",
     "cost_price": 0,
     "brand": "Microflex"
   },
   {
-    "Sku": "DGP-350-M",
+    "sku": "DGP-350-M",
     "cost_price": 4.95,
     "brand": "Microflex"
   },
   {
-    "Sku": "DGP-350-S",
+    "sku": "DGP-350-S",
     "cost_price": 4.95,
     "brand": "Microflex"
   },
   {
-    "Sku": "US-220-M",
+    "sku": "US-220-M",
     "cost_price": 6.76,
     "brand": "Microflex"
   },
   {
-    "Sku": "US-220-L",
+    "sku": "US-220-L",
     "cost_price": 7,
     "brand": "Microflex"
   },
   {
-    "Sku": "US-220-S",
+    "sku": "US-220-S",
     "cost_price": 7,
     "brand": "Microflex"
   },
   {
-    "Sku": "UF-524-M",
+    "sku": "UF-524-M",
     "cost_price": 8.53,
     "brand": "Microflex"
   },
   {
-    "Sku": "UF-524-S",
+    "sku": "UF-524-S",
     "cost_price": 8.53,
     "brand": "Microflex"
   },
   {
-    "Sku": "UF-524-XS-S",
+    "sku": "UF-524-XS-S",
     "cost_price": 8.53,
     "brand": "Microflex"
   },
   {
-    "Sku": "MK-296-XXL",
+    "sku": "MK-296-XXL",
     "cost_price": 8.87,
     "brand": "Microflex"
   },
   {
-    "Sku": "SU-690-L",
+    "sku": "SU-690-L",
     "cost_price": 9.18,
     "brand": "Microflex"
   },
   {
-    "Sku": "MF-300-S",
+    "sku": "MF-300-S",
     "cost_price": 9.41,
     "brand": "Microflex"
   },
   {
-    "Sku": "C521",
+    "sku": "C521",
     "cost_price": 11,
     "brand": "Microflex"
   },
   {
-    "Sku": "C522",
+    "sku": "C522",
     "cost_price": 11.1,
     "brand": "Microflex"
   },
   {
-    "Sku": "Z6HC-1",
+    "sku": "Z6HC-1",
     "cost_price": 0,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "DDM60038",
+    "sku": "DDM60038",
     "cost_price": 0,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "M60035-1",
+    "sku": "M60035-1",
     "cost_price": 0,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "OCP04-128",
+    "sku": "OCP04-128",
     "cost_price": 0,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "OCW06-100-1",
+    "sku": "OCW06-100-1",
     "cost_price": 7.51,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "M60034-1",
+    "sku": "M60034-1",
     "cost_price": 8.76,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "OCW06-100",
+    "sku": "OCW06-100",
     "cost_price": 47.25,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "M60035",
+    "sku": "M60035",
     "cost_price": 82.34,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "OCP02-320",
+    "sku": "OCP02-320",
     "cost_price": 101,
     "brand": "Micro-Scientific Industries"
   },
   {
-    "Sku": "700740-2D",
+    "sku": "700740-2D",
     "cost_price": 0,
     "brand": "Milk-Bone"
   },
   {
-    "Sku": "700740-2",
+    "sku": "700740-2",
     "cost_price": 0,
     "brand": "Milk-Bone"
   },
   {
-    "Sku": "62-203",
+    "sku": "62-203",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-204",
+    "sku": "62-204",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-205",
+    "sku": "62-205",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-206",
+    "sku": "62-206",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-312B",
+    "sku": "4-312B",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "22D-209",
+    "sku": "22D-209",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "66-317",
+    "sku": "66-317",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-55MSSOB",
+    "sku": "76-55MSSOB",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-3",
+    "sku": "76-3",
     "cost_price": 0,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "3-1001-1",
+    "sku": "3-1001-1",
     "cost_price": 2.82,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "V966-317",
+    "sku": "V966-317",
     "cost_price": 3.26,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "568-70750",
+    "sku": "568-70750",
     "cost_price": 3.87,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "67-688",
+    "sku": "67-688",
     "cost_price": 3.95,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "V966-652",
+    "sku": "V966-652",
     "cost_price": 5.63,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "69-23s",
+    "sku": "69-23s",
     "cost_price": 7.09,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-415",
+    "sku": "4-415",
     "cost_price": 8.89,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-411",
+    "sku": "4-411",
     "cost_price": 9.14,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": 222859,
+    "sku": 222859,
     "cost_price": 9.2,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "72-34",
+    "sku": "72-34",
     "cost_price": 11.9,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-80",
+    "sku": "76-80",
     "cost_price": 16.17,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-511",
+    "sku": "4-511",
     "cost_price": 17.87,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "DFG557SU",
+    "sku": "DFG557SU",
     "cost_price": 20.16,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-70",
+    "sku": "76-70",
     "cost_price": 22,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-315",
+    "sku": "4-315",
     "cost_price": 22.45,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-115",
+    "sku": "4-115",
     "cost_price": 22.45,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "77-70",
+    "sku": "77-70",
     "cost_price": 22.66,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-110",
+    "sku": "4-110",
     "cost_price": 25.01,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-40",
+    "sku": "76-40",
     "cost_price": 28.63,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-42",
+    "sku": "76-42",
     "cost_price": 29.11,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-71",
+    "sku": "62-71",
     "cost_price": 32.1,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-43",
+    "sku": "76-43",
     "cost_price": 35.83,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "DEL8",
+    "sku": "DEL8",
     "cost_price": 42.5,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-144",
+    "sku": "62-144",
     "cost_price": 42.55,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "3-725",
+    "sku": "3-725",
     "cost_price": 44.02,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-315C",
+    "sku": "4-315C",
     "cost_price": 44.9,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "4-115C",
+    "sku": "4-115C",
     "cost_price": 48.06,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "3-740",
+    "sku": "3-740",
     "cost_price": 59.33,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "33-34-SH",
+    "sku": "33-34-SH",
     "cost_price": 70.08,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "33-32",
+    "sku": "33-32",
     "cost_price": 72,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "33-34",
+    "sku": "33-34",
     "cost_price": 73.09,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "33-36",
+    "sku": "33-36",
     "cost_price": 73.09,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "33-35",
+    "sku": "33-35",
     "cost_price": 73.09,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "3-700",
+    "sku": "3-700",
     "cost_price": 76.13,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-201",
+    "sku": "62-201",
     "cost_price": 94,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "DEFXC35M",
+    "sku": "DEFXC35M",
     "cost_price": 128.34,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "62-200",
+    "sku": "62-200",
     "cost_price": 134.94,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "76-55SSOB",
+    "sku": "76-55SSOB",
     "cost_price": 266.71,
     "brand": "Miltex-Integra"
   },
   {
-    "Sku": "MM98815-1",
+    "sku": "MM98815-1",
     "cost_price": 0,
     "brand": "MM98815-1"
   },
   {
-    "Sku": "MM98816-1",
+    "sku": "MM98816-1",
     "cost_price": 0,
     "brand": "MM98816-1"
   },
   {
-    "Sku": "MM98817-1",
+    "sku": "MM98817-1",
     "cost_price": 0,
     "brand": "MM98817-1"
   },
   {
-    "Sku": "MSA-110-1",
+    "sku": "MSA-110-1",
     "cost_price": 0,
     "brand": "MSA-110-1"
   },
   {
-    "Sku": "3001T-12",
+    "sku": "3001T-12",
     "cost_price": 0,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "N928-M",
+    "sku": "N928-M",
     "cost_price": 0,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "VU423-SI",
+    "sku": "VU423-SI",
     "cost_price": 0,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "V393-M",
+    "sku": "V393-M",
     "cost_price": 0,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "N667-M",
+    "sku": "N667-M",
     "cost_price": 0,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "VU423-M",
+    "sku": "VU423-M",
     "cost_price": 0,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6001-03",
+    "sku": "6001-03",
     "cost_price": 2.76,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008T-21",
+    "sku": "6008T-21",
     "cost_price": 3.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008T-22",
+    "sku": "6008T-22",
     "cost_price": 3.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008T-15",
+    "sku": "6008T-15",
     "cost_price": 3.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008T-11",
+    "sku": "6008T-11",
     "cost_price": 3.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008T-10",
+    "sku": "6008T-10",
     "cost_price": 3.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008T-12",
+    "sku": "6008T-12",
     "cost_price": 3.88,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2002-64",
+    "sku": "2002-64",
     "cost_price": 4.55,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2002-61",
+    "sku": "2002-61",
     "cost_price": 4.55,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2002-67",
+    "sku": "2002-67",
     "cost_price": 4.55,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "QBRGEN",
+    "sku": "QBRGEN",
     "cost_price": 5.46,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2003-81",
+    "sku": "2003-81",
     "cost_price": 6.53,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008TR-12",
+    "sku": "6008TR-12",
     "cost_price": 7.82,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008TR-15",
+    "sku": "6008TR-15",
     "cost_price": 7.82,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "6008TR-11",
+    "sku": "6008TR-11",
     "cost_price": 8.21,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-25",
+    "sku": "2001T-25",
     "cost_price": 10.58,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-22",
+    "sku": "2001T-22",
     "cost_price": 10.58,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-15",
+    "sku": "2001T-15",
     "cost_price": 10.58,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-12",
+    "sku": "2001T-12",
     "cost_price": 10.58,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-11",
+    "sku": "2001T-11",
     "cost_price": 11.11,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-10",
+    "sku": "2001T-10",
     "cost_price": 11.16,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "3001T-11",
+    "sku": "3001T-11",
     "cost_price": 11.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "3001T-15C",
+    "sku": "3001T-15C",
     "cost_price": 12.6,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-15C",
+    "sku": "2001T-15C",
     "cost_price": 12.6,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "3001T-15",
+    "sku": "3001T-15",
     "cost_price": 12.6,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "3001T-12B",
+    "sku": "3001T-12B",
     "cost_price": 12.6,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "2001T-12B",
+    "sku": "2001T-12B",
     "cost_price": 12.6,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "GP822-M",
+    "sku": "GP822-M",
     "cost_price": 19.85,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "GP822-M-SI",
+    "sku": "GP822-M-SI",
     "cost_price": 19.85,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "GC6354-M",
+    "sku": "GC6354-M",
     "cost_price": 22.05,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "N660-M",
+    "sku": "N660-M",
     "cost_price": 22.9,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "QFRGEN-01",
+    "sku": "QFRGEN-01",
     "cost_price": 25.71,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "P8660-M",
+    "sku": "P8660-M",
     "cost_price": 26.1,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "P8661-M",
+    "sku": "P8661-M",
     "cost_price": 28.1,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "P8699-M",
+    "sku": "P8699-M",
     "cost_price": 28.7,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "V391-M",
+    "sku": "V391-M",
     "cost_price": 31.2,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "V392-M",
+    "sku": "V392-M",
     "cost_price": 31.8,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "V393-M-1",
+    "sku": "V393-M-1",
     "cost_price": 32.1,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "V463-M",
+    "sku": "V463-M",
     "cost_price": 47.9,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "V464-M",
+    "sku": "V464-M",
     "cost_price": 48.6,
     "brand": "Myco Medical"
   },
   {
-    "Sku": "BR-9005",
+    "sku": "BR-9005",
     "cost_price": 25.26,
     "brand": "Mydent"
   },
   {
-    "Sku": "UT1000",
+    "sku": "UT1000",
     "cost_price": 0,
     "brand": "Mydent"
   },
   {
-    "Sku": "HC-1001",
+    "sku": "HC-1001",
     "cost_price": 0,
     "brand": "Mydent"
   },
   {
-    "Sku": "DF12",
+    "sku": "DF12",
     "cost_price": 0,
     "brand": "New World Imports"
   },
   {
-    "Sku": "DENT40-1",
+    "sku": "DENT40-1",
     "cost_price": 1.52,
     "brand": "New World Imports"
   },
   {
-    "Sku": "TP6L",
+    "sku": "TP6L",
     "cost_price": 88.1,
     "brand": "New World Imports"
   },
   {
-    "Sku": "6280-1",
+    "sku": "6280-1",
     "cost_price": 0,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "6290-1",
+    "sku": "6290-1",
     "cost_price": 0,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "6291-1",
+    "sku": "6291-1",
     "cost_price": 0,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "6281-1",
+    "sku": "6281-1",
     "cost_price": 0,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "6240-1",
+    "sku": "6240-1",
     "cost_price": 0.54,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "6260-1",
+    "sku": "6260-1",
     "cost_price": 1.22,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "6270-1",
+    "sku": "6270-1",
     "cost_price": 1.25,
     "brand": "Nurse Assist"
   },
   {
-    "Sku": "52818-1",
+    "sku": "52818-1",
     "cost_price": 8.89,
     "brand": "O&M Halyard Inc"
   },
   {
-    "Sku": "52818-1- LOCAL",
+    "sku": "52818-1- LOCAL",
     "cost_price": 8.89,
     "brand": "O&M Halyard Inc"
   },
   {
-    "Sku": 33573,
+    "sku": 33573,
     "cost_price": 0,
     "brand": "ODonto"
   },
   {
-    "Sku": "33573- LOCAL",
+    "sku": "33573- LOCAL",
     "cost_price": 0,
     "brand": "ODonto"
   },
   {
-    "Sku": 80799984,
+    "sku": 80799984,
     "cost_price": 0,
     "brand": "Oral-B"
   },
   {
-    "Sku": "13-1157-Osung",
+    "sku": "13-1157-Osung",
     "cost_price": 0,
     "brand": "Osung"
   },
   {
-    "Sku": "00076660300378-4",
+    "sku": "00076660300378-4",
     "cost_price": 0,
     "brand": "P&G-HEALTH"
   },
   {
-    "Sku": "P5009-1",
+    "sku": "P5009-1",
     "cost_price": 3,
     "brand": "P5009-1"
   },
   {
-    "Sku": "P5009-5",
+    "sku": "P5009-5",
     "cost_price": 0,
     "brand": "P5009-5"
   },
   {
-    "Sku": "248-500",
+    "sku": "248-500",
     "cost_price": 125.44,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131201,
+    "sku": 131201,
     "cost_price": 0,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131115,
+    "sku": 131115,
     "cost_price": 0,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131116,
+    "sku": 131116,
     "cost_price": 0,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "251W",
+    "sku": "251W",
     "cost_price": 0,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "HH-102",
+    "sku": "HH-102",
     "cost_price": 0,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "3DR-DB-ORF",
+    "sku": "3DR-DB-ORF",
     "cost_price": 0,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "CP001BW-01",
+    "sku": "CP001BW-01",
     "cost_price": 4.12,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 811,
+    "sku": 811,
     "cost_price": 5.24,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "CR-100",
+    "sku": "CR-100",
     "cost_price": 5.55,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 231,
+    "sku": 231,
     "cost_price": 6.74,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "MASKT-06BK",
+    "sku": "MASKT-06BK",
     "cost_price": 10.39,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131113,
+    "sku": 131113,
     "cost_price": 10.7,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PMCL-106",
+    "sku": "PMCL-106",
     "cost_price": 16.05,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "151Z",
+    "sku": "151Z",
     "cost_price": 16.73,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "152EZ",
+    "sku": "152EZ",
     "cost_price": 16.73,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PD130",
+    "sku": "PD130",
     "cost_price": 17.97,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "TM268",
+    "sku": "TM268",
     "cost_price": 25,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 125,
+    "sku": 125,
     "cost_price": 25.87,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 1169,
+    "sku": 1169,
     "cost_price": 26.84,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PD-104",
+    "sku": "PD-104",
     "cost_price": 27.54,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "OOG-25",
+    "sku": "OOG-25",
     "cost_price": 29.26,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "OOG-20",
+    "sku": "OOG-20",
     "cost_price": 29.26,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 1357,
+    "sku": 1357,
     "cost_price": 31.79,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 411101,
+    "sku": 411101,
     "cost_price": 37.05,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 411103,
+    "sku": 411103,
     "cost_price": 37.05,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 411105,
+    "sku": 411105,
     "cost_price": 37.42,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 452201,
+    "sku": 452201,
     "cost_price": 37.56,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "248-144",
+    "sku": "248-144",
     "cost_price": 37.72,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "247-144",
+    "sku": "247-144",
     "cost_price": 38.47,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PM-T1",
+    "sku": "PM-T1",
     "cost_price": 39.51,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131110,
+    "sku": 131110,
     "cost_price": 42.85,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131111,
+    "sku": 131111,
     "cost_price": 42.85,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 131109,
+    "sku": 131109,
     "cost_price": 42.85,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "166-100A",
+    "sku": "166-100A",
     "cost_price": 45.04,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "LSFAS-100",
+    "sku": "LSFAS-100",
     "cost_price": 45.82,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "R3008",
+    "sku": "R3008",
     "cost_price": 51.27,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "198T-144",
+    "sku": "198T-144",
     "cost_price": 56.66,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PD-121",
+    "sku": "PD-121",
     "cost_price": 58.64,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "ASMS-100",
+    "sku": "ASMS-100",
     "cost_price": 61.09,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "168-01-disc.",
+    "sku": "168-01-disc.",
     "cost_price": 61.23,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "168-01",
+    "sku": "168-01",
     "cost_price": 62.35,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PM-R3",
+    "sku": "PM-R3",
     "cost_price": 83.24,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PM-R2",
+    "sku": "PM-R2",
     "cost_price": 83.24,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PM-R1",
+    "sku": "PM-R1",
     "cost_price": 86.59,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PMCL-102",
+    "sku": "PMCL-102",
     "cost_price": 112.46,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "247-500",
+    "sku": "247-500",
     "cost_price": 124.49,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "251T-500",
+    "sku": "251T-500",
     "cost_price": 130.87,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PM-02",
+    "sku": "PM-02",
     "cost_price": 149.97,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "198T-500",
+    "sku": "198T-500",
     "cost_price": 190.95,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "168-500",
+    "sku": "168-500",
     "cost_price": 190.95,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "3DR-CNR-A2-300",
+    "sku": "3DR-CNR-A2-300",
     "cost_price": 198.76,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "166-500A",
+    "sku": "166-500A",
     "cost_price": 200.73,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PM-01",
+    "sku": "PM-01",
     "cost_price": 206.89,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "LSFAF-500",
+    "sku": "LSFAF-500",
     "cost_price": 231.87,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "LSFAS-500",
+    "sku": "LSFAS-500",
     "cost_price": 231.87,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": 411201,
+    "sku": 411201,
     "cost_price": 297.92,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "PMCL-100",
+    "sku": "PMCL-100",
     "cost_price": 610.98,
     "brand": "Pac-Dent"
   },
   {
-    "Sku": "3601G",
+    "sku": "3601G",
     "cost_price": 50.35,
     "brand": "Palmero"
   },
   {
-    "Sku": "803C",
+    "sku": "803C",
     "cost_price": 17.47,
     "brand": "Palmero"
   },
   {
-    "Sku": "3565G-1",
+    "sku": "3565G-1",
     "cost_price": 19.21,
     "brand": "Palmero"
   },
   {
-    "Sku": "1866c",
+    "sku": "1866c",
     "cost_price": 25.67,
     "brand": "Palmero"
   },
   {
-    "Sku": 3546,
+    "sku": 3546,
     "cost_price": 26.92,
     "brand": "Palmero"
   },
   {
-    "Sku": 3547,
+    "sku": 3547,
     "cost_price": 28.58,
     "brand": "Palmero"
   },
   {
-    "Sku": "1867C",
+    "sku": "1867C",
     "cost_price": 48.87,
     "brand": "Palmero"
   },
   {
-    "Sku": "S397-AP1.5",
+    "sku": "S397-AP1.5",
     "cost_price": 0,
     "brand": "Parkell"
   },
   {
-    "Sku": "S425",
+    "sku": "S425",
     "cost_price": 0,
     "brand": "Parkell"
   },
   {
-    "Sku": "S374",
+    "sku": "S374",
     "cost_price": 6.7,
     "brand": "Parkell"
   },
   {
-    "Sku": "S017",
+    "sku": "S017",
     "cost_price": 20.3,
     "brand": "Parkell"
   },
   {
-    "Sku": "S426",
+    "sku": "S426",
     "cost_price": 20.9,
     "brand": "Parkell"
   },
   {
-    "Sku": "S429",
+    "sku": "S429",
     "cost_price": 21.45,
     "brand": "Parkell"
   },
   {
-    "Sku": "D418",
+    "sku": "D418",
     "cost_price": 21.75,
     "brand": "Parkell"
   },
   {
-    "Sku": "S441",
+    "sku": "S441",
     "cost_price": 22.54,
     "brand": "Parkell"
   },
   {
-    "Sku": "S181",
+    "sku": "S181",
     "cost_price": 29.05,
     "brand": "Parkell"
   },
   {
-    "Sku": "S329",
+    "sku": "S329",
     "cost_price": 30.45,
     "brand": "Parkell"
   },
   {
-    "Sku": "D406",
+    "sku": "D406",
     "cost_price": 30.94,
     "brand": "Parkell"
   },
   {
-    "Sku": "S626",
+    "sku": "S626",
     "cost_price": 35.37,
     "brand": "Parkell"
   },
   {
-    "Sku": "S437S",
+    "sku": "S437S",
     "cost_price": 41.85,
     "brand": "Parkell"
   },
   {
-    "Sku": "S438S",
+    "sku": "S438S",
     "cost_price": 41.85,
     "brand": "Parkell"
   },
   {
-    "Sku": "D419",
+    "sku": "D419",
     "cost_price": 42.61,
     "brand": "Parkell"
   },
   {
-    "Sku": "S457S",
+    "sku": "S457S",
     "cost_price": 44.15,
     "brand": "Parkell"
   },
   {
-    "Sku": "S255",
+    "sku": "S255",
     "cost_price": 45.15,
     "brand": "Parkell"
   },
   {
-    "Sku": "S396",
+    "sku": "S396",
     "cost_price": 48.7,
     "brand": "Parkell"
   },
   {
-    "Sku": "S641",
+    "sku": "S641",
     "cost_price": 51.63,
     "brand": "Parkell"
   },
   {
-    "Sku": "S463S",
+    "sku": "S463S",
     "cost_price": 52.65,
     "brand": "Parkell"
   },
   {
-    "Sku": "S453S",
+    "sku": "S453S",
     "cost_price": 52.65,
     "brand": "Parkell"
   },
   {
-    "Sku": "S456S",
+    "sku": "S456S",
     "cost_price": 55.27,
     "brand": "Parkell"
   },
   {
-    "Sku": "S251",
+    "sku": "S251",
     "cost_price": 62,
     "brand": "Parkell"
   },
   {
-    "Sku": "S180",
+    "sku": "S180",
     "cost_price": 67.45,
     "brand": "Parkell"
   },
   {
-    "Sku": "S286",
+    "sku": "S286",
     "cost_price": 68.25,
     "brand": "Parkell"
   },
   {
-    "Sku": "S183",
+    "sku": "S183",
     "cost_price": 72.28,
     "brand": "Parkell"
   },
   {
-    "Sku": "S640",
+    "sku": "S640",
     "cost_price": 75.32,
     "brand": "Parkell"
   },
   {
-    "Sku": "S424",
+    "sku": "S424",
     "cost_price": 77.6,
     "brand": "Parkell"
   },
   {
-    "Sku": "S285",
+    "sku": "S285",
     "cost_price": 81.6,
     "brand": "Parkell"
   },
   {
-    "Sku": "S398",
+    "sku": "S398",
     "cost_price": 81.83,
     "brand": "Parkell"
   },
   {
-    "Sku": "S492S",
+    "sku": "S492S",
     "cost_price": 105,
     "brand": "Parkell"
   },
   {
-    "Sku": "DPI30",
+    "sku": "DPI30",
     "cost_price": 123.8,
     "brand": "Parkell"
   },
   {
-    "Sku": "S284",
+    "sku": "S284",
     "cost_price": 141.24,
     "brand": "Parkell"
   },
   {
-    "Sku": "DTI30",
+    "sku": "DTI30",
     "cost_price": 146.34,
     "brand": "Parkell"
   },
   {
-    "Sku": "S220",
+    "sku": "S220",
     "cost_price": 150.54,
     "brand": "Parkell"
   },
   {
-    "Sku": "S491S",
+    "sku": "S491S",
     "cost_price": 164.2,
     "brand": "Parkell"
   },
   {
-    "Sku": "S301",
+    "sku": "S301",
     "cost_price": 167.45,
     "brand": "Parkell"
   },
   {
-    "Sku": "S300",
+    "sku": "S300",
     "cost_price": 168,
     "brand": "Parkell"
   },
   {
-    "Sku": "S182",
+    "sku": "S182",
     "cost_price": 191.15,
     "brand": "Parkell"
   },
   {
-    "Sku": "S371",
+    "sku": "S371",
     "cost_price": 202.85,
     "brand": "Parkell"
   },
   {
-    "Sku": "S191",
+    "sku": "S191",
     "cost_price": 207.64,
     "brand": "Parkell"
   },
   {
-    "Sku": "D624MS",
+    "sku": "D624MS",
     "cost_price": 326.5,
     "brand": "Parkell"
   },
   {
-    "Sku": "S380",
+    "sku": "S380",
     "cost_price": 439.74,
     "brand": "Parkell"
   },
   {
-    "Sku": "D560-110",
+    "sku": "D560-110",
     "cost_price": 814,
     "brand": "Parkell"
   },
   {
-    "Sku": "D700SE-110",
+    "sku": "D700SE-110",
     "cost_price": 1168.34,
     "brand": "Parkell"
   },
   {
-    "Sku": 36958,
+    "sku": 36958,
     "cost_price": 0,
     "brand": "Parker Labs"
   },
   {
-    "Sku": "PSBS077900",
+    "sku": "PSBS077900",
     "cost_price": 1,
     "brand": "PDI"
   },
   {
-    "Sku": "Bracket",
+    "sku": "Bracket",
     "cost_price": 1,
     "brand": "PDI"
   },
   {
-    "Sku": "Bracket-1",
+    "sku": "Bracket-1",
     "cost_price": 1,
     "brand": "PDI"
   },
   {
-    "Sku": "PSBS077900- LOCAL",
+    "sku": "PSBS077900- LOCAL",
     "cost_price": 1,
     "brand": "PDI"
   },
   {
-    "Sku": "Bracket-1- LOCAL",
+    "sku": "Bracket-1- LOCAL",
     "cost_price": 1,
     "brand": "PDI"
   },
   {
-    "Sku": "M233XT_1",
+    "sku": "M233XT_1",
     "cost_price": 2.06,
     "brand": "PDI"
   },
   {
-    "Sku": "M233XT-H",
+    "sku": "M233XT-H",
     "cost_price": 2.07,
     "brand": "PDI"
   },
   {
-    "Sku": "PDI-P03672-1",
+    "sku": "PDI-P03672-1",
     "cost_price": 4.33,
     "brand": "PDI"
   },
   {
-    "Sku": "PDI-P03672-1- LOCAL",
+    "sku": "PDI-P03672-1- LOCAL",
     "cost_price": 4.33,
     "brand": "PDI"
   },
   {
-    "Sku": "Q89072-1",
+    "sku": "Q89072-1",
     "cost_price": 4.35,
     "brand": "PDI"
   },
   {
-    "Sku": "Q55172-1",
+    "sku": "Q55172-1",
     "cost_price": 4.5,
     "brand": "PDI"
   },
   {
-    "Sku": "P13872-1",
+    "sku": "P13872-1",
     "cost_price": 4.71,
     "brand": "PDI"
   },
   {
-    "Sku": "P03672-1",
+    "sku": "P03672-1",
     "cost_price": 4.74,
     "brand": "PDI"
   },
   {
-    "Sku": "D43600-1PK",
+    "sku": "D43600-1PK",
     "cost_price": 4.98,
     "brand": "PDI"
   },
   {
-    "Sku": "P54072-1",
+    "sku": "P54072-1",
     "cost_price": 5.74,
     "brand": "PDI"
   },
   {
-    "Sku": "P22884-1A",
+    "sku": "P22884-1A",
     "cost_price": 7.24,
     "brand": "PDI"
   },
   {
-    "Sku": "P22884-1",
+    "sku": "P22884-1",
     "cost_price": 7.24,
     "brand": "PDI"
   },
   {
-    "Sku": "P84172-1",
+    "sku": "P84172-1",
     "cost_price": 8.29,
     "brand": "PDI"
   },
   {
-    "Sku": "P66784-2",
+    "sku": "P66784-2",
     "cost_price": 10.42,
     "brand": "PDI"
   },
   {
-    "Sku": "Q34540",
+    "sku": "Q34540",
     "cost_price": 22.53,
     "brand": "PDI"
   },
   {
-    "Sku": "P22884",
+    "sku": "P22884",
     "cost_price": 40.7,
     "brand": "PDI"
   },
   {
-    "Sku": "Q55172",
+    "sku": "Q55172",
     "cost_price": 52.01,
     "brand": "PDI"
   },
   {
-    "Sku": "M233XT-Utah",
+    "sku": "M233XT-Utah",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "M233XT-EC",
+    "sku": "M233XT-EC",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "P22884-1Aa",
+    "sku": "P22884-1Aa",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "M225XT",
+    "sku": "M225XT",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "Bracket- LOCAL",
+    "sku": "Bracket- LOCAL",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "P13472_CS- LOCAL",
+    "sku": "P13472_CS- LOCAL",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "B07K7VGH66",
+    "sku": "B07K7VGH66",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "P13472_1",
+    "sku": "P13472_1",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "P13472_CS",
+    "sku": "P13472_CS",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "B10800",
+    "sku": "B10800",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "H04082-1",
+    "sku": "H04082-1",
     "cost_price": 0,
     "brand": "PDI"
   },
   {
-    "Sku": "P71520-1",
+    "sku": "P71520-1",
     "cost_price": 1.24,
     "brand": "PDI"
   },
   {
-    "Sku": "A500F48-1",
+    "sku": "A500F48-1",
     "cost_price": 1.63,
     "brand": "PDI"
   },
   {
-    "Sku": "P010900",
+    "sku": "P010900",
     "cost_price": 2,
     "brand": "PDI"
   },
   {
-    "Sku": "C22370-1",
+    "sku": "C22370-1",
     "cost_price": 3.16,
     "brand": "PDI"
   },
   {
-    "Sku": "D25431-1",
+    "sku": "D25431-1",
     "cost_price": 3.72,
     "brand": "PDI"
   },
   {
-    "Sku": "P13472-1",
+    "sku": "P13472-1",
     "cost_price": 4.12,
     "brand": "PDI"
   },
   {
-    "Sku": "C69900-1",
+    "sku": "C69900-1",
     "cost_price": 4.29,
     "brand": "PDI"
   },
   {
-    "Sku": "D43600-1",
+    "sku": "D43600-1",
     "cost_price": 4.53,
     "brand": "PDI"
   },
   {
-    "Sku": "Q85084-1",
+    "sku": "Q85084-1",
     "cost_price": 4.74,
     "brand": "PDI"
   },
   {
-    "Sku": "B60307-1",
+    "sku": "B60307-1",
     "cost_price": 5.61,
     "brand": "PDI"
   },
   {
-    "Sku": "DD H59200",
+    "sku": "DD H59200",
     "cost_price": 5.63,
     "brand": "PDI"
   },
   {
-    "Sku": "P86984-1XL",
+    "sku": "P86984-1XL",
     "cost_price": 5.69,
     "brand": "PDI"
   },
   {
-    "Sku": "P25372-1",
+    "sku": "P25372-1",
     "cost_price": 5.8,
     "brand": "PDI"
   },
   {
-    "Sku": "P86984-1",
+    "sku": "P86984-1",
     "cost_price": 6.02,
     "brand": "PDI"
   },
   {
-    "Sku": "P72584-1",
+    "sku": "P72584-1",
     "cost_price": 6.1,
     "brand": "PDI"
   },
   {
-    "Sku": "P72584-1XL",
+    "sku": "P72584-1XL",
     "cost_price": 6.1,
     "brand": "PDI"
   },
   {
-    "Sku": "P27372-1",
+    "sku": "P27372-1",
     "cost_price": 7.2,
     "brand": "PDI"
   },
   {
-    "Sku": "DDP25784",
+    "sku": "DDP25784",
     "cost_price": 11.97,
     "brand": "PDI"
   },
   {
-    "Sku": "P71520-10",
+    "sku": "P71520-10",
     "cost_price": 12.43,
     "brand": "PDI"
   },
   {
-    "Sku": "U87295-1",
+    "sku": "U87295-1",
     "cost_price": 12.72,
     "brand": "PDI"
   },
   {
-    "Sku": "B19600",
+    "sku": "B19600",
     "cost_price": 13.13,
     "brand": "PDI"
   },
   {
-    "Sku": "Q85084",
+    "sku": "Q85084",
     "cost_price": 28.3,
     "brand": "PDI"
   },
   {
-    "Sku": "P25372-6",
+    "sku": "P25372-6",
     "cost_price": 35.37,
     "brand": "PDI"
   },
   {
-    "Sku": "P86984-CS",
+    "sku": "P86984-CS",
     "cost_price": 36.14,
     "brand": "PDI"
   },
   {
-    "Sku": "P72584",
+    "sku": "P72584",
     "cost_price": 36.63,
     "brand": "PDI"
   },
   {
-    "Sku": "U87295",
+    "sku": "U87295",
     "cost_price": 38.16,
     "brand": "PDI"
   },
   {
-    "Sku": "Q89072",
+    "sku": "Q89072",
     "cost_price": 49,
     "brand": "PDI"
   },
   {
-    "Sku": "P13872",
+    "sku": "P13872",
     "cost_price": 52,
     "brand": "PDI"
   },
   {
-    "Sku": "P7007P",
+    "sku": "P7007P",
     "cost_price": 63.84,
     "brand": "PDI"
   },
   {
-    "Sku": "P54072",
+    "sku": "P54072",
     "cost_price": 71.42,
     "brand": "PDI"
   },
   {
-    "Sku": "Q51510",
+    "sku": "Q51510",
     "cost_price": 196.75,
     "brand": "PDI"
   },
   {
-    "Sku": "102704036-1",
+    "sku": "102704036-1",
     "cost_price": 7.04,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "102505036-1",
+    "sku": "102505036-1",
     "cost_price": 8.51,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": 102704036,
+    "sku": 102704036,
     "cost_price": 8.51,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": 103003025,
+    "sku": 103003025,
     "cost_price": 8.51,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "AN101",
+    "sku": "AN101",
     "cost_price": 10.89,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "AN1033",
+    "sku": "AN1033",
     "cost_price": 0,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "2101051-HB",
+    "sku": "2101051-HB",
     "cost_price": 0,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "2101052-1",
+    "sku": "2101052-1",
     "cost_price": 0,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "2101051-1",
+    "sku": "2101051-1",
     "cost_price": 0,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "102704025-1",
+    "sku": "102704025-1",
     "cost_price": 6.63,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "103003012-1",
+    "sku": "103003012-1",
     "cost_price": 6.63,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "103003025-1",
+    "sku": "103003025-1",
     "cost_price": 6.63,
     "brand": "Pierrel Pharma"
   },
   {
-    "Sku": "DD703612",
+    "sku": "DD703612",
     "cost_price": 0,
     "brand": "Pine-Sol"
   },
   {
-    "Sku": "DD703612- LOCAL",
+    "sku": "DD703612- LOCAL",
     "cost_price": 0,
     "brand": "Pine-Sol"
   },
   {
-    "Sku": "9007285-1",
+    "sku": "9007285-1",
     "cost_price": 0,
     "brand": "Premier"
   },
   {
-    "Sku": 1030585,
+    "sku": 1030585,
     "cost_price": 0,
     "brand": "Premier"
   },
   {
-    "Sku": 9045010,
+    "sku": 9045010,
     "cost_price": 0,
     "brand": "Premier"
   },
   {
-    "Sku": 9045015,
+    "sku": 9045015,
     "cost_price": 0,
     "brand": "Premier"
   },
   {
-    "Sku": 9045052,
+    "sku": 9045052,
     "cost_price": 0,
     "brand": "Premier"
   },
   {
-    "Sku": 9045055,
+    "sku": 9045055,
     "cost_price": 0,
     "brand": "Premier"
   },
   {
-    "Sku": 9007285,
+    "sku": 9007285,
     "cost_price": 10.55,
     "brand": "Premier Dental"
   },
   {
-    "Sku": "9007285-12",
+    "sku": "9007285-12",
     "cost_price": 0,
     "brand": "Premier Dental"
   },
   {
-    "Sku": "DD-99-211",
+    "sku": "DD-99-211",
     "cost_price": 0,
     "brand": "Premium Plus"
   },
   {
-    "Sku": "P907128-1",
+    "sku": "P907128-1",
     "cost_price": 12.85,
     "brand": "Pro Advantage"
   },
   {
-    "Sku": "PA-8006",
+    "sku": "PA-8006",
     "cost_price": 0,
     "brand": "ProAdvantage"
   },
   {
-    "Sku": "P359101-1",
+    "sku": "P359101-1",
     "cost_price": 4.26,
     "brand": "ProAdvantage"
   },
   {
-    "Sku": "PA-8108",
+    "sku": "PA-8108",
     "cost_price": 17.03,
     "brand": "ProAdvantage"
   },
   {
-    "Sku": "PA-8005",
+    "sku": "PA-8005",
     "cost_price": 19.06,
     "brand": "ProAdvantage"
   },
   {
-    "Sku": "PC-Intense-AA-24- LOCAL",
+    "sku": "PC-Intense-AA-24- LOCAL",
     "cost_price": 0,
     "brand": "Procell"
   },
   {
-    "Sku": "80356910-1",
+    "sku": "80356910-1",
     "cost_price": 20,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80702652-1",
+    "sku": "80702652-1",
     "cost_price": 33.2,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80703251-1-HB",
+    "sku": "80703251-1-HB",
     "cost_price": 37.13,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80360465-1-HB",
+    "sku": "80360465-1-HB",
     "cost_price": 37.14,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80360465-1",
+    "sku": "80360465-1",
     "cost_price": 65,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80703251-1",
+    "sku": "80703251-1",
     "cost_price": 65,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 18217,
+    "sku": 18217,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80725895-1",
+    "sku": "80725895-1",
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80738528,
+    "sku": 80738528,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80788665,
+    "sku": 80788665,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80824066,
+    "sku": 80824066,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80725477,
+    "sku": 80725477,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80742356,
+    "sku": 80742356,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80755972,
+    "sku": 80755972,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80345500,
+    "sku": 80345500,
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80779742-old",
+    "sku": "80779742-old",
     "cost_price": 0,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80779740,
+    "sku": 80779740,
     "cost_price": 4.49,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 37000089872,
+    "sku": 37000089872,
     "cost_price": 5.7,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80366100,
+    "sku": 80366100,
     "cost_price": 5.81,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80355763,
+    "sku": 80355763,
     "cost_price": 5.84,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80310196,
+    "sku": 80310196,
     "cost_price": 6.43,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80779742,
+    "sku": 80779742,
     "cost_price": 8.94,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80345505,
+    "sku": 80345505,
     "cost_price": 10.72,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80777585,
+    "sku": 80777585,
     "cost_price": 11.09,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "80742356-36 pack",
+    "sku": "80742356-36 pack",
     "cost_price": 11.1,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 3700040159,
+    "sku": 3700040159,
     "cost_price": 19.8,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 10000000000000,
+    "sku": 10000000000000,
     "cost_price": 20.17,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80717506,
+    "sku": 80717506,
     "cost_price": 21.94,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80297304,
+    "sku": 80297304,
     "cost_price": 22,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "37000089872-4",
+    "sku": "37000089872-4",
     "cost_price": 22.1,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80691656,
+    "sku": 80691656,
     "cost_price": 22.2,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80346815,
+    "sku": 80346815,
     "cost_price": 22.21,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80768504,
+    "sku": 80768504,
     "cost_price": 22.52,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80775811,
+    "sku": 80775811,
     "cost_price": 23.69,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80717080,
+    "sku": 80717080,
     "cost_price": 24.57,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80754437,
+    "sku": 80754437,
     "cost_price": 30.91,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 84843394,
+    "sku": 84843394,
     "cost_price": 30.91,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80779741,
+    "sku": 80779741,
     "cost_price": 30.91,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "3077209596-72",
+    "sku": "3077209596-72",
     "cost_price": 33.32,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 7666030037,
+    "sku": 7666030037,
     "cost_price": 37.18,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80775876,
+    "sku": 80775876,
     "cost_price": 53.92,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80303243,
+    "sku": 80303243,
     "cost_price": 54,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80362566,
+    "sku": 80362566,
     "cost_price": 58.93,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 84860307,
+    "sku": 84860307,
     "cost_price": 62.13,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80819862,
+    "sku": 80819862,
     "cost_price": 65.11,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80372278,
+    "sku": 80372278,
     "cost_price": 65.14,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 3077209596,
+    "sku": 3077209596,
     "cost_price": 66.63,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80721154,
+    "sku": 80721154,
     "cost_price": 69.8,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80734958,
+    "sku": 80734958,
     "cost_price": 70.59,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 7666030041,
+    "sku": 7666030041,
     "cost_price": 111.59,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": 80725895,
+    "sku": 80725895,
     "cost_price": 220,
     "brand": "Procter & Gamble"
   },
   {
-    "Sku": "VR2A2",
+    "sku": "VR2A2",
     "cost_price": 0,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "LLE3",
+    "sku": "LLE3",
     "cost_price": 0,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "BTBS-N",
+    "sku": "BTBS-N",
     "cost_price": 13.71,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "ET-50R",
+    "sku": "ET-50R",
     "cost_price": 30.37,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "PEG",
+    "sku": "PEG",
     "cost_price": 48.68,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "LLE",
+    "sku": "LLE",
     "cost_price": 62.65,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "ET-24",
+    "sku": "ET-24",
     "cost_price": 65.43,
     "brand": "Pulpdent"
   },
   {
-    "Sku": "MX-250-200",
+    "sku": "MX-250-200",
     "cost_price": 0,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "pgt560b",
+    "sku": "pgt560b",
     "cost_price": 0,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGKTE1",
+    "sku": "PGKTE1",
     "cost_price": 0,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGBA15",
+    "sku": "PGBA15",
     "cost_price": 0,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGCS10",
+    "sku": "PGCS10",
     "cost_price": 58.56,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGPLG1",
+    "sku": "PGPLG1",
     "cost_price": 88.86,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGBM20",
+    "sku": "PGBM20",
     "cost_price": 111.08,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGBA20",
+    "sku": "PGBA20",
     "cost_price": 137.34,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PGBM30",
+    "sku": "PGBM30",
     "cost_price": 151.48,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "PG-500",
+    "sku": "PG-500",
     "cost_price": 349.54,
     "brand": "PuraGraft"
   },
   {
-    "Sku": "Q-1229",
+    "sku": "Q-1229",
     "cost_price": 6.12,
     "brand": "Quala"
   },
   {
-    "Sku": "Q10917",
+    "sku": "Q10917",
     "cost_price": 15.94,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-10025K",
+    "sku": "QUIN-10025K",
     "cost_price": 48.24,
     "brand": "Quala"
   },
   {
-    "Sku": 410,
+    "sku": 410,
     "cost_price": 334.88,
     "brand": "Quala"
   },
   {
-    "Sku": "QBT2015",
+    "sku": "QBT2015",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "QBT2020",
+    "sku": "QBT2020",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "LAD3590",
+    "sku": "LAD3590",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "WPADCPAQ",
+    "sku": "WPADCPAQ",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "WPADCPLV",
+    "sku": "WPADCPLV",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "WPADCPSI",
+    "sku": "WPADCPSI",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "ZCCIA",
+    "sku": "ZCCIA",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "2731004Q",
+    "sku": "2731004Q",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "CVH3Q",
+    "sku": "CVH3Q",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "Q30149",
+    "sku": "Q30149",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "Q353004-1",
+    "sku": "Q353004-1",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "WPADCPWH",
+    "sku": "WPADCPWH",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "XP23-PC12Q 6",
+    "sku": "XP23-PC12Q 6",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "Q40252-FC",
+    "sku": "Q40252-FC",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "18-555-1",
+    "sku": "18-555-1",
     "cost_price": 0,
     "brand": "Quala"
   },
   {
-    "Sku": "Q48060",
+    "sku": "Q48060",
     "cost_price": 0.82,
     "brand": "Quala"
   },
   {
-    "Sku": "Q48058",
+    "sku": "Q48058",
     "cost_price": 0.82,
     "brand": "Quala"
   },
   {
-    "Sku": "2731002Q",
+    "sku": "2731002Q",
     "cost_price": 2.63,
     "brand": "Quala"
   },
   {
-    "Sku": "2731006Q",
+    "sku": "2731006Q",
     "cost_price": 2.63,
     "brand": "Quala"
   },
   {
-    "Sku": "2731001Q",
+    "sku": "2731001Q",
     "cost_price": 2.63,
     "brand": "Quala"
   },
   {
-    "Sku": "2731005Q",
+    "sku": "2731005Q",
     "cost_price": 2.64,
     "brand": "Quala"
   },
   {
-    "Sku": "2731007Q",
+    "sku": "2731007Q",
     "cost_price": 2.64,
     "brand": "Quala"
   },
   {
-    "Sku": "403201-6",
+    "sku": "403201-6",
     "cost_price": 2.83,
     "brand": "Quala"
   },
   {
-    "Sku": "403202-6",
+    "sku": "403202-6",
     "cost_price": 2.84,
     "brand": "Quala"
   },
   {
-    "Sku": "403003-1",
+    "sku": "403003-1",
     "cost_price": 3.54,
     "brand": "Quala"
   },
   {
-    "Sku": "403001-1",
+    "sku": "403001-1",
     "cost_price": 3.54,
     "brand": "Quala"
   },
   {
-    "Sku": "403004-1",
+    "sku": "403004-1",
     "cost_price": 3.54,
     "brand": "Quala"
   },
   {
-    "Sku": "403002-1",
+    "sku": "403002-1",
     "cost_price": 4.53,
     "brand": "Quala"
   },
   {
-    "Sku": "Q353002-1",
+    "sku": "Q353002-1",
     "cost_price": 5.85,
     "brand": "Quala"
   },
   {
-    "Sku": "50036360-1",
+    "sku": "50036360-1",
     "cost_price": 7.99,
     "brand": "Quala"
   },
   {
-    "Sku": "50036370-1",
+    "sku": "50036370-1",
     "cost_price": 7.99,
     "brand": "Quala"
   },
   {
-    "Sku": "Q9020",
+    "sku": "Q9020",
     "cost_price": 8,
     "brand": "Quala"
   },
   {
-    "Sku": "EXD11-12Q 4",
+    "sku": "EXD11-12Q 4",
     "cost_price": 8.44,
     "brand": "Quala"
   },
   {
-    "Sku": 50036365,
+    "sku": 50036365,
     "cost_price": 9.54,
     "brand": "Quala"
   },
   {
-    "Sku": "Q182605",
+    "sku": "Q182605",
     "cost_price": 9.84,
     "brand": "Quala"
   },
   {
-    "Sku": "50036370-quala",
+    "sku": "50036370-quala",
     "cost_price": 10,
     "brand": "Quala"
   },
   {
-    "Sku": "DP47830-1",
+    "sku": "DP47830-1",
     "cost_price": 10.67,
     "brand": "Quala"
   },
   {
-    "Sku": 50094955,
+    "sku": 50094955,
     "cost_price": 10.74,
     "brand": "Quala"
   },
   {
-    "Sku": "EXD3CHQ6",
+    "sku": "EXD3CHQ6",
     "cost_price": 11.19,
     "brand": "Quala"
   },
   {
-    "Sku": "Q40251-FC",
+    "sku": "Q40251-FC",
     "cost_price": 11.31,
     "brand": "Quala"
   },
   {
-    "Sku": "Q30610",
+    "sku": "Q30610",
     "cost_price": 12.05,
     "brand": "Quala"
   },
   {
-    "Sku": "EXC17Q",
+    "sku": "EXC17Q",
     "cost_price": 12.14,
     "brand": "Quala"
   },
   {
-    "Sku": "EXC18Q",
+    "sku": "EXC18Q",
     "cost_price": 12.14,
     "brand": "Quala"
   },
   {
-    "Sku": "P0431-3",
+    "sku": "P0431-3",
     "cost_price": 12.21,
     "brand": "Quala"
   },
   {
-    "Sku": "PC12Q/6",
+    "sku": "PC12Q/6",
     "cost_price": 12.6,
     "brand": "Quala"
   },
   {
-    "Sku": "Q48044",
+    "sku": "Q48044",
     "cost_price": 13.39,
     "brand": "Quala"
   },
   {
-    "Sku": 50094698,
+    "sku": 50094698,
     "cost_price": 15.06,
     "brand": "Quala"
   },
   {
-    "Sku": "P00066",
+    "sku": "P00066",
     "cost_price": 17.53,
     "brand": "Quala"
   },
   {
-    "Sku": "P00072",
+    "sku": "P00072",
     "cost_price": 18.07,
     "brand": "Quala"
   },
   {
-    "Sku": "200-380-1",
+    "sku": "200-380-1",
     "cost_price": 21.67,
     "brand": "Quala"
   },
   {
-    "Sku": "P00525",
+    "sku": "P00525",
     "cost_price": 21.7,
     "brand": "Quala"
   },
   {
-    "Sku": "Q48033",
+    "sku": "Q48033",
     "cost_price": 27.24,
     "brand": "Quala"
   },
   {
-    "Sku": 50036380,
+    "sku": 50036380,
     "cost_price": 30.15,
     "brand": "Quala"
   },
   {
-    "Sku": "08-A0100",
+    "sku": "08-A0100",
     "cost_price": 34.31,
     "brand": "Quala"
   },
   {
-    "Sku": "Q589510",
+    "sku": "Q589510",
     "cost_price": 35.3,
     "brand": "Quala"
   },
   {
-    "Sku": "18200-QU",
+    "sku": "18200-QU",
     "cost_price": 35.72,
     "brand": "Quala"
   },
   {
-    "Sku": "Q3055C",
+    "sku": "Q3055C",
     "cost_price": 42.88,
     "brand": "Quala"
   },
   {
-    "Sku": "OCA BX 1000",
+    "sku": "OCA BX 1000",
     "cost_price": 43.27,
     "brand": "Quala"
   },
   {
-    "Sku": "Q055022",
+    "sku": "Q055022",
     "cost_price": 44.02,
     "brand": "Quala"
   },
   {
-    "Sku": "08-A0003-quala",
+    "sku": "08-A0003-quala",
     "cost_price": 44.76,
     "brand": "Quala"
   },
   {
-    "Sku": "P00687",
+    "sku": "P00687",
     "cost_price": 45.43,
     "brand": "Quala"
   },
   {
-    "Sku": "08-A0003-1",
+    "sku": "08-A0003-1",
     "cost_price": 45.8,
     "brand": "Quala"
   },
   {
-    "Sku": "08-A1400",
+    "sku": "08-A1400",
     "cost_price": 48.4,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-100025K",
+    "sku": "QUIN-100025K",
     "cost_price": 49.92,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-10025K-1",
+    "sku": "QUIN-10025K-1",
     "cost_price": 49.92,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-1030K-Q",
+    "sku": "QUIN-1030K-Q",
     "cost_price": 49.92,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-10030K",
+    "sku": "QUIN-10030K",
     "cost_price": 49.92,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-100030K-",
+    "sku": "QUIN-100030K-",
     "cost_price": 49.93,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-1030K",
+    "sku": "QUIN-1030K",
     "cost_price": 50,
     "brand": "Quala"
   },
   {
-    "Sku": "QUIN-1025K",
+    "sku": "QUIN-1025K",
     "cost_price": 50,
     "brand": "Quala"
   },
   {
-    "Sku": "Q055026",
+    "sku": "Q055026",
     "cost_price": 58.08,
     "brand": "Quala"
   },
   {
-    "Sku": 1351,
+    "sku": 1351,
     "cost_price": 67.02,
     "brand": "Quala"
   },
   {
-    "Sku": "Q602452",
+    "sku": "Q602452",
     "cost_price": 153.43,
     "brand": "Quala"
   },
   {
-    "Sku": "Q055003",
+    "sku": "Q055003",
     "cost_price": 416.75,
     "brand": "Quala"
   },
   {
-    "Sku": "Q055007",
+    "sku": "Q055007",
     "cost_price": 504.13,
     "brand": "Quala"
   },
   {
-    "Sku": "17-8P97-BQ0W",
+    "sku": "17-8P97-BQ0W",
     "cost_price": 0,
     "brand": "RE-1977L"
   },
   {
-    "Sku": "13422-1",
+    "sku": "13422-1",
     "cost_price": 6.87,
     "brand": "Reckitt"
   },
   {
-    "Sku": "DD95029",
+    "sku": "DD95029",
     "cost_price": 0,
     "brand": "Reckitt Benckiser Group"
   },
   {
-    "Sku": "DD-79329",
+    "sku": "DD-79329",
     "cost_price": 0,
     "brand": "Reckitt Benckiser Group"
   },
   {
-    "Sku": "SM-59909",
+    "sku": "SM-59909",
     "cost_price": 35.2,
     "brand": "Reckitt Benckiser Group"
   },
   {
-    "Sku": "DD-79329 CASE",
+    "sku": "DD-79329 CASE",
     "cost_price": 52,
     "brand": "Reckitt Benckiser Group"
   },
   {
-    "Sku": "CFW200SD",
+    "sku": "CFW200SD",
     "cost_price": 16.5,
     "brand": "Safe Dent"
   },
   {
-    "Sku": "P5018",
+    "sku": "P5018",
     "cost_price": 0,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9020G-1",
+    "sku": "A9020G-1",
     "cost_price": 1.25,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "STP-7002-B-1",
+    "sku": "STP-7002-B-1",
     "cost_price": 1.95,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9011-CB-1",
+    "sku": "A9011-CB-1",
     "cost_price": 2.1,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9011-WW-1",
+    "sku": "A9011-WW-1",
     "cost_price": 2.1,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "P5010-1",
+    "sku": "P5010-1",
     "cost_price": 2.63,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "STP-7004-D-1",
+    "sku": "STP-7004-D-1",
     "cost_price": 2.83,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "STP-7001-A-1",
+    "sku": "STP-7001-A-1",
     "cost_price": 3.4,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A90143-L-1",
+    "sku": "A90143-L-1",
     "cost_price": 7.5,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A90125CW",
+    "sku": "A90125CW",
     "cost_price": 7.5,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A90141-S-1",
+    "sku": "A90141-S-1",
     "cost_price": 7.5,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A90126MC",
+    "sku": "A90126MC",
     "cost_price": 7.55,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "c6013-1",
+    "sku": "c6013-1",
     "cost_price": 8.33,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "P5018-1",
+    "sku": "P5018-1",
     "cost_price": 9.1,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "p5014-1",
+    "sku": "p5014-1",
     "cost_price": 10.5,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "LAB100S-SKY-1",
+    "sku": "LAB100S-SKY-1",
     "cost_price": 12,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "C6011",
+    "sku": "C6011",
     "cost_price": 13.25,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9015",
+    "sku": "A9015",
     "cost_price": 20,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9011-CB-case",
+    "sku": "A9011-CB-case",
     "cost_price": 21.21,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "ISO25-BL",
+    "sku": "ISO25-BL",
     "cost_price": 37.87,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "P5016XL",
+    "sku": "P5016XL",
     "cost_price": 55,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "P5010",
+    "sku": "P5010",
     "cost_price": 63,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9020G",
+    "sku": "A9020G",
     "cost_price": 125,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": "A9019W",
+    "sku": "A9019W",
     "cost_price": 125,
     "brand": "Safe-Dent"
   },
   {
-    "Sku": 46581021006,
+    "sku": 46581021006,
     "cost_price": 4.75,
     "brand": "Salonpas"
   },
   {
-    "Sku": 8100045,
+    "sku": 8100045,
     "cost_price": 51.51,
     "brand": "SDI"
   },
   {
-    "Sku": 7700030,
+    "sku": 7700030,
     "cost_price": 52.71,
     "brand": "SDI"
   },
   {
-    "Sku": 8800537,
+    "sku": 8800537,
     "cost_price": 72.73,
     "brand": "SDI"
   },
   {
-    "Sku": 8800504,
+    "sku": 8800504,
     "cost_price": 72.73,
     "brand": "SDI"
   },
   {
-    "Sku": 7700325,
+    "sku": 7700325,
     "cost_price": 149.06,
     "brand": "SDI"
   },
   {
-    "Sku": 7700029,
+    "sku": 7700029,
     "cost_price": 149.06,
     "brand": "SDI"
   },
   {
-    "Sku": 7700500,
+    "sku": 7700500,
     "cost_price": 193.04,
     "brand": "SDI"
   },
   {
-    "Sku": 7700457,
+    "sku": 7700457,
     "cost_price": 273.7,
     "brand": "SDI"
   },
   {
-    "Sku": 4422303,
+    "sku": 4422303,
     "cost_price": 476.32,
     "brand": "SDI"
   },
   {
-    "Sku": "134758-3",
+    "sku": "134758-3",
     "cost_price": 14.49,
     "brand": "Sensodyne"
   },
   {
-    "Sku": "01S0530",
+    "sku": "01S0530",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": 1e+300,
+    "sku": 1e+300,
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "99171-1",
+    "sku": "99171-1",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "99167-1",
+    "sku": "99167-1",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "99184-1",
+    "sku": "99184-1",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01N6000",
+    "sku": "01N6000",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "99167-HB",
+    "sku": "99167-HB",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-A1050-1",
+    "sku": "01-A1050-1",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-S0510",
+    "sku": "01-S0510",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01S0540",
+    "sku": "01S0540",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-A1003",
+    "sku": "01-A1003",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01A1200-1",
+    "sku": "01A1200-1",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01A1400-1",
+    "sku": "01A1400-1",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1600",
+    "sku": "01-N1600",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01N4501",
+    "sku": "01N4501",
     "cost_price": 0,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-I0300",
+    "sku": "01-I0300",
     "cost_price": 5,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1271",
+    "sku": "01-N1271",
     "cost_price": 8,
     "brand": "Septodont"
   },
   {
-    "Sku": "01C4038",
+    "sku": "01C4038",
     "cost_price": 9.39,
     "brand": "Septodont"
   },
   {
-    "Sku": "01N1301",
+    "sku": "01N1301",
     "cost_price": 9.61,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1252",
+    "sku": "01-N1252",
     "cost_price": 10.04,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1300",
+    "sku": "01-N1300",
     "cost_price": 10.55,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1272",
+    "sku": "01-N1272",
     "cost_price": 11.55,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1550",
+    "sku": "01-N1550",
     "cost_price": 11.61,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1630",
+    "sku": "01-N1630",
     "cost_price": 13.83,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N1650",
+    "sku": "01-N1650",
     "cost_price": 14.3,
     "brand": "Septodont"
   },
   {
-    "Sku": "01T0160",
+    "sku": "01T0160",
     "cost_price": 25.99,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N0015",
+    "sku": "01-N0015",
     "cost_price": 26.7,
     "brand": "Septodont"
   },
   {
-    "Sku": "01S0600",
+    "sku": "01S0600",
     "cost_price": 30,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N2210",
+    "sku": "01-N2210",
     "cost_price": 32.75,
     "brand": "Septodont"
   },
   {
-    "Sku": 99510,
+    "sku": 99510,
     "cost_price": 33.16,
     "brand": "Septodont"
   },
   {
-    "Sku": "99169-1",
+    "sku": "99169-1",
     "cost_price": 36.63,
     "brand": "Septodont"
   },
   {
-    "Sku": "01A1100",
+    "sku": "01A1100",
     "cost_price": 40.72,
     "brand": "Septodont"
   },
   {
-    "Sku": "01E0510",
+    "sku": "01E0510",
     "cost_price": 41,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N2110",
+    "sku": "01-N2110",
     "cost_price": 47.42,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N2100",
+    "sku": "01-N2100",
     "cost_price": 47.42,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-C0605",
+    "sku": "01-C0605",
     "cost_price": 50,
     "brand": "Septodont"
   },
   {
-    "Sku": 99210,
+    "sku": 99210,
     "cost_price": 50,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N2120",
+    "sku": "01-N2120",
     "cost_price": 57.29,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N2105",
+    "sku": "01-N2105",
     "cost_price": 60,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-S0520",
+    "sku": "01-S0520",
     "cost_price": 91.61,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-C0600",
+    "sku": "01-C0600",
     "cost_price": 100,
     "brand": "Septodont"
   },
   {
-    "Sku": "01S0610",
+    "sku": "01S0610",
     "cost_price": 198,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-N2040",
+    "sku": "01-N2040",
     "cost_price": 259.78,
     "brand": "Septodont"
   },
   {
-    "Sku": "01-C0700",
+    "sku": "01-C0700",
     "cost_price": 524.75,
     "brand": "Septodont"
   },
   {
-    "Sku": "HG22",
+    "sku": "HG22",
     "cost_price": 0,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "0090-shofu",
+    "sku": "0090-shofu",
     "cost_price": 0,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1364,
+    "sku": 1364,
     "cost_price": 0,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2227,
+    "sku": 2227,
     "cost_price": 3.8,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 44,
+    "sku": 44,
     "cost_price": 18.27,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "Y1012",
+    "sku": "Y1012",
     "cost_price": 20.23,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1432,
+    "sku": 1432,
     "cost_price": 22.77,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2015,
+    "sku": 2015,
     "cost_price": 23.02,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2001,
+    "sku": 2001,
     "cost_price": 23.02,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2003,
+    "sku": 2003,
     "cost_price": 23.02,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2014,
+    "sku": 2014,
     "cost_price": 23.02,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2066,
+    "sku": 2066,
     "cost_price": 23.02,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2002,
+    "sku": 2002,
     "cost_price": 23.24,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1363,
+    "sku": 1363,
     "cost_price": 26.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2034,
+    "sku": 2034,
     "cost_price": 29.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 157,
+    "sku": 157,
     "cost_price": 35.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1753,
+    "sku": 1753,
     "cost_price": 45.34,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1752,
+    "sku": 1752,
     "cost_price": 45.34,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1754,
+    "sku": 1754,
     "cost_price": 45.34,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 2202,
+    "sku": 2202,
     "cost_price": 47.02,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "Y2284",
+    "sku": "Y2284",
     "cost_price": 52.78,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "Y2285",
+    "sku": "Y2285",
     "cost_price": 52.78,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "C0204",
+    "sku": "C0204",
     "cost_price": 53.98,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "C0203",
+    "sku": "C0203",
     "cost_price": 80.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "3208A",
+    "sku": "3208A",
     "cost_price": 80.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "2000S",
+    "sku": "2000S",
     "cost_price": 83.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "0321B",
+    "sku": "0321B",
     "cost_price": 83.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "C0214",
+    "sku": "C0214",
     "cost_price": 93.98,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1782,
+    "sku": 1782,
     "cost_price": 95.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": 1781,
+    "sku": 1781,
     "cost_price": 95.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "HG42",
+    "sku": "HG42",
     "cost_price": 96.92,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "H413",
+    "sku": "H413",
     "cost_price": 113.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "GMK1",
+    "sku": "GMK1",
     "cost_price": 167.97,
     "brand": "Shofu Dental"
   },
   {
-    "Sku": "19T028",
+    "sku": "19T028",
     "cost_price": 9.95,
     "brand": "Silmet"
   },
   {
-    "Sku": "184A02",
+    "sku": "184A02",
     "cost_price": 17.95,
     "brand": "Silmet"
   },
   {
-    "Sku": 121491,
+    "sku": 121491,
     "cost_price": 325,
     "brand": "Silmet"
   },
   {
-    "Sku": 120491,
+    "sku": 120491,
     "cost_price": 345,
     "brand": "Silmet"
   },
   {
-    "Sku": 120492,
+    "sku": 120492,
     "cost_price": 510,
     "brand": "Silmet"
   },
   {
-    "Sku": 120493,
+    "sku": 120493,
     "cost_price": 595.39,
     "brand": "Silmet"
   },
   {
-    "Sku": 121493,
+    "sku": 121493,
     "cost_price": 629.5,
     "brand": "Silmet"
   },
   {
-    "Sku": 9221,
+    "sku": 9221,
     "cost_price": 3.68,
     "brand": "Solventum"
   },
   {
-    "Sku": "SCS-100",
+    "sku": "SCS-100",
     "cost_price": 0,
     "brand": "SPS Medical"
   },
   {
-    "Sku": "EMS-052",
+    "sku": "EMS-052",
     "cost_price": 0,
     "brand": "SPS Medical"
   },
   {
-    "Sku": 80955,
+    "sku": 80955,
     "cost_price": 0,
     "brand": "Sultan"
   },
   {
-    "Sku": 72008,
+    "sku": 72008,
     "cost_price": 23.45,
     "brand": "Sultan"
   },
   {
-    "Sku": 11513,
+    "sku": 11513,
     "cost_price": 24.32,
     "brand": "Sultan"
   },
   {
-    "Sku": "AD30022",
+    "sku": "AD30022",
     "cost_price": 25.74,
     "brand": "Sultan"
   },
   {
-    "Sku": 77635,
+    "sku": 77635,
     "cost_price": 28.25,
     "brand": "Sultan"
   },
   {
-    "Sku": 77600,
+    "sku": 77600,
     "cost_price": 28.25,
     "brand": "Sultan"
   },
   {
-    "Sku": 77620,
+    "sku": 77620,
     "cost_price": 28.25,
     "brand": "Sultan"
   },
   {
-    "Sku": 77610,
+    "sku": 77610,
     "cost_price": 28.57,
     "brand": "Sultan"
   },
   {
-    "Sku": 77630,
+    "sku": 77630,
     "cost_price": 28.57,
     "brand": "Sultan"
   },
   {
-    "Sku": 72101,
+    "sku": 72101,
     "cost_price": 31.86,
     "brand": "Sultan"
   },
   {
-    "Sku": 72100,
+    "sku": 72100,
     "cost_price": 32.69,
     "brand": "Sultan"
   },
   {
-    "Sku": 77640,
+    "sku": 77640,
     "cost_price": 33.89,
     "brand": "Sultan"
   },
   {
-    "Sku": "0072102FG",
+    "sku": "0072102FG",
     "cost_price": 41.9,
     "brand": "Sultan"
   },
   {
-    "Sku": "AD30002",
+    "sku": "AD30002",
     "cost_price": 44.93,
     "brand": "Sultan"
   },
   {
-    "Sku": 77650,
+    "sku": 77650,
     "cost_price": 76.63,
     "brand": "Sultan"
   },
   {
-    "Sku": 20390,
+    "sku": 20390,
     "cost_price": 80.4,
     "brand": "Sultan"
   },
   {
-    "Sku": 72056,
+    "sku": 72056,
     "cost_price": 133.34,
     "brand": "Sultan"
   },
   {
-    "Sku": 79015,
+    "sku": 79015,
     "cost_price": 183.35,
     "brand": "Sultan"
   },
   {
-    "Sku": 78830,
+    "sku": 78830,
     "cost_price": 388.8,
     "brand": "Sultan"
   },
   {
-    "Sku": 77720,
+    "sku": 77720,
     "cost_price": 550.8,
     "brand": "Sultan"
   },
   {
-    "Sku": 77715,
+    "sku": 77715,
     "cost_price": 557,
     "brand": "Sultan"
   },
   {
-    "Sku": 77700,
+    "sku": 77700,
     "cost_price": 557,
     "brand": "Sultan"
   },
   {
-    "Sku": 77710,
+    "sku": 77710,
     "cost_price": 557.016,
     "brand": "Sultan"
   },
   {
-    "Sku": "201RYBP-1",
+    "sku": "201RYBP-1",
     "cost_price": 1.19,
     "brand": "Sunstar"
   },
   {
-    "Sku": "201RYBP-6",
+    "sku": "201RYBP-6",
     "cost_price": 1.19,
     "brand": "Sunstar"
   },
   {
-    "Sku": "409PC",
+    "sku": "409PC",
     "cost_price": 9.96,
     "brand": "Sunstar"
   },
   {
-    "Sku": "840PQA",
+    "sku": "840PQA",
     "cost_price": 29.09,
     "brand": "Sunstar"
   },
   {
-    "Sku": "1115PQB",
+    "sku": "1115PQB",
     "cost_price": 0,
     "brand": "Sunstar"
   },
   {
-    "Sku": "612PQA",
+    "sku": "612PQA",
     "cost_price": 0,
     "brand": "Sunstar"
   },
   {
-    "Sku": "605PE",
+    "sku": "605PE",
     "cost_price": 0,
     "brand": "Sunstar"
   },
   {
-    "Sku": "201RYBZ",
+    "sku": "201RYBZ",
     "cost_price": 6.9,
     "brand": "Sunstar"
   },
   {
-    "Sku": "308PD",
+    "sku": "308PD",
     "cost_price": 11.35,
     "brand": "Sunstar"
   },
   {
-    "Sku": "600PB",
+    "sku": "600PB",
     "cost_price": 11.99,
     "brand": "Sunstar"
   },
   {
-    "Sku": "891PQ",
+    "sku": "891PQ",
     "cost_price": 14.03,
     "brand": "Sunstar"
   },
   {
-    "Sku": "201RYBP",
+    "sku": "201RYBP",
     "cost_price": 14.29,
     "brand": "Sunstar"
   },
   {
-    "Sku": "414PQF",
+    "sku": "414PQF",
     "cost_price": 15.22,
     "brand": "Sunstar"
   },
   {
-    "Sku": "600PYC",
+    "sku": "600PYC",
     "cost_price": 16.61,
     "brand": "Sunstar"
   },
   {
-    "Sku": "800CQA",
+    "sku": "800CQA",
     "cost_price": 18.82,
     "brand": "Sunstar"
   },
   {
-    "Sku": "872PQ",
+    "sku": "872PQ",
     "cost_price": 25.14,
     "brand": "Sunstar"
   },
   {
-    "Sku": "3612PQ",
+    "sku": "3612PQ",
     "cost_price": 25.14,
     "brand": "Sunstar"
   },
   {
-    "Sku": "3614PQ",
+    "sku": "3614PQ",
     "cost_price": 25.14,
     "brand": "Sunstar"
   },
   {
-    "Sku": "871PQ",
+    "sku": "871PQ",
     "cost_price": 25.28,
     "brand": "Sunstar"
   },
   {
-    "Sku": "3014PQ",
+    "sku": "3014PQ",
     "cost_price": 26.17,
     "brand": "Sunstar"
   },
   {
-    "Sku": "1614PQA",
+    "sku": "1614PQA",
     "cost_price": 29.41,
     "brand": "Sunstar"
   },
   {
-    "Sku": "1612PQA",
+    "sku": "1612PQA",
     "cost_price": 29.41,
     "brand": "Sunstar"
   },
   {
-    "Sku": "1209PLT",
+    "sku": "1209PLT",
     "cost_price": 35.28,
     "brand": "Sunstar"
   },
   {
-    "Sku": "650PA",
+    "sku": "650PA",
     "cost_price": 44.04,
     "brand": "Sunstar"
   },
   {
-    "Sku": "634PB",
+    "sku": "634PB",
     "cost_price": 44.04,
     "brand": "Sunstar"
   },
   {
-    "Sku": "632DB",
+    "sku": "632DB",
     "cost_price": 44.04,
     "brand": "Sunstar"
   },
   {
-    "Sku": "670P",
+    "sku": "670P",
     "cost_price": 44.04,
     "brand": "Sunstar"
   },
   {
-    "Sku": "1415PQ",
+    "sku": "1415PQ",
     "cost_price": 44.62,
     "brand": "Sunstar"
   },
   {
-    "Sku": "1815PQB",
+    "sku": "1815PQB",
     "cost_price": 44.62,
     "brand": "Sunstar"
   },
   {
-    "Sku": "3200PQ",
+    "sku": "3200PQ",
     "cost_price": 69.3,
     "brand": "Sunstar"
   },
   {
-    "Sku": "SM-93896",
+    "sku": "SM-93896",
     "cost_price": 0,
     "brand": "SuperMax"
   },
   {
-    "Sku": "SM-93897-m",
+    "sku": "SM-93897-m",
     "cost_price": 0,
     "brand": "SuperMax"
   },
   {
-    "Sku": "SM-93898-l",
+    "sku": "SM-93898-l",
     "cost_price": 0,
     "brand": "SuperMax"
   },
   {
-    "Sku": "13-1178-E",
+    "sku": "13-1178-E",
     "cost_price": 12,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "4461-NY",
+    "sku": "4461-NY",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "MC-12-1000-1",
+    "sku": "MC-12-1000-1",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "MC-12-1000-10",
+    "sku": "MC-12-1000-10",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "10-507P",
+    "sku": "10-507P",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "11-611P",
+    "sku": "11-611P",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "11-686",
+    "sku": "11-686",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "13-1013s",
+    "sku": "13-1013s",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "MIR5DS-SS",
+    "sku": "MIR5DS-SS",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "12-814",
+    "sku": "12-814",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "12-815",
+    "sku": "12-815",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "12-907",
+    "sku": "12-907",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "12-902",
+    "sku": "12-902",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "10-365s",
+    "sku": "10-365s",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "16-2809",
+    "sku": "16-2809",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "13-1175-A",
+    "sku": "13-1175-A",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "10-118-SS",
+    "sku": "10-118-SS",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "13-1175-Tip",
+    "sku": "13-1175-Tip",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "16-2810-Blk.",
+    "sku": "16-2810-Blk.",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "12-907-HB",
+    "sku": "12-907-HB",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "11-629P",
+    "sku": "11-629P",
     "cost_price": 0,
     "brand": "SurgiMac"
   },
   {
-    "Sku": "10-508",
+    "sku": "10-508",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-803",
+    "sku": "12-803",
     "cost_price": 7.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-511",
+    "sku": "10-511",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-905",
+    "sku": "12-905",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1176",
+    "sku": "13-1176",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2612",
+    "sku": "16-2612",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-006",
+    "sku": "MS-006",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "FN-8WGE-036I- LOCAL",
+    "sku": "FN-8WGE-036I- LOCAL",
     "cost_price": 0.72,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-111-CS",
+    "sku": "10-111-CS",
     "cost_price": 1,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-111-SS",
+    "sku": "10-111-SS",
     "cost_price": 1,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-472S",
+    "sku": "10-472S",
     "cost_price": 1.25,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MW-JZ8W-RUYP",
+    "sku": "MW-JZ8W-RUYP",
     "cost_price": 2,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MW-JZ8W-RUYP- LOCAL",
+    "sku": "MW-JZ8W-RUYP- LOCAL",
     "cost_price": 2,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-360- LOCAL",
+    "sku": "10-360- LOCAL",
     "cost_price": 2,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-470-L",
+    "sku": "10-470-L",
     "cost_price": 2,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-125CS",
+    "sku": "10-125CS",
     "cost_price": 2.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-531",
+    "sku": "10-531",
     "cost_price": 3,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-904",
+    "sku": "12-904",
     "cost_price": 3,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-506-A",
+    "sku": "10-506-A",
     "cost_price": 3.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-623",
+    "sku": "11-623",
     "cost_price": 3.75,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-310",
+    "sku": "10-310",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-625",
+    "sku": "11-625",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1302",
+    "sku": "12-1302",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1303",
+    "sku": "12-1303",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-551",
+    "sku": "12-551",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-562",
+    "sku": "12-562",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1007",
+    "sku": "13-1007",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1180",
+    "sku": "13-1180",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-688",
+    "sku": "11-688",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1355",
+    "sku": "13-1355",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1361",
+    "sku": "13-1361",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-621",
+    "sku": "13-621",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1358",
+    "sku": "13-1358",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-124",
+    "sku": "13-124",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-127",
+    "sku": "13-127",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-720",
+    "sku": "10-720",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-620",
+    "sku": "10-620",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-125",
+    "sku": "13-125",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-315",
+    "sku": "10-315",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1012",
+    "sku": "13-1012",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1012G",
+    "sku": "13-1012G",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1157",
+    "sku": "13-1157",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-519-3",
+    "sku": "10-519-3",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "Gracey-Kit",
+    "sku": "Gracey-Kit",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1112-HB",
+    "sku": "13-1112-HB",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1175-2",
+    "sku": "13-1175-2",
     "cost_price": 4,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 4024,
+    "sku": 4024,
     "cost_price": 4.18,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 16407,
+    "sku": 16407,
     "cost_price": 4.2,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-501",
+    "sku": "11-501",
     "cost_price": 4.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 3988,
+    "sku": 3988,
     "cost_price": 4.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-603-SD",
+    "sku": "11-603-SD",
     "cost_price": 4.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-631",
+    "sku": "11-631",
     "cost_price": 4.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 701,
+    "sku": 701,
     "cost_price": 4.5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-619",
+    "sku": "11-619",
     "cost_price": 4.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1170",
+    "sku": "13-1170",
     "cost_price": 4.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1171",
+    "sku": "13-1171",
     "cost_price": 4.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-509",
+    "sku": "10-509",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-540",
+    "sku": "10-540",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-628",
+    "sku": "11-628",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1929s",
+    "sku": "12-1929s",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 20790,
+    "sku": 20790,
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 21155,
+    "sku": 21155,
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-931",
+    "sku": "12-931",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-932",
+    "sku": "12-932",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-933",
+    "sku": "12-933",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1127",
+    "sku": "13-1127",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-507-B",
+    "sku": "10-507-B",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-930",
+    "sku": "12-930",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-360",
+    "sku": "10-360",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-616",
+    "sku": "11-616",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1301",
+    "sku": "12-1301",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MF-001",
+    "sku": "MF-001",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-813",
+    "sku": "12-813",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1301-A",
+    "sku": "12-1301-A",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 16772,
+    "sku": 16772,
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1153",
+    "sku": "13-1153",
     "cost_price": 5.24,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "19-2211",
+    "sku": "19-2211",
     "cost_price": 5.24,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-432",
+    "sku": "10-432",
     "cost_price": 6,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1020B",
+    "sku": "13-1020B",
     "cost_price": 6,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 1066,
+    "sku": 1066,
     "cost_price": 6.78,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1018",
+    "sku": "13-1018",
     "cost_price": 7,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1812",
+    "sku": "12-1812",
     "cost_price": 7,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "15-2028",
+    "sku": "15-2028",
     "cost_price": 7,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-624",
+    "sku": "11-624",
     "cost_price": 7,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-518",
+    "sku": "10-518",
     "cost_price": 8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2503",
+    "sku": "16-2503",
     "cost_price": 8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-715",
+    "sku": "11-715",
     "cost_price": 8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "N4-3IRB-OVJM- LOCAL",
+    "sku": "N4-3IRB-OVJM- LOCAL",
     "cost_price": 8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "N4-3IRB-OVJM",
+    "sku": "N4-3IRB-OVJM",
     "cost_price": 8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1821",
+    "sku": "12-1821",
     "cost_price": 9,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-1181",
+    "sku": "11-1181",
     "cost_price": 10,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-682",
+    "sku": "11-682",
     "cost_price": 10.49,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-1176",
+    "sku": "11-1176",
     "cost_price": 11,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-706",
+    "sku": "11-706",
     "cost_price": 11,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-125SS",
+    "sku": "10-125SS",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MIR5DS-CS-A",
+    "sku": "MIR5DS-CS-A",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2505",
+    "sku": "16-2505",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-681",
+    "sku": "11-681",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-683",
+    "sku": "11-683",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-684",
+    "sku": "11-684",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1745",
+    "sku": "12-1745",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2559",
+    "sku": "16-2559",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2555",
+    "sku": "16-2555",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2557",
+    "sku": "16-2557",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1774",
+    "sku": "12-1774",
     "cost_price": 12,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1711",
+    "sku": "12-1711",
     "cost_price": 13.78,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1712",
+    "sku": "12-1712",
     "cost_price": 13.78,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1715",
+    "sku": "12-1715",
     "cost_price": 13.78,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1811",
+    "sku": "12-1811",
     "cost_price": 13.78,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1823",
+    "sku": "14-1823",
     "cost_price": 13.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1101",
+    "sku": "12-1101",
     "cost_price": 13.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2604",
+    "sku": "16-2604",
     "cost_price": 15,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2551",
+    "sku": "16-2551",
     "cost_price": 15,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1102",
+    "sku": "12-1102",
     "cost_price": 15,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2552",
+    "sku": "16-2552",
     "cost_price": 15,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2603",
+    "sku": "16-2603",
     "cost_price": 15,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2507",
+    "sku": "16-2507",
     "cost_price": 16,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2510",
+    "sku": "16-2510",
     "cost_price": 16,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2511-A",
+    "sku": "16-2511-A",
     "cost_price": 16,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1816",
+    "sku": "14-1816",
     "cost_price": 16,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1720",
+    "sku": "12-1720",
     "cost_price": 18,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1810",
+    "sku": "14-1810",
     "cost_price": 18,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2808",
+    "sku": "16-2808",
     "cost_price": 20,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2506",
+    "sku": "16-2506",
     "cost_price": 20,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2507-TC",
+    "sku": "16-2507-TC",
     "cost_price": 20,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2807",
+    "sku": "16-2807",
     "cost_price": 20,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1175",
+    "sku": "13-1175",
     "cost_price": 20.31,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2806",
+    "sku": "16-2806",
     "cost_price": 25,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1182",
+    "sku": "13-1182",
     "cost_price": 30,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 93,
+    "sku": 93,
     "cost_price": 30.35,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2502",
+    "sku": "16-2502",
     "cost_price": 39.99,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-106SS",
+    "sku": "10-106SS",
     "cost_price": 45,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-106CS",
+    "sku": "10-106CS",
     "cost_price": 50,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "70-1901",
+    "sku": "70-1901",
     "cost_price": 50,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-29112- LOCAL",
+    "sku": "13-29112- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MY-7HRK-KUKL",
+    "sku": "MY-7HRK-KUKL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MY-7HRK-KUKL- LOCAL",
+    "sku": "MY-7HRK-KUKL- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "KG-0MI6-BTN4",
+    "sku": "KG-0MI6-BTN4",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-17ADG- LOCAL",
+    "sku": "12-17ADG- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-006- LOCAL",
+    "sku": "MS-006- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MF-001- LOCAL",
+    "sku": "MF-001- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-17ADG",
+    "sku": "12-17ADG",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2502- LOCAL",
+    "sku": "16-2502- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "15-2027- LOCAL",
+    "sku": "15-2027- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2503- LOCAL",
+    "sku": "16-2503- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "15-2027",
+    "sku": "15-2027",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "NI-FX7M-NCHW- LOCAL",
+    "sku": "NI-FX7M-NCHW- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "NI-FX7M-NCHW",
+    "sku": "NI-FX7M-NCHW",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-472S- LOCAL",
+    "sku": "10-472S- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2603- LOCAL",
+    "sku": "16-2603- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-603-SD- LOCAL",
+    "sku": "11-603-SD- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "SI-4E77-CBUT- LOCAL",
+    "sku": "SI-4E77-CBUT- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1175- LOCAL",
+    "sku": "13-1175- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "QB-1IM0-WWCJ- LOCAL",
+    "sku": "QB-1IM0-WWCJ- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "SI-4E77-CBUT",
+    "sku": "SI-4E77-CBUT",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-472-L- LOCAL",
+    "sku": "10-472-L- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-603- LOCAL",
+    "sku": "11-603- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "QB-1IM0-WWCJ",
+    "sku": "QB-1IM0-WWCJ",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1257- LOCAL",
+    "sku": "13-1257- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1012GP-LOCAL",
+    "sku": "13-1012GP-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "E5-B1E3-XQDD",
+    "sku": "E5-B1E3-XQDD",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "B-12-905- LOCAL",
+    "sku": "B-12-905- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-371p- LOCAL",
+    "sku": "10-371p- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "Forceps150",
+    "sku": "Forceps150",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "53L",
+    "sku": "53L",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-306P5- LOCAL",
+    "sku": "10-306P5- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-306P10- LOCAL",
+    "sku": "10-306P10- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "19-2211BL- LOCAL",
+    "sku": "19-2211BL- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "19-2211BL",
+    "sku": "19-2211BL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-352P- LOCAL",
+    "sku": "10-352P- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-125SS- LOCAL",
+    "sku": "10-125SS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-306P10",
+    "sku": "10-306P10",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-321-8mm- LOCAL",
+    "sku": "10-321-8mm- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-518-2",
+    "sku": "10-518-2",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-520-4",
+    "sku": "10-520-4",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-904- LOCAL",
+    "sku": "12-904- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "A9-NCQS-6K9U",
+    "sku": "A9-NCQS-6K9U",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "A9-NCQS-6K9U- LOCAL",
+    "sku": "A9-NCQS-6K9U- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "0X-25GV-L4NR- LOCAL",
+    "sku": "0X-25GV-L4NR- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "0X-25GV-L4NR",
+    "sku": "0X-25GV-L4NR",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-509MB- LOCAL",
+    "sku": "10-509MB- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-509MB",
+    "sku": "10-509MB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "E7-KYF9-79B4- LOCAL",
+    "sku": "E7-KYF9-79B4- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "E7-KYF9-79B4",
+    "sku": "E7-KYF9-79B4",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 1162112,
+    "sku": 1162112,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "Gracey-Kit- LOCAL",
+    "sku": "Gracey-Kit- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-508MB- LOCAL",
+    "sku": "10-508MB- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-508MB",
+    "sku": "10-508MB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-507s",
+    "sku": "10-507s",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-507s- LOCAL",
+    "sku": "10-507s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-306P5",
+    "sku": "10-306P5",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "Forceps150- LOCAL",
+    "sku": "Forceps150- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "53L- LOCAL",
+    "sku": "53L- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-811- LOCAL",
+    "sku": "12-811- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-125CS-LOCAL",
+    "sku": "10-125CS-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "77RL",
+    "sku": "77RL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "77RL- LOCAL",
+    "sku": "77RL- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "OR-14EV-4D6W",
+    "sku": "OR-14EV-4D6W",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "TR-3FCP-PN1O",
+    "sku": "TR-3FCP-PN1O",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1720- LOCAL",
+    "sku": "12-1720- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "TR-3FCP-PN1O- LOCAL",
+    "sku": "TR-3FCP-PN1O- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1711- LOCAL",
+    "sku": "12-1711- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2516- LOCAL",
+    "sku": "16-2516- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2806-Rx",
+    "sku": "16-2806-Rx",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2602- LOCAL",
+    "sku": "16-2602- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-007- LOCAL",
+    "sku": "MS-007- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2602C- LOCAL",
+    "sku": "16-2602C- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-623- LOCAL",
+    "sku": "11-623- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2511- LOCAL",
+    "sku": "16-2511- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-624- LOCAL",
+    "sku": "11-624- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-111CS- LOCAL",
+    "sku": "10-111CS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "WV-DEFO-FRAF",
+    "sku": "WV-DEFO-FRAF",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "WE-UD4J-94VV",
+    "sku": "WE-UD4J-94VV",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "WV-DEFO-FRAF- LOCAL",
+    "sku": "WV-DEFO-FRAF- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "WE-UD4J-94VV- LOCAL",
+    "sku": "WE-UD4J-94VV- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-111SS- LOCAL",
+    "sku": "10-111SS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "B2-9946- LOCAL",
+    "sku": "B2-9946- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "8D-MVLL-DL9V- LOCAL",
+    "sku": "8D-MVLL-DL9V- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "B2-9946",
+    "sku": "B2-9946",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "NX-K5Q0-T9DH",
+    "sku": "NX-K5Q0-T9DH",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "70-1901- LOCAL",
+    "sku": "70-1901- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2604- LOCAL",
+    "sku": "16-2604- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "2892- LOCAL",
+    "sku": "2892- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1774- LOCAL",
+    "sku": "12-1774- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "HP-VM25-VRFF- LOCAL",
+    "sku": "HP-VM25-VRFF- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "HP-VM25-VRFF",
+    "sku": "HP-VM25-VRFF",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "21-F7BN-LQAK",
+    "sku": "21-F7BN-LQAK",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "YE-8CLI-UBDB",
+    "sku": "YE-8CLI-UBDB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "B6-ZDZX-FLNE",
+    "sku": "B6-ZDZX-FLNE",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-0MDZ-21NB",
+    "sku": "11-0MDZ-21NB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "LO-1YYT-R97G",
+    "sku": "LO-1YYT-R97G",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2513- LOCAL",
+    "sku": "16-2513- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2507-TC- LOCAL",
+    "sku": "16-2507-TC- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2513-5- LOCAL",
+    "sku": "16-2513-5- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "SM-BIBSBL-500- LOCAL",
+    "sku": "SM-BIBSBL-500- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "SM-BIBSBL-500",
+    "sku": "SM-BIBSBL-500",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "N7-SDTC-Z465",
+    "sku": "N7-SDTC-Z465",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "9Y-1HRC-XIEI",
+    "sku": "9Y-1HRC-XIEI",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "YW-6O1S-CIXP",
+    "sku": "YW-6O1S-CIXP",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "U0-9UF2-FJYJ",
+    "sku": "U0-9UF2-FJYJ",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "1B-CKA7-NM7U",
+    "sku": "1B-CKA7-NM7U",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "GG-5HUQ-RLVA",
+    "sku": "GG-5HUQ-RLVA",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "84-5V9X-IBXV- LOCAL",
+    "sku": "84-5V9X-IBXV- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "84-5V9X-IBXV",
+    "sku": "84-5V9X-IBXV",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "YD-PF1T-JHPX",
+    "sku": "YD-PF1T-JHPX",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1176- LOCAL",
+    "sku": "13-1176- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "6O-MO6S-R6TD",
+    "sku": "6O-MO6S-R6TD",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "GQ-W3XZ-1QN3",
+    "sku": "GQ-W3XZ-1QN3",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-001- LOCAL",
+    "sku": "MS-001- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-002- LOCAL",
+    "sku": "MS-002- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2609- LOCAL",
+    "sku": "16-2609- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-106CS- LOCAL",
+    "sku": "10-106CS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-106SS- LOCAL",
+    "sku": "10-106SS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2608-5-LOCAL",
+    "sku": "16-2608-5-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2612- LOCAL",
+    "sku": "16-2612- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1168",
+    "sku": "12-1168",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-314",
+    "sku": "10-314",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-370",
+    "sku": "10-370",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-352",
+    "sku": "10-352",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-458",
+    "sku": "10-458",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-501",
+    "sku": "10-501",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-507",
+    "sku": "10-507",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-508-B",
+    "sku": "10-508-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-519",
+    "sku": "10-519",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-624-A",
+    "sku": "11-624-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1902-A",
+    "sku": "12-1902-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1903-A",
+    "sku": "12-1903-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-811",
+    "sku": "12-811",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1254",
+    "sku": "13-1254",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2512",
+    "sku": "16-2512",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2553",
+    "sku": "16-2553",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2605",
+    "sku": "16-2605",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2809-A",
+    "sku": "16-2809-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2810-A",
+    "sku": "16-2810-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "29-3404",
+    "sku": "29-3404",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "F35XS",
+    "sku": "F35XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "F67XS",
+    "sku": "F67XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "FX79XS",
+    "sku": "FX79XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MA-FAF1XS",
+    "sku": "MA-FAF1XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MIR5DS-SS-A",
+    "sku": "MIR5DS-SS-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-125CS-M-3",
+    "sku": "10-125CS-M-3",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-125SS-M-3",
+    "sku": "10-125SS-M-3",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-512-B",
+    "sku": "10-512-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1901-kit-3",
+    "sku": "12-1901-kit-3",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1902-A and 12-1903-A",
+    "sku": "12-1902-A and 12-1903-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1925 and 12-1926",
+    "sku": "12-1925 and 12-1926",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1941 and 12-1942",
+    "sku": "12-1941 and 12-1942",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 15676,
+    "sku": 15676,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 16041,
+    "sku": 16041,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1956 and 12-1957",
+    "sku": "12-1956 and 12-1957",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-412-A",
+    "sku": "10-412-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-370-A",
+    "sku": "10-370-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-520",
+    "sku": "10-520",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-700-A",
+    "sku": "11-700-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1014",
+    "sku": "13-1014",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-708-A",
+    "sku": "11-708-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "19-2311",
+    "sku": "19-2311",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2513",
+    "sku": "16-2513",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 11293,
+    "sku": 11293,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-690-A",
+    "sku": "11-690-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1013G",
+    "sku": "13-1013G",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-707-A",
+    "sku": "11-707-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-709-A",
+    "sku": "11-709-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2517",
+    "sku": "16-2517",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-424",
+    "sku": "10-424",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-521",
+    "sku": "10-521",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-522",
+    "sku": "10-522",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-609-A",
+    "sku": "11-609-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-611-A",
+    "sku": "11-611-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-523",
+    "sku": "10-523",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2504",
+    "sku": "16-2504",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MA-F13XS",
+    "sku": "MA-F13XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MA-F1XS",
+    "sku": "MA-F1XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MA-FAF36XS",
+    "sku": "MA-FAF36XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MA-FX45XS",
+    "sku": "MA-FX45XS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-511-B",
+    "sku": "10-511-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-525-B",
+    "sku": "10-525-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-698-A",
+    "sku": "11-698-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-712-A",
+    "sku": "11-712-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-717-A",
+    "sku": "11-717-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-810-A",
+    "sku": "11-810-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 3258,
+    "sku": 3258,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 9467,
+    "sku": 9467,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 9832,
+    "sku": 9832,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 15311,
+    "sku": 15311,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1015-A",
+    "sku": "13-1015-A",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2541",
+    "sku": "16-2541",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2591",
+    "sku": "16-2591",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-509-B",
+    "sku": "10-509-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1304",
+    "sku": "12-1304",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2615",
+    "sku": "16-2615",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-506-B",
+    "sku": "10-506-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "19-2411",
+    "sku": "19-2411",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1003-s-HB",
+    "sku": "13-1003-s-HB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "15-EXD11",
+    "sku": "15-EXD11",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2612C-HB",
+    "sku": "16-2612C-HB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2612C-HB-HB",
+    "sku": "16-2612C-HB-HB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2612C-HB-HB-HB",
+    "sku": "16-2612C-HB-HB-HB",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "20-E302",
+    "sku": "20-E302",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "mc234",
+    "sku": "mc234",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-306",
+    "sku": "10-306",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-371",
+    "sku": "10-371",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-470",
+    "sku": "10-470",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1706",
+    "sku": "12-1706",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1716",
+    "sku": "12-1716",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1744",
+    "sku": "12-1744",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1744 and 12-1745",
+    "sku": "12-1744 and 12-1745",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1907-Gold",
+    "sku": "12-1907-Gold",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1943 and 12-1944",
+    "sku": "12-1943 and 12-1944",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 17868,
+    "sku": 17868,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 18233,
+    "sku": 18233,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": 18598,
+    "sku": 18598,
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1001",
+    "sku": "13-1001",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1020Blue",
+    "sku": "13-1020Blue",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1112",
+    "sku": "13-1112",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1181",
+    "sku": "13-1181",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1257",
+    "sku": "13-1257",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "13-1403",
+    "sku": "13-1403",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1808",
+    "sku": "14-1808",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1835",
+    "sku": "14-1835",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1836",
+    "sku": "14-1836",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1841",
+    "sku": "14-1841",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1842",
+    "sku": "14-1842",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1843",
+    "sku": "14-1843",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1878",
+    "sku": "14-1878",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2519",
+    "sku": "16-2519",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2539",
+    "sku": "16-2539",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2806-B",
+    "sku": "16-2806-B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2810",
+    "sku": "16-2810",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "29-3401",
+    "sku": "29-3401",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "29-3405",
+    "sku": "29-3405",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MIR5DS-CS",
+    "sku": "MIR5DS-CS",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-001",
+    "sku": "MS-001",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-002",
+    "sku": "MS-002",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "MS-002B",
+    "sku": "MS-002B",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "RE-1963",
+    "sku": "RE-1963",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "RE-1964",
+    "sku": "RE-1964",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "RE-1965",
+    "sku": "RE-1965",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2615-S",
+    "sku": "16-2615-S",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1829",
+    "sku": "14-1829",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-610P",
+    "sku": "11-610P",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "14-1840",
+    "sku": "14-1840",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2612C",
+    "sku": "16-2612C",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2516",
+    "sku": "16-2516",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2511",
+    "sku": "16-2511",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-460",
+    "sku": "10-460",
     "cost_price": 0,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-1301-S-HB",
+    "sku": "12-1301-S-HB",
     "cost_price": 0.8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "11-716-A",
+    "sku": "11-716-A",
     "cost_price": 2.6,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "12-930-HB-HB",
+    "sku": "12-930-HB-HB",
     "cost_price": 3.8,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "DD20-RF30-HB",
+    "sku": "DD20-RF30-HB",
     "cost_price": 5,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "16-2551-HB",
+    "sku": "16-2551-HB",
     "cost_price": 7.7,
     "brand": "SurgiMac-AirSeries"
   },
   {
-    "Sku": "10-506B",
+    "sku": "10-506B",
     "cost_price": 5,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "10-507B",
+    "sku": "10-507B",
     "cost_price": 5,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "10-508B",
+    "sku": "10-508B",
     "cost_price": 5,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "10-501B",
+    "sku": "10-501B",
     "cost_price": 12,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "CG-KFLZ-7N7I- LOCAL",
+    "sku": "CG-KFLZ-7N7I- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "16-2606",
+    "sku": "16-2606",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "16-2606- LOCAL",
+    "sku": "16-2606- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "MS-008- LOCAL",
+    "sku": "MS-008- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "MS-009",
+    "sku": "MS-009",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "MS-009- LOCAL",
+    "sku": "MS-009- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "16-2608BL- LOCAL",
+    "sku": "16-2608BL- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "HK-XYT6-L4JD",
+    "sku": "HK-XYT6-L4JD",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "MS-009-B",
+    "sku": "MS-009-B",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "10-509B",
+    "sku": "10-509B",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "13-1013BL",
+    "sku": "13-1013BL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "MS-007",
+    "sku": "MS-007",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "MS-008BL",
+    "sku": "MS-008BL",
     "cost_price": 0,
     "brand": "SurgiMac-BlackSeries"
   },
   {
-    "Sku": "13-1158",
+    "sku": "13-1158",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2621",
+    "sku": "16-2621",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470s-HB",
+    "sku": "10-470s-HB",
     "cost_price": 0.6,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-3101-1",
+    "sku": "16-3101-1",
     "cost_price": 0.62,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470-E",
+    "sku": "10-470-E",
     "cost_price": 0.7,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-314-E",
+    "sku": "10-314-E",
     "cost_price": 0.8,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1155",
+    "sku": "13-1155",
     "cost_price": 1,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-308-E",
+    "sku": "10-308-E",
     "cost_price": 1,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2620",
+    "sku": "16-2620",
     "cost_price": 1.25,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1111ss- LOCAL",
+    "sku": "13-1111ss- LOCAL",
     "cost_price": 1.25,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2620- LOCAL",
+    "sku": "16-2620- LOCAL",
     "cost_price": 1.25,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1404-2",
+    "sku": "13-1404-2",
     "cost_price": 1.5,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-354s-HB",
+    "sku": "10-354s-HB",
     "cost_price": 2,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-111CS-M",
+    "sku": "10-111CS-M",
     "cost_price": 2,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1113",
+    "sku": "13-1113",
     "cost_price": 2,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10365-S-HB",
+    "sku": "10365-S-HB",
     "cost_price": 2,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10365-S-NY",
+    "sku": "10365-S-NY",
     "cost_price": 2,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-3001- LOCAL",
+    "sku": "16-3001- LOCAL",
     "cost_price": 2,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "15-2515-E",
+    "sku": "15-2515-E",
     "cost_price": 2.5,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-458-E",
+    "sku": "10-458-E",
     "cost_price": 2.75,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2452",
+    "sku": "16-2452",
     "cost_price": 2.99,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-4102",
+    "sku": "16-4102",
     "cost_price": 3,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-4101_EC",
+    "sku": "16-4101_EC",
     "cost_price": 3,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1157B",
+    "sku": "13-1157B",
     "cost_price": 4,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-601-E",
+    "sku": "11-601-E",
     "cost_price": 4.5,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1158-5- LOCAL",
+    "sku": "13-1158-5- LOCAL",
     "cost_price": 5.5,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1103-E",
+    "sku": "12-1103-E",
     "cost_price": 5.99,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2510-E",
+    "sku": "16-2510-E",
     "cost_price": 5.99,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1113-E",
+    "sku": "13-1113-E",
     "cost_price": 5.99,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-744-E",
+    "sku": "10-744-E",
     "cost_price": 5.99,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-350-S",
+    "sku": "10-350-S",
     "cost_price": 6,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Mac-Set6",
+    "sku": "Mac-Set6",
     "cost_price": 6,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1152",
+    "sku": "13-1152",
     "cost_price": 8,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1111",
+    "sku": "13-1111",
     "cost_price": 9,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470ss",
+    "sku": "10-470ss",
     "cost_price": 10,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470ss- LOCAL",
+    "sku": "10-470ss- LOCAL",
     "cost_price": 10,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2609-5",
+    "sku": "16-2609-5",
     "cost_price": 10,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2608-5",
+    "sku": "16-2608-5",
     "cost_price": 10,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2608",
+    "sku": "16-2608",
     "cost_price": 15.99,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Retractor",
+    "sku": "Retractor",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Retractor- LOCAL",
+    "sku": "Retractor- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2521s- LOCAL",
+    "sku": "16-2521s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470- LOCAL",
+    "sku": "10-470- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470s- LOCAL",
+    "sku": "10-470s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470s-5-LOCAL",
+    "sku": "10-470s-5-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-470s-5",
+    "sku": "10-470s-5",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "15-1001- LOCAL",
+    "sku": "15-1001- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Caliper- LOCAL",
+    "sku": "Caliper- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1402-HB",
+    "sku": "13-1402-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1152- LOCAL",
+    "sku": "13-1152- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1112- LOCAL",
+    "sku": "13-1112- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1152s- LOCAL",
+    "sku": "13-1152s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1404-Rx",
+    "sku": "13-1404-Rx",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1404-3",
+    "sku": "13-1404-3",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "NS-KWTZ-6PWV- LOCAL",
+    "sku": "NS-KWTZ-6PWV- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Mac-Set6- LOCAL",
+    "sku": "Mac-Set6- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1113- LOCAL",
+    "sku": "13-1113- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1157B- LOCAL",
+    "sku": "13-1157B- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "JC-ZBIL-JXRO- LOCAL",
+    "sku": "JC-ZBIL-JXRO- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1158- LOCAL",
+    "sku": "13-1158- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1158-5",
+    "sku": "13-1158-5",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "6S-F2TJ-156C",
+    "sku": "6S-F2TJ-156C",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "NS-KWTZ-6PWV",
+    "sku": "NS-KWTZ-6PWV",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "6S-F2TJ-156C- LOCAL",
+    "sku": "6S-F2TJ-156C- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1403-Rx",
+    "sku": "13-1403-Rx",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "LU-XP2H-XZDZ",
+    "sku": "LU-XP2H-XZDZ",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Mac12",
+    "sku": "Mac12",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "LU-XP2H-XZDZ- LOCAL",
+    "sku": "LU-XP2H-XZDZ- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2616",
+    "sku": "16-2616",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2616- LOCAL",
+    "sku": "16-2616- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2608- LOCAL",
+    "sku": "16-2608- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2609-HB",
+    "sku": "16-2609-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "Mac12- LOCAL",
+    "sku": "Mac12- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "F4-9PJY-BX33",
+    "sku": "F4-9PJY-BX33",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "05-RBD3-TRZC",
+    "sku": "05-RBD3-TRZC",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "F4-9PJY-BX33- LOCAL",
+    "sku": "F4-9PJY-BX33- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "K3-P3NZ-EKKE- LOCAL",
+    "sku": "K3-P3NZ-EKKE- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "05-RBD3-TRZC- LOCAL",
+    "sku": "05-RBD3-TRZC- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "AS-JL2Z-MU1R",
+    "sku": "AS-JL2Z-MU1R",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "K3-P3NZ-EKKE",
+    "sku": "K3-P3NZ-EKKE",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "AS-JL2Z-MU1R- LOCAL",
+    "sku": "AS-JL2Z-MU1R- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "IP-AMZY-RPHW- LOCAL",
+    "sku": "IP-AMZY-RPHW- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "T1-9969- LOCAL",
+    "sku": "T1-9969- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "S7-RTIS-ATA1",
+    "sku": "S7-RTIS-ATA1",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "S7-RTIS-ATA1- LOCAL",
+    "sku": "S7-RTIS-ATA1- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "MF-FLXT-X5LR",
+    "sku": "MF-FLXT-X5LR",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "MF-FLXT-X5LR- LOCAL",
+    "sku": "MF-FLXT-X5LR- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2609-5- LOCAL",
+    "sku": "16-2609-5- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-128",
+    "sku": "10-128",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-128- LOCAL",
+    "sku": "10-128- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": 7117,
+    "sku": 7117,
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2621- LOCAL",
+    "sku": "16-2621- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-4103-HB",
+    "sku": "16-4103-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1404 HB",
+    "sku": "13-1404 HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1255",
+    "sku": "13-1255",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2521",
+    "sku": "16-2521",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-353",
+    "sku": "10-353",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-812",
+    "sku": "12-812",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-601",
+    "sku": "11-601",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-462",
+    "sku": "10-462",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-630",
+    "sku": "11-630",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1154",
+    "sku": "13-1154",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1401",
+    "sku": "13-1401",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-308",
+    "sku": "10-308",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-495-P",
+    "sku": "10-495-P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-496-P",
+    "sku": "10-496-P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-107-10",
+    "sku": "10-107-10",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-497-P",
+    "sku": "10-497-P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-612",
+    "sku": "11-612",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-906",
+    "sku": "12-906",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-910",
+    "sku": "12-910",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1200",
+    "sku": "13-1200",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2522",
+    "sku": "16-2522",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2543",
+    "sku": "16-2543",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "CAS-05P",
+    "sku": "CAS-05P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "CAS-07P",
+    "sku": "CAS-07P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "CAS-10P",
+    "sku": "CAS-10P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "CASP-Set",
+    "sku": "CASP-Set",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-2101-P-E",
+    "sku": "12-2101-P-E",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-908",
+    "sku": "12-908",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-498-P",
+    "sku": "10-498-P",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "2731002-hb",
+    "sku": "2731002-hb",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2803 House brand",
+    "sku": "16-2803 House brand",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "SM07-400",
+    "sku": "SM07-400",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-308-HB",
+    "sku": "10-308-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2521-HB-HB",
+    "sku": "16-2521-HB-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-111-CS-HB",
+    "sku": "10-111-CS-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-111-SS-HB",
+    "sku": "10-111-SS-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-316",
+    "sku": "10-316",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-316-HB",
+    "sku": "10-316-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-611-hb",
+    "sku": "11-611-hb",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-628s-HB",
+    "sku": "11-628s-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1903-HB",
+    "sku": "12-1903-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1904-HB",
+    "sku": "12-1904-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1354-E-HB",
+    "sku": "13-1354-E-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2521-HB",
+    "sku": "16-2521-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2608 HB",
+    "sku": "16-2608 HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2609 HB",
+    "sku": "16-2609 HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-523-HB",
+    "sku": "16-523-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "670-144",
+    "sku": "670-144",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "675-474",
+    "sku": "675-474",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "IN07-405-SM",
+    "sku": "IN07-405-SM",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2519-HB",
+    "sku": "16-2519-HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "SM-19-324",
+    "sku": "SM-19-324",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1103 HB",
+    "sku": "12-1103 HB",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1404",
+    "sku": "13-1404",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2511s",
+    "sku": "16-2511s",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2513s",
+    "sku": "16-2513s",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2609",
+    "sku": "16-2609",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1156",
+    "sku": "13-1156",
     "cost_price": 0,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-812-E",
+    "sku": "12-812-E",
     "cost_price": 0.8,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-906-E",
+    "sku": "12-906-E",
     "cost_price": 0.8,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "055-55",
+    "sku": "055-55",
     "cost_price": 1.05,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "11-611s-HB",
+    "sku": "11-611s-HB",
     "cost_price": 1.25,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "16-2803 HB",
+    "sku": "16-2803 HB",
     "cost_price": 3,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "13-1176 HB",
+    "sku": "13-1176 HB",
     "cost_price": 3.5,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "SM07-225",
+    "sku": "SM07-225",
     "cost_price": 4.63,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "SM-3117-kit",
+    "sku": "SM-3117-kit",
     "cost_price": 4.95,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1751 HB",
+    "sku": "12-1751 HB",
     "cost_price": 5,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "29-3402-HB",
+    "sku": "29-3402-HB",
     "cost_price": 6,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "29-3401-F",
+    "sku": "29-3401-F",
     "cost_price": 7,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1101-HB",
+    "sku": "12-1101-HB",
     "cost_price": 7,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "12-1751-P-HB",
+    "sku": "12-1751-P-HB",
     "cost_price": 13,
     "brand": "SurgiMac-EcoSeries"
   },
   {
-    "Sku": "10-360-H",
+    "sku": "10-360-H",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "12-903",
+    "sku": "12-903",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-412",
+    "sku": "10-412",
     "cost_price": 2,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-319-H",
+    "sku": "10-319-H",
     "cost_price": 2,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-412- LOCAL",
+    "sku": "10-412- LOCAL",
     "cost_price": 2,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1112-H",
+    "sku": "13-1112-H",
     "cost_price": 3,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-611-H",
+    "sku": "11-611-H",
     "cost_price": 3,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-352-H",
+    "sku": "10-352-H",
     "cost_price": 3,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-623-H",
+    "sku": "11-623-H",
     "cost_price": 3.75,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1012G-H",
+    "sku": "13-1012G-H",
     "cost_price": 4,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "15-2128P",
+    "sku": "15-2128P",
     "cost_price": 4.5,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-511-H",
+    "sku": "10-511-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-610-H",
+    "sku": "11-610-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-619-H",
+    "sku": "11-619-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-629-H",
+    "sku": "11-629-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "12-811-H",
+    "sku": "12-811-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "12-803-H",
+    "sku": "12-803-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-306-H",
+    "sku": "10-306-H",
     "cost_price": 4.99,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-507-H",
+    "sku": "10-507-H",
     "cost_price": 5,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-513-H",
+    "sku": "10-513-H",
     "cost_price": 5,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-508-H",
+    "sku": "10-508-H",
     "cost_price": 5,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-506-H",
+    "sku": "10-506-H",
     "cost_price": 9,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1257-H",
+    "sku": "13-1257-H",
     "cost_price": 9,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1006G",
+    "sku": "13-1006G",
     "cost_price": 15,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "15-EXD2- LOCAL",
+    "sku": "15-EXD2- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-687",
+    "sku": "11-687",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1006sss- LOCAL",
+    "sku": "13-1006sss- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": 1533,
+    "sku": 1533,
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "1533- LOCAL",
+    "sku": "1533- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-626p-HB-LOCAL",
+    "sku": "11-626p-HB-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-626p-HB",
+    "sku": "11-626p-HB",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "S204SD- LOCAL",
+    "sku": "S204SD- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1006G- LOCAL",
+    "sku": "13-1006G- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-687-H",
+    "sku": "11-687-H",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "13-1007-H",
+    "sku": "13-1007-H",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-628-H",
+    "sku": "10-628-H",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-412-H",
+    "sku": "10-412-H",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-695",
+    "sku": "11-695",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-307-H",
+    "sku": "10-307-H",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "16-2410",
+    "sku": "16-2410",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "11-623 HB",
+    "sku": "11-623 HB",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "15-SBH5-6",
+    "sku": "15-SBH5-6",
     "cost_price": 0,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": "10-507-H-HB",
+    "sku": "10-507-H-HB",
     "cost_price": 2.5,
     "brand": "SurgiMac-HexaSeries"
   },
   {
-    "Sku": 12178,
+    "sku": 12178,
     "cost_price": 0,
     "brand": "SurgiMac-MacBite"
   },
   {
-    "Sku": "12178-4",
+    "sku": "12178-4",
     "cost_price": 0,
     "brand": "SurgiMac-MacBite"
   },
   {
-    "Sku": "16-2609-BL",
+    "sku": "16-2609-BL",
     "cost_price": 0,
     "brand": "SurgiMac-MacBlack"
   },
   {
-    "Sku": "10-1211-P",
+    "sku": "10-1211-P",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "16-2453- LOCAL",
+    "sku": "16-2453- LOCAL",
     "cost_price": 1,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "Mac20-6r",
+    "sku": "Mac20-6r",
     "cost_price": 4,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4110",
+    "sku": "MC-10-4110",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4111",
+    "sku": "MC-10-4111",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4115C",
+    "sku": "MC-10-4115C",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4115",
+    "sku": "MC-10-4115",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4112",
+    "sku": "MC-10-4112",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4120",
+    "sku": "MC-10-4120",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4121",
+    "sku": "MC-10-4121",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4122",
+    "sku": "MC-10-4122",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4123",
+    "sku": "MC-10-4123",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4124",
+    "sku": "MC-10-4124",
     "cost_price": 4.49,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4115-100",
+    "sku": "4115-100",
     "cost_price": 5,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4115C-100",
+    "sku": "4115C-100",
     "cost_price": 5,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4115-100- LOCAL",
+    "sku": "4115-100- LOCAL",
     "cost_price": 5,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4112-100",
+    "sku": "4112-100",
     "cost_price": 6,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4111-100",
+    "sku": "4111-100",
     "cost_price": 6,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4112B-100",
+    "sku": "4112B-100",
     "cost_price": 6,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1211",
+    "sku": "MC-10-1211",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5212",
+    "sku": "MC-10-5212",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1210",
+    "sku": "MC-10-1210",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5211",
+    "sku": "MC-10-5211",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1222",
+    "sku": "MC-10-1222",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1212",
+    "sku": "MC-10-1212",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1215C",
+    "sku": "MC-10-1215C",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5210",
+    "sku": "MC-10-5210",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1220",
+    "sku": "MC-10-1220",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1221",
+    "sku": "MC-10-1221",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5215",
+    "sku": "MC-10-5215",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1215",
+    "sku": "MC-10-1215",
     "cost_price": 6.97,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4112-100- LOCAL",
+    "sku": "4112-100- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4110-100",
+    "sku": "4110-100",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4112B-100- LOCAL",
+    "sku": "4112B-100- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4110-10",
+    "sku": "4110-10",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "10-4115C-Rx",
+    "sku": "10-4115C-Rx",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4115C-10",
+    "sku": "4115C-10",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4112-10",
+    "sku": "4112-10",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4115-10",
+    "sku": "4115-10",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4111-10",
+    "sku": "4111-10",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4110-100- LOCAL",
+    "sku": "4110-100- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4110-10- LOCAL",
+    "sku": "4110-10- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4111-100- LOCAL",
+    "sku": "4111-100- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4112B-10",
+    "sku": "4112B-10",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "10-1215-RX",
+    "sku": "10-1215-RX",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "4111-10- LOCAL",
+    "sku": "4111-10- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1212-HB",
+    "sku": "MC-10-1212-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "SM19-3000",
+    "sku": "SM19-3000",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5212D",
+    "sku": "MC-10-5212D",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5215C",
+    "sku": "MC-10-5215C",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-5222",
+    "sku": "MC-10-5222",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-12-1000",
+    "sku": "MC-12-1000",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "10-4115C",
+    "sku": "10-4115C",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "10-1215",
+    "sku": "10-1215",
     "cost_price": 0,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "SU503",
+    "sku": "SU503",
     "cost_price": 1,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-4115C-HB",
+    "sku": "MC-10-4115C-HB",
     "cost_price": 2,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1210-HB",
+    "sku": "MC-10-1210-HB",
     "cost_price": 3.66,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "MC-10-1211-HB",
+    "sku": "MC-10-1211-HB",
     "cost_price": 4.5,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "371215-HB",
+    "sku": "371215-HB",
     "cost_price": 4.79,
     "brand": "SurgiMac-MacCut"
   },
   {
-    "Sku": "3116-M",
+    "sku": "3116-M",
     "cost_price": 0,
     "brand": "SurgiMac-MacGrip"
   },
   {
-    "Sku": "BG-T6IQ-19YA",
+    "sku": "BG-T6IQ-19YA",
     "cost_price": 2,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1550-10",
+    "sku": "10-1550-10",
     "cost_price": 2,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "9H-PS6F-6JAE",
+    "sku": "9H-PS6F-6JAE",
     "cost_price": 2.83,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "IV-NH7E-ZJU8",
+    "sku": "IV-NH7E-ZJU8",
     "cost_price": 3.53,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "IV-NH7E-ZJU8- LOCAL",
+    "sku": "IV-NH7E-ZJU8- LOCAL",
     "cost_price": 3.53,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "IC920- LOCAL",
+    "sku": "IC920- LOCAL",
     "cost_price": 4,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1551",
+    "sku": "10-1551",
     "cost_price": 5,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1501-NY",
+    "sku": "10-1501-NY",
     "cost_price": 6.25,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1502-M",
+    "sku": "10-1502-M",
     "cost_price": 6.25,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1502-NY",
+    "sku": "10-1502-NY",
     "cost_price": 6.25,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1503-NY",
+    "sku": "10-1503-NY",
     "cost_price": 6.25,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1504-NY",
+    "sku": "10-1504-NY",
     "cost_price": 6.25,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "3F-30DW-YWF0",
+    "sku": "3F-30DW-YWF0",
     "cost_price": 8,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1501",
+    "sku": "10-1501",
     "cost_price": 8.99,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1502",
+    "sku": "10-1502",
     "cost_price": 8.99,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1503",
+    "sku": "10-1503",
     "cost_price": 8.99,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1504",
+    "sku": "10-1504",
     "cost_price": 8.99,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1601-CS",
+    "sku": "10-1601-CS",
     "cost_price": 17.99,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1601-W-CS",
+    "sku": "10-1601-W-CS",
     "cost_price": 17.99,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1551-CS",
+    "sku": "10-1551-CS",
     "cost_price": 23,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1551-CS-RX",
+    "sku": "10-1551-CS-RX",
     "cost_price": 23.7,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "2141-SM",
+    "sku": "2141-SM",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1601",
+    "sku": "10-1601",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1601-W",
+    "sku": "10-1601-W",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "IC920",
+    "sku": "IC920",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "9H-PS6F-6JAE- LOCAL",
+    "sku": "9H-PS6F-6JAE- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "3F-30DW-YWF0- LOCAL",
+    "sku": "3F-30DW-YWF0- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "0P-QXU4-4TL5- LOCAL",
+    "sku": "0P-QXU4-4TL5- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "0P-QXU4-4TL5",
+    "sku": "0P-QXU4-4TL5",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "hb-msksb",
+    "sku": "hb-msksb",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1551-50",
+    "sku": "10-1551-50",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "HC-45-234",
+    "sku": "HC-45-234",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1301",
+    "sku": "10-1301",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1500",
+    "sku": "10-1500",
     "cost_price": 0,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "M3010-DD",
+    "sku": "M3010-DD",
     "cost_price": 0.7,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1551-10/pk-Knitt Cuff",
+    "sku": "10-1551-10/pk-Knitt Cuff",
     "cost_price": 1.195,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "IC583",
+    "sku": "IC583",
     "cost_price": 6,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1500-Elastic",
+    "sku": "10-1500-Elastic",
     "cost_price": 7.82,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "10-1551-Knitt Cuff",
+    "sku": "10-1551-Knitt Cuff",
     "cost_price": 11.95,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "4748-349",
+    "sku": "4748-349",
     "cost_price": 29.75,
     "brand": "SurgiMac-MacSafe"
   },
   {
-    "Sku": "4116XS-1",
+    "sku": "4116XS-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116XL-1",
+    "sku": "4116XL-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116S-1",
+    "sku": "4116S-1",
     "cost_price": 1.4,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116M-1",
+    "sku": "4116M-1",
     "cost_price": 1.4,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116L-1",
+    "sku": "4116L-1",
     "cost_price": 1.77,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4118-S",
+    "sku": "4118-S",
     "cost_price": 129,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4118-L",
+    "sku": "4118-L",
     "cost_price": 129,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4118-M-CS",
+    "sku": "4118-M-CS",
     "cost_price": 129,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4118-M",
+    "sku": "4118-M",
     "cost_price": 129,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4118-S-CS",
+    "sku": "4118-S-CS",
     "cost_price": 129,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4118-L-CS",
+    "sku": "4118-L-CS",
     "cost_price": 129,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116XL",
+    "sku": "4116XL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116S",
+    "sku": "4116S",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116M",
+    "sku": "4116M",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116XS",
+    "sku": "4116XS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116L",
+    "sku": "4116L",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116-M-1",
+    "sku": "4116-M-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116-L-1",
+    "sku": "4116-L-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116-XS-1",
+    "sku": "4116-XS-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116-S-1",
+    "sku": "4116-S-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "4116-XL-1",
+    "sku": "4116-XL-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5213DD",
+    "sku": "5213DD",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5214DD",
+    "sku": "5214DD",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "DD5215",
+    "sku": "DD5215",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "SM-3116",
-    "cost_price": 1.80,
-    "brand": "SurgiMac-MacSoft"
-  },
-  {
-    "Sku": "SM-3117",
+    "sku": "SM-3116",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "SM-3118",
-    "cost_price": 1.80,
-    "brand": "SurgiMac-MacSoft"
-  },
-  {
-    "Sku": "SM-3119",
+    "sku": "SM-3117",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8115-XS-HB",
+    "sku": "SM-3118",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8118-L-HB",
+    "sku": "SM-3119",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "7115-M-1-HB",
+    "sku": "8115-XS-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "7116-S-HB",
+    "sku": "8118-L-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "7115-XS-1-HB",
+    "sku": "7115-M-1-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "7118-L-1-HB",
+    "sku": "7116-S-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8116-S-HB",
+    "sku": "7115-XS-1-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5116-M-HB-1",
+    "sku": "7118-L-1-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8117-M-HB",
+    "sku": "8116-S-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5116-L",
+    "sku": "5116-M-HB-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5116-M",
+    "sku": "8117-M-HB",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5116-S",
+    "sku": "5116-L",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5116-XL",
+    "sku": "5116-M",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "5116-XS",
+    "sku": "5116-S",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8116-S",
+    "sku": "5116-XL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8117-M",
+    "sku": "5116-XS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8118-L",
+    "sku": "8116-S",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8119-XL",
+    "sku": "8117-M",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "6116-M",
+    "sku": "8118-L",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "9119-M",
+    "sku": "8119-XL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8115-XS",
+    "sku": "6116-M",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "6116-S-1",
+    "sku": "9119-M",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8115-XS-CS",
+    "sku": "8115-XS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8119-XL-CS",
+    "sku": "6116-S-1",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8116-S-CS",
+    "sku": "8115-XS-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8117-M-CS",
+    "sku": "8119-XL-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "8118-L-CS",
+    "sku": "8116-S-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "9119-S",
+    "sku": "8117-M-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "9119-XS",
+    "sku": "8118-L-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "SM-3116-CS",
+    "sku": "9119-S",
+    "cost_price": 0,
+    "brand": "SurgiMac-MacSoft"
+  },
+  {
+    "sku": "9119-XS",
+    "cost_price": 0,
+    "brand": "SurgiMac-MacSoft"
+  },
+  {
+    "sku": "SM-3116-CS",
     "cost_price": 18,
     "brand": "SurgiMac-MacSoft"
   },
   {
-    "Sku": "13-1354s",
+    "sku": "13-1354s",
     "cost_price": 3,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5F45CX20",
+    "sku": "5F45CX20",
     "cost_price": 7,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5F45CX30",
+    "sku": "5F45CX30",
     "cost_price": 7,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5G45CX16",
+    "sku": "5G45CX16",
     "cost_price": 7,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5G45CX19",
+    "sku": "5G45CX19",
     "cost_price": 7,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5F45CX26",
+    "sku": "5F45CX26",
     "cost_price": 9.4,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4G68CX19",
+    "sku": "4G68CX19",
     "cost_price": 19.9,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "16-N2558S11",
+    "sku": "16-N2558S11",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "MAC-6501- LOCAL",
+    "sku": "MAC-6501- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "Mac3",
+    "sku": "Mac3",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "Mac3- LOCAL",
+    "sku": "Mac3- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "13-1354s- LOCAL",
+    "sku": "13-1354s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "13-1354s-3",
+    "sku": "13-1354s-3",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "13-1354s-3- LOCAL",
+    "sku": "13-1354s-3- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "TP-R33J-DXSM",
+    "sku": "TP-R33J-DXSM",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "TP-R33J-DXSM- LOCAL",
+    "sku": "TP-R33J-DXSM- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18F68CX19",
+    "sku": "18F68CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18H68CX19",
+    "sku": "18H68CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2F45CX19",
+    "sku": "2F45CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2H45CX13P",
+    "sku": "2H45CX13P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2H45CX19",
+    "sku": "2H45CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2G45CX19",
+    "sku": "2G45CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "10F76DZ26",
+    "sku": "10F76DZ26",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "10G75DZ22",
+    "sku": "10G75DZ22",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "7F45CX28",
+    "sku": "7F45CX28",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2F45CX24",
+    "sku": "2F45CX24",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3F45CG19",
+    "sku": "3F45CG19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3G4CX30PG",
+    "sku": "3G4CX30PG",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4F45CX19",
+    "sku": "4F45CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4F68CX22",
+    "sku": "4F68CX22",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4G45CX13P",
+    "sku": "4G45CX13P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4G45CX17",
+    "sku": "4G45CX17",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4G45CX36P",
+    "sku": "4G45CX36P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4G4CX18PG",
+    "sku": "4G4CX18PG",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4G4CX30PG",
+    "sku": "4G4CX30PG",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4H45CX13P",
+    "sku": "4H45CX13P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4H45CX20",
+    "sku": "4H45CX20",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4H45CX30P",
+    "sku": "4H45CX30P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "4H68CX28",
+    "sku": "4H68CX28",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "7F45CX48",
+    "sku": "7F45CX48",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "7F68CX36",
+    "sku": "7F68CX36",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "7G68CX36",
+    "sku": "7G68CX36",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18E68CX24",
+    "sku": "18E68CX24",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18F68CX24",
+    "sku": "18F68CX24",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18G68CX19",
+    "sku": "18G68CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18G68CX24",
+    "sku": "18G68CX24",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2F68CX24",
+    "sku": "2F68CX24",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2G68CX19",
+    "sku": "2G68CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "18F68DZ26",
+    "sku": "18F68DZ26",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2D68DZ36",
+    "sku": "2D68DZ36",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2E68DZ26",
+    "sku": "2E68DZ26",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2E68DZ36",
+    "sku": "2E68DZ36",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2F68DZ22",
+    "sku": "2F68DZ22",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2F68DZ26",
+    "sku": "2F68DZ26",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2G68DZ22",
+    "sku": "2G68DZ22",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "2J45CS65",
+    "sku": "2J45CS65",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3F45CX18",
+    "sku": "3F45CX18",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3G25CX18",
+    "sku": "3G25CX18",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3G45CX18",
+    "sku": "3G45CX18",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3H45CX18",
+    "sku": "3H45CX18",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "3I45CX22",
+    "sku": "3I45CX22",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "8F45CX24",
+    "sku": "8F45CX24",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "8G45CX13P",
+    "sku": "8G45CX13P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "8G45CX19",
+    "sku": "8G45CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "8H45CX19",
+    "sku": "8H45CX19",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "8I45CX10.5P",
+    "sku": "8I45CX10.5P",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "8I45CX16",
+    "sku": "8I45CX16",
     "cost_price": 0,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5F45CX30-HB",
+    "sku": "5F45CX30-HB",
     "cost_price": 7,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "5G45CX19-HB",
+    "sku": "5G45CX19-HB",
     "cost_price": 7,
     "brand": "SurgiMac-MacSuture"
   },
   {
-    "Sku": "7115-XS",
+    "sku": "7115-XS",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7116-S",
+    "sku": "7116-S",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7117-M",
+    "sku": "7117-M",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7118-L",
+    "sku": "7118-L",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7119-XL",
+    "sku": "7119-XL",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7115-XS-CS",
+    "sku": "7115-XS-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7116-S-CS",
+    "sku": "7116-S-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7117-M-CS",
+    "sku": "7117-M-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7118-L-CS",
+    "sku": "7118-L-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "7119-XL-CS",
+    "sku": "7119-XL-CS",
     "cost_price": 0,
     "brand": "SurgiMac-MacTouch"
   },
   {
-    "Sku": "10-1210-P",
+    "sku": "10-1210-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-1215C-P",
+    "sku": "10-1215C-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-1215-P",
+    "sku": "10-1215-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4115-P",
+    "sku": "10-4115-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-1212-P",
+    "sku": "10-1212-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4110-P",
+    "sku": "10-4110-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4111-P",
+    "sku": "10-4111-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4115C-P",
+    "sku": "10-4115C-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4120-P",
+    "sku": "10-4120-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4123-P",
+    "sku": "10-4123-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4122-P",
+    "sku": "10-4122-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "10-4112-P",
+    "sku": "10-4112-P",
     "cost_price": 3,
     "brand": "SurgiMac-ProCut"
   },
   {
-    "Sku": "Mac20-7r",
+    "sku": "Mac20-7r",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-470-P",
+    "sku": "10-470-P",
     "cost_price": 1,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Scapno3- LOCAL",
+    "sku": "Scapno3- LOCAL",
     "cost_price": 1,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2457",
+    "sku": "16-2457",
     "cost_price": 1,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-472",
+    "sku": "10-472",
     "cost_price": 1,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-113CS",
+    "sku": "10-113CS",
     "cost_price": 1.2,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-113SS",
+    "sku": "10-113SS",
     "cost_price": 1.2,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-823",
+    "sku": "12-823",
     "cost_price": 2,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2802",
+    "sku": "16-2802",
     "cost_price": 2.75,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-458-P",
+    "sku": "10-458-P",
     "cost_price": 2.75,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2801",
+    "sku": "16-2801",
     "cost_price": 2.75,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 4719,
+    "sku": 4719,
     "cost_price": 2.99,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 1431,
+    "sku": 1431,
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-2101-P",
+    "sku": "12-2101-P",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1203-P",
+    "sku": "13-1203-P",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 1797,
+    "sku": 1797,
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 19329,
+    "sku": 19329,
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 19694,
+    "sku": 19694,
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1416-P",
+    "sku": "13-1416-P",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1405-P",
+    "sku": "13-1405-P",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Mac20-10r",
+    "sku": "Mac20-10r",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-711",
+    "sku": "11-711",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-687P",
+    "sku": "11-687P",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1901s",
+    "sku": "12-1901s",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 11658,
+    "sku": 11658,
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1912-A",
+    "sku": "12-1912-A",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-4102-P",
+    "sku": "16-4102-P",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-112-SS",
+    "sku": "10-112-SS",
     "cost_price": 3.2,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-412P",
+    "sku": "10-412P",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1020",
+    "sku": "13-1020",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR04-SS",
+    "sku": "MIR04-SS",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1012GP",
+    "sku": "13-1012GP",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Mac20-11r",
+    "sku": "Mac20-11r",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2803",
+    "sku": "16-2803",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2631",
+    "sku": "16-2631",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "DB-EDFB-25GL",
+    "sku": "DB-EDFB-25GL",
     "cost_price": 4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 3623,
+    "sku": 3623,
     "cost_price": 4.5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-511P",
+    "sku": "10-511P",
     "cost_price": 4.99,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 22981,
+    "sku": 22981,
     "cost_price": 5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-603P",
+    "sku": "11-603P",
     "cost_price": 5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 24077,
+    "sku": 24077,
     "cost_price": 5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "B7-8FNQ-CTYM",
+    "sku": "B7-8FNQ-CTYM",
     "cost_price": 5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1962-Set",
+    "sku": "12-1962-Set",
     "cost_price": 5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR06-CS",
+    "sku": "MIR06-CS",
     "cost_price": 5.5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1402",
+    "sku": "13-1402",
     "cost_price": 6,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR06-CS- LOCAL",
+    "sku": "MIR06-CS- LOCAL",
     "cost_price": 6,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1814-P",
+    "sku": "12-1814-P",
     "cost_price": 6,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR03-CS",
+    "sku": "MIR03-CS",
     "cost_price": 6.5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-CS- LOCAL",
+    "sku": "MIR05-CS- LOCAL",
     "cost_price": 6.5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1721P",
+    "sku": "12-1721P",
     "cost_price": 7,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1811P",
+    "sku": "12-1811P",
     "cost_price": 7,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1813P",
+    "sku": "12-1813P",
     "cost_price": 7,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2651",
+    "sku": "16-2651",
     "cost_price": 7,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1718",
+    "sku": "12-1718",
     "cost_price": 8,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1751",
+    "sku": "12-1751",
     "cost_price": 9,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1752",
+    "sku": "12-1752",
     "cost_price": 9,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "29-3402",
+    "sku": "29-3402",
     "cost_price": 9,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1103",
+    "sku": "12-1103",
     "cost_price": 10,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-709",
+    "sku": "11-709",
     "cost_price": 11,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1721",
+    "sku": "12-1721",
     "cost_price": 11,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-501P",
+    "sku": "10-501P",
     "cost_price": 12,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1711-P",
+    "sku": "12-1711-P",
     "cost_price": 13.78,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1715-P",
+    "sku": "12-1715-P",
     "cost_price": 13.78,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1812P",
+    "sku": "12-1812P",
     "cost_price": 13.78,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1101-P",
+    "sku": "12-1101-P",
     "cost_price": 13.99,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 37974,
+    "sku": 37974,
     "cost_price": 14,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-118CS",
+    "sku": "10-118CS",
     "cost_price": 14,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-118SS",
+    "sku": "10-118SS",
     "cost_price": 14,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-118CS- LOCAL",
+    "sku": "10-118CS- LOCAL",
     "cost_price": 14,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "WP-BQ9H-5OYW",
+    "sku": "WP-BQ9H-5OYW",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "WP-BQ9H-5OYW- LOCAL",
+    "sku": "WP-BQ9H-5OYW- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 30660911,
+    "sku": 30660911,
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "63-0CD1-U06Y",
+    "sku": "63-0CD1-U06Y",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "4elevators",
+    "sku": "4elevators",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "4elevators- LOCAL",
+    "sku": "4elevators- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "IJ-3B97-61LP",
+    "sku": "IJ-3B97-61LP",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "NS-NV7T-IHCE",
+    "sku": "NS-NV7T-IHCE",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "P2-Z08X-5OT4",
+    "sku": "P2-Z08X-5OT4",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "GY-DVYO-7YVT",
+    "sku": "GY-DVYO-7YVT",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "UB-OZ6H-6K3D",
+    "sku": "UB-OZ6H-6K3D",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "B7-8FNQ-CTYM- LOCAL",
+    "sku": "B7-8FNQ-CTYM- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "2Q-7NQC-YR4C- LOCAL",
+    "sku": "2Q-7NQC-YR4C- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "29-3402-Local",
+    "sku": "29-3402-Local",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "UM-7QLK-CGWP- LOCAL",
+    "sku": "UM-7QLK-CGWP- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "L2-7OE8-6UQL",
+    "sku": "L2-7OE8-6UQL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "L2-7OE8-6UQL- LOCAL",
+    "sku": "L2-7OE8-6UQL- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "AK-HA4A-1TJ7- LOCAL",
+    "sku": "AK-HA4A-1TJ7- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "AK-HA4A-1TJ7",
+    "sku": "AK-HA4A-1TJ7",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "0B-Z0BR-FNET- LOCAL",
+    "sku": "0B-Z0BR-FNET- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "0B-Z0BR-FNET",
+    "sku": "0B-Z0BR-FNET",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1006- LOCAL",
+    "sku": "13-1006- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1006",
+    "sku": "13-1006",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1402- LOCAL",
+    "sku": "13-1402- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "OM-P7OV-AJVU",
+    "sku": "OM-P7OV-AJVU",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "OM-P7OV-AJVU- LOCAL",
+    "sku": "OM-P7OV-AJVU- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1747- LOCAL",
+    "sku": "12-1747- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "UD-86VX-G9CG- LOCAL",
+    "sku": "UD-86VX-G9CG- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "UD-86VX-G9CG",
+    "sku": "UD-86VX-G9CG",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "CV-VVYM-EMTY- LOCAL",
+    "sku": "CV-VVYM-EMTY- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "CV-VVYM-EMTY",
+    "sku": "CV-VVYM-EMTY",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "GD-6AK7-MZSG",
+    "sku": "GD-6AK7-MZSG",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-113CS- LOCAL",
+    "sku": "10-113CS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "84-491Q-750W- LOCAL",
+    "sku": "84-491Q-750W- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-CS-P",
+    "sku": "MIR05-CS-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "8B-G4JB-8SBE",
+    "sku": "8B-G4JB-8SBE",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-113SS- LOCAL",
+    "sku": "10-113SS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-CS-P- LOCAL",
+    "sku": "MIR05-CS-P- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-SS-P- LOCAL",
+    "sku": "MIR05-SS-P- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-SS-P",
+    "sku": "MIR05-SS-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "8B-G4JB-8SBE- LOCAL",
+    "sku": "8B-G4JB-8SBE- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "KP-1KK6-P79G",
+    "sku": "KP-1KK6-P79G",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1112P- LOCAL",
+    "sku": "13-1112P- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "84-491Q-750W",
+    "sku": "84-491Q-750W",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "GD-6AK7-MZSG- LOCAL",
+    "sku": "GD-6AK7-MZSG- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1747",
+    "sku": "12-1747",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR04-CS- LOCAL",
+    "sku": "MIR04-CS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Mir03-CS- LOCAL",
+    "sku": "Mir03-CS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-CS-A",
+    "sku": "MIR05-CS-A",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Wow-5setsc",
+    "sku": "Wow-5setsc",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Wow-5setsc- LOCAL",
+    "sku": "Wow-5setsc- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1703- LOCAL",
+    "sku": "12-1703- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1703",
+    "sku": "12-1703",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1721- LOCAL",
+    "sku": "12-1721- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1718- LOCAL",
+    "sku": "12-1718- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Elevators",
+    "sku": "Elevators",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Elevators- LOCAL",
+    "sku": "Elevators- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2623- LOCAL",
+    "sku": "16-2623- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2624- LOCAL",
+    "sku": "16-2624- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2625- LOCAL",
+    "sku": "16-2625- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "5E-3XHS-T19K",
+    "sku": "5E-3XHS-T19K",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "BW-O4OC-QZDG- LOCAL",
+    "sku": "BW-O4OC-QZDG- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "BW-O4OC-QZDG",
+    "sku": "BW-O4OC-QZDG",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "6L-8OAK-UWR2- LOCAL",
+    "sku": "6L-8OAK-UWR2- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1020- LOCAL",
+    "sku": "13-1020- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "6L-8OAK-UWR2",
+    "sku": "6L-8OAK-UWR2",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MD-8Q2P-ZOFT",
+    "sku": "MD-8Q2P-ZOFT",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "29-0763",
+    "sku": "29-0763",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "29-1493- LOCAL",
+    "sku": "29-1493- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "29-0763- LOCAL",
+    "sku": "29-0763- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "4Y-0PPA-RB8N",
+    "sku": "4Y-0PPA-RB8N",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "PI-JODK-TNO2",
+    "sku": "PI-JODK-TNO2",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2457- LOCAL",
+    "sku": "16-2457- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2442-HB",
+    "sku": "16-2442-HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "VQ-JB2Z-2Q8G",
+    "sku": "VQ-JB2Z-2Q8G",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "IW-3S64-SPMB",
+    "sku": "IW-3S64-SPMB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "49-RI2C-GJYT",
+    "sku": "49-RI2C-GJYT",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "0Q-M41N-3U7M",
+    "sku": "0Q-M41N-3U7M",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "C2-GIRF-ZL96",
+    "sku": "C2-GIRF-ZL96",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "KV-G3WW-QK9L",
+    "sku": "KV-G3WW-QK9L",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "6L-W5MR-Z9CR",
+    "sku": "6L-W5MR-Z9CR",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "DB-EDFB-25GL- LOCAL",
+    "sku": "DB-EDFB-25GL- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "PA-PD5W-5YXD",
+    "sku": "PA-PD5W-5YXD",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RS-RGZL-9L3R",
+    "sku": "RS-RGZL-9L3R",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "QN-FZ2G-QWAH",
+    "sku": "QN-FZ2G-QWAH",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "XG-4PIM-CA00",
+    "sku": "XG-4PIM-CA00",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "ZX-RRYC-1L7Y",
+    "sku": "ZX-RRYC-1L7Y",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "0H-4KO3-OK88",
+    "sku": "0H-4KO3-OK88",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "A0-3HFQ-TSQR",
+    "sku": "A0-3HFQ-TSQR",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "8L-ALF6-NX69",
+    "sku": "8L-ALF6-NX69",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-112- LOCAL",
+    "sku": "10-112- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "2-1966 set",
+    "sku": "2-1966 set",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 23712,
+    "sku": 23712,
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 23346,
+    "sku": 23346,
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-112SS- LOCAL",
+    "sku": "10-112SS- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-112CS-1- LOCAL",
+    "sku": "10-112CS-1- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Syringe",
+    "sku": "Syringe",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "Syringe- LOCAL",
+    "sku": "Syringe- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2809-HB",
+    "sku": "16-2809-HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2809-HB-LOCAL",
+    "sku": "16-2809-HB-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1156 HB",
+    "sku": "13-1156 HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-711-HB",
+    "sku": "11-711-HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2803-HB",
+    "sku": "16-2803-HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-CS HB",
+    "sku": "MIR05-CS HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1721-HB",
+    "sku": "12-1721-HB",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1822",
+    "sku": "12-1822",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2804",
+    "sku": "16-2804",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR03-SS",
+    "sku": "MIR03-SS",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR06-SS",
+    "sku": "MIR06-SS",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-461",
+    "sku": "10-461",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2457-P",
+    "sku": "16-2457-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2459",
+    "sku": "16-2459",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "EL-1970-Ca",
+    "sku": "EL-1970-Ca",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "EL-1970-P",
+    "sku": "EL-1970-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "OS-1000-Ca",
+    "sku": "OS-1000-Ca",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RE-1903 and RE-1904",
+    "sku": "RE-1903 and RE-1904",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-SS",
+    "sku": "MIR05-SS",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RootEKit",
+    "sku": "RootEKit",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2455-P",
+    "sku": "16-2455-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2631-P",
+    "sku": "16-2631-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2655-P",
+    "sku": "16-2655-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "29-3403",
+    "sku": "29-3403",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1405",
+    "sku": "13-1405",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-801",
+    "sku": "10-801",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-801",
+    "sku": "11-801",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-802",
+    "sku": "11-802",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1751 and 12-1752",
+    "sku": "12-1751 and 12-1752",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1811P and 12-1812P",
+    "sku": "12-1811P and 12-1812P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1815 and 12-1816",
+    "sku": "12-1815 and 12-1816",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2614",
+    "sku": "16-2614",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2404",
+    "sku": "16-2404",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2401",
+    "sku": "16-2401",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2402",
+    "sku": "16-2402",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2403",
+    "sku": "16-2403",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1903 and 12-1904",
+    "sku": "12-1903 and 12-1904",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2512-P",
+    "sku": "16-2512-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-306P",
+    "sku": "10-306P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-352P",
+    "sku": "10-352P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-360P",
+    "sku": "10-360P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-506",
+    "sku": "10-506",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "11-626p",
+    "sku": "11-626p",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1711-15-Set",
+    "sku": "12-1711-15-Set",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1722",
+    "sku": "12-1722",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": 12024,
+    "sku": 12024,
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1014P",
+    "sku": "13-1014P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1178",
+    "sku": "13-1178",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1251",
+    "sku": "13-1251",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1354",
+    "sku": "13-1354",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "DD-12-1966 set",
+    "sku": "DD-12-1966 set",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR05-CS",
+    "sku": "MIR05-CS",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RE-1903",
+    "sku": "RE-1903",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RE-1904",
+    "sku": "RE-1904",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-112-CS",
+    "sku": "10-112-CS",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR04-CS",
+    "sku": "MIR04-CS",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "13-1112P",
+    "sku": "13-1112P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2602",
+    "sku": "16-2602",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2602s",
+    "sku": "16-2602s",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "16-2612S",
+    "sku": "16-2612S",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RE-1977L",
+    "sku": "RE-1977L",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "RE-1977R-P",
+    "sku": "RE-1977R-P",
     "cost_price": 0,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1715-P-HB",
+    "sku": "12-1715-P-HB",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "MIR04-CS HB",
+    "sku": "MIR04-CS HB",
     "cost_price": 4.4,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "3240-234",
+    "sku": "3240-234",
     "cost_price": 4.5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1103-HB",
+    "sku": "12-1103-HB",
     "cost_price": 5,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "12-1711-P-HB",
+    "sku": "12-1711-P-HB",
     "cost_price": 7,
     "brand": "SurgiMac-ProSeries"
   },
   {
-    "Sku": "10-312s",
+    "sku": "10-312s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-370- LOCAL",
+    "sku": "10-370- LOCAL",
     "cost_price": 1.5,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-370s",
+    "sku": "10-370s",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1019-S",
+    "sku": "13-1019-S",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-628s",
+    "sku": "11-628s",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306S",
+    "sku": "10-306S",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-319s",
+    "sku": "10-319s",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-623s",
+    "sku": "11-623s",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "12-811s",
+    "sku": "12-811s",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "Williams- LOCAL",
+    "sku": "Williams- LOCAL",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "Williams",
+    "sku": "Williams",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "IC-7TJG-SSAW- LOCAL",
+    "sku": "IC-7TJG-SSAW- LOCAL",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "113-1108-S",
+    "sku": "113-1108-S",
     "cost_price": 2,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-685- LOCAL",
+    "sku": "11-685- LOCAL",
     "cost_price": 2.25,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "12-813S",
+    "sku": "12-813S",
     "cost_price": 2.29,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-684-S",
+    "sku": "11-684-S",
     "cost_price": 3,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1107s",
+    "sku": "13-1107s",
     "cost_price": 3,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-685",
+    "sku": "11-685",
     "cost_price": 3,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-371s- LOCAL",
+    "sku": "10-371s- LOCAL",
     "cost_price": 3,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "IC-7TJG-SSAW",
+    "sku": "IC-7TJG-SSAW",
     "cost_price": 4,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1003-S",
+    "sku": "13-1003-S",
     "cost_price": 7,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306S5",
+    "sku": "10-306S5",
     "cost_price": 10,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-370S-HB-LOCAL",
+    "sku": "10-370S-HB-LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-370S-HB",
+    "sku": "10-370S-HB",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "QF-P2R0-W5PV- LOCAL",
+    "sku": "QF-P2R0-W5PV- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-685s- LOCAL",
+    "sku": "11-685s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-686- LOCAL",
+    "sku": "11-686- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "QF-P2R0-W5PV",
+    "sku": "QF-P2R0-W5PV",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1107s- LOCAL",
+    "sku": "13-1107s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306S5- LOCAL",
+    "sku": "10-306S5- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "BO-VKZS-4JE1- LOCAL",
+    "sku": "BO-VKZS-4JE1- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-23-6s",
+    "sku": "10-23-6s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-23-6s- LOCAL",
+    "sku": "10-23-6s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-354- LOCAL",
+    "sku": "10-354- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306- LOCAL",
+    "sku": "10-306- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306S- LOCAL",
+    "sku": "10-306S- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306S10- LOCAL",
+    "sku": "10-306S10- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-306S10",
+    "sku": "10-306S10",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-314s- LOCAL",
+    "sku": "10-314s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-611s- LOCAL",
+    "sku": "11-611s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "Fball- LOCAL",
+    "sku": "Fball- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "Fball",
+    "sku": "Fball",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-107s- LOCAL",
+    "sku": "10-107s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "12-813S-Local",
+    "sku": "12-813S-Local",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-107s10",
+    "sku": "10-107s10",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-107s10- LOCAL",
+    "sku": "10-107s10- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-107s3- LOCAL",
+    "sku": "10-107s3- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-107s3",
+    "sku": "10-107s3",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-412s- LOCAL",
+    "sku": "10-412s- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-449- LOCAL",
+    "sku": "10-449- LOCAL",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-449",
+    "sku": "10-449",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-370s-3",
+    "sku": "10-370s-3",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-312-s-HB",
+    "sku": "10-312-s-HB",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-685-HB",
+    "sku": "11-685-HB",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "12-813S-HB",
+    "sku": "12-813S-HB",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1019-S-HB",
+    "sku": "13-1019-S-HB",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1107s-HB",
+    "sku": "13-1107s-HB",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-354-S",
+    "sku": "10-354-S",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-314s",
+    "sku": "10-314s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1003S",
+    "sku": "13-1003S",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1108",
+    "sku": "13-1108",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "13-1112s",
+    "sku": "13-1112s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-412s",
+    "sku": "10-412s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "12-904S",
+    "sku": "12-904S",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-371s",
+    "sku": "10-371s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-611s",
+    "sku": "11-611s",
     "cost_price": 0,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-312s-HB",
+    "sku": "10-312s-HB",
     "cost_price": 0.8,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "11-689-HB",
+    "sku": "11-689-HB",
     "cost_price": 1,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "10-371-S-HB",
+    "sku": "10-371-S-HB",
     "cost_price": 2.6,
     "brand": "SurgiMac-SlimSeries"
   },
   {
-    "Sku": "SM-786",
+    "sku": "SM-786",
     "cost_price": 0,
     "brand": "TC Dental"
   },
   {
-    "Sku": "30824-1",
+    "sku": "30824-1",
     "cost_price": 4.51,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30824-1- LOCAL",
+    "sku": "30824-1- LOCAL",
     "cost_price": 5.43,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 30966,
+    "sku": 30966,
     "cost_price": 5.99,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 35417,
+    "sku": 35417,
     "cost_price": 6.67,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 704522,
+    "sku": 704522,
     "cost_price": 18.99,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "704522-EC",
+    "sku": "704522-EC",
     "cost_price": 18.99,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30826-1",
+    "sku": "30826-1",
     "cost_price": 21.57,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 31758,
+    "sku": 31758,
     "cost_price": 26.4,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30824-6-A",
+    "sku": "30824-6-A",
     "cost_price": 27.09,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 242552,
+    "sku": 242552,
     "cost_price": 31.99,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 30824,
+    "sku": 30824,
     "cost_price": 32.49,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 35420,
+    "sku": 35420,
     "cost_price": 33.99,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "35417-CS",
+    "sku": "35417-CS",
     "cost_price": 43.02,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30577-6",
+    "sku": "30577-6",
     "cost_price": 46.42,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30577-EC",
+    "sku": "30577-EC",
     "cost_price": 46.42,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 31759,
+    "sku": 31759,
     "cost_price": 64.76,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30825-3- LOCAL",
+    "sku": "30825-3- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30825-3",
+    "sku": "30825-3",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30966-EC",
+    "sku": "30966-EC",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "clorox 425 wipes- LOCAL",
+    "sku": "clorox 425 wipes- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "clorox 425 wipes",
+    "sku": "clorox 425 wipes",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "35417- LOCAL",
+    "sku": "35417- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "35420-CS",
+    "sku": "35420-CS",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "DD242552- LOCAL",
+    "sku": "DD242552- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "629581-Clorox_Tablet",
+    "sku": "629581-Clorox_Tablet",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30825-P-6- LOCAL",
+    "sku": "30825-P-6- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30825-P-6",
+    "sku": "30825-P-6",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30826-1- LOCAL",
+    "sku": "30826-1- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30826-2- LOCAL",
+    "sku": "30826-2- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30826-2",
+    "sku": "30826-2",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "DD242552",
+    "sku": "DD242552",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 241915,
+    "sku": 241915,
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30824-6-A- LOCAL",
+    "sku": "30824-6-A- LOCAL",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "241915-5",
+    "sku": "241915-5",
     "cost_price": 0,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30825-1",
+    "sku": "30825-1",
     "cost_price": 5.2,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": "30577-1",
+    "sku": "30577-1",
     "cost_price": 8.43,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 31757,
+    "sku": 31757,
     "cost_price": 24.25,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 30577,
+    "sku": 30577,
     "cost_price": 50,
     "brand": "The Clorox Company"
   },
   {
-    "Sku": 21105,
+    "sku": 21105,
     "cost_price": 0,
     "brand": "Tidi Products LLC"
   },
   {
-    "Sku": 981002,
+    "sku": 981002,
     "cost_price": 26.71,
     "brand": "Tidi Products LLC"
   },
   {
-    "Sku": 981004,
+    "sku": 981004,
     "cost_price": 30.26,
     "brand": "Tidi Products LLC"
   },
   {
-    "Sku": "759142-1",
+    "sku": "759142-1",
     "cost_price": 0,
     "brand": "Xttrium Labs"
   },
   {
-    "Sku": "929992-1",
+    "sku": "929992-1",
     "cost_price": 0,
     "brand": "Xttrium Labs"
   },
   {
-    "Sku": 116200104,
+    "sku": 116200104,
     "cost_price": 3.3,
     "brand": "Xttrium Labs"
   },
   {
-    "Sku": 759142,
+    "sku": 759142,
     "cost_price": 24.2,
     "brand": "Xttrium Labs"
   },
   {
-    "Sku": 929992,
+    "sku": 929992,
     "cost_price": 24.49,
     "brand": "Xttrium Labs"
   },
   {
-    "Sku": 1573,
+    "sku": 1573,
     "cost_price": 105.6,
     "brand": "Xttrium Labs"
   },
   {
-    "Sku": 295387,
+    "sku": 295387,
     "cost_price": 0,
     "brand": "Young Dental"
   },
   {
-    "Sku": 611001,
+    "sku": 611001,
     "cost_price": 29.74,
     "brand": "Young Dental"
   },
   {
-    "Sku": 212450,
+    "sku": 212450,
     "cost_price": 100.88,
     "brand": "Young Dental"
   },
   {
-    "Sku": 54605,
+    "sku": 54605,
     "cost_price": 308.17,
     "brand": "Young Dental"
   },
   {
-    "Sku": 53905,
+    "sku": 53905,
     "cost_price": 358.46,
     "brand": "Young Dental"
   },
   {
-    "Sku": 121075,
+    "sku": 121075,
     "cost_price": 612.4,
     "brand": "Young Dental"
   },
   {
-    "Sku": 19000,
+    "sku": 19000,
     "cost_price": 0,
     "brand": "Young Innovations Europe GmbH"
   },
   {
-    "Sku": 19001,
+    "sku": 19001,
     "cost_price": 0,
     "brand": "Young Innovations Europe GmbH"
   },
   {
-    "Sku": 19005,
+    "sku": 19005,
     "cost_price": 0,
     "brand": "Young Innovations Europe GmbH"
   },
   {
-    "Sku": 19006,
+    "sku": 19006,
     "cost_price": 48.55,
     "brand": "Young Innovations Europe GmbH"
   },
   {
-    "Sku": "50Z400D",
+    "sku": "50Z400D",
     "cost_price": 0,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z940B",
+    "sku": "50Z940B",
     "cost_price": 0,
     "brand": "Zirc"
   },
   {
-    "Sku": "20Z471",
+    "sku": "20Z471",
     "cost_price": 0,
     "brand": "Zirc"
   },
   {
-    "Sku": "20Z472",
+    "sku": "20Z472",
     "cost_price": 0,
     "brand": "Zirc"
   },
   {
-    "Sku": "20Z479",
+    "sku": "20Z479",
     "cost_price": 0,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z970",
+    "sku": "50Z970",
     "cost_price": 16.41,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z925P",
+    "sku": "50Z925P",
     "cost_price": 23.63,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z930D",
+    "sku": "50Z930D",
     "cost_price": 33.48,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z940Q",
+    "sku": "50Z940Q",
     "cost_price": 42.67,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z940P",
+    "sku": "50Z940P",
     "cost_price": 42.67,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z457",
+    "sku": "50Z457",
     "cost_price": 50.05,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z354-NEON",
+    "sku": "50Z354-NEON",
     "cost_price": 55.8,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z363-NEON",
+    "sku": "50Z363-NEON",
     "cost_price": 55.8,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z364-NEON",
+    "sku": "50Z364-NEON",
     "cost_price": 55.8,
     "brand": "Zirc"
   },
   {
-    "Sku": "50R381",
+    "sku": "50R381",
     "cost_price": 55.8,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z354-JWL",
+    "sku": "50Z354-JWL",
     "cost_price": 55.8,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z363-JWL",
+    "sku": "50Z363-JWL",
     "cost_price": 55.8,
     "brand": "Zirc"
   },
   {
-    "Sku": "20Z420A",
+    "sku": "20Z420A",
     "cost_price": 85.34,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z989MD-B",
+    "sku": "50Z989MD-B",
     "cost_price": 149.5,
     "brand": "Zirc"
   },
   {
-    "Sku": "50Z989LG-B",
+    "sku": "50Z989LG-B",
     "cost_price": 150.99,
     "brand": "Zirc"
   },
   {
-    "Sku": "20506-1.1",
+    "sku": "20506-1.1",
     "cost_price": 7,
     "brand": "House brand"
   },
   {
-    "Sku": "12897-1`",
+    "sku": "12897-1`",
     "cost_price": 23.99,
     "brand": "House brand"
   },
   {
-    "Sku": 253599,
+    "sku": 253599,
     "cost_price": 27.99,
     "brand": "House brand"
   },
   {
-    "Sku": "10015Mbx- LOCAL",
+    "sku": "10015Mbx- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Air Wick Lavender- LOCAL",
+    "sku": "Air Wick Lavender- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "Air Wick Lavender",
+    "sku": "Air Wick Lavender",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "BF90166B-3",
+    "sku": "BF90166B-3",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "62-202-SM",
+    "sku": "62-202-SM",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "88TN03M-CS2000",
+    "sku": "88TN03M-CS2000",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "88TN03M-CS2000- LOCAL",
+    "sku": "88TN03M-CS2000- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD18217",
+    "sku": "DD18217",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "DD18217- LOCAL",
+    "sku": "DD18217- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "10015M-Cs- LOCAL",
+    "sku": "10015M-Cs- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "88TN03M-BX200- LOCAL",
+    "sku": "88TN03M-BX200- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "88TN03M-BX200",
+    "sku": "88TN03M-BX200",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "3601G-1",
+    "sku": "3601G-1",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "4025-3",
+    "sku": "4025-3",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "286164-2",
+    "sku": "286164-2",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "US03623A-2",
+    "sku": "US03623A-2",
     "cost_price": 0,
     "brand": "House brand"
   },
   {
-    "Sku": "US03623A-2- LOCAL",
+    "sku": "US03623A-2- LOCAL",
     "cost_price": 0,
     "brand": "House brand"
   }
