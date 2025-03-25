@@ -506,7 +506,7 @@ product_cost_price = [
   },
   {
     "Sku": "381433-BX",
-    "cost_price": 107.08,
+    "cost_price": 96.07,
     "brand": "BD"
   },
   {
