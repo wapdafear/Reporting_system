@@ -1289,6 +1289,11 @@ product_cost = [
     "cost_price": 45.35,
     "brand": "Cargus"
   },
+   {
+    "sku": "DD9010",
+    "cost_price": 45.35,
+    "brand": "Cargus"
+  },
   {
     "sku": "SM-7103A",
     "cost_price": 0,
@@ -1561,7 +1566,7 @@ product_cost = [
   },
   {
     "sku": "7100-HB",
-    "cost_price": 26,
+    "cost_price": 19.50,
     "brand": "Cargus"
   },
   {
@@ -2301,12 +2306,12 @@ product_cost = [
   },
   {
     "sku": "7101-HB",
-    "cost_price": 26.95,
+    "cost_price": 19.50,
     "brand": "Dharma Research"
   },
   {
     "sku": 7100,
-    "cost_price": 26.95,
+    "cost_price": 19.50,
     "brand": "Dharma Research"
   },
   {
@@ -10151,6 +10156,11 @@ product_cost = [
   },
   {
     "sku": "MS990",
+    "cost_price": 47.8,
+    "brand": "McKesson"
+  },
+   {
+    "sku": "MS990-Rx",
     "cost_price": 47.8,
     "brand": "McKesson"
   },
