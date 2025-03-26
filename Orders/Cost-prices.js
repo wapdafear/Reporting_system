@@ -24,6 +24,11 @@ product_cost = [
     "cost_price": 0,
     "brand": "3D Dental"
   },
+   {
+    "sku": "SM-7101SM",
+    "cost_price": 19.50,
+    "brand": "Dharma Research"
+  },
   {
     "sku": "VXA-P",
     "cost_price": 0,
