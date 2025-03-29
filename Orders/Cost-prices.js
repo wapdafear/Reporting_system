@@ -511,7 +511,7 @@ product_cost = [
   },
   {
     "sku": "381433-BX",
-    "cost_price": 107.08,
+    "cost_price": 91.50,
     "brand": "BD"
   },
   {
@@ -781,7 +781,7 @@ product_cost = [
   },
   {
     "sku": "13416-1",
-    "cost_price": 9.36,
+    "cost_price": 9.41,
     "brand": "Biofreeze"
   },
   {
@@ -1286,7 +1286,7 @@ product_cost = [
   },
   {
     "sku": "SM-7102C",
-    "cost_price": 26.95,
+    "cost_price": 19.50,
     "brand": "Cargus"
   },
   {
@@ -15571,7 +15571,7 @@ product_cost = [
   },
   {
     "sku": "P13472_CS- LOCAL",
-    "cost_price": 0,
+    "cost_price": 49.48,
     "brand": "PDI"
   },
   {
@@ -15586,7 +15586,7 @@ product_cost = [
   },
   {
     "sku": "P13472_CS",
-    "cost_price": 0,
+    "cost_price": 49.48,
     "brand": "PDI"
   },
   {
@@ -22111,6 +22111,11 @@ product_cost = [
   },
   {
     "sku": "12-1901s",
+    "cost_price": 3,
+    "brand": "SurgiMac-ProSeries"
+  },
+{
+    "sku": "12-1901s-LOCAL",
     "cost_price": 3,
     "brand": "SurgiMac-ProSeries"
   },
