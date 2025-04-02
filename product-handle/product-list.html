@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style>
+        .table-container {
+            margin-top: 20px;
+        }
+        .refresh-button {
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+        .edit-mode input {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Product List</h2>
+            <div>
+                <button id="addNewRow" class="btn btn-success me-2">Add New Product</button>
+                <a href="product-upload.html" class="btn btn-primary">Upload New Products</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
+                    </div>
+                    <div class="col-md-4">
+                        <select id="manufacturerFilter" class="form-select">
+                            <option value="">All Manufacturers</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="refreshButton" class="btn btn-secondary refresh-button">
+                            Refresh Data
+                        </button>
+                    </div>
+                </div>
+
+                <div class="loading">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+
+                <div class="table-responsive">
+                    <table id="productTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Description</th>
+                                <th>Manufacturer</th>
+                                <th>Cost</th>
+                                
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        // Configure the base URL for API endpoints
+        const API_BASE_URL = 'https://backend-api-4679.onrender.com/api';
+
+        let productTable;
+
+        // Initialize DataTable
+        $(document).ready(function() {
+            // Destroy existing DataTable if it exists
+            if ($.fn.DataTable.isDataTable('#productTable')) {
+                $('#productTable').DataTable().destroy();
+            }
+
+            productTable = $('#productTable').DataTable({
+                columns: [
+                    { 
+                        data: 'Sku',
+                        title: 'SKU'
+                    },
+                    { 
+                        data: 'Description',
+                        title: 'Description',
+                        render: function(data) {
+                            return data || 'N/A';
+                        }
+                    },
+                    { 
+                        data: 'Manufacturer',
+                        title: 'Manufacturer',
+                        render: function(data) {
+                            return data || 'Unknown';
+                        }
+                    },
+                    { 
+                        data: 'Cost',
+                        title: 'Cost',
+                        render: function(data) {
+                            return data ? `$${parseFloat(data).toFixed(2)}` : '$0.00';
+                        }
+                    },
+                    {
+                        data: null,
+                        title: 'Actions',
+                        orderable: false,
+                        searchable: false,
+                        render: function(data) {
+                            return '<button class="btn btn-sm btn-primary edit-btn">Edit</button>';
+                        }
+                    }
+                ]
+            });
+
+            // Load initial data
+            loadProducts();
+
+            // Setup refresh button
+            $('#refreshButton').click(function() {
+                // Destroy and reinitialize DataTable before loading new data
+                if ($.fn.DataTable.isDataTable('#productTable')) {
+                    $('#productTable').DataTable().destroy();
+                }
+                productTable = $('#productTable').DataTable({
+                    columns: [
+                        { 
+                            data: 'Sku',
+                            title: 'SKU'
+                        },
+                        { 
+                            data: 'Description',
+                            title: 'Description',
+                            render: function(data) {
+                                return data || 'N/A';
+                            }
+                        },
+                        { 
+                            data: 'Manufacturer',
+                            title: 'Manufacturer',
+                            render: function(data) {
+                                return data || 'Unknown';
+                            }
+                        },
+                        { 
+                            data: 'Cost',
+                            title: 'Cost',
+                            render: function(data) {
+                                return data ? `$${parseFloat(data).toFixed(2)}` : '$0.00';
+                            }
+                        },
+                       
+                        {
+                            data: null,
+                            title: 'Actions',
+                            orderable: false,
+                            searchable: false,
+                            render: function(data) {
+                                return '<button class="btn btn-sm btn-primary edit-btn">Edit</button>';
+                            }
+                        }
+                    ]
+                });
+                loadProducts();
+            });
+
+            // Setup manufacturer filter
+            $('#manufacturerFilter').change(function() {
+                const selectedManufacturer = $(this).val();
+                // Use exact match for manufacturer (column 2)
+                if (selectedManufacturer) {
+                    productTable.column(2).search('^' + selectedManufacturer + '$', true, false).draw();
+                } else {
+                    productTable.column(2).search('').draw();
+                }
+            });
+
+            // Setup add new row button
+            $('#addNewRow').click(function() {
+                const newRow = [
+                    '<input type="text" class="form-control" placeholder="Enter SKU">',
+                    '<input type="text" class="form-control" placeholder="Enter Description">',
+                    '<input type="text" class="form-control" placeholder="Enter Manufacturer">',
+                    '<input type="number" step="0.01" class="form-control" placeholder="Enter Cost">',
+                    '<div class="action-buttons"><button class="btn btn-sm btn-success save-new">Save</button><button class="btn btn-sm btn-danger cancel-new">Cancel</button></div>'
+                ];
+                productTable.row.add(newRow).draw(false);
+            });
+
+            // Handle save new row
+            $('#productTable').on('click', '.save-new', function() {
+                const row = $(this).closest('tr');
+                const sku = row.find('td:eq(0) input').val();
+                const description = row.find('td:eq(1) input').val();
+                const manufacturer = row.find('td:eq(2) input').val();
+                const cost = row.find('td:eq(3) input').val();
+
+                if (!sku || !manufacturer) {
+                    alert('Please fill in SKU and Manufacturer fields');
+                    return;
+                }
+
+                saveProduct({
+                    Sku: sku,
+                    Description: description || '',
+                    Manufacturer: manufacturer,
+                    Cost: parseFloat(cost) || 0
+                }, row);
+            });
+
+            // Handle cancel new row
+            $('#productTable').on('click', '.cancel-new', function() {
+                const row = $(this).closest('tr');
+                productTable.row(row).remove().draw();
+            });
+
+            // Handle edit button
+            $('#productTable').on('click', '.edit-btn', function() {
+                const row = $(this).closest('tr');
+                const data = productTable.row(row).data();
+                
+                // Get values from the row data (data is an object with the schema fields)
+                const description = data.Description || '';
+                const manufacturer = data.Manufacturer || '';
+                const cost = data.Cost ? parseFloat(data.Cost).toString() : '0';
+                
+                // Replace cells with input fields
+                row.find('td:eq(1)').html(`<input type="text" class="form-control" value="${description}">`);
+                row.find('td:eq(2)').html(`<input type="text" class="form-control" value="${manufacturer}">`);
+                row.find('td:eq(3)').html(`<input type="number" step="0.01" class="form-control" value="${cost}">`);
+                row.find('td:eq(4)').html(`
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-success save-edit">Save</button>
+                        <button class="btn btn-sm btn-danger cancel-edit">Cancel</button>
+                    </div>
+                `);
+            });
+
+            // Handle save edit
+            $('#productTable').on('click', '.save-edit', function() {
+                const row = $(this).closest('tr');
+                const data = productTable.row(row).data();
+                const sku = data.Sku;
+                const description = row.find('td:eq(1) input').val();
+                const manufacturer = row.find('td:eq(2) input').val();
+                const cost = row.find('td:eq(3) input').val();
+
+                if (!manufacturer) {
+                    alert('Please fill in the manufacturer field');
+                    return;
+                }
+                
+                saveProduct({
+                    Sku: sku,
+                    Description: description || '',
+                    Manufacturer: manufacturer,
+                    Cost: parseFloat(cost) || 0
+                }, row);
+                
+            });
+
+            // Handle cancel edit
+            $('#productTable').on('click', '.cancel-edit', function() {
+                loadProducts();
+            });
+
+            // Setup search functionality
+            $('#searchInput').on('keyup', function() {
+                productTable.search(this.value).draw();
+            });
+        });
+
+        async function saveProduct(productData, row) {
+            try {
+                const method = row.find('.save-new').length > 0 ? 'POST' : 'PUT';
+                const url = method === 'POST' ? 
+                    `${API_BASE_URL}/products` : 
+                    `${API_BASE_URL}/products/${productData.Sku}`;
+
+                console.log('Saving product data:', productData);
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(productData)
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Failed to save product');
+                }
+
+                loadProducts();
+            } catch (error) {
+                alert('Error saving product: ' + error.message);
+                console.error('Error saving product:', error);
+            }
+        }
+
+        async function loadProducts() {
+            const loading = $('.loading');
+            const errorMessage = $('#errorMessage');
+            const manufacturerFilter = $('#manufacturerFilter');
+
+            try {
+                loading.show();
+                errorMessage.text('');
+
+                const response = await fetch(`${API_BASE_URL}/products`);
+      
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch products');
+                }
+
+                const products = await response.json();
+                
+                // Clear existing data
+                if (productTable) {
+                    productTable.clear();
+                }
+                
+                // Add new data
+                if (Array.isArray(products) && products.length > 0) {
+                    // Remove duplicates based on Sku
+                    const uniqueProducts = products.filter((product, index, self) =>
+                        index === self.findIndex((p) => p.Sku === product.Sku)
+                    );
+
+                    // uniqueProducts.forEach(product => {
+                    //     const rowData = [
+                    //         product.Sku || '',
+                    //         product.Description || 'NA',
+                    //         product.Manufacturer || 'Unknown',
+                    //         product.Cost ? `$${parseFloat(product.Cost).toFixed(2)}` : '$0.00',
+                    //         new Date().toLocaleString(),
+                    //         '<div class="action-buttons"><button class="btn btn-sm btn-primary edit-btn">Edit</button></div>'
+                    //     ];
+                        
+                    //     if (productTable) {
+                    //         productTable.row.add(rowData);
+                    //     }
+                    // });
+                    // console.log(uniqueProducts);
+                    // productTable.rows.add(uniqueProducts).draw() ;
+                    console.log(products);
+                    productTable.rows.add(products).draw() ;
+                    
+                    // Redraw the table
+                    if (productTable) {
+                        productTable.draw();
+                    }
+
+                    // Update manufacturer filter options
+                    const manufacturers = [...new Set(uniqueProducts
+                        .map(p => p.Manufacturer || 'Unknown')
+                        .filter(m => m) // Remove empty values
+                    )].sort();
+                    
+                    manufacturerFilter.empty().append('<option value="">All Manufacturers</option>');
+                    manufacturers.forEach(manufacturer => {
+                        manufacturerFilter.append(`<option value="${manufacturer}">${manufacturer}</option>`);
+                    });
+                } else {
+                    console.log('No products data received or empty array');
+                    errorMessage.text('No products found in the database');
+                }
+
+            } catch (error) {
+                errorMessage.text(`Error loading products: ${error.message}`);
+                console.error('Error:', error);
+            } finally {
+                loading.hide();
+            }
+        }
+    </script>
+</body>
+</html>

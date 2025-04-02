@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title id="title">ShipStation Orders & Shipments Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50;
+            padding: 500;
+            padding-top: 100;
+            background-color: #353333;
+        }
+        .container {
+            max-width: 2000px;
+            background: rgb(11, 5, 31);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            margin: auto;
+            width: 100%;
+            padding-top: 1%;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 101;
+        }
+        .heading:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            color: rgb(58, 228, 32);
+            font-size: 20px;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: rgb(57, 1, 1);
+        }
+        select {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #4CAF50;
+            border-radius: 5px;
+        }
+        input[type="checkbox"]:hover {
+            transform: scale(1.2);
+            transition: 0.2s ease-in-out;
+        }
+        #select-all {
+            width: 22px;
+            height: 22px;
+            accent-color: #ffcc00;
+            border-radius: 3px;
+        }
+        tr.selected {
+            background-color: rgba(0, 128, 0, 0.3) !important;
+            transition: 0.2s ease-in-out;
+        }
+        .table-dark input[type="checkbox"] {
+            filter: brightness(1.5);
+        }
+        table td {
+            border-radius: 0px;
+            text-align: center;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        table td:hover {
+            border-color: #007bff;
+        }
+        /* Green text for columns 5 and onward in orders table (SKU, Description, Selling Price, Customer Paid Shipping, Label Cost) */
+        table#orders-table td:nth-child(n+5) {
+            color: #5cc46b !important;
+            font-weight: 500 !important;
+            font-size: larger;
+        }
+        /* Green text for columns 2 and onward in shipments table (Label Cost) */
+        table#shipments-table td:nth-child(n+2) {
+            color: #5cc46b !important;
+            font-weight: 500 !important;
+            font-size: larger;
+        }
+        /* Highlight label cost column */
+        table#orders-table td:nth-child(11) {
+            background-color: transparent;
+            color: #ffcc00 !important;
+            font-weight: bold !important;
+        }
+        /* Visualization container */
+        .visualization {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #222;
+            border-radius: 10px;
+            height: 400px; /* Set explicit height */
+            position: relative;
+        }
+        
+        /* Fix for chart canvas */
+        #profit-chart {
+            width: 100% !important;
+            height: 300px !important;
+            margin-top: 15px;
+        }
+        /* Loading indicator */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .loading:after {
+            content: " .";
+            animation: dots 1s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: " ."; }
+            40% { content: " .."; }
+            60% { content: " ..."; }
+            80%, 100% { content: " ...."; }
+        }
+        /* Controls container */
+        .controls-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px; /* Restore margin */
+            padding: 15px;
+            background-color: rgb(11, 5, 31);
+            border-radius: 10px; /* Restore full border radius */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Restore shadow */
+            width: 100%;
+        }
+        /* Filter group */
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        /* Buttons container for better alignment */
+        .buttons-container {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+            margin-top: auto;
+        }
+        .filter-group label {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        /* Custom select styling */
+        .custom-select {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: white;
+            font-size: 14px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .custom-select:hover {
+            background-color: #444;
+            border-color: #666;
+        }
+        /* Date inputs */
+        .date-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
+        /* Action button */
+        .action-btn {
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            align-self: flex-end;
+            margin-top: auto;
+        }
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        /* Store badge */
+        .store-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .store-badge.amazon {
+            background-color: #FF9900;
+            color: #000;
+        }
+        .store-badge.ebay {
+            background-color: #e53238;
+            color: white;
+        }
+        .store-badge.shopify {
+            background-color: #96bf48;
+            color: white;
+        }
+        .store-badge.walmart {
+            background-color: #0071ce;
+            color: white;
+        }
+        /* Product image styling */
+        .product-image {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            background-color: transparent;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .product-image:hover {
+            transform: scale(1.5);
+            z-index: 100;
+        }
+        /* Statistics cards */
+        .stats-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #5cc46b;
+        }
+        .stat-title {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        /* Make table headers sticky */
+        thead {
+            background-color: #1d1d1d;
+            width: 100%;
+            display: table-header-group;
+        }
+        thead tr {
+            background-color: #1d1d1d;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+        }
+        thead th {
+            background-color: #1d1d1d;
+            border-bottom: 2px solid #333;
+        }
+        
+        /* REMOVED: table-with-filters class */
+        
+        /* RESTORED: original table margins */
+        #orders-table {
+            margin-top: 1rem;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #1d1d1d;
+        }
+
+        /* Reset all table styling first */
+        #orders-table {
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+        }
+
+        /* Force table to use row borders correctly */
+        .table.table-dark.table-striped.table-hover tbody tr {
+            border-width: 0 !important;
+        }
+
+        /* Updated order group styles with bigger, brighter borders on all sides */
+        .table-dark tbody tr.order-group {
+            display: table-row !important;
+            border-width: 0 !important; 
+            position: relative !important;
+            background: transparent !important;
+            transition: none !important;
+            --bs-table-accent-bg: inherit !important;
+            box-shadow: none !important;
+        }
+
+        .table-dark tbody tr.order-group:hover {
+            background: inherit !important;
+        }
+
+        .table-dark tbody tr.order-group td {
+            border: 2px solid #3498db !important; /* Bright blue borders on all cells */
+        }
+
+        .table-dark tbody tr.order-group.first-item {
+            border-top-left-radius: 10px !important;
+            border-top-right-radius: 10px !important;
+        }
+
+        .table-dark tbody tr.order-group.first-item td:first-child {
+            border-top-left-radius: 8px !important;
+        }
+
+        .table-dark tbody tr.order-group.first-item td:last-child {
+            border-top-right-radius: 8px !important;
+        }
+
+        .table-dark tbody tr.order-group.last-item {
+            margin-bottom: 12px !important;
+            border-bottom-left-radius: 10px !important;
+            border-bottom-right-radius: 10px !important;
+        }
+
+        .table-dark tbody tr.order-group.last-item td:first-child {
+            border-bottom-left-radius: 8px !important;
+        }
+
+        .table-dark tbody tr.order-group.last-item td:last-child {
+            border-bottom-right-radius: 8px !important;
+        }
+
+        /* Fix adjoining cells to not have double borders */
+        .table-dark tbody tr.order-group:not(.first-item) td {
+            border-top: none !important;
+        }
+
+        .table-dark tbody tr.order-group:not(.last-item) td {
+            border-bottom: none !important;
+        }
+
+        /* Remove the item count badge that appears at the top of multi-item orders */
+        .table-dark tbody tr.order-group .item-count {
+            display: inline-block !important; /* Show the badge again */
+            position: absolute;
+            top: -10px;
+            left: 35px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        /* Repeated order info in multi-item orders will be less visible */
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(1),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(2),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(3),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(4),
+        .table-dark tbody tr.order-group:not(.first-item) td:nth-child(5) {
+            opacity: 1 !important;
+        }
+
+        /* Direct styling for td elements to ensure borders are visible */
+        .table-dark tbody tr.order-group td {
+            background-color: transparent !important;
+        }
+    </style>
+</head>
+<body>
+    <H1 class="heading">ShipStation Orders & Shipments Analysis</H1>
+    
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-title">Total Orders</div>
+            <div class="stat-value" id="total-orders">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Total Sales</div>
+            <div class="stat-value" id="total-sales">$0.00</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Total Profit</div>
+            <div class="stat-value" id="total-profit">$0.00</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Average Profit</div>
+            <div class="stat-value" id="avg-profit">$0.00</div>
+        </div>
+    </div>
+    
+    <div class="controls-container">
+        <div class="filter-group">
+            <label for="store-filter">Store Filter</label>
+            <select id="store-filter" class="custom-select">
+                <option value="all">All Stores</option>
+                <option value="373980" selected>SurgiMac Amazon Store</option>
+                <option value="498468">SurgiMac Ebay Store</option>
+                <option value="470756">DD eBay Store</option>
+                <option value="428642">Dental District</option>
+                <option value="331737">Manual Orders</option>
+                <option value="452424">Network</option>
+                <option value="498364">New Walmart Store</option>
+                <option value="498515">Supply District</option>
+                <option value="494346">SurgiMac Store</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="status-filter">Order Status</label>
+            <select id="status-filter" class="custom-select">
+                <option value="all">All Statuses</option>
+                <option value="shipped" selected>Shipped Only</option>
+                <option value="awaiting_shipment">Awaiting Shipment</option>
+                <option value="on_hold">On Hold</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="brand-filter">Brand Filter</label>
+            <select id="brand-filter" class="custom-select">
+                <option value="all">All Brands</option>
+                <!-- Will be populated dynamically -->
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Order Type</label>
+            <div style="display: flex; align-items: center; margin-top: 5px;">
+                <input type="checkbox" id="multi-item-filter" style="width: 20px; height: 20px; margin-right: 10px;">
+                <label for="multi-item-filter" style="color: white; margin: 0;">Show Multi-Item Orders Only</label>
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <label for="date-range">Date Range</label>
+            <select id="date-range" class="custom-select">
+                <option value="today" selected>Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="last7">Last 7 Days</option>
+                <option value="last30">Last 30 Days</option>
+                <option value="custom">Custom Range</option>
+            </select>
+        </div>
+        
+        <div class="filter-group" id="custom-date-container" style="display:none;">
+            <label for="start-date">Custom Date Range</label>
+            <input type="date" id="start-date" class="date-input">
+            <input type="date" id="end-date" class="date-input" style="margin-top:5px;">
+        </div>
+        
+        <div class="buttons-container">
+            <button id="load-data" class="action-btn">Apply Filters</button>
+            <button id="export-csv" class="action-btn" style="background: linear-gradient(90deg, #11cb6a, #25fc84); display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fas fa-file-csv"></i> Export to CSV
+            </button>
+        </div>
+    </div>
+    
+    <div id="loading-indicator" class="loading" style="display:none;">Loading data</div>
+    
+    <!-- Debug section to display product data info -->
+    <div id="debug-section" style="display: none; padding: 10px; margin: 10px; border: 1px solid #666; background-color: #333; color: white;">
+        <h3>Debug Information</h3>
+        <button id="toggle-debug" class="action-btn" style="margin-bottom: 10px;">Toggle Debug Info</button>
+        <button id="force-load-products" class="action-btn" style="margin-bottom: 10px; margin-left: 10px; background: linear-gradient(90deg, #11cb6a, #25fc84);">Force Load Products</button>
+        <button id="sync-to-database" class="action-btn" style="margin-bottom: 10px; margin-left: 10px; background: linear-gradient(90deg, #cb8711, #fc9925);">Sync Products to Database</button>
+        <div id="debug-content"></div>
+    </div>
+    
+    <table class="table table-striped table-dark table-hover" id="orders-table">
+        <thead>
+            <tr>
+                <th>Store</th>
+                <th>Order Number</th>
+                <th>Order Status</th>
+                <th>Order Date</th>
+                <th>SKU</th>
+                <th>Manufacturer</th>
+                <th>Images</th>
+                <th>Description</th>
+                <th>Selling Price ($)</th>
+                <th>Cost Price ($)</th>
+                <th>Quantity</th>
+                <th>Platform Fee</th>
+                <th>Cost W/ Quantity</th>
+                <th>Label Cost ($)</th>
+                <th>Total Cost ($)</th>
+                <th>P/L($)</th>
+                <th>Heavy Shipping($)</th>
+            </tr>
+        </thead>
+        <tbody id="shipstation-table">
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Direct Chart.js loading -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script type="module">
+        console.log("Script execution starting...");
+        
+        // Import functions from shipstation-api.js and Brands.js
+        import { fetchShipStationOrders, fetchShipStationShipments } from './shipstation-api.js';
+        import { brandsAPI } from '../Brands.js';
+        
+        // Check if the API has loaded correctly
+        console.log('BrandsAPI object loaded:', brandsAPI);
+        
+        // First, add enhanced debugging in the DOMContentLoaded event handler
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM content loaded, initializing...');
+            
+            // Initialize brand filter immediately on page load
+            brandsAPI.fetchProducts()
+                .then(products => {
+                    window.cachedProductsData = products;
+                    console.log(`Loaded ${products.length} products from API`);
+                    
+                    // Log a few sample products to verify data
+                    if (products.length > 0) {
+                        console.log('First few products:', products.slice(0, 3));
+                    }
+                    
+                    return populateBrandFilter();
+                })
+                .then(() => {
+                    console.log('Brand filter populated');
+                    // Auto-load data
+                    if (typeof loadData === 'function') {
+                        loadData();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error initializing:', error);
+                });
+        });
+        
+        // Initialize UI elements
+        const dateRangeSelect = document.getElementById('date-range');
+        const customDateContainer = document.getElementById('custom-date-container');
+        const storeFilter = document.getElementById('store-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const brandFilter = document.getElementById('brand-filter');
+        const multiItemFilter = document.getElementById('multi-item-filter');
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+        
+        // Chart reference
+        let profitChart = null;
+        
+        // Flag to track if data is currently being loaded
+        let isLoading = false;
+        
+        // Global variables to store cached data
+        let cachedOrders = [];
+        let cachedShipments = [];
+        let processedOrders = [];
+        
+        // Show/hide custom date range based on selection
+        if (dateRangeSelect) {
+            dateRangeSelect.addEventListener('change', function() {
+                // console.log("Date range changed to:", this.value);
+                if (this.value === 'custom') {
+                    customDateContainer.style.display = 'flex';
+                } else {
+                    customDateContainer.style.display = 'none';
+                }
+            });
+        }
+        
+        // Function to show loading indicator
+        function showLoading(show) {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            if (loadingIndicator) {
+                loadingIndicator.style.display = show ? 'flex' : 'none';
+            }
+            // Update global loading state
+            isLoading = show;
+            
+            // Disable/enable load button
+            const loadDataBtn = document.getElementById('load-data');
+            if (loadDataBtn) {
+                loadDataBtn.disabled = show;
+                loadDataBtn.innerHTML = show ? 'Loading...' : 'Apply Filters';
+            }
+        }
+        
+        // Helper function to determine store type
+        function getStoreType(order) {
+            // Direct store ID check - most reliable method
+            const storeId = order.advancedOptions?.storeId;
+            
+            // If we have a valid store ID and it's one of our known IDs, use it directly
+            if (storeId) {
+                const knownIds = ["373980", "498468", "470756", "428642", "331737", "452424", "498364", "498515", "494346"];
+                if (knownIds.includes(storeId)) {
+                    return storeId;
+                }
+            }
+            
+            // Get store name from various possible locations
+            const storeName = order.storeName || 
+                             order.advancedOptions?.storeName || 
+                             order.store?.name || '';
+            
+            // Check for marketplace-specific indicators
+            if (order.marketplaceId === "ATVPDKIKX0DER" || 
+                order.advancedOptions?.source === "amazon" ||
+                storeName.toLowerCase().includes("amazon")) {
+                return "373980"; // SurgiMac Amazon Store
+            } 
+            
+            if (order.advancedOptions?.source === "ebay" || 
+                order.advancedOptions?.channel === "eBay" ||
+                storeName.toLowerCase().includes("ebay")) {
+                if (storeName.toLowerCase().includes("surgimac")) {
+                    return "498468"; // SurgiMac Ebay Store
+                } else if (storeName.toLowerCase().includes("dd")) {
+                    return "470756"; // DD eBay Store
+                } else {
+                    // Default eBay store if not specific
+                    return "498468";
+                }
+            } 
+            
+            if (order.advancedOptions?.source === "walmart" || 
+                order.advancedOptions?.channel === "Walmart" ||
+                storeName.toLowerCase().includes("walmart")) {
+                return "498364"; // New Walmart Store
+            } 
+            
+            if (storeName.toLowerCase().includes("dental") || 
+                storeName.toLowerCase().includes("district")) {
+                return "428642"; // Dental District
+            } 
+            
+            if (storeName.toLowerCase().includes("manual")) {
+                return "331737"; // Manual Orders
+            } 
+            
+            if (storeName.toLowerCase().includes("network")) {
+                return "452424"; // Network
+            } 
+            
+            if (storeName.toLowerCase().includes("supply") || 
+                storeName.toLowerCase().includes("district")) {
+                return "498515"; // Supply District
+            } 
+            
+            if (storeName.toLowerCase().includes("surgimac")) {
+                return "494346"; // SurgiMac Store
+            }
+            
+            // Default to Network if we can't determine
+            // console.log(`Order ${order.orderNumber}: Defaulting to Network (452424)`);
+            return "452424";
+        }
+        
+        // Function to create store badges
+        function getStoreBadge(storeId) {
+            // Default to Network if not handled
+            let badge = '<span class="store-badge" style="background-color: #4682b4; color: white;">Network</span>';
+            
+            switch(storeId) {
+                case "373980": // SurgiMac Amazon Store
+                    badge = '<span class="store-badge amazon">SurgiMac Amazon</span>';
+                    break;
+                case "498468": // SurgiMac Ebay Store
+                    badge = '<span class="store-badge ebay">SurgiMac eBay</span>';
+                    break;
+                case "470756": // DD eBay Store
+                    badge = '<span class="store-badge" style="background-color: #9370db; color: white;">DD eBay</span>';
+                    break;
+                case "428642": // Dental District
+                    badge = '<span class="store-badge" style="background-color: #3cb371; color: white;">Dental District</span>';
+                    break;
+                case "331737": // Manual Orders
+                    badge = '<span class="store-badge" style="background-color: #20b2aa; color: white;">Manual</span>';
+                    break;
+                case "452424": // Network
+                    badge = '<span class="store-badge" style="background-color: #4682b4; color: white;">Network</span>';
+                    break;
+                case "498364": // New Walmart Store
+                    badge = '<span class="store-badge walmart">Walmart</span>';
+                    break;
+                case "498515": // Supply District
+                    badge = '<span class="store-badge" style="background-color: #ff6347; color: white;">Supply</span>';
+                    break;
+                case "494346": // SurgiMac Store
+                    badge = '<span class="store-badge" style="background-color: #6a5acd; color: white;">SurgiMac</span>';
+                    break;
+            }
+            
+            return badge;
+        }
+        
+        // Function to get date range based on selection
+        function getDateRange() {
+            if (!dateRangeSelect) {
+                // If dateRangeSelect doesn't exist, return today's date range
+                const today = new Date();
+                const startDate = new Date(today);
+                startDate.setHours(0, 0, 0, 0);
+                const endDate = new Date(today);
+                endDate.setHours(23, 59, 59, 999);
+                
+                return {
+                    startDate: startDate.toISOString(),
+                    endDate: endDate.toISOString()
+                };
+            }
+            
+            const dateRangeValue = dateRangeSelect.value;
+            const today = new Date();
+            
+            let startDate, endDate;
+            
+            switch(dateRangeValue) {
+                case 'today':
+                    startDate = new Date(today);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'yesterday':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 1);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setDate(today.getDate() - 1);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'last7':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 7);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'last30':
+                    startDate = new Date(today);
+                    startDate.setDate(today.getDate() - 30);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                case 'custom':
+                    startDate = new Date(startDateInput.value);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(endDateInput.value);
+                    endDate.setHours(23, 59, 59, 999);
+                    break;
+                default:
+                    startDate = new Date(today);
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate = new Date(today);
+                    endDate.setHours(23, 59, 59, 999);
+            }
+            
+            return {
+                startDate: startDate.toISOString(),
+                endDate: endDate.toISOString()
+            };
+        }
+        
+        // Function to filter orders based on user selections
+        function filterOrders(orders) {
+            if (!storeFilter || !statusFilter) {
+                return orders;
+            }
+            
+            const storeFilterValue = storeFilter.value;
+            const orderStatus = statusFilter.value;
+            const brandFilterValue = brandFilter ? brandFilter.value : 'all';
+            const showMultiItemOnly = multiItemFilter ? multiItemFilter.checked : false;
+            
+            return orders.filter(order => {
+                // Filter by store
+                if (storeFilterValue !== 'all') {
+                    const orderStoreId = getStoreType(order);
+                    if (storeFilterValue !== orderStoreId) {
+                        return false;
+                    }
+                }
+                
+                // Filter by status
+                if (orderStatus !== 'all' && order.orderStatus !== orderStatus) {
+                    return false;
+                }
+                
+                // Filter by multi-item
+                if (showMultiItemOnly && order.items.length < 2) {
+                    return false;
+                }
+                
+                // Filter by brand if needed
+                if (brandFilterValue !== 'all') {
+                    // Check if any item in the order has the selected brand
+                    return order.items.some(item => {
+                        const productInfo = findProductCost(item.sku);
+                        const brand = productInfo.manufacturer || '';
+                        return brand && brand.toLowerCase() === brandFilterValue.toLowerCase();
+                    });
+                }
+                
+                return true;
+            });
+        }
+
+        // Enhanced findProductCost function to work with the actual data structure from Brands.js
+        function findProductCost(sku) {
+            if (!sku) return { manufacturer: 'Unknown', cost_price: 0 };
+            
+            try {
+                // Simple direct lookup in the cached products
+                if (!window.cachedProductsData || !Array.isArray(window.cachedProductsData)) {
+                    console.warn('Product cache not initialized or invalid:', window.cachedProductsData);
+                    return { manufacturer: 'Unknown', cost_price: 0 };
+                }
+
+                // Normalize the SKU from ShipStation for comparison
+                const skuString = String(sku).trim().toLowerCase();
+                
+                // Find product by SKU - direct match first
+                const product = window.cachedProductsData.find(p => {
+                    if (!p || !p.sku) return false;
+                    return String(p.sku).trim().toLowerCase() === skuString;
+                });
+                
+                if (product) {
+                    // Found direct match
+                    return {
+                        manufacturer: product.manufacturer || 'Unknown',
+                        cost_price: typeof product.cost_price === 'number' ? product.cost_price : 0
+                    };
+                }
+                
+                // Try partial match as fallback
+                const partialMatch = window.cachedProductsData.find(p => {
+                    if (!p || !p.sku) return false;
+                    const productSku = String(p.sku).trim().toLowerCase();
+                    return productSku.includes(skuString) || skuString.includes(productSku);
+                });
+                
+                if (partialMatch) {
+                    return {
+                        manufacturer: partialMatch.manufacturer || 'Unknown',
+                        cost_price: typeof partialMatch.cost_price === 'number' ? partialMatch.cost_price : 0
+                    };
+                }
+                
+                // No match found
+                return { manufacturer: 'Unknown', cost_price: 0 };
+            } catch (error) {
+                console.error(`Error finding product for ${sku}:`, error);
+                return { manufacturer: 'Unknown', cost_price: 0 };
+            }
+        }
+        
+        // Function to get label cost from shipments data
+        function getLabelCost(orderNumber, shipments) {
+            if (!shipments || !Array.isArray(shipments)) return 0;
+            
+            // Find matching shipment(s) for this order number
+            const orderShipments = shipments.filter(shipment => 
+                shipment.orderNumber === orderNumber);
+            
+            if (orderShipments.length === 0) return 0;
+            
+            // Sum up total label cost for all shipments for this order
+            let totalLabelCost = 0;
+            orderShipments.forEach(shipment => {
+                // ShipStation normally has shipmentCost or cost property
+                const cost = shipment.shipmentCost || shipment.cost || 0;
+                if (typeof cost === 'number') {
+                    totalLabelCost += cost;
+                } else if (typeof cost === 'string') {
+                    // Try to parse if it's a string
+                    totalLabelCost += parseFloat(cost) || 0;
+                }
+            });
+            
+            return totalLabelCost;
+        }
+        
+        // Function to update statistics
+        function updateStatistics(orders) {
+            let totalSales = 0;
+            let totalProfit = 0;
+            let totalOrders = 0;
+            
+            // Process each order for statistics
+            for (const order of orders) {
+                for (const item of order.items) {
+                    const sellingPrice = item.unitPrice * item.quantity;
+                    const productInfo = findProductCost(item.sku);
+                    const costPrice = productInfo.cost_price || 0;
+                    const customerPaidShipping = order.shippingAmount || 0;
+                    
+                    const profit = sellingPrice - costPrice + customerPaidShipping;
+                    
+                    totalSales += sellingPrice;
+                    totalProfit += profit;
+                    totalOrders++;
+                }
+            }
+            
+            // Update stat elements if they exist
+            const totalOrdersEl = document.getElementById('total-orders');
+            const totalSalesEl = document.getElementById('total-sales');
+            const totalProfitEl = document.getElementById('total-profit');
+            const avgProfitEl = document.getElementById('avg-profit');
+            
+            if (totalOrdersEl) totalOrdersEl.textContent = totalOrders;
+            if (totalSalesEl) totalSalesEl.textContent = '$' + totalSales.toFixed(2);
+            if (totalProfitEl) {
+                totalProfitEl.textContent = '$' + totalProfit.toFixed(2);
+                totalProfitEl.style.color = totalProfit >= 0 ? '#5cc46b' : '#ff6b6b';
+            }
+            
+            const avgProfit = totalOrders > 0 ? totalProfit / totalOrders : 0;
+            if (avgProfitEl) {
+                avgProfitEl.textContent = '$' + avgProfit.toFixed(2);
+                avgProfitEl.style.color = avgProfit >= 0 ? '#5cc46b' : '#ff6b6b';
+            }
+        }
+        
+        // Function to display orders
+        function displayOrders(orders) {
+            // console.log("Displaying ShipStation Orders data:", orders);
+            const tableBody = document.getElementById("shipstation-table");
+            if (!tableBody) {
+                console.error("Table body with ID 'shipstation-table' not found.");
+                return;
+            }
+            tableBody.innerHTML = "";  // Clear previous data
+
+            if (!orders || orders.length === 0) {
+                // console.log("No orders data available, showing fallback message");
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:red;">No orders data available</td></tr>`;
+                updateStatistics([]);
+                return;
+            }
+
+            // Populate brand filter if it exists
+            populateBrandFilter();
+
+            // Filter orders based on user selections
+            const filteredOrders = filterOrders(orders);
+            
+            if (filteredOrders.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders match the selected filters</td></tr>`;
+                updateStatistics([]);
+                return;
+            }
+
+            // Get date range for shipments
+            const { startDate, endDate } = getDateRange();
+            
+            // Use cached shipments or fetch them
+            let shipments = cachedShipments;
+            if (!shipments || shipments.length === 0) {
+                // console.log("No shipments in cache, using 0 for label costs");
+                shipments = [];
+            }
+            
+            // Update statistics with filtered orders
+            updateStatistics(filteredOrders);
+            
+            // Data for chart visualization
+            const orderProfits = [];
+            
+            // Process orders and group by order number
+            for (const order of filteredOrders) {
+                // Get store type for display
+                const storeId = getStoreType(order);
+                
+                // Get store badge HTML
+                const storeBadge = getStoreBadge(storeId);
+                
+                // Check if this order has multiple items
+                const isMultiItemOrder = order.items.length > 1;
+                
+                // Get label cost for the order using the shipments data
+                const labelCost = getLabelCost(order.orderNumber, shipments);
+                
+                // Process each item in the order
+                for (let itemIndex = 0; itemIndex < order.items.length; itemIndex++) {
+                    const item = order.items[itemIndex];
+                    const row = document.createElement("tr");
+                    const sellingPrice = item.unitPrice * item.quantity;
+                    const customerPaidShipping = order.shippingAmount || 0;
+                    
+                    // Find product cost price with direct lookup
+                    const productInfo = findProductCost(item.sku);
+                    const costPrice = productInfo.cost_price || 0;
+                    const manufacturer = productInfo.manufacturer || 'Unknown';
+                    
+                    // Calculate profit with label cost
+                    const feePercentage = getPlatformFeePercentage(storeId);
+                    const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
+                    const total_cost_with_quantity = parseFloat((costPrice * item.quantity).toFixed(2));
+                    const Total_Cost = total_cost_with_quantity + marketfee + labelCost;
+                    const profit = (sellingPrice - Total_Cost) + customerPaidShipping;
+                    
+                    // Add to chart data
+                    orderProfits.push({
+                        orderNumber: order.orderNumber,
+                        profit: profit,
+                        store: storeId
+                    });
+                    
+                    // Add classes for multi-item orders
+                    if (isMultiItemOrder) {
+                        row.classList.add('order-group');
+                        if (itemIndex === 0) row.classList.add('first-item');
+                        if (itemIndex === order.items.length - 1) row.classList.add('last-item');
+                    }
+                    
+                    row.innerHTML = `
+                        <td>${isMultiItemOrder && itemIndex > 0 ? '' : storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length}</span>` : ''}</td>
+                        <td>${order.orderNumber || "N/A"}</td>
+                        <td>${order.orderStatus || "N/A"}</td>
+                        <td>${new Date(order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
+                        <td>${item.sku || "N/A"}</td>
+                        <td>${manufacturer !== 'Unknown' ? manufacturer : '<span style="color: #ffcc00; font-weight: bold;">Unknown</span>'}</td>
+                        <td>${item.imageUrl ? `<img src="${item.imageUrl}" class="product-image" alt="Product Image">` : "N/A"}</td>
+                        <td>${item.name || "N/A"}</td>
+                        <td>$${sellingPrice.toFixed(2)}</td>
+                        <td>${costPrice > 0 ? `$${costPrice.toFixed(2)}` : '<span style="color: #ff9900; font-weight: bold;">$0.00</span>'}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${marketfee.toFixed(2)}</td>
+                        <td>$${total_cost_with_quantity.toFixed(2)}</td>
+                        <td>$${labelCost.toFixed(2)}</td>
+                        <td>$${Total_Cost.toFixed(2)}</td>
+                        <td style="color: ${profit >= 0 ? '#5cc46b' : '#ff6b6b'} !important;">$${profit.toFixed(2)}</td>
+                        <td style="color: ${customerPaidShipping > 0 ? '#ff9900' : 'inherit'} !important; font-weight: ${customerPaidShipping > 0 ? 'bold' : 'normal'};">$${customerPaidShipping.toFixed(2)}</td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+            
+            // Draw the chart
+            createProfitChart(orderProfits);
+        }
+        
+        // Format data for chart - adjust store IDs to store names
+        function storeIdToName(storeId) {
+            switch(storeId) {
+                case "373980": return "SurgiMac Amazon";
+                case "498468": return "SurgiMac eBay";
+                case "470756": return "DD eBay";
+                case "428642": return "Dental District";
+                case "331737": return "Manual Orders";
+                case "452424": return "Network";
+                case "498364": return "Walmart";
+                case "498515": return "Supply District";
+                case "494346": return "SurgiMac";
+                default: return "Network"; // Default to Network instead of "Other"
+            }
+        }
+
+        // Simple chart creation function - basic implementation for reliability
+        function createProfitChart(orderProfits) {
+            const chartCanvas = document.getElementById('profit-chart');
+            if (!chartCanvas) return;
+            
+            // Clear any existing chart
+            if (profitChart) {
+                profitChart.destroy();
+            }
+            
+            // Group data by store
+            const storeData = {};
+            
+            orderProfits.forEach(item => {
+                const storeId = item.store || 'other';
+                const storeName = storeIdToName(storeId);
+                
+                if (!storeData[storeName]) {
+                    storeData[storeName] = {
+                        totalProfit: 0,
+                        count: 0,
+                        storeId: storeId
+                    };
+                }
+                storeData[storeName].totalProfit += item.profit;
+                storeData[storeName].count++;
+            });
+            
+            // Prepare data for chart
+            const labels = Object.keys(storeData);
+            const data = labels.map(store => storeData[store].totalProfit);
+            const counts = labels.map(store => storeData[store].count);
+            
+            // Colors for different stores
+            const colors = {
+                "SurgiMac Amazon": 'rgba(255, 153, 0, 0.7)',
+                "SurgiMac eBay": 'rgba(229, 50, 56, 0.7)',
+                "DD eBay": 'rgba(147, 112, 219, 0.7)',
+                "Dental District": 'rgba(60, 179, 113, 0.7)',
+                "Manual Orders": 'rgba(32, 178, 170, 0.7)',
+                "Network": 'rgba(70, 130, 180, 0.7)',
+                "Walmart": 'rgba(0, 113, 206, 0.7)',
+                "Supply District": 'rgba(255, 99, 71, 0.7)',
+                "SurgiMac": 'rgba(106, 90, 205, 0.7)'
+            };
+            
+            const backgroundColors = labels.map(label => 
+                colors[label] || (
+                    storeData[label].totalProfit >= 0 ? 
+                    'rgba(92, 196, 107, 0.7)' : 
+                    'rgba(255, 107, 107, 0.7)'
+                )
+            );
+            
+            // Format labels to show count
+            const formattedLabels = labels.map(label => 
+                `${label} (${storeData[label].count} orders)`
+            );
+            
+            // Create chart
+            profitChart = new Chart(chartCanvas, {
+                type: 'bar',
+                data: {
+                    labels: formattedLabels,
+                    datasets: [{
+                        label: 'Total Profit by Store ($)',
+                        data: data,
+                        backgroundColor: backgroundColors,
+                        borderColor: backgroundColors.map(color => color.replace('0.7', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#ffffff'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#ffffff'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Function to load data with safety checks
+        function loadData() {
+            // Prevent multiple concurrent API calls
+            if (isLoading) {
+                return;
+            }
+            
+            try {
+                showLoading(true);
+                
+                const tableBody = document.getElementById("shipstation-table");
+                if (tableBody) {
+                    tableBody.innerHTML = `<tr><td colspan="12" style="text-align:center;">Fetching orders, please wait...</td></tr>`;
+                }
+                
+                // Get date range based on user selection
+                const { startDate, endDate } = getDateRange();
+                
+                // Fetch orders and shipments
+                fetchShipStationOrders(startDate, endDate)
+                    .then(orders => {
+                        // Store in global cache
+                        cachedOrders = orders || [];
+                        
+                        // Cache the raw orders for filtering
+                        try {
+                            const cacheKey = getCacheKeyForCurrentDateRange();
+                            localStorage.setItem(`shipstation_cache_${cacheKey}`, JSON.stringify(orders));
+                        } catch (e) {
+                            // Ignore cache errors
+                        }
+                        
+                        return fetchShipStationShipments(startDate, endDate)
+                            .then(shipments => {
+                                cachedShipments = shipments || [];
+                                return { orders, shipments };
+                            });
+                    })
+                    .then(({ orders, shipments }) => {
+                        if (orders && orders.length > 0) {
+                            // Display the orders
+                            displayOrders(orders);
+                        } else {
+                            const tableBody = document.getElementById("shipstation-table");
+                            if (tableBody) {
+                                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders found for the selected date range</td></tr>`;
+                            }
+                        }
+                        
+                        showLoading(false);
+                    })
+                    .catch(error => {
+                        showLoading(false);
+                        
+                        const ordersTable = document.getElementById("shipstation-table");
+                        if (ordersTable) {
+                            let errorMessage = `<tr><td colspan="12" style="color:red;">Failed to load ShipStation orders: ${error.message}</td></tr>`;
+                            
+                            // Show a more helpful message for CORS errors
+                            if (error.message.includes("CORS")) {
+                                errorMessage = `
+                                    <tr>
+                                        <td colspan="12" style="color:red; text-align:left; padding:15px;">
+                                            <strong>CORS Error Detected</strong><br><br>
+                                            Your browser's security policy (Same-Origin Policy) is preventing direct API calls to ShipStation.<br><br>
+                                            <strong>Solutions:</strong><br>
+                                            1. Use a server-side script to call the ShipStation API instead of making direct calls from the browser<br>
+                                            2. Create a simple backend proxy in Node.js, PHP, or another server-side language<br>
+                                            3. Check if you have cached data by refreshing the page (we store previous results)<br><br>
+                                            <em>Technical details: ${error.message}</em>
+                                        </td>
+                                    </tr>`;
+                            }
+                            
+                            ordersTable.innerHTML = errorMessage;
+                        }
+                    });
+            } catch (error) {
+                showLoading(false);
+                console.error('Error in loadData:', error);
+            }
+        }
+        
+        // Preprocess orders with shipment data once
+        async function preprocessOrders(orders, shipments) {
+            const processed = [];
+            
+            for (const order of orders) {
+                // Get store type for display
+                const storeId = getStoreType(order);
+                const storeBadge = getStoreBadge(storeId);
+                const isMultiItemOrder = order.items.length > 1;
+                
+                // Get label cost for the order using the shipments data
+                const labelCost = getLabelCost(order.orderNumber, shipments);
+                
+                // Process each item 
+                for (let itemIndex = 0; itemIndex < order.items.length; itemIndex++) {
+                    const item = order.items[itemIndex];
+                    const sellingPrice = item.unitPrice * item.quantity;
+                    const customerPaidShipping = order.shippingAmount || 0;
+                    
+                    // Find product cost and brand - now use await
+                    const productInfo = findProductCost(item.sku);
+                    const costPrice = productInfo.cost_price || 0;
+                    const manufacturer = productInfo.manufacturer || '';
+                    
+                    // Calculate profit and other metrics
+                    const feePercentage = getPlatformFeePercentage(storeId);
+                    const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
+                    const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`;
+                    const total_cost_with_quantity = parseFloat((costPrice * item.quantity).toFixed(2));
+                    const Total_Cost = total_cost_with_quantity + marketfee + labelCost;
+                    const profit = (sellingPrice - Total_Cost) + customerPaidShipping;
+                    
+                    // Store processed data
+                    processed.push({
+                        order,
+                        item,
+                        itemIndex,
+                        storeId,
+                        storeBadge,
+                        isMultiItemOrder,
+                        sellingPrice,
+                        costPrice,
+                        marketfee,
+                        manufacturer,
+                        labelCost,
+                        total_cost_with_quantity,
+                        Total_Cost,
+                        profit,
+                        customerPaidShipping,
+                        feePercentage,
+                        feeDisplay
+                    });
+                }
+            }
+            
+            return processed;
+        }
+        
+        // New function to only display filtered data from pre-processed orders
+        async function displayFilteredOrders() {
+            const tableBody = document.getElementById("shipstation-table");
+            if (!tableBody) return;
+            
+            tableBody.innerHTML = "";
+            
+            // Apply filters to pre-processed orders (this is now synchronous and fast)
+            const filtered = filterProcessedOrders(processedOrders);
+            
+            if (filtered.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders match the selected filters</td></tr>`;
+                updateStatistics([]);
+                return;
+            }
+
+            // Calculate orders for statistics from the filtered data
+            const uniqueOrders = new Map();
+            filtered.forEach(item => {
+                if (!uniqueOrders.has(item.order.orderId)) {
+                    uniqueOrders.set(item.order.orderId, item.order);
+                }
+            });
+            
+            updateStatistics(Array.from(uniqueOrders.values()));
+            
+            // Prepare data for chart
+            const orderProfits = filtered.map(item => ({
+                orderNumber: item.order.orderNumber,
+                profit: item.profit,
+                store: item.storeId
+            }));
+            
+            // Render table rows
+            filtered.forEach(item => {
+                const row = document.createElement("tr");
+                
+                // Add classes for multi-item orders
+                if (item.isMultiItemOrder) {
+                    row.classList.add('order-group');
+                    
+                    // Add special classes for first and last items
+                    if (item.itemIndex === 0) {
+                        row.classList.add('first-item');
+                    }
+                    if (item.itemIndex === item.order.items.length - 1) {
+                        row.classList.add('last-item');
+                    }
+                }
+
+                row.innerHTML = `
+                    <td>${item.isMultiItemOrder && item.itemIndex > 0 ? '' : item.storeBadge}${item.isMultiItemOrder && item.itemIndex === 0 ? `<span class="item-count">${item.order.items.length}</span>` : ''}</td>
+                    <td>${item.order.orderNumber || "N/A"}</td>
+                    <td>${item.order.orderStatus || "N/A"}</td>
+                    <td>${new Date(item.order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
+                    <td>${item.item.sku || "N/A"}</td>
+                    <td>${item.manufacturer ? `${item.manufacturer}` : '<span style="color: #ffcc00; font-weight: bold;">N/A</span>'}</td>
+                    <td>${item.item.imageUrl ? `<img src="${item.item.imageUrl}" class="product-image" alt="Product Image">` : "N/A"}</td>
+                    <td>${item.item.name || "N/A"}</td>
+                    <td>$${item.sellingPrice.toFixed(2)}</td>
+                    <td>${item.costPrice > 0 ? `$${item.costPrice.toFixed(2)}` : '<span style="color: #ff9900; font-weight: bold;">$0.00</span>'}</td>
+                    <td>${item.item.quantity}</td>
+                    <td>$${item.marketfee.toFixed(2)} </td>
+                    <td>$${item.total_cost_with_quantity.toFixed(2)}</td>
+                    <td>$${item.labelCost.toFixed(2)}</td>
+                    <td>$${item.Total_Cost.toFixed(2)}</td>
+                    <td style="color: ${item.profit >= 0 ? '#5cc46b' : '#ff6b6b'} !important;">$${item.profit.toFixed(2)}</td>
+                    <td style="color: ${item.customerPaidShipping > 0 ? '#ff9900' : 'inherit'} !important; font-weight: ${item.customerPaidShipping > 0 ? 'bold' : 'normal'};">$${item.customerPaidShipping.toFixed(2)}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            // Draw the chart
+            createProfitChart(orderProfits);
+        }
+        
+        // New function to filter pre-processed orders (very fast)
+        function filterProcessedOrders(processedOrders) {
+            const storeFilterValue = storeFilter ? storeFilter.value : 'all';
+            const orderStatus = statusFilter ? statusFilter.value : 'all';
+            const brandFilterValue = brandFilter ? brandFilter.value : 'all';
+            const showMultiItemOnly = multiItemFilter ? multiItemFilter.checked : false;
+            
+            return processedOrders.filter(item => {
+                // Filter by store
+                if (storeFilterValue !== 'all' && item.storeId !== storeFilterValue) {
+                    return false;
+                }
+                
+                // Filter by status
+                if (orderStatus !== 'all' && item.order.orderStatus !== orderStatus) {
+                    return false;
+                }
+                
+                // Filter by multi-item
+                if (showMultiItemOnly && !item.isMultiItemOrder) {
+                    return false;
+                }
+                
+                // Filter by brand
+                if (brandFilterValue !== 'all' && 
+                    (!item.manufacturer || item.manufacturer.toLowerCase() !== brandFilterValue.toLowerCase())) {
+                    return false;
+                }
+                
+                return true;
+            });
+        }
+        
+        // Update the event listener for the load button
+        const loadDataBtn = document.getElementById('load-data');
+        if (loadDataBtn) {
+            loadDataBtn.addEventListener('click', function() {
+                // console.log("Load button clicked");
+                loadData();
+            });
+        }
+        
+        // Auto-load on page load
+        // console.log("Auto-loading data on page load");
+        // Note: This is now handled in the DOMContentLoaded event handler where we initialize brands
+
+        // CSV Export functionality
+        const exportCsvBtn = document.getElementById('export-csv');
+        if (exportCsvBtn) {
+            exportCsvBtn.addEventListener('click', function() {
+                exportTableToCSV('shipstation_orders.csv');
+            });
+        }
+        
+        // Function to export table data to CSV
+        function exportTableToCSV(filename) {
+            // If we have no processed data, show an alert
+            if (!processedOrders || processedOrders.length === 0) {
+                alert('No data to export! Please load data first.');
+                return;
+            }
+            
+            // Get filtered data
+            const filteredData = filterProcessedOrders(processedOrders);
+            if (filteredData.length === 0) {
+                alert('No data matches your current filters! Please adjust filters and try again.');
+                return;
+            }
+            
+            // CSV Headers
+            const headers = [
+                'Store',
+                'Order Number',
+                'Order Status',
+                'Order Date',
+                'SKU',
+                'Manufacturer',
+                'Product Name',
+                'Selling Price ($)',
+                'Cost Price ($)',
+                'Quantity',
+                'Platform Fee ($)',
+                'Cost With Quantity ($)',
+                'Label Cost ($)',
+                'Total Cost ($)',
+                'Profit/Loss ($)',
+                'Customer Paid Shipping ($)'
+            ];
+            
+            // Create CSV content
+            let csvContent = headers.join(',') + '\n';
+            
+            // Add data rows
+            filteredData.forEach(item => {
+                // Format date
+                const orderDate = new Date(item.order.createDate).toLocaleString('en-US', { 
+                    timeZone: 'America/New_York', 
+                    year: 'numeric', 
+                    month: '2-digit', 
+                    day: '2-digit', 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    hour12: true 
+                }).replace(',', '');
+                
+                // Get store name instead of badge HTML
+                const storeName = storeIdToName(item.storeId);
+                
+                // Create row data with proper escaping for CSV
+                const row = [
+                    `"${storeName}"`,
+                    `"${item.order.orderNumber || 'N/A'}"`,
+                    `"${item.order.orderStatus || 'N/A'}"`,
+                    `"${orderDate}"`,
+                    `"${item.item.sku || 'N/A'}"`,
+                    `"${item.manufacturer || 'N/A'}"`,
+                    `"${(item.item.name || 'N/A').replace(/"/g, '""')}"`, // Escape quotes in product names
+                    item.sellingPrice.toFixed(2),
+                    item.costPrice.toFixed(2),
+                    item.item.quantity,
+                    item.marketfee.toFixed(2),
+                    item.total_cost_with_quantity.toFixed(2),
+                    item.labelCost.toFixed(2),
+                    item.Total_Cost.toFixed(2),
+                    item.profit.toFixed(2),
+                    item.customerPaidShipping.toFixed(2)
+                ];
+                
+                csvContent += row.join(',') + '\n';
+            });
+            
+            // Create a blob and download
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            
+            // Create downloadable link
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', filename);
+            link.style.visibility = 'hidden';
+            
+            // Append, click to download, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Get a cache key for the current date range
+        function getCacheKeyForCurrentDateRange() {
+            const { startDate, endDate } = getDateRange();
+            return `orders_${startDate.substring(0, 10)}_${endDate.substring(0, 10)}`;
+        }
+
+        // Function to populate the brand filter with unique brands from API
+        function populateBrandFilter() {
+            if (!brandFilter) return Promise.resolve();
+            
+            try {
+                // Ensure products are loaded
+                if (!window.cachedProductsData || !Array.isArray(window.cachedProductsData)) {
+                    console.warn('Cannot populate brand filter - no product data');
+                    return Promise.resolve();
+                }
+                
+                // Extract unique manufacturers using Set
+                const manufacturersSet = new Set();
+                window.cachedProductsData.forEach(p => {
+                    if (p && p.manufacturer) {
+                        manufacturersSet.add(p.manufacturer);
+                    }
+                });
+                
+                const manufacturers = Array.from(manufacturersSet).sort();
+                // console.log(`Found ${manufacturers.length} unique manufacturers`);
+                
+                // Save current selection
+                const currentSelection = brandFilter.value;
+                
+                // Clear existing options except the first one (All Brands)
+                while (brandFilter.options.length > 1) {
+                    brandFilter.remove(1);
+                }
+                
+                // Add manufacturer options
+                manufacturers.forEach(manufacturer => {
+                    if (!manufacturer) return; // Skip empty values
+                    const option = document.createElement('option');
+                    option.value = manufacturer;
+                    option.textContent = manufacturer;
+                    brandFilter.appendChild(option);
+                });
+                
+                // Restore previous selection if it exists
+                if (currentSelection !== 'all') {
+                    for (let i = 0; i < brandFilter.options.length; i++) {
+                        if (brandFilter.options[i].value === currentSelection) {
+                            brandFilter.selectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+                
+                return Promise.resolve();
+            } catch (error) {
+                console.error('Error populating brand filter:', error);
+                return Promise.reject(error);
+            }
+        }
+
+        // Add a function to determine the platform fee percentage based on store
+        function getPlatformFeePercentage(storeId) {
+            switch(storeId) {
+                case "452424": // Network (Net32)
+                    return 0.18; // 18%
+                case "373980": // SurgiMac Amazon Store
+                    return 0.15; // 15%
+                default:
+                    return 0.15; // 15% for all other stores
+            }
+        }
+
+        // Add the event listeners for filter changes back
+        // Event listeners for filter changes
+        if (storeFilter) {
+            storeFilter.addEventListener('change', function() {
+                // If we have orders, just refresh the display with the new filter
+                if (cachedOrders && cachedOrders.length > 0) {
+                    displayOrders(cachedOrders);
+                } else {
+                    // If no orders, load data
+                    loadData();
+                }
+            });
+        }
+        
+        if (statusFilter) {
+            statusFilter.addEventListener('change', function() {
+                if (cachedOrders && cachedOrders.length > 0) {
+                    displayOrders(cachedOrders);
+                } else {
+                    loadData();
+                }
+            });
+        }
+        
+        if (brandFilter) {
+            brandFilter.addEventListener('change', function() {
+                if (cachedOrders && cachedOrders.length > 0) {
+                    displayOrders(cachedOrders);
+                } else {
+                    loadData();
+                }
+            });
+        }
+        
+        if (multiItemFilter) {
+            multiItemFilter.addEventListener('change', function() {
+                if (cachedOrders && cachedOrders.length > 0) {
+                    displayOrders(cachedOrders);
+                } else {
+                    loadData();
+                }
+            });
+        }
+        
+        // Function to populate and control the debug section
+        function setupDebugSection() {
+            const debugSection = document.getElementById('debug-section');
+            const debugContent = document.getElementById('debug-content');
+            const toggleDebugBtn = document.getElementById('toggle-debug');
+            const forceLoadBtn = document.getElementById('force-load-products');
+            const syncToDatabaseBtn = document.getElementById('sync-to-database');
+            
+            // Show debug section
+            debugSection.style.display = 'block';
+            
+            // Toggle visibility on button click
+            toggleDebugBtn.addEventListener('click', function() {
+                if (debugContent.style.display === 'none') {
+                    debugContent.style.display = 'block';
+                    this.textContent = 'Hide Debug Info';
+                } else {
+                    debugContent.style.display = 'none';
+                    this.textContent = 'Show Debug Info';
+                }
+            });
+            
+            // Force load products directly
+            forceLoadBtn.addEventListener('click', function() {
+                this.textContent = 'Loading...';
+                this.disabled = true;
+                
+                // Create some default manufacturer mappings
+                const manufacturerMap = {
+                    '3M': ['3M', '08434'],
+                    'DENTSPLY': ['DENTSPLY', 'DEN'],
+                    'KERR': ['KERR', '121491'],
+                    'SURGIMAC': ['SURGIMAC', 'Dec-50'],
+                    'SHOFU': ['SHOFU', '1432'],
+                    'SEPTODONT': ['SEPTODONT', '01-C'],
+                    'BD': ['BD', '30544'],
+                    'PATTERSON': ['PATTERSON', '33017'],
+                    'PURELL': ['PURELL', '3659'],
+                    'CROSSTEX': ['CROSSTEX', '43445'],
+                    'KEYSTONE': ['KEYSTONE', '4220'],
+                    'ULTRADENT': ['ULTRADENT'],
+                    'GC': ['GC', '4422'],
+                    'HU-FRIEDY': ['HU-FRIEDY', '10-505'],
+                    'METREX': ['METREX', '10-600'],
+                    'PREMIER': ['PREMIER', '11513'],
+                    'AWAN': ['AWAN', '1169'],
+                };
+                
+                // Force load products directly with manufacturer info
+                if (window.cachedProductsData && window.cachedProductsData.length > 0) {
+                    const enhancedProducts = window.cachedProductsData.map(item => {
+                        // Get the VP code or SKU
+                        const sku = item.sku || '';
+                        
+                        // Default manufacturer
+                        let manufacturer = 'Unknown';
+                        let cost_price = item.cost_price || 0;
+                        
+                        // Try to determine manufacturer based on SKU prefixes
+                        if (sku) {
+                            const skuStr = String(sku).toUpperCase();
+                            
+                            // Check for matches against our manufacturer map
+                            for (const [brand, prefixes] of Object.entries(manufacturerMap)) {
+                                if (prefixes.some(prefix => 
+                                    typeof skuStr === 'string' && 
+                                    (skuStr.startsWith(prefix) || skuStr.includes(prefix))
+                                )) {
+                                    manufacturer = brand;
+                                    
+                                    // If cost is zero, set a default cost based on manufacturer
+                                    if (!cost_price) {
+                                        if (brand === '3M' || brand === 'DENTSPLY' || brand === 'KERR') {
+                                            cost_price = 45.99;
+                                        } else if (brand === 'SURGIMAC') {
+                                            cost_price = 29.99;
+                                        } else if (brand === 'SEPTODONT') {
+                                            cost_price = 55.50;
+                                        } else {
+                                            // Random cost between 10 and 100
+                                            cost_price = Math.floor(Math.random() * 90) + 10;
+                                        }
+                                    }
+                                    
+                                    break;
+                                }
+                            }
+                        }
+                        
+                        // Update the item
+                        item.manufacturer = manufacturer;
+                        item.cost_price = cost_price;
+                        
+                        return item;
+                    });
+                    
+                    // Update the cached products data
+                    window.cachedProductsData = enhancedProducts;
+                    
+                    // Update the debug info
+                    updateDebugInfo();
+                    this.textContent = 'Products Enhanced!';
+                    
+                    // Refresh the display if orders are loaded
+                    if (window.cachedOrders && window.cachedOrders.length > 0) {
+                        displayOrders(window.cachedOrders);
+                    }
+                } else {
+                    // No cached products yet, try to fetch them
+                    this.textContent = 'No products to enhance';
+                    
+                    // Try to get products from the brandsAPI
+                    brandsAPI.fetchProducts()
+                        .then(products => {
+                            window.cachedProductsData = products;
+                            console.log(`Loaded ${products.length} products`);
+                            updateDebugInfo();
+                            this.textContent = 'Products Loaded!';
+                            
+                            // Refresh the display if orders are loaded
+                            if (window.cachedOrders && window.cachedOrders.length > 0) {
+                                displayOrders(window.cachedOrders);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error loading products:', error);
+                            this.textContent = 'Error Loading Products';
+                        });
+                }
+            });
+            
+            // Sync products to database
+            syncToDatabaseBtn.addEventListener('click', async function() {
+                this.textContent = 'Syncing...';
+                this.disabled = true;
+                
+                // Get all unique SKUs from the table
+                const tableRows = document.querySelectorAll('#shipstation-table tr');
+                const skus = new Set();
+                
+                tableRows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    if (cells.length > 4) {
+                        const sku = cells[4].textContent.trim();
+                        if (sku && sku !== 'N/A') {
+                            skus.add(sku);
+                        }
+                    }
+                });
+                
+                console.log(`Found ${skus.size} unique SKUs in the table`);
+                
+                // For each SKU, check if it exists in our cachedProductsData
+                // If not, create a new product in the database
+                let successCount = 0;
+                let failCount = 0;
+                
+                // Create manufacturer mapping for better default values
+                const manufacturerMap = {
+                    '3M': ['3M', '08434'],
+                    'DENTSPLY': ['DENTSPLY', 'DEN'],
+                    'KERR': ['KERR', '121491'],
+                    'SURGIMAC': ['SURGIMAC', 'Dec-50'],
+                    'SHOFU': ['SHOFU', '1432'],
+                    'SEPTODONT': ['SEPTODONT', '01-C'],
+                    'BD': ['BD', '30544'],
+                    'PATTERSON': ['PATTERSON', '33017'],
+                    'PURELL': ['PURELL', '3659'],
+                    'CROSSTEX': ['CROSSTEX', '43445'],
+                    'KEYSTONE': ['KEYSTONE', '4220'],
+                    'ULTRADENT': ['ULTRADENT'],
+                    'GC': ['GC', '4422'],
+                    'HU-FRIEDY': ['HU-FRIEDY', '10-505'],
+                    'METREX': ['METREX', '10-600'],
+                    'PREMIER': ['PREMIER', '11513'],
+                    'AWAN': ['AWAN', '1169'],
+                };
+                
+                for (const sku of skus) {
+                    try {
+                        // Check if this SKU exists in window.cachedProductsData
+                        const existingProduct = window.cachedProductsData?.find(p => 
+                            p.sku && String(p.sku).toLowerCase() === String(sku).toLowerCase()
+                        );
+                        
+                        if (!existingProduct) {
+                            // Determine a likely manufacturer based on SKU patterns
+                            let manufacturer = 'Unknown';
+                            const skuStr = String(sku).toUpperCase();
+                            
+                            for (const [brand, prefixes] of Object.entries(manufacturerMap)) {
+                                if (prefixes.some(prefix => 
+                                    typeof skuStr === 'string' && 
+                                    (skuStr.startsWith(prefix) || skuStr.includes(prefix))
+                                )) {
+                                    manufacturer = brand;
+                                    break;
+                                }
+                            }
+                            
+                            // Create a new product in the database
+                            const response = await fetch('https://backend-api-4679.onrender.com/api/products', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    Sku: sku,
+                                    Description: 'Added from ShipStation',
+                                    Manufacturer: manufacturer,
+                                    Cost: 0
+                                })
+                            });
+                            
+                            if (response.ok) {
+                                successCount++;
+                                console.log(`Successfully added SKU: ${sku}`);
+                            } else {
+                                failCount++;
+                                console.warn(`Failed to add SKU: ${sku}`);
+                            }
+                        } else {
+                            console.log(`SKU already exists: ${sku}`);
+                        }
+                    } catch (error) {
+                        console.error(`Error processing SKU ${sku}:`, error);
+                        failCount++;
+                    }
+                }
+                
+                // Reload the products from the database
+                this.textContent = `Done! Added ${successCount} products`;
+                
+                // Refresh the product data
+                if (successCount > 0) {
+                    brandsAPI.cachedProducts = null; // Force reload
+                    brandsAPI.fetchProducts()
+                        .then(products => {
+                            window.cachedProductsData = products;
+                            updateDebugInfo();
+                            
+                            // Refresh the display if orders are loaded
+                            if (window.cachedOrders && window.cachedOrders.length > 0) {
+                                displayOrders(window.cachedOrders);
+                            }
+                        });
+                }
+                
+                // Re-enable the button after 3 seconds
+                setTimeout(() => {
+                    this.disabled = false;
+                }, 3000);
+            });
+            
+            // Initially hide the content
+            debugContent.style.display = 'none';
+            
+            // Add product data info to debug section
+            const updateDebugInfo = () => {
+                if (!window.cachedProductsData) {
+                    debugContent.innerHTML = `<p>No product data loaded yet</p>`;
+                    return;
+                }
+                
+                // Sample a few products
+                const sampleProducts = window.cachedProductsData.slice(0, 5);
+                
+                let html = `
+                    <p>Total products loaded: ${window.cachedProductsData.length}</p>
+                    <h4>Sample Products:</h4>
+                    <table class="table table-dark" style="font-size: 12px;">
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Description</th>
+                                <th>Manufacturer</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                sampleProducts.forEach(product => {
+                    html += `
+                        <tr>
+                            <td>${product.sku || 'N/A'}</td>
+                            <td>${product.description || 'N/A'}</td>
+                            <td>${product.manufacturer || 'Unknown'}</td>
+                            <td>${product.cost_price !== undefined ? product.cost_price : 'N/A'}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `
+                        </tbody>
+                    </table>
+                    <p><strong>Note:</strong> If manufacturer shows "Unknown" or cost shows "0", the API connection might be failing or the data mapping is incorrect.</p>
+                `;
+                
+                debugContent.innerHTML = html;
+            };
+            
+            // Update debug info when product data changes
+            window.addEventListener('DOMContentLoaded', () => {
+                // Wait a bit for data to load
+                setTimeout(updateDebugInfo, 2000);
+            });
+            
+            // Update again when brand filter is populated (which happens after product data loads)
+            const originalPopulateBrandFilter = window.populateBrandFilter;
+            window.populateBrandFilter = function() {
+                const result = originalPopulateBrandFilter.apply(this, arguments);
+                updateDebugInfo();
+                return result;
+            };
+        }
+        
+        // Initialize debug section
+        setupDebugSection();
+        
+        // Function to check if cache is valid (simplified version of the one in shipstation-api.js)
+        function isLocalCacheValid(cacheKey) {
+            try {
+                const cacheData = localStorage.getItem(`shipstation_cache_${cacheKey}`);
+                return !!cacheData;
+            } catch (error) {
+                return false;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title id="title">Stock Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Stock Management</title>
     <style>
        body {
             font-family: Arial, sans-serif;
@@ -96,32 +97,7 @@
             color: white;
         }
         
-        input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-            accent-color: #4CAF50;
-    border-radius: 5px;
-}
-
-input[type="checkbox"]:hover {
-            transform: scale(1.2);
-    transition: 0.2s ease-in-out;
-}
-
-#select-all {
-    width: 22px;
-    height: 22px;
-            accent-color: #ffcc00;
-    border-radius: 3px;
-}
-
-tr.selected {
-            background-color: rgba(0, 128, 0, 0.3) !important;
-    transition: 0.2s ease-in-out;
-}
-
-.table-dark input[type="checkbox"] {
+        .table-dark input[type="checkbox"] {
             filter: brightness(1.5);
         }
         
@@ -238,64 +214,467 @@ table td:hover {
             margin-bottom: 15px;
             display: none;
         }
+
+        .editable-field {
+            position: relative;
+        }
+
+        .view-mode {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .edit-mode {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .edit-btn {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .editable-field:hover .edit-btn {
+            opacity: 1;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 5px;
+        }
+
+        .manufacturer-input,
+        .cost-input {
+            background-color: #2a2a3a;
+            color: white;
+            border: 1px solid #4a4a5a;
+            border-radius: 4px;
+            padding: 5px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+
+        .manufacturer-input:focus,
+        .cost-input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+
+        .manufacturer-input:hover,
+        .cost-input:hover {
+            border-color: #6c757d;
+        }
+
+        #save-all-changes {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        #save-all-changes:hover {
+            background-color: #218838;
+            transform: translateY(-1px);
+        }
+
+        .sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .sortable i {
+            margin-left: 5px;
+            color: #6c757d;
+        }
+
+        .sortable.asc i {
+            color: #fff;
+            transform: rotate(180deg);
+        }
+
+        .sortable.desc i {
+            color: #fff;
+        }
+
+        .sortable:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .status-urgent, .status-warning, .status-good, .status-excess {
+            display: inline-block;
+            width: auto;
+            min-width: 200px;
+            margin: 4px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .table th:nth-child(1) { width: 12%; }
+        .table th:nth-child(2) { width: auto; }
+        .table th:nth-child(3) { width: 15%; }
+        .table th:nth-child(4) { width: 12%; }
+        .table th:nth-child(5) { width: 12%; }
+        .table th:nth-child(6) { width: 20%; }
+
+        .table td {
+            padding: 12px 8px;
+        }
+        
+        .table td:nth-child(2) {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .status-urgent {
+            background: linear-gradient(135deg, #ff4e42, #e63946);
+            color: white;
+            font-weight: bold;
+        }
+
+        .status-warning {
+            background: linear-gradient(135deg, #ff9e2c, #ff6f00);
+            color: white;
+            font-weight: bold;
+        }
+
+        .status-good {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            font-weight: bold;
+        }
+
+        .status-excess {
+            background: linear-gradient(135deg, #17a2b8, #0dcaf0);
+            color: white;
+            font-weight: bold;
+        }
     </style>
+    <script type="module">
+        import { brandsAPI } from './Brands.js';
+        import { getProductSalesBySKU, getFirstDayOfMonth, getCurrentDate } from './shipstation-api.js';
+        
+        let products = [];
+        let salesData = {};
+        let currentSort = {
+            column: null,
+            direction: null
+        };
+        
+        // DOM Elements
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const loadingText = document.getElementById('loading-text');
+        const errorMessage = document.getElementById('error-message');
+        
+        // Event Listeners
+        document.getElementById('apply-filters').addEventListener('click', applyFilters);
+        document.getElementById('refresh-data').addEventListener('click', fetchAllData);
+        document.getElementById('download-excel').addEventListener('click', downloadExcel);
+        
+        // Initialize data on page load
+        document.addEventListener('DOMContentLoaded', fetchAllData);
+        
+        // Fetch and display data
+        async function fetchAllData() {
+            try {
+                showLoading('Fetching products and sales data...');
+                
+                // Fetch products and sales data in parallel
+                const [productsData, monthlySales] = await Promise.all([
+                    brandsAPI.fetchProducts(),
+                    getProductSalesBySKU(getFirstDayOfMonth(), getCurrentDate())
+                ]);
+                
+                products = productsData;
+                salesData = monthlySales;
+                
+                populateManufacturerFilter(products);
+                renderProducts(products);
+                initializeSorting();
+                hideLoading();
+            } catch (error) {
+                console.error('Error:', error);
+                hideLoading();
+                showError('Failed to fetch data');
+            }
+        }
+
+        // Apply filters to the product list
+        function applyFilters() {
+            const manufacturerFilter = document.getElementById('manufacturerFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            let filteredProducts = products.filter(product => {
+                let matchesManufacturer = true;
+                let matchesStatus = true;
+                
+                // Manufacturer filter
+                if (manufacturerFilter !== 'all') {
+                    matchesManufacturer = product.manufacturer === manufacturerFilter;
+                }
+                
+                // Status filter
+                if (statusFilter !== 'all') {
+                    const monthlySales = salesData[product.sku]?.totalQuantity || 0;
+                    const status = calculateStockStatus(parseInt(product.stockLevel) || 0, monthlySales);
+                    matchesStatus = status.status === statusFilter;
+                }
+                
+                return matchesManufacturer && matchesStatus;
+            });
+            
+            if (currentSort.column) {
+                sortProducts(currentSort.column, currentSort.direction, filteredProducts);
+            } else {
+                renderProducts(filteredProducts);
+            }
+        }
+        
+        // Render products in table
+        function renderProducts(productsToRender) {
+            const tableBody = document.getElementById('product-table');
+            tableBody.innerHTML = '';
+
+            if (productsToRender.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" class="text-center">No products found</td></tr>';
+                return;
+            }
+            
+            productsToRender.forEach(product => {
+                const monthlySales = salesData[product.vp_code]?.totalQuantity || 0;
+                const stockStatus = calculateStockStatus(parseInt(product.stockLevel) || 0, monthlySales);
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.vp_code}</td>
+                    <td>${product.description}</td>
+                    <td>${product.manufacturer}</td>
+                    <td>${product.stockLevel}</td>
+                    <td>${monthlySales}</td>
+                    <td><span class="status-${stockStatus.status}">${stockStatus.message}</span></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to download selected products as Excel
+        function downloadExcel() {
+            const tableRows = document.querySelectorAll('#product-table tr');
+            
+            if (tableRows.length === 0) {
+                showError('No products to download');
+                return;
+            }
+
+            try {
+                const productsToExport = Array.from(tableRows).map(row => ({
+                    'VP Code': row.cells[0].textContent.trim(),
+                    'Description': row.cells[1].textContent.trim(),
+                    'Manufacturer': row.cells[2].textContent.trim(),
+                    'Stock Level': row.cells[3].textContent.trim(),
+                    'Monthly Sales': row.cells[4].textContent.trim(),
+                    'Stock Status': row.cells[5].textContent.trim()
+                }));
+
+                // Create worksheet
+                const ws = XLSX.utils.json_to_sheet(productsToExport);
+                
+                // Create workbook
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Products');
+                
+                // Generate filename with timestamp
+                const date = new Date();
+                const timestamp = date.toISOString().split('T')[0];
+                const filename = `stock_report_${timestamp}.xlsx`;
+                
+                // Write and download the file
+                XLSX.writeFile(wb, filename);
+                
+                console.log('Excel file generated successfully');
+            } catch (error) {
+                console.error('Error generating Excel file:', error);
+                showError('Failed to generate Excel file');
+            }
+        }
+        
+        // Loading overlay functions
+        function showLoading(message) {
+            loadingText.textContent = message;
+            loadingOverlay.style.display = 'flex';
+        }
+        
+        function hideLoading() {
+            loadingOverlay.style.display = 'none';
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Add this function to populate manufacturer filter
+        function populateManufacturerFilter(products) {
+            const manufacturerFilter = document.getElementById('manufacturerFilter');
+            const manufacturers = [...new Set(products.map(p => p.manufacturer))].sort();
+            
+            manufacturerFilter.innerHTML = '<option value="all">All Manufacturers</option>';
+            manufacturers.forEach(manufacturer => {
+                manufacturerFilter.innerHTML += `
+                    <option value="${manufacturer}">${manufacturer}</option>
+                `;
+            });
+        }
+
+        // Add sorting initialization
+        function initializeSorting() {
+            const sortableHeaders = document.querySelectorAll('.sortable');
+            sortableHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const sortType = header.dataset.sort;
+                    
+                    // Remove sorting classes from all headers
+                    sortableHeaders.forEach(h => {
+                        h.classList.remove('asc', 'desc');
+                    });
+
+                    // Toggle sort direction
+                    if (currentSort.column === sortType) {
+                        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        currentSort.column = sortType;
+                        currentSort.direction = 'desc';
+                    }
+
+                    // Add appropriate class to current header
+                    header.classList.add(currentSort.direction);
+
+                    // Sort the products
+                    sortProducts(sortType, currentSort.direction);
+                });
+            });
+        }
+
+        function sortProducts(sortType, direction) {
+            // Get current filters
+            const manufacturerFilter = document.getElementById('manufacturerFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            // First apply filters
+            let productsToSort = products.filter(product => {
+                let matchesManufacturer = true;
+                let matchesStatus = true;
+                
+                // Apply manufacturer filter
+                if (manufacturerFilter !== 'all') {
+                    matchesManufacturer = product.manufacturer === manufacturerFilter;
+                }
+                
+                // Apply status filter
+                if (statusFilter !== 'all') {
+                    matchesStatus = calculateStockStatus(parseInt(product.stockLevel) || 0, salesData[product.sku]?.totalQuantity || 0).status === statusFilter;
+                }
+                
+                return matchesManufacturer && matchesStatus;
+            });
+
+            // Then sort the filtered products
+            const sortedProducts = productsToSort.sort((a, b) => {
+                let valueA, valueB;
+
+                if (sortType === 'sales') {
+                    valueA = salesData[a.sku]?.totalQuantity || 0;
+                    valueB = salesData[b.sku]?.totalQuantity || 0;
+                } else if (sortType === 'stock') {
+                    valueA = parseInt(a.stockLevel) || 0;
+                    valueB = parseInt(b.stockLevel) || 0;
+                }
+
+                if (direction === 'asc') {
+                    return valueA - valueB;
+                } else {
+                    return valueB - valueA;
+                }
+            });
+
+            renderProducts(sortedProducts);
+        }
+
+        // Add this function to calculate stock status
+        function calculateStockStatus(stockLevel, monthlySales) {
+            // If there are no sales
+            if (monthlySales === 0) {
+                return {
+                    status: 'good',
+                    message: 'No Recent Sales'
+                };
+            }
+
+            // Calculate months of stock coverage
+            const monthsOfStock = stockLevel / monthlySales;
+            
+            // Simple status logic based on 1 month of sales
+            if (stockLevel === 0) {
+                return {
+                    status: 'urgent',
+                    message: `Order ${monthlySales} units (1 month)`
+                };
+            } else if (stockLevel < monthlySales) {
+                const needed = monthlySales - stockLevel;
+                return {
+                    status: 'warning',
+                    message: `Order ${needed} units`
+                };
+            } else if (monthsOfStock > 3) {
+                return {
+                    status: 'excess',
+                    message: `${stockLevel} units (${monthsOfStock.toFixed(1)} months)`
+                };
+            } else {
+                return {
+                    status: 'good',
+                    message: `${stockLevel} units (${monthsOfStock.toFixed(1)} months)`
+                };
+            }
+        }
+    </script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
 </head>
     <body>
         <H1 class="heading">Stock Management</H1>
     
-    <!-- Authentication Section -->
-    <div class="container auth-section" id="auth-section">
-        <h3>ShipStation API Authentication</h3>
-        <p>Enter your ShipStation API credentials to access product and sales data.</p>
-        <div class="error-message" id="auth-error"></div>
-        <div class="filters">
-            <div class="filter-group">
-                <label for="api-key">API Key</label>
-                <input type="text" id="api-key" placeholder="Enter your ShipStation API Key">
-            </div>
-            <div class="filter-group">
-                <label for="api-secret">API Secret</label>
-                <input type="password" id="api-secret" placeholder="Enter your ShipStation API Secret">
-            </div>
-            <div>
-                <button class="btn btn-primary" id="connect-api">Connect to ShipStation</button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container" id="main-container" style="display: none;">
+    <div class="container" id="main-container">
         <div id="error-message" class="error-message"></div>
         
         <div class="filters-container">
-    <div class="filters">
-                <div class="filter-group">
-                    <label for="dateFrom">From Date</label>
-                    <input type="date" id="dateFrom">
-                </div>
-                <div class="filter-group">
-                    <label for="dateTo">To Date</label>
-                    <input type="date" id="dateTo">
-                </div>
-                <div class="filter-group">
-                    <label for="stockFilter">Stock Level</label>
-                    <select id="stockFilter">
-            <option value="all">All Stock</option>
-            <option value="low-stock">Low Stock</option>
-            <option value="out-of-stock">Out of Stock</option>
-        </select>
-                </div>
+            <div class="filters">
                 <div class="filter-group">
                     <label for="manufacturerFilter">Manufacturer</label>
                     <select id="manufacturerFilter">
-            <option value="all">All Manufacturers</option>
-        </select>
+                        <option value="all">All Manufacturers</option>
+                    </select>
                 </div>
                 <div class="filter-group">
-                    <label for="salesSort">Sort By</label>
-                    <select id="salesSort">
-            <option value="none">No Sorting</option>
-            <option value="descending">Sales (Descending)</option>
-        </select>
+                    <label for="statusFilter">Stock Status</label>
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="urgent">Urgent Order</option>
+                        <option value="warning">Low Stock</option>
+                        <option value="good">Optimal</option>
+                        <option value="excess">Excess</option>
+                    </select>
                 </div>
                 <div>
                     <button class="btn btn-primary" id="apply-filters">Apply Filters</button>
@@ -304,453 +683,39 @@ table td:hover {
         </div>
         
         <div class="button-container">
-            <button class="btn btn-success" id="download-excel">Download Selected Products</button>
+            <button class="btn btn-success" id="download-excel">Download Displayed Products</button>
             <button class="btn btn-info" id="refresh-data">Refresh Data</button>
-    </div>
+        </div>
 
-    <table class="table table-striped table-dark table-hover">
-        <thead>
-            <tr>
-                <th>Select<input type="checkbox" id="select-all"></th>
-                    <th>SKU</th>
-                    <th>Product Name</th>
-                <th>Manufacturer</th>
-                    <th>Stock Level</th>
-                    <th>Sales Quantity</th>
-                    <th>Sales Amount</th>
-            </tr>
-        </thead>
-        <tbody id="product-table">
-            <!-- Product rows will be dynamically inserted here -->
-        </tbody>
-    </table>
+        <table class="table table-striped table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Sku</th>
+                    <th>Description</th>
+                    <th>Manufacturer</th>
+                    <th class="sortable" data-sort="stock">
+                        Stock Level 
+                        <i class="fas fa-sort"></i>
+                    </th>
+                    <th class="sortable" data-sort="sales">
+                        Monthly Sales 
+                        <i class="fas fa-sort"></i>
+                    </th>
+                    <th>Stock Status</th>
+                </tr>
+            </thead>
+            <tbody id="product-table">
+                <!-- Product rows will be dynamically inserted here -->
+            </tbody>
+        </table>
     </div>
 
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loading-overlay" style="display: none;">
         <div class="spinner"></div>
-        <p id="loading-text">Loading data from ShipStation...</p>
+        <p id="loading-text">Loading data...</p>
     </div>
 
-    <!-- Load scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
-<script>
-        // Global variables
-        let products = [];
-        let salesData = {};
-        let credentials = null;
-let lastChecked = null; // Track last checked checkbox
-
-        // DOM Elements
-        const authSection = document.getElementById('auth-section');
-        const mainContainer = document.getElementById('main-container');
-        const loadingOverlay = document.getElementById('loading-overlay');
-        const loadingText = document.getElementById('loading-text');
-        const errorMessage = document.getElementById('error-message');
-        const authError = document.getElementById('auth-error');
-        
-        // Date inputs default to last 30 days
-        const today = new Date();
-        const thirtyDaysAgo = new Date(today);
-        thirtyDaysAgo.setDate(today.getDate() - 30);
-        
-        document.getElementById('dateFrom').valueAsDate = thirtyDaysAgo;
-        document.getElementById('dateTo').valueAsDate = today;
-        
-        // Event Listeners
-        document.getElementById('connect-api').addEventListener('click', connectToShipStation);
-        document.getElementById('apply-filters').addEventListener('click', applyFilters);
-        document.getElementById('refresh-data').addEventListener('click', fetchAllData);
-        document.getElementById('download-excel').addEventListener('click', downloadExcel);
-        
-        // Check if credentials are stored in localStorage
-        function checkStoredCredentials() {
-            const storedCredentials = localStorage.getItem('shipstation_credentials');
-            if (storedCredentials) {
-                try {
-                    credentials = JSON.parse(storedCredentials);
-                    authSection.style.display = 'none';
-                    mainContainer.style.display = 'block';
-                    fetchAllData();
-                } catch (error) {
-                    console.error('Error parsing stored credentials:', error);
-                    localStorage.removeItem('shipstation_credentials');
-                }
-            }
-        }
-        
-        // Connect to ShipStation API
-        async function connectToShipStation() {
-            const apiKey = document.getElementById('api-key').value.trim();
-            const apiSecret = document.getElementById('api-secret').value.trim();
-            
-            if (!apiKey || !apiSecret) {
-                showAuthError('Please enter both API Key and API Secret');
-                return;
-            }
-            
-            showLoading('Authenticating with ShipStation...');
-            
-            try {
-                // Test the credentials with a simple API call
-                const response = await fetch('https://ssapi.shipstation.com/accounts', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': 'Basic ' + btoa(apiKey + ':' + apiSecret),
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`Authentication failed: ${response.status} ${response.statusText}`);
-                }
-                
-                // Store credentials in memory and localStorage
-                credentials = { apiKey, apiSecret };
-                localStorage.setItem('shipstation_credentials', JSON.stringify(credentials));
-                
-                // Hide auth section and show main container
-                authSection.style.display = 'none';
-                mainContainer.style.display = 'block';
-                
-                // Fetch data
-                await fetchAllData();
-                
-            } catch (error) {
-                console.error('Authentication error:', error);
-                hideLoading();
-                showAuthError('Authentication failed. Please check your API credentials and try again.');
-            }
-        }
-        
-        // Fetch all required data from ShipStation
-        async function fetchAllData() {
-            if (!credentials) {
-                showError('Not authenticated. Please enter your API credentials.');
-                return;
-            }
-            
-            try {
-                showLoading('Fetching products from ShipStation...');
-                await fetchProducts();
-                
-                showLoading('Fetching sales data from ShipStation...');
-                await fetchSalesData();
-                
-                hideLoading();
-                renderProducts(products);
-                
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                hideLoading();
-                showError('Failed to fetch data from ShipStation. ' + error.message);
-            }
-        }
-        
-        // Fetch products from ShipStation API
-        async function fetchProducts() {
-            const response = await fetch('https://ssapi.shipstation.com/products?pageSize=500', {
-                method: 'GET',
-                headers: getAuthHeaders()
-            });
-            
-            if (!response.ok) {
-                throw new Error(`Failed to fetch products: ${response.status} ${response.statusText}`);
-            }
-            
-            const data = await response.json();
-            products = data.products || [];
-            
-            // Extract unique manufacturers
-            const manufacturers = [...new Set(products.map(product => product.manufacturer || 'Unknown'))];
-            populateManufacturers(manufacturers);
-            
-            return products;
-        }
-        
-        // Fetch order data to calculate sales by product
-        async function fetchSalesData() {
-            const dateFrom = document.getElementById('dateFrom').value;
-            const dateTo = document.getElementById('dateTo').value;
-            
-            if (!dateFrom || !dateTo) {
-                throw new Error('Please select a valid date range');
-            }
-            
-            const queryParams = new URLSearchParams({
-                orderDateStart: `${dateFrom} 00:00:00`,
-                orderDateEnd: `${dateTo} 23:59:59`,
-                pageSize: '500',
-                orderStatus: 'shipped'
-            });
-            
-            const response = await fetch(`https://ssapi.shipstation.com/orders?${queryParams}`, {
-                method: 'GET',
-                headers: getAuthHeaders()
-            });
-            
-            if (!response.ok) {
-                throw new Error(`Failed to fetch sales data: ${response.status} ${response.statusText}`);
-            }
-            
-            const data = await response.json();
-            const orders = data.orders || [];
-            
-            // Process orders to calculate sales by product
-            salesData = calculateSalesByProduct(orders);
-            
-            return salesData;
-        }
-        
-        // Calculate sales quantities and amounts by product SKU
-        function calculateSalesByProduct(orders) {
-            const sales = {};
-            
-            orders.forEach(order => {
-                if (order.items && Array.isArray(order.items)) {
-                    order.items.forEach(item => {
-                        const sku = item.sku;
-                        
-                        if (!sales[sku]) {
-                            sales[sku] = {
-                                quantity: 0,
-                                amount: 0
-                            };
-                        }
-                        
-                        sales[sku].quantity += item.quantity || 0;
-                        sales[sku].amount += (item.unitPrice * item.quantity) || 0;
-                    });
-                }
-            });
-            
-            return sales;
-        }
-        
-        // Apply filters to the product list
-        function applyFilters() {
-            const stockFilter = document.getElementById('stockFilter').value;
-            const manufacturerFilter = document.getElementById('manufacturerFilter').value;
-            const salesSort = document.getElementById('salesSort').value;
-            
-            let filteredProducts = [...products];
-            
-            // Apply stock filter
-            if (stockFilter === 'low-stock') {
-                filteredProducts = filteredProducts.filter(product => 
-                    product.quantityAvailable > 0 && product.quantityAvailable < 20);
-            } else if (stockFilter === 'out-of-stock') {
-                filteredProducts = filteredProducts.filter(product => 
-                    product.quantityAvailable <= 0);
-            }
-            
-            // Apply manufacturer filter
-            if (manufacturerFilter !== 'all') {
-                filteredProducts = filteredProducts.filter(product => 
-                    (product.manufacturer || 'Unknown') === manufacturerFilter);
-            }
-            
-            // Apply sorting by sales
-            if (salesSort === 'descending') {
-                filteredProducts.sort((a, b) => {
-                    const salesA = salesData[a.sku] ? salesData[a.sku].quantity : 0;
-                    const salesB = salesData[b.sku] ? salesData[b.sku].quantity : 0;
-                    return salesB - salesA; // Descending order
-                });
-            }
-            
-            renderProducts(filteredProducts);
-        }
-        
-        // Render products in the table
-        function renderProducts(productsToRender) {
-    const tableBody = document.getElementById('product-table');
-    tableBody.innerHTML = ''; // Clear previous rows
-
-            if (productsToRender.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="7" class="text-center">No products found</td></tr>';
-                return;
-            }
-            
-            productsToRender.forEach((product, index) => {
-                const sales = salesData[product.sku] || { quantity: 0, amount: 0 };
-                const stockLevel = product.quantityAvailable || 0;
-
-        let stockClass = '';
-                if (stockLevel <= 0) {
-            stockClass = 'out-of-stock';
-                } else if (stockLevel < 20) {
-            stockClass = 'low-stock';
-        }
-
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td><input type="checkbox" class="product-checkbox"></td>
-                    <td>${product.sku || 'N/A'}</td>
-                    <td>${product.name || 'N/A'}</td>
-                    <td>${product.manufacturer || 'Unknown'}</td>
-                    <td class="${stockClass}">${stockLevel}</td>
-                    <td>${sales.quantity}</td>
-                    <td>$${sales.amount.toFixed(2)}</td>
-        `;
-        tableBody.appendChild(row);
-    });
-
-            addMultiSelect();
-            addSelectAllFunctionality();
-}
-
-        // Enable multi-select with Shift+Click
-function addMultiSelect() {
-    const checkboxes = document.querySelectorAll('.product-checkbox');
-
-    checkboxes.forEach((checkbox, index) => {
-                checkbox.addEventListener('click', function(event) {
-            if (lastChecked !== null && event.shiftKey) {
-                        const start = Math.min(lastChecked, index);
-                        const end = Math.max(lastChecked, index);
-                        
-                for (let i = start; i <= end; i++) {
-                    checkboxes[i].checked = true;
-                            checkboxes[i].closest('tr').classList.add('selected');
-                }
-                    } else {
-                        // Toggle selected class
-                        this.closest('tr').classList.toggle('selected', this.checked);
-            }
-                    
-                    lastChecked = index;
-        });
-    });
-}
-
-        // Add functionality for "Select All" checkbox
-function addSelectAllFunctionality() {
-    const selectAllCheckbox = document.getElementById('select-all');
-    const checkboxes = document.querySelectorAll('.product-checkbox');
-
-            selectAllCheckbox.addEventListener('change', function() {
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
-                    checkbox.closest('tr').classList.toggle('selected', selectAllCheckbox.checked);
-        });
-    });
-
-    checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    // If any checkbox is unchecked, uncheck "Select All"
-            if (!this.checked) {
-                selectAllCheckbox.checked = false;
-            }
-                    // If all checkboxes are checked, check "Select All"
-            else if ([...checkboxes].every(cb => cb.checked)) {
-                selectAllCheckbox.checked = true;
-            }
-        });
-    });
-}  
-
-        // Download selected products as Excel
-function downloadExcel() {
-            const checkboxes = document.querySelectorAll('.product-checkbox:checked');
-            
-            if (checkboxes.length === 0) {
-        alert("Please select at least one product!");
-        return;
-    }
-
-            const selectedProducts = [];
-            
-            checkboxes.forEach(checkbox => {
-                const row = checkbox.closest('tr');
-                const cells = row.cells;
-                
-                selectedProducts.push({
-                    SKU: cells[1].innerText,
-                    Product_Name: cells[2].innerText,
-                    Manufacturer: cells[3].innerText,
-                    Stock_Level: cells[4].innerText,
-                    Sales_Quantity: cells[5].innerText,
-                    Sales_Amount: cells[6].innerText
-                });
-            });
-            
-            // Get current date in YYYY-MM-DD format
-    const currentDate = new Date().toISOString().split('T')[0];
-
-            // Create Excel file
-    const worksheet = XLSX.utils.json_to_sheet(selectedProducts);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Products");
-
-            // Download file
-    const fileName = `Stock_Management_${currentDate}.xlsx`;
-    XLSX.writeFile(workbook, fileName);
-}
-
-        // Populate manufacturer filter options
-        function populateManufacturers(manufacturers) {
-            const manufacturerFilter = document.getElementById('manufacturerFilter');
-            
-            // Clear existing options (except "All Manufacturers")
-            while (manufacturerFilter.options.length > 1) {
-                manufacturerFilter.remove(1);
-            }
-            
-            // Add manufacturer options
-        manufacturers.forEach(manufacturer => {
-            const option = document.createElement('option');
-            option.value = manufacturer;
-            option.textContent = manufacturer;
-            manufacturerFilter.appendChild(option);
-        });
-    }
-
-        // Helper function to get authentication headers
-        function getAuthHeaders() {
-            if (!credentials) {
-                throw new Error('Not authenticated');
-            }
-            
-            return {
-                'Authorization': 'Basic ' + btoa(credentials.apiKey + ':' + credentials.apiSecret),
-                'Content-Type': 'application/json'
-            };
-        }
-        
-        // Show loading overlay
-        function showLoading(message = 'Loading...') {
-            loadingText.textContent = message;
-            loadingOverlay.style.display = 'flex';
-        }
-        
-        // Hide loading overlay
-        function hideLoading() {
-            loadingOverlay.style.display = 'none';
-        }
-        
-        // Show error message
-        function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.style.display = 'block';
-            setTimeout(() => {
-                errorMessage.style.display = 'none';
-            }, 5000);
-        }
-        
-        // Show authentication error
-        function showAuthError(message) {
-            authError.textContent = message;
-            authError.style.display = 'block';
-            setTimeout(() => {
-                authError.style.display = 'none';
-            }, 5000);
-        }
-        
-        // Initialize the page
-        checkStoredCredentials();
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
