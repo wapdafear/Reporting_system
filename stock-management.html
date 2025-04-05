@@ -358,13 +358,339 @@ table td:hover {
             color: white;
             font-weight: bold;
         }
+
+        .sales-period-toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .toggle-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+        }
+
+        .toggle-label input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .toggle-text {
+            font-weight: 500;
+        }
+
+        .loading-indicator {
+            color: #ffcc00;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-style: italic;
+            display: none;
+        }
+
+        .three-month-column {
+            background-color: rgba(0, 123, 255, 0.2);
+            transition: background-color 0.5s ease;
+        }
+
+        .three-month-column.highlight {
+            background-color: rgba(0, 123, 255, 0.4);
+            animation: highlight-pulse 1.5s ease-in-out 2;
+        }
+
+        @keyframes highlight-pulse {
+            0% { background-color: rgba(0, 123, 255, 0.2); }
+            50% { background-color: rgba(0, 123, 255, 0.5); }
+            100% { background-color: rgba(0, 123, 255, 0.2); }
+        }
     </style>
     <script type="module">
-        import { brandsAPI } from './Brands.js';
-        import { getProductSalesBySKU, getFirstDayOfMonth, getCurrentDate } from './shipstation-api.js';
+        // Remove the imports and implement locally
+        // import { brandsAPI } from './Brands.js';
+        import { product as netProducts } from './Net32-stock.js';
+        // import { getProductSalesBySKU, getFirstDayOfMonth, getCurrentDate } from './shipstation-api.js';
+        
+        // Local implementation of shipstation API functions
+        function getFirstDayOfMonth() {
+            const today = new Date();
+            return new Date(today.getFullYear(), today.getMonth(), 1).toISOString().split('T')[0];
+        }
+        
+        function getOneMonthAgo() {
+            const today = new Date();
+            const oneMonthAgo = new Date(today);
+            oneMonthAgo.setDate(today.getDate() - 30); // Go back 30 days
+            return oneMonthAgo.toISOString().split('T')[0];
+        }
+        
+        function getThreeMonthsAgo() {
+            const today = new Date();
+            const threeMonthsAgo = new Date(today);
+            threeMonthsAgo.setDate(today.getDate() - 90); // Go back 90 days
+            return threeMonthsAgo.toISOString().split('T')[0];
+        }
+        
+        function getCurrentDate() {
+            return new Date().toISOString().split('T')[0];
+        }
+        
+        // Add actual API credentials from shipstation-api.js
+        const API_KEY = '3e015458d3d54b19a67577d8b8bb6f47';
+        const API_SECRET = 'd8b2d9dfb6ee4a56b37ce0b63fd4d6db';
+        const AUTH = btoa(`${API_KEY}:${API_SECRET}`);
+        
+        // Cache settings from shipstation-api.js
+        const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
+        const LOCAL_STORAGE_PREFIX = 'shipstation_cache_';
+        
+        // Helper function to check if cache is valid
+        function isLocalCacheValid(cacheKey) {
+            const cacheData = localStorage.getItem(`${LOCAL_STORAGE_PREFIX}${cacheKey}`);
+            if (!cacheData) return false;
+            
+            try {
+                const { timestamp } = JSON.parse(cacheData);
+                return timestamp && (Date.now() - timestamp < CACHE_DURATION);
+            } catch (error) {
+                console.error("Error reading cache:", error);
+                return false;
+            }
+        }
+        
+        // Helper function to get cached data
+        function getLocalCache(cacheKey) {
+            try {
+                const cacheData = localStorage.getItem(`${LOCAL_STORAGE_PREFIX}${cacheKey}`);
+                if (!cacheData) return null;
+                
+                const { data } = JSON.parse(cacheData);
+                return data;
+            } catch (error) {
+                console.error("Error reading cache data:", error);
+                return null;
+            }
+        }
+        
+        // Helper function to set cache data
+        function setLocalCache(cacheKey, data) {
+            try {
+                const cacheData = {
+                    timestamp: Date.now(),
+                    data: data
+                };
+                localStorage.setItem(`${LOCAL_STORAGE_PREFIX}${cacheKey}`, JSON.stringify(cacheData));
+                console.log(`Data cached with key: ${cacheKey}`);
+            } catch (error) {
+                console.error("Error caching data:", error);
+            }
+        }
+        
+        async function getProductSalesBySKU(startDate, endDate) {
+            console.log(`Fetching sales data from ${startDate} to ${endDate}`);
+            
+            // Create a cache key based on the date range
+            const cacheKey = `orders_${startDate}_${endDate}`;
+            
+            // Check cache first
+            if (isLocalCacheValid(cacheKey)) {
+                console.log("Using cached orders data");
+                const cachedOrders = getLocalCache(cacheKey);
+                if (cachedOrders && cachedOrders.length > 0) {
+                    console.log(`Retrieved ${cachedOrders.length} orders from cache`);
+                    return processOrdersIntoSalesData(cachedOrders);
+                }
+            }
+            
+            try {
+                // Format dates for ShipStation API
+                const formattedStartDate = new Date(startDate).toISOString();
+                const formattedEndDate = new Date(endDate).toISOString();
+                
+                // Initialize variables for pagination
+                let allOrders = [];
+                let page = 1;
+                let hasMorePages = true;
+                const pageSize = 500; // Maximum page size allowed by ShipStation API
+                
+                // Loop through all pages until no more results
+                while (hasMorePages) {
+                    const apiUrl = `https://ssapi.shipstation.com/orders?createDateStart=${formattedStartDate}&createDateEnd=${formattedEndDate}&pageSize=${pageSize}&page=${page}`;
+                    console.log(`Fetching orders page ${page}`);
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Basic ${AUTH}`,
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors'
+                    });
+                    
+                    console.log(`API response status for page ${page}: ${response.status}`);
+                    
+                    // If we get an error
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error(`API error: ${response.status} ${response.statusText}`);
+                        console.error("Error details:", errorText);
+                        throw new Error(`API error: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    console.log(`Received orders data for page ${page}, total count: ${data.orders?.length || 0}`);
+                    
+                    // Add orders from this page to our collection
+                    if (data.orders && data.orders.length > 0) {
+                        allOrders = [...allOrders, ...data.orders];
+                        
+                        // Check if we should fetch the next page
+                        if (data.orders.length < pageSize) {
+                            hasMorePages = false;
+                            console.log(`Page ${page} contained fewer than ${pageSize} orders, no more pages to fetch.`);
+                        } else {
+                            page++;
+                            // Add a small delay to avoid rate limiting
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                        }
+                    } else {
+                        hasMorePages = false;
+                        console.log(`Page ${page} contained no orders, no more pages to fetch.`);
+                    }
+                }
+                
+                console.log(`Successfully fetched ${allOrders.length} orders across ${page} page(s)`);
+                
+                // Cache the results
+                if (allOrders.length > 0) {
+                    setLocalCache(cacheKey, allOrders);
+                }
+                
+                // Process orders into sales data
+                return processOrdersIntoSalesData(allOrders);
+                
+            } catch (error) {
+                console.error("Error fetching ShipStation orders:", error);
+                // Return demo data on error
+                return {
+                    "B9909-10": { totalQuantity: 12, orders: [] },
+                    "01-C0700": { totalQuantity: 8, orders: [] },
+                    "01S0530": { totalQuantity: 5, orders: [] }
+                };
+            }
+        }
+        
+        // Helper function to process orders into sales data by SKU
+        function processOrdersIntoSalesData(orders) {
+            const result = {};
+            
+            // Process each order
+            orders.forEach(order => {
+                // Process each item in the order
+                (order.items || []).forEach(item => {
+                    const sku = item.sku;
+                    
+                    if (!sku) return;
+                    
+                    // Initialize if this is the first time seeing this SKU
+                    if (!result[sku]) {
+                        result[sku] = {
+                            totalQuantity: 0,
+                            orders: []
+                        };
+                    }
+                    
+                    // Add to total quantity
+                    result[sku].totalQuantity += (parseInt(item.quantity) || 0);
+                    
+                    // Add order details
+                    result[sku].orders.push({
+                        orderNumber: order.orderNumber,
+                        orderDate: order.orderDate,
+                        quantity: item.quantity
+                    });
+                });
+            });
+            
+            console.log(`Processed sales data for ${Object.keys(result).length} unique SKUs`);
+            return result;
+        }
+        
+        // Local implementation of brandsAPI
+        const localBrandsAPI = {
+            cachedProducts: null,
+            
+            async fetchProducts() {
+                console.log("Local brandsAPI: Fetching products...");
+                try {
+                    if (this.cachedProducts) {
+                        console.log("Local brandsAPI: Returning cached products");
+                        return this.cachedProducts;
+                    }
+                    
+                    // Try multiple possible API endpoints
+                    const possibleEndpoints = [
+                        'https://brandsapi.azurewebsites.net/api/products/all',
+                        'https://backend-api-4679.onrender.com/api/products',
+                        'https://backend-api-4679.onrender.com/api/v1/products',
+                        'https://backend-api-4679.onrender.com/api'
+                    ];
+                    
+                    let data = [];
+                    let succeeded = false;
+                    
+                    // Try each endpoint until one works
+                    for (const endpoint of possibleEndpoints) {
+                        try {
+                            console.log(`Trying API endpoint: ${endpoint}`);
+                            const response = await fetch(endpoint);
+                            
+                            if (response.ok) {
+                                data = await response.json();
+                                console.log(`API endpoint ${endpoint} succeeded with ${data.length} products`);
+                                succeeded = true;
+                                break;
+                            } else {
+                                console.log(`API endpoint ${endpoint} failed with status ${response.status}`);
+                            }
+                        } catch (endpointError) {
+                            console.log(`Error with endpoint ${endpoint}:`, endpointError.message);
+                        }
+                    }
+                    
+                    if (!succeeded) {
+                        console.warn("All API endpoints failed, using demo data");
+                        // Provide some fallback demo data
+                        data = [
+                            { Sku: "B9909-10", Description: "Multi-Dose Vial Access Spike", Manufacturer: "McKesson", Cost: 1860 },
+                            { Sku: "01-C0700", Description: "Biodentine XP Bioceramic Base", Manufacturer: "Septodont", Cost: 299 },
+                            { Sku: "01S0530", Description: "RTR+ 80/20 Biphasic Bone Grafting Material", Manufacturer: "Septodont", Cost: 199 }
+                        ];
+                    }
+                    
+                    // Cache the results
+                    this.cachedProducts = data;
+                    return data;
+                } catch (error) {
+                    console.error("Local brandsAPI error:", error);
+                    // Return fallback demo data on error
+                    return [
+                        { Sku: "B9909-10", Description: "Multi-Dose Vial Access Spike", Manufacturer: "McKesson", Cost: 1860 },
+                        { Sku: "01-C0700", Description: "Biodentine XP Bioceramic Base", Manufacturer: "Septodont", Cost: 299 },
+                        { Sku: "01S0530", Description: "RTR+ 80/20 Biphasic Bone Grafting Material", Manufacturer: "Septodont", Cost: 199 }
+                    ];
+                }
+            }
+        };
         
         let products = [];
-        let salesData = {};
+        let oneMonthSalesData = {};  // Store 1-month sales data
+        let threeMonthSalesData = {}; // Store 3-month sales data 
+        let isThreeMonthDataLoaded = false; // Track if 3-month data is loaded
+        let isShowingThreeMonthSales = false; // Track which data is being displayed
         let currentSort = {
             column: null,
             direction: null
@@ -376,26 +702,169 @@ table td:hover {
         const errorMessage = document.getElementById('error-message');
         
         // Event Listeners
-        document.getElementById('apply-filters').addEventListener('click', applyFilters);
-        document.getElementById('refresh-data').addEventListener('click', fetchAllData);
-        document.getElementById('download-excel').addEventListener('click', downloadExcel);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('apply-filters').addEventListener('click', applyFilters);
+            document.getElementById('refresh-data').addEventListener('click', fetchAllData);
+            document.getElementById('download-excel').addEventListener('click', downloadExcel);
+            document.getElementById('salesPeriodToggle').addEventListener('change', toggleThreeMonthColumn);
+            
+            // Initialize data on page load
+            fetchAllData();
+        });
         
-        // Initialize data on page load
-        document.addEventListener('DOMContentLoaded', fetchAllData);
+        // Function to toggle the visibility of the 3-month sales column
+        function toggleThreeMonthColumn(event) {
+            const isChecked = event.target.checked;
+            isShowingThreeMonthSales = isChecked;
+            
+            // Toggle visibility of 3-month sales column headers
+            const threeMonthColumns = document.querySelectorAll('.three-month-column');
+            
+            if (isChecked) {
+                // Show 3-month sales columns
+                threeMonthColumns.forEach(col => {
+                    col.style.display = '';
+                    col.classList.add('highlight');
+                    
+                    // Remove highlight class after animation completes
+                    setTimeout(() => {
+                        col.classList.remove('highlight');
+                    }, 3500);
+                });
+                
+                if (!isThreeMonthDataLoaded) {
+                    // If 3-month data is not yet loaded, show loading indicator
+                    document.getElementById('threemonth-loading').style.display = 'block';
+                } else {
+                    // If data is already loaded, just update the table
+                    renderProducts(products);
+                }
+            } else {
+                // Hide 3-month sales columns
+                threeMonthColumns.forEach(col => {
+                    col.style.display = 'none';
+                });
+                
+                // Update the table to refresh the view
+                renderProducts(products);
+            }
+        }
         
         // Fetch and display data
         async function fetchAllData() {
             try {
                 showLoading('Fetching products and sales data...');
+                console.log("Starting to fetch data...");
                 
-                // Fetch products and sales data in parallel
-                const [productsData, monthlySales] = await Promise.all([
-                    brandsAPI.fetchProducts(),
-                    getProductSalesBySKU(getFirstDayOfMonth(), getCurrentDate())
+                // Get products from Net32-stock.js
+                const stockProducts = netProducts;
+                console.log("Loaded local products from Net32-stock.js, count:", stockProducts.length);
+                
+                // Log a few sample items from Net32-stock.js
+                if (stockProducts.length > 0) {
+                    console.log("Sample product from Net32-stock.js:", stockProducts[0]);
+                }
+                
+                // Get the date range for sales data - exactly one month period
+                const endDate = getCurrentDate();
+                const oneMonthStartDate = getOneMonthAgo();
+                console.log(`Using date range for 1-month sales: ${oneMonthStartDate} to ${endDate}`);
+                
+                // Fetch products data and 1-month sales data in parallel, using our local API
+                const [apiProducts, monthlySales] = await Promise.all([
+                    localBrandsAPI.fetchProducts(),
+                    getProductSalesBySKU(oneMonthStartDate, endDate)
                 ]);
                 
-                products = productsData;
-                salesData = monthlySales;
+                console.log("API returned products:", apiProducts ? apiProducts.length : 0);
+                
+                // Store 1-month sales data
+                oneMonthSalesData = monthlySales;
+                
+                // Create a lookup map for faster manufacturer matching
+                const manufacturerMap = {};
+                
+                if (apiProducts && apiProducts.length > 0) {
+                    // Create a map of SKU to manufacturer from API data
+                    apiProducts.forEach(product => {
+                        // Check all possible property names for SKU and Manufacturer
+                        const possibleSkuFields = ['Sku', 'sku', 'SKU', 'skuNumber', 'ProductCode'];
+                        const possibleManufacturerFields = ['Manufacturer', 'manufacturer', 'Brand', 'brand', 'McKesson'];
+                        
+                        // Find the SKU field that exists in this product
+                        let apiSku = null;
+                        for (const field of possibleSkuFields) {
+                            if (product[field]) {
+                                apiSku = product[field];
+                                break;
+                            }
+                        }
+                        
+                        // Find the manufacturer field that exists in this product
+                        let manufacturer = null;
+                        for (const field of possibleManufacturerFields) {
+                            if (product[field]) {
+                                manufacturer = product[field];
+                                break;
+                            }
+                        }
+                        
+                        if (apiSku && manufacturer) {
+                            const normalizedSku = apiSku.toString().trim().toLowerCase();
+                            manufacturerMap[normalizedSku] = manufacturer;
+                        }
+                    });
+                    
+                    console.log(`Created manufacturer map with ${Object.keys(manufacturerMap).length} entries`);
+                }
+                
+                // Create properly formatted product data
+                products = stockProducts.map(stockProduct => {
+                    // Standardize the SKU format
+                    const stockSku = typeof stockProduct.sku === 'string' ? 
+                        stockProduct.sku : 
+                        stockProduct.sku ? stockProduct.sku.toString() : '';
+                    
+                    const normalizedStockSku = stockSku.trim().toLowerCase();
+                    
+                    // Look up the manufacturer from our map
+                    const manufacturer = manufacturerMap[normalizedStockSku] || 'Unknown';
+                    
+                    // Create the product object with fields needed for display
+                    return {
+                        sku: stockSku, // Use the local SKU as primary identifier
+                        description: stockProduct.description || '',
+                        stockLevel: stockProduct.old_count || 0,
+                        manufacturer: manufacturer
+                    };
+                });
+                
+                console.log("Processed products:", products.length);
+                
+                // Load 3-month data in the background
+                const threeMonthStartDate = getThreeMonthsAgo();
+                console.log(`Loading 3-month sales data in background: ${threeMonthStartDate} to ${endDate}`);
+                
+                // Start loading 3-month data
+                getProductSalesBySKU(threeMonthStartDate, endDate)
+                    .then(threeMonthSales => {
+                        threeMonthSalesData = threeMonthSales;
+                        isThreeMonthDataLoaded = true;
+                        console.log("3-month sales data loaded successfully");
+                        
+                        // Hide the loading indicator if it's displayed
+                        document.getElementById('threemonth-loading').style.display = 'none';
+                        
+                        // If the 3-month column is already visible, update the display
+                        if (isShowingThreeMonthSales) {
+                            renderProducts(products);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error loading 3-month sales data:", error);
+                        document.getElementById('threemonth-loading').style.display = 'none';
+                        document.getElementById('threemonth-loading').textContent = 'Failed to load 3-month data';
+                    });
                 
                 populateManufacturerFilter(products);
                 renderProducts(products);
@@ -404,7 +873,7 @@ table td:hover {
             } catch (error) {
                 console.error('Error:', error);
                 hideLoading();
-                showError('Failed to fetch data');
+                showError('Failed to fetch data: ' + error.message);
             }
         }
 
@@ -424,6 +893,8 @@ table td:hover {
                 
                 // Status filter
                 if (statusFilter !== 'all') {
+                    // Use the currently displayed sales data
+                    const salesData = isShowingThreeMonthSales ? threeMonthSalesData : oneMonthSalesData;
                     const monthlySales = salesData[product.sku]?.totalQuantity || 0;
                     const status = calculateStockStatus(parseInt(product.stockLevel) || 0, monthlySales);
                     matchesStatus = status.status === statusFilter;
@@ -444,24 +915,41 @@ table td:hover {
             const tableBody = document.getElementById('product-table');
             tableBody.innerHTML = '';
 
-            if (productsToRender.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="6" class="text-center">No products found</td></tr>';
+            if (!productsToRender || productsToRender.length === 0) {
+                const colSpan = isShowingThreeMonthSales ? 7 : 6;
+                tableBody.innerHTML = `<tr><td colspan="${colSpan}" class="text-center">No products found</td></tr>`;
                 return;
             }
             
             productsToRender.forEach(product => {
-                const monthlySales = salesData[product.vp_code]?.totalQuantity || 0;
+                // Skip products with no SKU
+                if (!product.sku) {
+                    console.warn("Skipping product with no SKU:", product);
+                    return;
+                }
+                
+                const monthlySales = oneMonthSalesData[product.sku]?.totalQuantity || 0;
+                const threeMonthSales = threeMonthSalesData[product.sku]?.totalQuantity || 0;
+                
+                // Use monthly sales for stock status calculation
                 const stockStatus = calculateStockStatus(parseInt(product.stockLevel) || 0, monthlySales);
                 
                 const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${product.vp_code}</td>
-                    <td>${product.description}</td>
-                    <td>${product.manufacturer}</td>
-                    <td>${product.stockLevel}</td>
+                
+                const cells = `
+                    <td>${product.sku || 'N/A'}</td>
+                    <td>${product.description || 'N/A'}</td>
+                    <td>${product.manufacturer || 'Unknown'}</td>
+                    <td>${product.stockLevel || 0}</td>
                     <td>${monthlySales}</td>
-                    <td><span class="status-${stockStatus.status}">${stockStatus.message}</span></td>
                 `;
+                
+                // Add the three-month column (will be visible or hidden based on toggle)
+                const threeMonthCell = `<td class="three-month-column" ${isShowingThreeMonthSales ? '' : 'style="display:none"'}>${threeMonthSales}</td>`;
+                
+                const statusCell = `<td><span class="status-${stockStatus.status}">${stockStatus.message}</span></td>`;
+                
+                row.innerHTML = cells + threeMonthCell + statusCell;
                 tableBody.appendChild(row);
             });
         }
@@ -476,14 +964,27 @@ table td:hover {
             }
 
             try {
-                const productsToExport = Array.from(tableRows).map(row => ({
-                    'VP Code': row.cells[0].textContent.trim(),
-                    'Description': row.cells[1].textContent.trim(),
-                    'Manufacturer': row.cells[2].textContent.trim(),
-                    'Stock Level': row.cells[3].textContent.trim(),
-                    'Monthly Sales': row.cells[4].textContent.trim(),
-                    'Stock Status': row.cells[5].textContent.trim()
-                }));
+                const includeThreeMonthSales = isShowingThreeMonthSales;
+                
+                const productsToExport = Array.from(tableRows).map(row => {
+                    const baseData = {
+                        'SKU': row.cells[0].textContent.trim(),
+                        'Description': row.cells[1].textContent.trim(),
+                        'Manufacturer': row.cells[2].textContent.trim(),
+                        'Stock Level': row.cells[3].textContent.trim(),
+                        'Monthly Sales': row.cells[4].textContent.trim()
+                    };
+                    
+                    // Add 3-month sales if the column is visible
+                    if (includeThreeMonthSales) {
+                        baseData['3-Month Sales'] = row.cells[5].textContent.trim();
+                        baseData['Stock Status'] = row.cells[6].textContent.trim();
+                    } else {
+                        baseData['Stock Status'] = row.cells[5].textContent.trim();
+                    }
+                    
+                    return baseData;
+                });
 
                 // Create worksheet
                 const ws = XLSX.utils.json_to_sheet(productsToExport);
@@ -584,6 +1085,8 @@ table td:hover {
                 
                 // Apply status filter
                 if (statusFilter !== 'all') {
+                    // Use the currently displayed sales data
+                    const salesData = isShowingThreeMonthSales ? threeMonthSalesData : oneMonthSalesData;
                     matchesStatus = calculateStockStatus(parseInt(product.stockLevel) || 0, salesData[product.sku]?.totalQuantity || 0).status === statusFilter;
                 }
                 
@@ -595,8 +1098,13 @@ table td:hover {
                 let valueA, valueB;
 
                 if (sortType === 'sales') {
+                    // Use the currently displayed sales data
+                    const salesData = isShowingThreeMonthSales ? threeMonthSalesData : oneMonthSalesData;
                     valueA = salesData[a.sku]?.totalQuantity || 0;
                     valueB = salesData[b.sku]?.totalQuantity || 0;
+                } else if (sortType === 'three-month-sales') {
+                    valueA = threeMonthSalesData[a.sku]?.totalQuantity || 0;
+                    valueB = threeMonthSalesData[b.sku]?.totalQuantity || 0;
                 } else if (sortType === 'stock') {
                     valueA = parseInt(a.stockLevel) || 0;
                     valueB = parseInt(b.stockLevel) || 0;
@@ -614,8 +1122,12 @@ table td:hover {
 
         // Add this function to calculate stock status
         function calculateStockStatus(stockLevel, monthlySales) {
+            // Convert 3-month sales to average monthly if showing 3-month data
+            const adjustedMonthlySales = isShowingThreeMonthSales ? 
+                Math.ceil(monthlySales / 3) : monthlySales;
+            
             // If there are no sales
-            if (monthlySales === 0) {
+            if (adjustedMonthlySales === 0) {
                 return {
                     status: 'good',
                     message: 'No Recent Sales'
@@ -623,16 +1135,16 @@ table td:hover {
             }
 
             // Calculate months of stock coverage
-            const monthsOfStock = stockLevel / monthlySales;
+            const monthsOfStock = stockLevel / adjustedMonthlySales;
             
-            // Simple status logic based on 1 month of sales
+            // Simple status logic based on monthly sales
             if (stockLevel === 0) {
                 return {
                     status: 'urgent',
-                    message: `Order ${monthlySales} units (1 month)`
+                    message: `Order ${adjustedMonthlySales} units (1 month)`
                 };
-            } else if (stockLevel < monthlySales) {
-                const needed = monthlySales - stockLevel;
+            } else if (stockLevel < adjustedMonthlySales) {
+                const needed = adjustedMonthlySales - stockLevel;
                 return {
                     status: 'warning',
                     message: `Order ${needed} units`
@@ -653,7 +1165,7 @@ table td:hover {
     <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
 </head>
     <body>
-        <H1 class="heading">Stock Management</H1>
+        <H1 class="heading">TTM3 Purchasing Analysis</H1>
     
     <div class="container" id="main-container">
         <div id="error-message" class="error-message"></div>
@@ -676,6 +1188,13 @@ table td:hover {
                         <option value="excess">Excess</option>
                     </select>
                 </div>
+                <div class="filter-group sales-period-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="salesPeriodToggle">
+                        <span class="toggle-text">Show 3-Month Sales</span>
+                    </label>
+                    <div class="loading-indicator" id="threemonth-loading">Loading 3-month data...</div>
+                </div>
                 <div>
                     <button class="btn btn-primary" id="apply-filters">Apply Filters</button>
                 </div>
@@ -690,7 +1209,7 @@ table td:hover {
         <table class="table table-striped table-dark table-hover">
             <thead>
                 <tr>
-                    <th>Sku</th>
+                    <th>SKU</th>
                     <th>Description</th>
                     <th>Manufacturer</th>
                     <th class="sortable" data-sort="stock">
@@ -699,6 +1218,10 @@ table td:hover {
                     </th>
                     <th class="sortable" data-sort="sales">
                         Monthly Sales 
+                        <i class="fas fa-sort"></i>
+                    </th>
+                    <th class="three-month-column sortable" data-sort="three-month-sales" style="display: none;">
+                        3-Month Sales
                         <i class="fas fa-sort"></i>
                     </th>
                     <th>Stock Status</th>

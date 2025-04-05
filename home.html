@@ -11,885 +11,238 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #f5f7fa;
             min-height: 100vh;
             color: #333;
+            overflow: hidden;
         }
 
         .main-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 30px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-container {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
         .welcome-banner {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            text-align: left;
-            animation: fadeIn 1s ease-out;
+            padding: 15px 30px;
+            text-align: center;
         }
 
         .welcome-banner h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin: 0;
             font-weight: 600;
         }
 
-        .welcome-banner p {
-            opacity: 0.9;
-            margin-bottom: 0;
-            font-size: 18px;
+        /* Top Navigation Bar */
+        .nav-container {
+            display: flex;
+            background: #fff;
+            height: 64px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 0 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Card Grid Layout */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-            animation: slideUp 0.8s ease-out;
-        }
-
-        .dashboard-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            padding: 25px;
+        .nav-item {
+            padding: 0 25px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: left;
-            border-top: 5px solid transparent;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dashboard-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .dashboard-card.stock {
-            border-top-color: #e91e63;
-        }
-
-        .dashboard-card.inventory {
-            border-top-color: #2196f3;
-        }
-
-        .dashboard-card.comparison {
-            border-top-color: #ff9800;
-        }
-
-        .dashboard-card.label {
-            border-top-color: #673ab7;
-        }
-
-        .dashboard-card.reports {
-            border-top-color: #4caf50;
-        }
-
-        .card-icon {
-            font-size: 36px;
-            margin-bottom: 20px;
-            display: inline-block;
-            padding: 15px;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            text-align: center;
-            line-height: 50px;
-        }
-
-        .stock .card-icon {
-            color: #e91e63;
-            background: rgba(233, 30, 99, 0.1);
-        }
-
-        .inventory .card-icon {
-            color: #2196f3;
-            background: rgba(33, 150, 243, 0.1);
-        }
-
-        .comparison .card-icon {
-            color: #ff9800;
-            background: rgba(255, 152, 0, 0.1);
-        }
-
-        .label .card-icon {
-            color: #673ab7;
-            background: rgba(103, 58, 183, 0.1);
-        }
-
-        .reports .card-icon {
-            color: #4caf50;
-            background: rgba(76, 175, 80, 0.1);
-        }
-
-        .dashboard-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .dashboard-card p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        .card-action {
-            display: inline-block;
-            background: linear-gradient(90deg, #6a11cb, #2575fc);
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border: none;
-            cursor: pointer;
-            margin-top: auto;
-        }
-
-        .card-action:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            color: white;
-        }
-
-        /* Featured Section with Carousel */
-        .featured-section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        .featured-section h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #333;
-            text-align: left;
-        }
-
-        .carousel-item img {
-            border-radius: 10px;
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-        }
-
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 8px;
-            padding: 15px;
-            bottom: 20px;
-        }
-
-        /* Quick Stats Section */
-        .stats-overview {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-            animation: fadeIn 1.4s ease-out;
-        }
-
-        .stats-overview h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-align: left;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-item {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-value {
-            font-size: 28px;
-            font-weight: 700;
-            color: #6a11cb;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 16px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Side Panel Report Layout */
-        .reports-container {
-            display: flex;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-            min-height: 600px;
-            animation: slideUp 0.8s ease-out;
-        }
-
-        .reports-sidebar {
-            width: 280px;
-            background: #f5f7fa;
-            border-right: 1px solid #e1e5eb;
-            padding: 0;
-            overflow-y: auto;
-            flex-shrink: 0;
-        }
-
-        .reports-sidebar-header {
-            padding: 20px;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-  color: white;
-        }
-
-        .reports-sidebar-header h3 {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .reports-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .report-category {
-            border-bottom: 1px solid #e1e5eb;
-        }
-
-        .category-header {
+            color: #4a5568;
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #333;
-            background: rgba(0, 0, 0, 0.03);
-        }
-
-        .category-header:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        .category-header i {
-            margin-right: 10px;
-            width: 20px;
-  text-align: center;
-}
-
-        .category-header .toggle-icon {
-            margin-left: auto;
-            transition: transform 0.3s;
-        }
-
-        .report-category.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .report-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            max-height: 0;
             overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .report-category.active .report-items {
-            max-height: 500px;
-        }
-
-        .report-item {
-            padding: 10px 20px 10px 50px;
-  cursor: pointer;
-            transition: all 0.2s;
-            color: #555;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .report-item:hover {
-            background: rgba(106, 17, 203, 0.05);
-            color: #6a11cb;
-        }
-
-        .report-item.active {
-            background: rgba(106, 17, 203, 0.1);
-            color: #6a11cb;
+            position: relative;
+            height: 64px;
+            border-bottom: 3px solid transparent;
+            margin: 0 5px;
             font-weight: 500;
-            border-left: 3px solid #6a11cb;
         }
 
-        .reports-content {
+        .nav-item i {
+            font-size: 18px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(180deg, rgba(106, 17, 203, 0.05) 0%, rgba(106, 17, 203, 0.1) 100%);
+            color: #6a11cb;
+            border-bottom: 3px solid #6a11cb;
+        }
+
+        .nav-item:hover i {
+            transform: scale(1.1);
+            color: #6a11cb;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(180deg, rgba(106, 17, 203, 0.1) 0%, rgba(106, 17, 203, 0.15) 100%);
+            color: #6a11cb;
+            font-weight: 600;
+            border-bottom: 3px solid #6a11cb;
+            box-shadow: 0 0 10px rgba(106, 17, 203, 0.1);
+        }
+
+        .nav-item.active i {
+            color: #6a11cb;
+        }
+
+        .nav-item span {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-item .tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(51, 51, 51, 0.95);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .nav-item:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            top: 70px;
+        }
+
+        /* Content Panel */
+        .content-container {
             flex-grow: 1;
-            padding: 30px;
-            overflow-y: auto;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            margin: 0;
+            border-radius: 0;
+            height: calc(100vh - 118px); /* Subtract header heights */
         }
 
         .report-panel {
             display: none;
-            animation: fadeIn 0.5s ease-out;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
         .report-panel.active {
             display: block;
         }
 
-        .report-header {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e1e5eb;
-        }
-
-        .report-header h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .report-header p {
-            color: #666;
-            margin-bottom: 0;
-        }
-
-        .report-filter-bar {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-            padding: 15px;
-            background: #f5f7fa;
-            border-radius: 8px;
-        }
-
-        .filter-item {
-            flex-grow: 1;
-            min-width: 200px;
-        }
-
-        .filter-item label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #555;
-        }
-
-        .filter-item select,
-        .filter-item input {
+        .report-frame {
             width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background: white;
-        }
-
-        .filter-actions {
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-        }
-
-        .report-data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        .report-data-table th {
-            background: #f5f7fa;
-            color: #333;
-            font-weight: 600;
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 2px solid #e1e5eb;
-        }
-
-        .report-data-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e1e5eb;
-        }
-
-        .report-data-table tr:hover {
-            background: rgba(0, 0, 0, 0.02);
-        }
-
-        .data-chart {
-            height: 300px;
-            margin-bottom: 30px;
-            background: #f5f7fa;
-            border-radius: 8px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-style: italic;
+            height: 100%;
+            border: none;
         }
 
         /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .main-container {
-                padding: 20px;
-            }
-            
-            .card-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-
-            .reports-container {
-                flex-direction: column;
-            }
-
-            .reports-sidebar {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid #e1e5eb;
-            }
-        }
-
         @media (max-width: 768px) {
-            .welcome-banner {
-                padding: 20px;
+            .nav-item span {
+                display: none;
             }
             
-            .welcome-banner h1 {
-                font-size: 26px;
+            .nav-item {
+                padding: 0 15px;
+                justify-content: center;
             }
             
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .reports-content {
-                padding: 20px;
+            .nav-item i {
+                margin-right: 0;
             }
         }
-
-        @media (max-width: 576px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .carousel-caption {
-                padding: 10px;
-            }
-            
-            .carousel-caption h5 {
-                font-size: 16px;
-            }
-
-            .report-filter-bar {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .filter-actions {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .filter-actions button {
-                width: 100%;
-            }
-}
     </style>
 </head>
 <body>
     <div class="main-container">
-        <!-- Welcome Banner -->
-        <div class="welcome-banner">
-            <h1>Inventory Management Dashboard</h1>
-            <p>Access all your inventory management tools from one central location</p>
-        </div>
-
-        <!-- Quick Stats Overview -->
-        <div class="stats-overview">
-            <h2>Current Inventory Overview</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-value">2,451</div>
-                    <div class="stat-label">Total Products</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">$328,450</div>
-                    <div class="stat-label">Inventory Value</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">43</div>
-                    <div class="stat-label">Low Stock Items</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">12</div>
-                    <div class="stat-label">Out of Stock</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Reports with Left Sidebar and Right Content Panel -->
-        <div class="reports-container">
-            <!-- Left Sidebar with Reports List -->
-            <div class="reports-sidebar">
-                <div class="reports-sidebar-header">
-                    <h3>Report Categories</h3>
-                </div>
-                <ul class="reports-nav">
-                    <!-- Inventory Reports Category -->
-                    <li class="report-category active">
-                        <div class="category-header">
-                            <i class="fas fa-boxes-stacked"></i>
-                            Inventory Reports
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <ul class="report-items">
-                            <li class="report-item active" data-report="inventory-summary">Inventory Summary</li>
-                            <li class="report-item" data-report="low-stock">Low Stock Report</li>
-                            <li class="report-item" data-report="inventory-valuation">Inventory Valuation</li>
-                            <li class="report-item" data-report="inventory-aging">Inventory Aging</li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Sales Reports Category -->
-                    <li class="report-category">
-                        <div class="category-header">
-                            <i class="fas fa-chart-line"></i>
-                            Sales Reports
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <ul class="report-items">
-                            <li class="report-item" data-report="sales-summary">Sales Summary</li>
-                            <li class="report-item" data-report="sales-by-product">Sales by Product</li>
-                            <li class="report-item" data-report="sales-by-category">Sales by Category</li>
-                            <li class="report-item" data-report="top-selling">Top Selling Items</li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Purchase Reports Category -->
-                    <li class="report-category">
-                        <div class="category-header">
-                            <i class="fas fa-shopping-cart"></i>
-                            Purchase Reports
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <ul class="report-items">
-                            <li class="report-item" data-report="purchase-summary">Purchase Summary</li>
-                            <li class="report-item" data-report="purchase-by-vendor">Purchases by Vendor</li>
-                            <li class="report-item" data-report="pending-orders">Pending Purchase Orders</li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Financial Reports Category -->
-                    <li class="report-category">
-                        <div class="category-header">
-                            <i class="fas fa-dollar-sign"></i>
-                            Financial Reports
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <ul class="report-items">
-                            <li class="report-item" data-report="profit-loss">Profit & Loss</li>
-                            <li class="report-item" data-report="cost-analysis">Cost Analysis</li>
-                            <li class="report-item" data-report="margin-report">Margin Report</li>
-                        </ul>
-                    </li>
-                    
-                    <!-- Shipping Reports Category -->
-                    <li class="report-category">
-                        <div class="category-header">
-                            <i class="fas fa-truck"></i>
-                            Shipping Reports
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <ul class="report-items">
-                            <li class="report-item" data-report="shipping-summary">Shipping Summary</li>
-                            <li class="report-item" data-report="shipment-status">Shipment Status</li>
-                            <li class="report-item" data-report="shipping-cost">Shipping Cost Analysis</li>
-                        </ul>
-                    </li>
-                </ul>
+        <!-- Header Section -->
+        <div class="header-container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <h1>Inventory Management Dashboard</h1>
             </div>
             
-            <!-- Right Panel for Report Content -->
-            <div class="reports-content">
-                <!-- Inventory Summary Report Panel -->
-                <div class="report-panel active" id="inventory-summary">
-                    <div class="report-header">
-                        <h2>Inventory Summary Report</h2>
-                        <p>Overview of current inventory status, counts, and value across all warehouses.</p>
-                    </div>
-                    
-                    <div class="report-filter-bar">
-                        <div class="filter-item">
-                            <label for="warehouse-filter">Warehouse</label>
-                            <select id="warehouse-filter">
-                                <option value="all">All Warehouses</option>
-                                <option value="main">Main Warehouse</option>
-                                <option value="east">East Warehouse</option>
-                                <option value="west">West Warehouse</option>
-                            </select>
-                        </div>
-                        <div class="filter-item">
-                            <label for="category-filter">Category</label>
-                            <select id="category-filter">
-                                <option value="all">All Categories</option>
-                                <option value="dental">Dental Supplies</option>
-                                <option value="medical">Medical Equipment</option>
-                                <option value="office">Office Supplies</option>
-                            </select>
-                        </div>
-                        <div class="filter-item">
-                            <label for="status-filter">Status</label>
-                            <select id="status-filter">
-                                <option value="all">All Status</option>
-                                <option value="in-stock">In Stock</option>
-                                <option value="low-stock">Low Stock</option>
-                                <option value="out-of-stock">Out of Stock</option>
-                            </select>
-                        </div>
-                        <div class="filter-actions">
-                            <button class="card-action">Apply Filters</button>
-                        </div>
-                    </div>
-                    
-                    <div class="data-chart">
-                        Chart: Inventory Distribution by Category
-                    </div>
-                    
-                    <table class="report-data-table">
-                        <thead>
-                            <tr>
-                                <th>SKU</th>
-                                <th>Product Name</th>
-                                <th>Category</th>
-                                <th>Warehouse</th>
-                                <th>In Stock</th>
-                                <th>Reserved</th>
-                                <th>Available</th>
-                                <th>Value</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SM-4501</td>
-                                <td>Dental Impression Material</td>
-                                <td>Dental Supplies</td>
-                                <td>Main Warehouse</td>
-                                <td>42</td>
-                                <td>5</td>
-                                <td>37</td>
-                                <td>$3,780.00</td>
-                                <td>In Stock</td>
-                            </tr>
-                            <tr>
-                                <td>SM-2356</td>
-                                <td>Surgical Gloves (Medium)</td>
-                                <td>Medical Equipment</td>
-                                <td>East Warehouse</td>
-                                <td>12</td>
-                                <td>10</td>
-                                <td>2</td>
-                                <td>$240.00</td>
-                                <td>Low Stock</td>
-                            </tr>
-                            <tr>
-                                <td>SM-8976</td>
-                                <td>Autoclave Sterilization Pouches</td>
-                                <td>Dental Supplies</td>
-                                <td>West Warehouse</td>
-                                <td>85</td>
-                                <td>15</td>
-                                <td>70</td>
-                                <td>$1,275.00</td>
-                                <td>In Stock</td>
-                            </tr>
-                            <tr>
-                                <td>SM-3254</td>
-                                <td>Dental Burs Set</td>
-                                <td>Dental Supplies</td>
-                                <td>Main Warehouse</td>
-                                <td>5</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>$1,250.00</td>
-                                <td>Low Stock</td>
-                            </tr>
-                            <tr>
-                                <td>SM-7124</td>
-                                <td>Composite Filling Material</td>
-                                <td>Dental Supplies</td>
-                                <td>East Warehouse</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>$0.00</td>
-                                <td>Out of Stock</td>
-                            </tr>
-                        </tbody>
-                    </table>
-    </div>
-
-                <!-- Other report panels would be here, initially hidden -->
-                <div class="report-panel" id="low-stock">
-                    <div class="report-header">
-                        <h2>Low Stock Report</h2>
-                        <p>Products that are below their reorder level and require attention.</p>
-                    </div>
-                    <!-- Content for this report would go here -->
+            <!-- Top Navigation Bar -->
+            <div class="nav-container">
+                <!-- Stock Management Item -->
+                <div class="nav-item active" data-report="stock-management">
+                    <i class="fas fa-boxes-stacked"></i>
+                    <span>Stock Management</span>
+                    <div class="tooltip">SKU, Description, Manufacturer, Stock Level, Monthly Sales</div>
                 </div>
                 
-                <!-- Add more report panels as needed -->
+                <!-- Inventory Cost Item -->
+                <div class="nav-item" data-report="inventory-cost">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Inventory Sales & Cost</span>
+                    <div class="tooltip">VP_code, Description, Manufacturer, Stock, Sales, Total Sales, Avg Price</div>
+                </div>
+                
+                <!-- Comparison Table Item -->
+                <div class="nav-item" data-report="comparison-table">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Comparison Table</span>
+                    <div class="tooltip">VP_code, Description, Manufacturer, Jan Sales, Jan Total, Dec Sales, Dec Total</div>
+                </div>
             </div>
         </div>
         
-        <!-- Main Feature Cards -->
-        <div class="card-grid">
-            <!-- Stock Management Card -->
-            <div class="dashboard-card stock">
-                <div class="card-icon"><i class="fas fa-boxes-stacked"></i></div>
-                <h3>Stock Management</h3>
-                <p>Track inventory levels, manage stock locations, and set automated reorder points for all your products.</p>
-                <a href="stock-management.html" class="card-action">Manage Stock</a>
+        <!-- Content Area -->
+        <div class="content-container">
+            <!-- Stock Management Panel -->
+            <div class="report-panel active" id="stock-management">
+                <iframe src="stock-management.html" class="report-frame" title="Stock Management"></iframe>
             </div>
-
-            <!-- Inventory Sales/Cost Card -->
-            <div class="dashboard-card inventory">
-                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Inventory Sales & Cost</h3>
-                <p>Analyze sales performance, track costs, and view profit margins for your entire inventory.</p>
-                <a href="Inventory-cost.html" class="card-action">View Sales & Cost</a>
-            </div>
-
-            <!-- Comparison Table Card -->
-            <div class="dashboard-card comparison">
-                <div class="card-icon"><i class="fas fa-table-columns"></i></div>
-                <h3>Comparison Table</h3>
-                <p>Compare product performance, costs, and sales metrics across different time periods or categories.</p>
-                <a href="CompersionTable.html" class="card-action">Compare Data</a>
-            </div>
-
-            <!-- Label Testing Card -->
-            <div class="dashboard-card label">
-                <div class="card-icon"><i class="fas fa-tags"></i></div>
-                <h3>Label Testing</h3>
-                <p>Test and preview shipping labels, barcodes, and product tags before printing or implementing.</p>
-                <a href="orders/labels.html" class="card-action">Test Labels</a>
-            </div>
-
-            <!-- Reports Card -->
-            <div class="dashboard-card reports">
-                <div class="card-icon"><i class="fas fa-file-chart-column"></i></div>
-                <h3>Reports</h3>
-                <p>Generate and export comprehensive reports on all aspects of your inventory and sales performance.</p>
-                <a href="reports.html" class="card-action">View Reports</a>
-            </div>
-        </div>
-        
-        <!-- Featured Section with Carousel -->
-        <div class="featured-section">
-            <h2>Featured Updates</h2>
             
-            <div id="carouselFeatures" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselFeatures" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#carouselFeatures" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#carouselFeatures" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://cdn.shopify.com/s/files/1/0664/1264/2529/files/Main_Title_Slides_for_Blog_2.webp?v=1737721364" class="d-block w-100" alt="Inventory Updates">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Inventory Management Updates</h5>
-                            <p>New features for better inventory control</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0664/1264/2529/files/Main-Title-Slides-for-Blog_600x600.webp?v=1737040371" class="d-block w-100" alt="Sales Dashboard">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Sales Performance Dashboard</h5>
-                            <p>Track your sales metrics in real-time</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0664/1264/2529/files/2_6f580b0d-4b2b-4579-9761-2ff0cea71a93_480x480.svg?v=1736013828" class="d-block w-100" alt="Reporting Tools">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Advanced Reporting Tools</h5>
-                            <p>Generate comprehensive reports with ease</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeatures" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselFeatures" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <!-- Inventory Cost Panel -->
+            <div class="report-panel" id="inventory-cost">
+                <iframe src="Inventory-cost.html" class="report-frame" title="Inventory Cost"></iframe>
+            </div>
+            
+            <!-- Comparison Table Panel -->
+            <div class="report-panel" id="comparison-table">
+                <iframe src="CompersionTable.html" class="report-frame" title="Comparison Table"></iframe>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Toggle category dropdown in sidebar
-        document.querySelectorAll('.category-header').forEach(header => {
-            header.addEventListener('click', function() {
-                const category = this.parentElement;
-                category.classList.toggle('active');
-            });
-        });
-        
-        // Handle report item selection
-        document.querySelectorAll('.report-item').forEach(item => {
+        // Handle navigation item selection
+        document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function() {
                 // Remove active class from all items
-                document.querySelectorAll('.report-item').forEach(el => {
+                document.querySelectorAll('.nav-item').forEach(el => {
                     el.classList.remove('active');
                 });
                 
@@ -911,6 +264,6 @@
                 }
             });
         });
-        </script>
+    </script>
 </body>
 </html>
