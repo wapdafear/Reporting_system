@@ -6,79 +6,244 @@
     <title>Product List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #858796;
+            --success-color: #1cc88a;
+            --info-color: #36b9cc;
+            --warning-color: #f6c23e;
+            --danger-color: #e74a3b;
+        }
+
+        body {
+            background-color: #f8f9fc;
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            padding: 20px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0;
+        }
+
         .table-container {
             margin-top: 20px;
+            padding: 20px;
         }
+
         .refresh-button {
             margin-bottom: 20px;
         }
+
         .loading {
             display: none;
             text-align: center;
             padding: 20px;
         }
-        .error-message {
-            color: #dc3545;
-            margin-top: 10px;
+
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
         }
+
+        .toast {
+            min-width: 300px;
+        }
+
         .edit-mode input {
             width: 100%;
-            padding: 4px;
-            border: 1px solid #ddd;
+            padding: 8px;
+            border: 1px solid #d1d3e2;
             border-radius: 4px;
+            transition: border-color 0.15s ease-in-out;
         }
+
+        .edit-mode input:focus {
+            border-color: var(--primary-color);
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+        }
+
         .action-buttons {
             display: flex;
-            gap: 5px;
+            gap: 8px;
+        }
+
+        .btn {
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.35rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background-color: #f8f9fc;
+            border-bottom: 2px solid #e3e6f0;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .table tbody td {
+            vertical-align: middle;
+            padding: 1rem;
+        }
+
+        .search-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 0.35rem;
+            border: 1px solid #d1d3e2;
+            padding: 0.375rem 0.75rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+        }
+
+        .page-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .dataTables_wrapper .dataTables_filter input {
+            margin-left: 0.5em;
+            border-radius: 0.35rem;
+            border: 1px solid #d1d3e2;
+            padding: 0.375rem 0.75rem;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0.5rem 0.75rem;
+            margin-left: 0.25rem;
+            border-radius: 0.35rem;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: var(--primary-color);
+        }
+
+        .ui-autocomplete {
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 9999;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Product List</h2>
+            <h1 class="page-title">Product Management</h1>
             <div>
-                <button id="addNewRow" class="btn btn-success me-2">Add New Product</button>
-                <a href="product-upload.html" class="btn btn-primary">Upload New Products</a>
+                <button id="saveAllChanges" class="btn btn-primary me-2" style="display: none;">
+                    <i class="fas fa-save"></i> Save All Changes
+                </button>
+                <button id="addNewRow" class="btn btn-success me-2">
+                    <i class="fas fa-plus"></i> Add New Product
+                </button>
+                <a href="product-upload.html" class="btn btn-primary">
+                    <i class="fas fa-upload"></i> Upload Products
+                </a>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select id="manufacturerFilter" class="form-select">
+                        <option value="">All Manufacturers</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button id="refreshButton" class="btn btn-secondary w-100">
+                        <i class="fas fa-sync-alt"></i> Refresh Data
+                    </button>
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
-                    </div>
-                    <div class="col-md-4">
-                        <select id="manufacturerFilter" class="form-select">
-                            <option value="">All Manufacturers</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <button id="refreshButton" class="btn btn-secondary refresh-button">
-                            Refresh Data
-                        </button>
-                    </div>
-                </div>
-
                 <div class="loading">
-                    <div class="spinner-border text-primary" role="status">
+                    <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
+                    <p class="mt-2">Loading products...</p>
                 </div>
 
-                <div id="errorMessage" class="error-message"></div>
-
                 <div class="table-responsive">
-                    <table id="productTable" class="table table-striped">
+                    <table id="productTable" class="table table-hover">
                         <thead>
                             <tr>
                                 <th>SKU</th>
                                 <th>Description</th>
                                 <th>Manufacturer</th>
                                 <th>Cost</th>
-                                
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -90,23 +255,44 @@
         </div>
     </div>
 
+    <!-- Toast container for notifications -->
+    <div class="toast-container">
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <script>
         // Configure the base URL for API endpoints
+        // const API_BASE_URL = 'http://localhost:5000/api';
         const API_BASE_URL = 'https://backend-api-4679.onrender.com/api';
 
         let productTable;
+        let cachedProducts = null;
+        let editedProducts = new Map(); // Track edited products
+        let manufacturers = []; // Store unique manufacturers for autocomplete
 
         // Initialize DataTable
         $(document).ready(function() {
-            // Destroy existing DataTable if it exists
+            initializeDataTable();
+            loadProducts();
+            setupEventListeners();
+        });
+
+        function initializeDataTable() {
             if ($.fn.DataTable.isDataTable('#productTable')) {
                 $('#productTable').DataTable().destroy();
             }
 
             productTable = $('#productTable').DataTable({
+                processing: true,
+                serverSide: false,
+                paging: true,
+                pageLength: 25,
+                lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]],
+                order: [[0, 'asc']],
                 columns: [
                     { 
                         data: 'Sku',
@@ -139,67 +325,22 @@
                         orderable: false,
                         searchable: false,
                         render: function(data) {
-                            return '<button class="btn btn-sm btn-primary edit-btn">Edit</button>';
+                            return '<button class="btn btn-sm btn-primary edit-btn"><i class="fas fa-edit"></i> Edit</button>';
                         }
                     }
                 ]
             });
+        }
 
-            // Load initial data
-            loadProducts();
-
+        function setupEventListeners() {
             // Setup refresh button
             $('#refreshButton').click(function() {
-                // Destroy and reinitialize DataTable before loading new data
-                if ($.fn.DataTable.isDataTable('#productTable')) {
-                    $('#productTable').DataTable().destroy();
-                }
-                productTable = $('#productTable').DataTable({
-                    columns: [
-                        { 
-                            data: 'Sku',
-                            title: 'SKU'
-                        },
-                        { 
-                            data: 'Description',
-                            title: 'Description',
-                            render: function(data) {
-                                return data || 'N/A';
-                            }
-                        },
-                        { 
-                            data: 'Manufacturer',
-                            title: 'Manufacturer',
-                            render: function(data) {
-                                return data || 'Unknown';
-                            }
-                        },
-                        { 
-                            data: 'Cost',
-                            title: 'Cost',
-                            render: function(data) {
-                                return data ? `$${parseFloat(data).toFixed(2)}` : '$0.00';
-                            }
-                        },
-                       
-                        {
-                            data: null,
-                            title: 'Actions',
-                            orderable: false,
-                            searchable: false,
-                            render: function(data) {
-                                return '<button class="btn btn-sm btn-primary edit-btn">Edit</button>';
-                            }
-                        }
-                    ]
-                });
                 loadProducts();
             });
 
             // Setup manufacturer filter
             $('#manufacturerFilter').change(function() {
                 const selectedManufacturer = $(this).val();
-                // Use exact match for manufacturer (column 2)
                 if (selectedManufacturer) {
                     productTable.column(2).search('^' + selectedManufacturer + '$', true, false).draw();
                 } else {
@@ -209,14 +350,31 @@
 
             // Setup add new row button
             $('#addNewRow').click(function() {
-                const newRow = [
-                    '<input type="text" class="form-control" placeholder="Enter SKU">',
-                    '<input type="text" class="form-control" placeholder="Enter Description">',
-                    '<input type="text" class="form-control" placeholder="Enter Manufacturer">',
-                    '<input type="number" step="0.01" class="form-control" placeholder="Enter Cost">',
-                    '<div class="action-buttons"><button class="btn btn-sm btn-success save-new">Save</button><button class="btn btn-sm btn-danger cancel-new">Cancel</button></div>'
-                ];
-                productTable.row.add(newRow).draw(false);
+                const newRow = {
+                    Sku: '',
+                    Description: '',
+                    Manufacturer: '',
+                    Cost: 0,
+                    isNew: true
+                };
+                
+                // Add the row and get its node
+                const rowNode = productTable.row.add(newRow).draw(false).node();
+                
+                // Convert the row to edit mode immediately
+                $(rowNode).find('td:eq(0)').html('<input type="text" class="form-control" placeholder="Enter SKU">');
+                $(rowNode).find('td:eq(1)').html('<input type="text" class="form-control" placeholder="Enter Description">');
+                $(rowNode).find('td:eq(2)').html('<input type="text" class="form-control manufacturer-input" placeholder="Enter Manufacturer">');
+                $(rowNode).find('td:eq(3)').html('<input type="number" step="0.01" class="form-control" placeholder="Enter Cost">');
+                $(rowNode).find('td:eq(4)').html(`
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-success save-new"><i class="fas fa-save"></i> Save</button>
+                        <button class="btn btn-sm btn-danger cancel-new"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+                `);
+
+                // Initialize autocomplete for manufacturer
+                initializeAutocomplete($(rowNode).find('.manufacturer-input'));
             });
 
             // Handle save new row
@@ -228,16 +386,18 @@
                 const cost = row.find('td:eq(3) input').val();
 
                 if (!sku || !manufacturer) {
-                    alert('Please fill in SKU and Manufacturer fields');
+                    showToast('Please fill in SKU and Manufacturer fields', 'error');
                     return;
                 }
 
-                saveProduct({
+                const productData = {
                     Sku: sku,
                     Description: description || '',
                     Manufacturer: manufacturer,
                     Cost: parseFloat(cost) || 0
-                }, row);
+                };
+
+                saveProduct(productData, row);
             });
 
             // Handle cancel new row
@@ -251,97 +411,295 @@
                 const row = $(this).closest('tr');
                 const data = productTable.row(row).data();
                 
-                // Get values from the row data (data is an object with the schema fields)
+                if (!data) {
+                    showToast('Unable to edit this row', 'error');
+                    return;
+                }
+
+                const sku = data.Sku;
                 const description = data.Description || '';
                 const manufacturer = data.Manufacturer || '';
                 const cost = data.Cost ? parseFloat(data.Cost).toString() : '0';
                 
-                // Replace cells with input fields
+                row.find('td:eq(0)').text(sku);
                 row.find('td:eq(1)').html(`<input type="text" class="form-control" value="${description}">`);
-                row.find('td:eq(2)').html(`<input type="text" class="form-control" value="${manufacturer}">`);
+                row.find('td:eq(2)').html(`<input type="text" class="form-control manufacturer-input" value="${manufacturer}">`);
                 row.find('td:eq(3)').html(`<input type="number" step="0.01" class="form-control" value="${cost}">`);
                 row.find('td:eq(4)').html(`
                     <div class="action-buttons">
-                        <button class="btn btn-sm btn-success save-edit">Save</button>
-                        <button class="btn btn-sm btn-danger cancel-edit">Cancel</button>
+                        <button class="btn btn-sm btn-success save-edit"><i class="fas fa-save"></i> Save</button>
+                        <button class="btn btn-sm btn-danger cancel-edit"><i class="fas fa-times"></i> Cancel</button>
                     </div>
                 `);
+
+                // Initialize autocomplete for manufacturer
+                initializeAutocomplete(row.find('.manufacturer-input'));
+
+                // Add to edited products map
+                editedProducts.set(sku, {
+                    row: row,
+                    originalData: data
+                });
+
+                // Show save all button
+                $('#saveAllChanges').show();
             });
 
-            // Handle save edit
-            $('#productTable').on('click', '.save-edit', function() {
+            // Handle save edit for single product
+            $('#productTable').on('click', '.save-edit', async function() {
                 const row = $(this).closest('tr');
                 const data = productTable.row(row).data();
+                
+                if (!data) {
+                    showToast('Unable to save this row', 'error');
+                    return;
+                }
+
                 const sku = data.Sku;
                 const description = row.find('td:eq(1) input').val();
                 const manufacturer = row.find('td:eq(2) input').val();
                 const cost = row.find('td:eq(3) input').val();
 
                 if (!manufacturer) {
-                    alert('Please fill in the manufacturer field');
+                    showToast('Please fill in the manufacturer field', 'error');
                     return;
                 }
-                
-                saveProduct({
+
+                const productData = {
                     Sku: sku,
                     Description: description || '',
                     Manufacturer: manufacturer,
                     Cost: parseFloat(cost) || 0
-                }, row);
-                
+                };
+
+                try {
+                    await saveProduct(productData, row);
+                    // Remove from edited products
+                    editedProducts.delete(sku);
+                    // Hide save all button if no more edits
+                    if (editedProducts.size === 0) {
+                        $('#saveAllChanges').hide();
+                    }
+                } catch (error) {
+                    console.error('Error saving product:', error);
+                    showToast('Error saving product: ' + error.message, 'error');
+                }
             });
 
             // Handle cancel edit
             $('#productTable').on('click', '.cancel-edit', function() {
+                const row = $(this).closest('tr');
+                const data = productTable.row(row).data();
+                
+                if (data) {
+                    // Remove from edited products
+                    editedProducts.delete(data.Sku);
+                    
+                    // Hide save all button if no more edits
+                    if (editedProducts.size === 0) {
+                        $('#saveAllChanges').hide();
+                    }
+                }
+                
+                // Restore original data
                 loadProducts();
+            });
+
+            // Handle save all changes
+            $('#saveAllChanges').click(async function() {
+                const loading = $('.loading');
+                try {
+                    loading.show();
+                    let successCount = 0;
+                    let errorCount = 0;
+
+                    for (const [sku, editData] of editedProducts) {
+                        const row = editData.row;
+                        const description = row.find('td:eq(1) input').val();
+                        const manufacturer = row.find('td:eq(2) input').val();
+                        const cost = row.find('td:eq(3) input').val();
+
+                        if (!manufacturer) {
+                            showToast(`Please fill in the manufacturer field for SKU: ${sku}`, 'error');
+                            continue;
+                        }
+
+                        const productData = {
+                            Sku: sku,
+                            Description: description || '',
+                            Manufacturer: manufacturer,
+                            Cost: parseFloat(cost) || 0
+                        };
+
+                        try {
+                            await saveProduct(productData, row);
+                            successCount++;
+                        } catch (error) {
+                            console.error(`Error saving product ${sku}:`, error);
+                            errorCount++;
+                        }
+                    }
+
+                    // Clear edited products
+                    editedProducts.clear();
+                    $('#saveAllChanges').hide();
+
+                    // Show summary
+                    if (successCount > 0) {
+                        showToast(`Successfully saved ${successCount} products`, 'success');
+                    }
+                    if (errorCount > 0) {
+                        showToast(`Failed to save ${errorCount} products`, 'error');
+                    }
+
+                    // Refresh the table
+                    loadProducts();
+                } catch (error) {
+                    console.error('Error in bulk save:', error);
+                    showToast('Error saving changes: ' + error.message, 'error');
+                } finally {
+                    loading.hide();
+                }
             });
 
             // Setup search functionality
             $('#searchInput').on('keyup', function() {
                 productTable.search(this.value).draw();
             });
-        });
+        }
+
+        function initializeAutocomplete(element) {
+            element.autocomplete({
+                source: manufacturers,
+                minLength: 1,
+                position: { my: "left bottom", at: "left top" }
+            });
+        }
 
         async function saveProduct(productData, row) {
             try {
                 const method = row.find('.save-new').length > 0 ? 'POST' : 'PUT';
+                const sku = encodeURIComponent(productData.Sku);
                 const url = method === 'POST' ? 
                     `${API_BASE_URL}/products` : 
-                    `${API_BASE_URL}/products/${productData.Sku}`;
+                    `${API_BASE_URL}/products/${sku}`;
 
-                console.log('Saving product data:', productData);
-                
+                console.log('Saving product:', { method, url, productData });
+
+                // Validate required fields
+                if (!productData.Sku || !productData.Manufacturer) {
+                    showToast('SKU and Manufacturer are required fields', 'error');
+                    return;
+                }
+
+                // Validate cost is a number
+                if (isNaN(productData.Cost)) {
+                    showToast('Cost must be a valid number', 'error');
+                    return;
+                }
+
+                const requestBody = {
+                    Sku: productData.Sku,
+                    Description: productData.Description || '',
+                    Manufacturer: productData.Manufacturer,
+                    Cost: parseFloat(productData.Cost) || 0
+                };
+
+                console.log('Request body:', requestBody);
+
                 const response = await fetch(url, {
                     method: method,
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
-                    body: JSON.stringify(productData)
+                    body: JSON.stringify(requestBody)
                 });
+                
+                console.log('Response status:', response.status);
                 
                 if (!response.ok) {
                     const errorData = await response.json();
+                    console.error('Error response:', errorData);
                     throw new Error(errorData.message || 'Failed to save product');
                 }
 
-                loadProducts();
+                const savedProduct = await response.json();
+                console.log('Saved product:', savedProduct);
+
+                // Add manufacturer to autocomplete list if new
+                if (!manufacturers.includes(savedProduct.Manufacturer) && savedProduct.Manufacturer) {
+                    manufacturers.push(savedProduct.Manufacturer);
+                    manufacturers.sort();
+                }
+
+                // Update local cache
+                if (method === 'POST') {
+                    if (!cachedProducts) cachedProducts = [];
+                    cachedProducts.push(savedProduct);
+                } else {
+                    const index = cachedProducts.findIndex(p => p.Sku === productData.Sku);
+                    if (index !== -1) {
+                        cachedProducts[index] = savedProduct;
+                    }
+                }
+
+                // Refresh the table
+                updateTable(cachedProducts);
+                showToast(`Product ${method === 'POST' ? 'created' : 'updated'} successfully`, 'success');
             } catch (error) {
-                alert('Error saving product: ' + error.message);
-                console.error('Error saving product:', error);
+                console.error('Error details:', error);
+                showToast('Error saving product: ' + error.message, 'error');
+                throw error;
             }
+        }
+
+        function showToast(message, type = 'info') {
+            const toastId = 'toast-' + Date.now();
+            const bgClass = type === 'success' ? 'bg-success' : 
+                           type === 'error' ? 'bg-danger' : 
+                           type === 'warning' ? 'bg-warning' : 'bg-info';
+            
+            const toastHtml = `
+                <div id="${toastId}" class="toast ${bgClass} text-white" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">${type.charAt(0).toUpperCase() + type.slice(1)}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        ${message}
+                    </div>
+                </div>
+            `;
+            
+            $('.toast-container').append(toastHtml);
+            
+            const toastElement = new bootstrap.Toast(document.getElementById(toastId), {
+                delay: 2000,
+                autohide: true
+            });
+            
+            toastElement.show();
+            
+            // Remove toast from DOM after it's hidden
+            $(`#${toastId}`).on('hidden.bs.toast', function() {
+                $(this).remove();
+            });
         }
 
         async function loadProducts() {
             const loading = $('.loading');
-            const errorMessage = $('#errorMessage');
-            const manufacturerFilter = $('#manufacturerFilter');
 
             try {
                 loading.show();
-                errorMessage.text('');
+
+                // Use cached data if available
+                if (cachedProducts) {
+                    updateTable(cachedProducts);
+                    return;
+                }
 
                 const response = await fetch(`${API_BASE_URL}/products`);
-      
                 
                 if (!response.ok) {
                     throw new Error('Failed to fetch products');
@@ -349,63 +707,46 @@
 
                 const products = await response.json();
                 
-                // Clear existing data
-                if (productTable) {
-                    productTable.clear();
-                }
-                
-                // Add new data
-                if (Array.isArray(products) && products.length > 0) {
-                    // Remove duplicates based on Sku
-                    const uniqueProducts = products.filter((product, index, self) =>
-                        index === self.findIndex((p) => p.Sku === product.Sku)
-                    );
+                // Cache the products
+                cachedProducts = products;
 
-                    // uniqueProducts.forEach(product => {
-                    //     const rowData = [
-                    //         product.Sku || '',
-                    //         product.Description || 'NA',
-                    //         product.Manufacturer || 'Unknown',
-                    //         product.Cost ? `$${parseFloat(product.Cost).toFixed(2)}` : '$0.00',
-                    //         new Date().toLocaleString(),
-                    //         '<div class="action-buttons"><button class="btn btn-sm btn-primary edit-btn">Edit</button></div>'
-                    //     ];
-                        
-                    //     if (productTable) {
-                    //         productTable.row.add(rowData);
-                    //     }
-                    // });
-                    // console.log(uniqueProducts);
-                    // productTable.rows.add(uniqueProducts).draw() ;
-                    console.log(products);
-                    productTable.rows.add(products).draw() ;
-                    
-                    // Redraw the table
-                    if (productTable) {
-                        productTable.draw();
-                    }
-
-                    // Update manufacturer filter options
-                    const manufacturers = [...new Set(uniqueProducts
-                        .map(p => p.Manufacturer || 'Unknown')
-                        .filter(m => m) // Remove empty values
-                    )].sort();
-                    
-                    manufacturerFilter.empty().append('<option value="">All Manufacturers</option>');
-                    manufacturers.forEach(manufacturer => {
-                        manufacturerFilter.append(`<option value="${manufacturer}">${manufacturer}</option>`);
-                    });
-                } else {
-                    console.log('No products data received or empty array');
-                    errorMessage.text('No products found in the database');
-                }
-
+                updateTable(products);
             } catch (error) {
-                errorMessage.text(`Error loading products: ${error.message}`);
+                showToast(`Error loading products: ${error.message}`, 'error');
                 console.error('Error:', error);
             } finally {
                 loading.hide();
             }
+        }
+
+        function updateTable(products) {
+            if (!Array.isArray(products) || products.length === 0) {
+                showToast('No products found in the database', 'warning');
+                return;
+            }
+
+            // Remove duplicates based on Sku
+            const uniqueProducts = products.filter((product, index, self) =>
+                index === self.findIndex((p) => p.Sku === product.Sku)
+            );
+
+            // Update manufacturer list for autocomplete
+            manufacturers = [...new Set(uniqueProducts
+                .map(p => p.Manufacturer || 'Unknown')
+                .filter(m => m && m !== 'Unknown')
+            )].sort();
+
+            // Update manufacturer filter options
+            const manufacturerFilter = $('#manufacturerFilter');
+            manufacturerFilter.empty().append('<option value="">All Manufacturers</option>');
+            manufacturers.forEach(manufacturer => {
+                manufacturerFilter.append(`<option value="${manufacturer}">${manufacturer}</option>`);
+            });
+
+            // Update table data
+            productTable.clear();
+            productTable.rows.add(uniqueProducts);
+            productTable.draw();
         }
     </script>
 </body>
