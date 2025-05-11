@@ -95,9 +95,9 @@
             width: 100%;
             background-color: #1a1a2e;
             color: white;
-        }
-        
-        .table-dark input[type="checkbox"] {
+}
+
+.table-dark input[type="checkbox"] {
             filter: brightness(1.5);
         }
         
@@ -411,9 +411,8 @@ table td:hover {
         // Remove the imports and implement locally
         // import { brandsAPI } from './Brands.js';
         import { product as netProducts } from './Net32-stock.js';
-        // import { getProductSalesBySKU, getFirstDayOfMonth, getCurrentDate } from './shipstation-api.js';
         
-        // Local implementation of shipstation API functions
+        // Add date helper functions
         function getFirstDayOfMonth() {
             const today = new Date();
             return new Date(today.getFullYear(), today.getMonth(), 1).toISOString().split('T')[0];
@@ -437,12 +436,19 @@ table td:hover {
             return new Date().toISOString().split('T')[0];
         }
         
-        // Add actual API credentials from shipstation-api.js
+        function getOneWeekAgo() {
+            const today = new Date();
+            const oneWeekAgo = new Date(today);
+            oneWeekAgo.setDate(today.getDate() - 7); // Go back 7 days
+            return oneWeekAgo.toISOString().split('T')[0];
+        }
+        
+        // Add ShipStation API credentials
         const API_KEY = '3e015458d3d54b19a67577d8b8bb6f47';
         const API_SECRET = 'd8b2d9dfb6ee4a56b37ce0b63fd4d6db';
         const AUTH = btoa(`${API_KEY}:${API_SECRET}`);
         
-        // Cache settings from shipstation-api.js
+        // Cache settings
         const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
         const LOCAL_STORAGE_PREFIX = 'shipstation_cache_';
         
@@ -488,8 +494,10 @@ table td:hover {
             }
         }
         
-        async function getProductSalesBySKU(startDate, endDate) {
-            console.log(`Fetching sales data from ${startDate} to ${endDate}`);
+        // Function to fetch orders from ShipStation API
+        async function fetchShipStationOrders(startDate, endDate) {
+            console.log("Starting to fetch ShipStation orders...");
+            console.log("Date range:", { startDate, endDate });
             
             // Create a cache key based on the date range
             const cacheKey = `orders_${startDate}_${endDate}`;
@@ -500,10 +508,10 @@ table td:hover {
                 const cachedOrders = getLocalCache(cacheKey);
                 if (cachedOrders && cachedOrders.length > 0) {
                     console.log(`Retrieved ${cachedOrders.length} orders from cache`);
-                    return processOrdersIntoSalesData(cachedOrders);
+                    return cachedOrders;
                 }
             }
-            
+
             try {
                 // Format dates for ShipStation API
                 const formattedStartDate = new Date(startDate).toISOString();
@@ -529,14 +537,22 @@ table td:hover {
                         },
                         mode: 'cors'
                     });
-                    
+
                     console.log(`API response status for page ${page}: ${response.status}`);
                     
-                    // If we get an error
+                    // If we get a CORS error or other error
                     if (!response.ok) {
                         const errorText = await response.text();
                         console.error(`API error: ${response.status} ${response.statusText}`);
                         console.error("Error details:", errorText);
+                        
+                        // If this is a CORS error, show a more helpful message
+                        if (response.status === 0 || errorText.includes("CORS") || errorText.includes("cross-origin")) {
+                            console.error("This appears to be a CORS error. ShipStation API doesn't allow direct browser requests.");
+                            console.error("To fix this, you need to call the API from a server or use a server-side proxy.");
+                            throw new Error("CORS error: Cannot access ShipStation API directly from the browser");
+                        }
+                        
                         throw new Error(`API error: ${response.status} ${response.statusText}`);
                     }
                     
@@ -569,6 +585,101 @@ table td:hover {
                     setLocalCache(cacheKey, allOrders);
                 }
                 
+                return allOrders;
+            } catch (error) {
+                console.error("Error fetching ShipStation orders:", error);
+                // Log more details about the error
+                if (error.message) console.error("Error message:", error.message);
+                if (error.stack) console.error("Error stack:", error.stack);
+                return [];
+            }
+        }
+        
+        // Process orders into sales data
+        function processOrdersIntoSalesData(orders) {
+            console.log(`Processing ${orders.length} orders into sales data...`);
+            
+            // Initialize results object
+            const salesBySku = {};
+            
+            // Process each order
+            orders.forEach(order => {
+                // Skip cancelled or rejected orders
+                if (order.orderStatus === 'cancelled' || order.orderStatus === 'rejected') {
+                    return;
+                }
+                
+                // Process each item in the order
+                if (order.items && Array.isArray(order.items)) {
+                    order.items.forEach(item => {
+                        // Get the SKU and normalize it
+                        let sku = item.sku || '';
+                        
+                        // Normalize SKU to match how we normalize in the display logic
+                        sku = sku.trim();
+                        
+                        // Skip empty SKUs
+                        if (!sku) return;
+                        
+                        // Get the quantity
+                        const quantity = parseInt(item.quantity) || 0;
+                        
+                        // Skip items with zero quantity
+                        if (quantity <= 0) return;
+                        
+                        // Initialize the SKU entry if it doesn't exist
+                        if (!salesBySku[sku]) {
+                            salesBySku[sku] = {
+                                totalQuantity: 0,
+                                orders: []
+                            };
+                        }
+                        
+                        // Add the quantity to the total
+                        salesBySku[sku].totalQuantity += quantity;
+                        
+                        // Add the order reference
+                        salesBySku[sku].orders.push({
+                            orderId: order.orderId,
+                            orderNumber: order.orderNumber,
+                            orderDate: order.orderDate,
+                            quantity: quantity
+                        });
+                    });
+                }
+            });
+            
+            console.log(`Processed sales data for ${Object.keys(salesBySku).length} SKUs`);
+            return salesBySku;
+        }
+        
+        // Update the getProductSalesBySKU function to use the ShipStation API directly
+        async function getProductSalesBySKU(startDate, endDate) {
+            console.log(`Fetching sales data from ${startDate} to ${endDate}`);
+            
+            // Create a cache key based on the date range
+            const cacheKey = `orders_${startDate}_${endDate}`;
+            
+            // Check cache first
+            if (isLocalCacheValid(cacheKey)) {
+                console.log("Using cached orders data");
+                const cachedOrders = getLocalCache(cacheKey);
+                if (cachedOrders && cachedOrders.length > 0) {
+                    console.log(`Retrieved ${cachedOrders.length} orders from cache`);
+                    return processOrdersIntoSalesData(cachedOrders);
+                }
+            }
+            
+            try {
+                // Use the ShipStation API directly
+                const allOrders = await fetchShipStationOrders(startDate, endDate);
+                console.log(`Successfully fetched ${allOrders.length} orders`);
+                
+                // Cache the results
+                if (allOrders.length > 0) {
+                    setLocalCache(cacheKey, allOrders);
+                }
+                
                 // Process orders into sales data
                 return processOrdersIntoSalesData(allOrders);
                 
@@ -581,42 +692,6 @@ table td:hover {
                     "01S0530": { totalQuantity: 5, orders: [] }
                 };
             }
-        }
-        
-        // Helper function to process orders into sales data by SKU
-        function processOrdersIntoSalesData(orders) {
-            const result = {};
-            
-            // Process each order
-            orders.forEach(order => {
-                // Process each item in the order
-                (order.items || []).forEach(item => {
-                    const sku = item.sku;
-                    
-                    if (!sku) return;
-                    
-                    // Initialize if this is the first time seeing this SKU
-                    if (!result[sku]) {
-                        result[sku] = {
-                            totalQuantity: 0,
-                            orders: []
-                        };
-                    }
-                    
-                    // Add to total quantity
-                    result[sku].totalQuantity += (parseInt(item.quantity) || 0);
-                    
-                    // Add order details
-                    result[sku].orders.push({
-                        orderNumber: order.orderNumber,
-                        orderDate: order.orderDate,
-                        quantity: item.quantity
-                    });
-                });
-            });
-            
-            console.log(`Processed sales data for ${Object.keys(result).length} unique SKUs`);
-            return result;
         }
         
         // Local implementation of brandsAPI
@@ -674,7 +749,7 @@ table td:hover {
                     // Cache the results
                     this.cachedProducts = data;
                     return data;
-                } catch (error) {
+            } catch (error) {
                     console.error("Local brandsAPI error:", error);
                     // Return fallback demo data on error
                     return [
@@ -696,6 +771,10 @@ table td:hover {
             direction: null
         };
         
+        // Add new global variable to store weekly sales data
+        let weeklySalesData = {};  // Store 1-week sales data 
+        let isShowingWeeklySales = false; // Track if weekly sales is displayed
+        
         // DOM Elements
         const loadingOverlay = document.getElementById('loading-overlay');
         const loadingText = document.getElementById('loading-text');
@@ -707,6 +786,7 @@ table td:hover {
             document.getElementById('refresh-data').addEventListener('click', fetchAllData);
             document.getElementById('download-excel').addEventListener('click', downloadExcel);
             document.getElementById('salesPeriodToggle').addEventListener('change', toggleThreeMonthColumn);
+            document.getElementById('weeklySalesToggle').addEventListener('change', toggleWeeklyColumn);
             
             // Initialize data on page load
             fetchAllData();
@@ -750,6 +830,35 @@ table td:hover {
             }
         }
         
+        function toggleWeeklyColumn(event) {
+            const isChecked = event.target.checked;
+            isShowingWeeklySales = isChecked;
+            
+            // Toggle visibility of weekly sales column headers
+            const weeklyColumns = document.querySelectorAll('.weekly-column');
+            
+            if (isChecked) {
+                // Show weekly sales columns
+                weeklyColumns.forEach(col => {
+                    col.style.display = '';
+                    col.classList.add('highlight');
+                    
+                    // Remove highlight class after animation completes
+                    setTimeout(() => {
+                        col.classList.remove('highlight');
+                    }, 3500);
+                });
+            } else {
+                // Hide weekly sales columns
+                weeklyColumns.forEach(col => {
+                    col.style.display = 'none';
+                });
+            }
+            
+            // Update the table to refresh the view
+            renderProducts(products);
+        }
+        
         // Fetch and display data
         async function fetchAllData() {
             try {
@@ -765,21 +874,25 @@ table td:hover {
                     console.log("Sample product from Net32-stock.js:", stockProducts[0]);
                 }
                 
-                // Get the date range for sales data - exactly one month period
+                // Get the date ranges for sales data
                 const endDate = getCurrentDate();
                 const oneMonthStartDate = getOneMonthAgo();
+                const oneWeekStartDate = getOneWeekAgo();
                 console.log(`Using date range for 1-month sales: ${oneMonthStartDate} to ${endDate}`);
+                console.log(`Using date range for 1-week sales: ${oneWeekStartDate} to ${endDate}`);
                 
-                // Fetch products data and 1-month sales data in parallel, using our local API
-                const [apiProducts, monthlySales] = await Promise.all([
+                // Fetch products data, 1-month sales data, and 1-week sales data in parallel
+                const [apiProducts, monthlySales, weeklySales] = await Promise.all([
                     localBrandsAPI.fetchProducts(),
-                    getProductSalesBySKU(oneMonthStartDate, endDate)
+                    getProductSalesBySKU(oneMonthStartDate, endDate),
+                    getProductSalesBySKU(oneWeekStartDate, endDate)
                 ]);
                 
                 console.log("API returned products:", apiProducts ? apiProducts.length : 0);
                 
-                // Store 1-month sales data
+                // Store sales data
                 oneMonthSalesData = monthlySales;
+                weeklySalesData = weeklySales;
                 
                 // Create a lookup map for faster manufacturer matching
                 const manufacturerMap = {};
@@ -870,7 +983,7 @@ table td:hover {
                 renderProducts(products);
                 initializeSorting();
                 hideLoading();
-            } catch (error) {
+                } catch (error) {
                 console.error('Error:', error);
                 hideLoading();
                 showError('Failed to fetch data: ' + error.message);
@@ -916,7 +1029,11 @@ table td:hover {
             tableBody.innerHTML = '';
 
             if (!productsToRender || productsToRender.length === 0) {
-                const colSpan = isShowingThreeMonthSales ? 7 : 6;
+                // Calculate colspan based on visible columns
+                let colSpan = 6; // Base columns
+                if (isShowingWeeklySales) colSpan++;
+                if (isShowingThreeMonthSales) colSpan++;
+                
                 tableBody.innerHTML = `<tr><td colspan="${colSpan}" class="text-center">No products found</td></tr>`;
                 return;
             }
@@ -928,6 +1045,7 @@ table td:hover {
                     return;
                 }
                 
+                const weeklySales = weeklySalesData[product.sku]?.totalQuantity || 0;
                 const monthlySales = oneMonthSalesData[product.sku]?.totalQuantity || 0;
                 const threeMonthSales = threeMonthSalesData[product.sku]?.totalQuantity || 0;
                 
@@ -941,15 +1059,20 @@ table td:hover {
                     <td>${product.description || 'N/A'}</td>
                     <td>${product.manufacturer || 'Unknown'}</td>
                     <td>${product.stockLevel || 0}</td>
-                    <td>${monthlySales}</td>
                 `;
+                
+                // Add the weekly column (will be visible or hidden based on toggle)
+                const weeklyCell = `<td class="weekly-column" ${isShowingWeeklySales ? '' : 'style="display:none"'}>${weeklySales}</td>`;
+                
+                // Add the monthly column
+                const monthlyCell = `<td>${monthlySales}</td>`;
                 
                 // Add the three-month column (will be visible or hidden based on toggle)
                 const threeMonthCell = `<td class="three-month-column" ${isShowingThreeMonthSales ? '' : 'style="display:none"'}>${threeMonthSales}</td>`;
                 
                 const statusCell = `<td><span class="status-${stockStatus.status}">${stockStatus.message}</span></td>`;
                 
-                row.innerHTML = cells + threeMonthCell + statusCell;
+                row.innerHTML = cells + weeklyCell + monthlyCell + threeMonthCell + statusCell;
                 tableBody.appendChild(row);
             });
         }
@@ -964,24 +1087,35 @@ table td:hover {
             }
 
             try {
+                const includeWeeklySales = isShowingWeeklySales;
                 const includeThreeMonthSales = isShowingThreeMonthSales;
                 
                 const productsToExport = Array.from(tableRows).map(row => {
+                    // Start with base data
                     const baseData = {
                         'SKU': row.cells[0].textContent.trim(),
                         'Description': row.cells[1].textContent.trim(),
                         'Manufacturer': row.cells[2].textContent.trim(),
-                        'Stock Level': row.cells[3].textContent.trim(),
-                        'Monthly Sales': row.cells[4].textContent.trim()
+                        'Stock Level': row.cells[3].textContent.trim()
                     };
+                    
+                    let cellIndex = 4;
+                    
+                    // Add weekly sales if the column is visible
+                    if (includeWeeklySales) {
+                        baseData['Weekly Sales'] = row.cells[cellIndex++].textContent.trim();
+                    }
+                    
+                    // Add monthly sales
+                    baseData['Monthly Sales'] = row.cells[cellIndex++].textContent.trim();
                     
                     // Add 3-month sales if the column is visible
                     if (includeThreeMonthSales) {
-                        baseData['3-Month Sales'] = row.cells[5].textContent.trim();
-                        baseData['Stock Status'] = row.cells[6].textContent.trim();
-                    } else {
-                        baseData['Stock Status'] = row.cells[5].textContent.trim();
+                        baseData['3-Month Sales'] = row.cells[cellIndex++].textContent.trim();
                     }
+                    
+                    // Add stock status
+                    baseData['Stock Status'] = row.cells[cellIndex].textContent.trim();
                     
                     return baseData;
                 });
@@ -990,8 +1124,8 @@ table td:hover {
                 const ws = XLSX.utils.json_to_sheet(productsToExport);
                 
                 // Create workbook
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, 'Products');
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Products');
                 
                 // Generate filename with timestamp
                 const date = new Date();
@@ -1013,7 +1147,7 @@ table td:hover {
             loadingText.textContent = message;
             loadingOverlay.style.display = 'flex';
         }
-        
+
         function hideLoading() {
             loadingOverlay.style.display = 'none';
         }
@@ -1097,11 +1231,12 @@ table td:hover {
             const sortedProducts = productsToSort.sort((a, b) => {
                 let valueA, valueB;
 
-                if (sortType === 'sales') {
-                    // Use the currently displayed sales data
-                    const salesData = isShowingThreeMonthSales ? threeMonthSalesData : oneMonthSalesData;
-                    valueA = salesData[a.sku]?.totalQuantity || 0;
-                    valueB = salesData[b.sku]?.totalQuantity || 0;
+                if (sortType === 'weekly-sales') {
+                    valueA = weeklySalesData[a.sku]?.totalQuantity || 0;
+                    valueB = weeklySalesData[b.sku]?.totalQuantity || 0;
+                } else if (sortType === 'sales') {
+                    valueA = oneMonthSalesData[a.sku]?.totalQuantity || 0;
+                    valueB = oneMonthSalesData[b.sku]?.totalQuantity || 0;
                 } else if (sortType === 'three-month-sales') {
                     valueA = threeMonthSalesData[a.sku]?.totalQuantity || 0;
                     valueB = threeMonthSalesData[b.sku]?.totalQuantity || 0;
@@ -1195,6 +1330,12 @@ table td:hover {
                     </label>
                     <div class="loading-indicator" id="threemonth-loading">Loading 3-month data...</div>
                 </div>
+                <div class="filter-group sales-period-toggle">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="weeklySalesToggle">
+                        <span class="toggle-text">Show Weekly Sales</span>
+                    </label>
+                </div>
                 <div>
                     <button class="btn btn-primary" id="apply-filters">Apply Filters</button>
                 </div>
@@ -1214,6 +1355,10 @@ table td:hover {
                     <th>Manufacturer</th>
                     <th class="sortable" data-sort="stock">
                         Stock Level 
+                        <i class="fas fa-sort"></i>
+                    </th>
+                    <th class="weekly-column sortable" data-sort="weekly-sales" style="display: none;">
+                        Weekly Sales
                         <i class="fas fa-sort"></i>
                     </th>
                     <th class="sortable" data-sort="sales">

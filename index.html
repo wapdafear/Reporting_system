@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
    <script src="script.js" defer></script>
 <style>
      body {
@@ -254,6 +255,15 @@
 
         .dashboard-card.CostTable {
             border-top-color: #00C853;
+        }
+
+        .dashboard-card.mobileapp {
+            border-top-color: #FF5722;
+        }
+
+        .mobileapp .card-icon {
+            color: #FF5722;
+            background: rgba(255, 87, 34, 0.1);
         }
 
         .card-icon {
@@ -545,11 +555,15 @@
                 <a class="nav-link active" aria-current="page" href="home.html">Reports</a>
               </li>
                         <li class="nav-item" id="amazon-link">
-                <a class="nav-link active" aria-current="page" href="Amazon_Reports/Amazon_page.html">Amazon</a>
+                <a class="nav-link active" aria-current="page" href="Orders/amazon-sales-dashboard.html">Sales Dashboard</a>
               </li>
                         <li class="nav-item" id="orders-link">
                 <a class="nav-link active" aria-current="page" href="Orders/Shipstation-orders.html">Orders</a>
              
+              </li>
+
+                <li class="nav-item" id="mobileapp-link">
+                <a class="nav-link active" aria-current="page" href="Orders/mobileapp.html">Product Catalog</a>
               </li>
 
                 <li class="nav-item" id="calculator-link">
@@ -580,14 +594,20 @@
                 
                 <div class="dashboard-card amazon" id="card-amazon">
                     <div class="card-icon"><i class="fab fa-amazon"></i></div>
-                    <h3>Amazon</h3>
-                    <p>Amazon-specific sales data and performance metrics.</p>
+                    <h3>Sales Dashboard</h3>
+                    <p>View sales data and performance metrics across all marketplaces.</p>
                 </div>
                 
                 <div class="dashboard-card orders" id="card-orders">
                     <div class="card-icon"><i class="fas fa-shipping-fast"></i></div>
                     <h3>Orders</h3>
                     <p>Track and manage customer orders from all channels.</p>
+                </div>
+                
+                <div class="dashboard-card mobileapp" id="card-mobileapp">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Product Catalog</h3>
+                    <p>Browse and search the complete product inventory catalog.</p>
                 </div>
                 
                 <div class="dashboard-card calculator" id="card-calculator">
@@ -741,17 +761,17 @@
             "accountant": {
                 password: "acc123",
                 role: "Accountant",
-                permissions: ["orders"]
+                permissions: ["orders", "mobileapp"]
             },
             "purchasing": {
                 password: "pur123",
                 role: "Purchasing",
-                permissions: ["reports"]
+                permissions: ["reports", "mobileapp"]
             },
             "admin": {
                 password: "admin123",
                 role: "Admin",
-                permissions: ["reports", "amazon", "orders", "calculator", "CostTable"]
+                permissions: ["reports", "amazon", "orders", "calculator", "CostTable", "mobileapp"]
             }
         };
 
@@ -776,9 +796,11 @@
         const cardAmazon = document.getElementById('card-amazon');
         const cardOrders = document.getElementById('card-orders');
         const cardCalculator = document.getElementById('card-calculator');
+        const cardMobileapp = document.getElementById('card-mobileapp');
 
         // Debug console logs to check elements
         console.log('Calculator card element:', cardCalculator);
+        console.log('Mobileapp card element:', cardMobileapp);
 
         // Add click handlers to dashboard cards
         cardReports.addEventListener('click', function() {
@@ -789,7 +811,7 @@
         
         cardAmazon.addEventListener('click', function() {
             if (amazonLink.style.display !== 'none') {
-                window.location.href = 'Amazon_Reports/Amazon_page.html';
+                window.location.href = 'Orders/amazon-sales-dashboard.html';
             }
         });
         
@@ -800,6 +822,11 @@
             
         }
     );
+        cardMobileapp.addEventListener('click', function() {
+            if (document.getElementById('mobileapp-link').style.display !== 'none') {
+                window.location.href = 'Orders/mobileapp.html';
+            }
+        });
         cardCalculator.addEventListener('click', function() {
             // Try different path formats to ensure it works
             try {
@@ -893,20 +920,24 @@
             const hasAmazon = userData.permissions.includes('amazon');
             const hasOrders = userData.permissions.includes('orders');
             const hasCalculator = userData.permissions.includes('calculator');
+            const hasMobileapp = userData.permissions.includes('mobileapp');
             
             console.log('Has Calculator permission:', hasCalculator);
+            console.log('Has Mobileapp permission:', hasMobileapp);
             
             // Nav links
             reportsLink.style.display = hasReports ? 'block' : 'none';
             amazonLink.style.display = hasAmazon ? 'block' : 'none';
             ordersLink.style.display = hasOrders ? 'block' : 'none';
             calculatorLink.style.display = hasCalculator ? 'block' : 'none';
+            document.getElementById('mobileapp-link').style.display = hasMobileapp ? 'block' : 'none';
             
             // Dashboard cards - using grid display mode
             cardReports.style.display = hasReports ? 'block' : 'none';
             cardAmazon.style.display = hasAmazon ? 'block' : 'none';
             cardOrders.style.display = hasOrders ? 'block' : 'none';
             cardCalculator.style.display = hasCalculator ? 'block' : 'none';
+            cardMobileapp.style.display = hasMobileapp ? 'block' : 'none';
             
             // Show purchasing-specific view or general stats
             const purchasingView = document.getElementById('purchasing-view');
@@ -929,6 +960,8 @@
 
         // Check user on page load
         window.addEventListener('DOMContentLoaded', function() {
+            // Clear localStorage to force fresh login with updated permissions
+            localStorage.removeItem('currentUser');
             checkLoggedInUser();
         });
 

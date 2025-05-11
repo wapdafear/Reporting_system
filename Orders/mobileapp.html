@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Catalog</title>
+    
+    <!-- STYLES -->
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        /* Layout containers */
+        .container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        
+        /* Header and controls section */
+        .app-header {
+            margin-bottom: 20px;
+        }
+        
+        .app-title {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .controls {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Search bar */
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+        
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+        
+        /* Filter controls */
+        .filters {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-label {
+            font-weight: 500;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .filter-select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            min-width: 150px;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            background-color: #4CAF50;
+            color: white;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .data-table th:hover {
+            background-color: #3e8e41;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .data-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Sort indicators */
+        .sort-indicator::after {
+            content: "↕";
+            margin-left: 5px;
+            opacity: 0.5;
+        }
+        
+        .sort-asc::after {
+            content: "↑";
+            margin-left: 5px;
+        }
+        
+        .sort-desc::after {
+            content: "↓";
+            margin-left: 5px;
+        }
+        
+        /* Status and feedback elements */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(76, 175, 80, 0.3);
+            border-radius: 50%;
+            border-top-color: #4CAF50;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error {
+            color: #d32f2f;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .debug-info {
+            background-color: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            text-align: left;
+            overflow: auto;
+        }
+        
+        /* Pagination controls */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .pagination-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .pagination-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .pagination-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .pagination-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .page-input {
+            width: 60px;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        /* Stats display */
+        .stats {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .stats-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .stats-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .stats-value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .pagination {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .pagination-info {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 class="app-title">Products Catalog</h1>
+        </header>
+        
+        <!-- Loading indicator -->
+        <div id="loading" class="loading">
+            <span class="spinner"></span> Loading products...
+        </div>
+        
+        <!-- Error display -->
+        <div id="error" class="error" style="display: none;"></div>
+        
+        <!-- Controls panel -->
+        <div id="controls" class="controls" style="display: none;">
+            <!-- Search -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search products by ID, code, manufacturer, or status..."
+                >
+                <button id="searchButton" class="btn">Search</button>
+            </div>
+            
+            <!-- Filters -->
+            <div class="filters">
+                <!-- Status filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Status</label>
+                    <select id="statusFilter" class="filter-select">
+                        <option value="">All Statuses</option>
+                    </select>
+                </div>
+                
+                <!-- Manufacturer filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Manufacturer</label>
+                    <select id="manufacturerFilter" class="filter-select">
+                        <option value="">All Manufacturers</option>
+                    </select>
+                </div>
+                
+                <!-- Page size selector -->
+                <div class="filter-group">
+                    <label class="filter-label">Items Per Page</label>
+                    <select id="pageSizeSelect" class="filter-select">
+                        <option value="20">20</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats display -->
+        <div id="stats" class="stats" style="display: none;">
+            <div class="stats-item">
+                <span class="stats-label">Total Products:</span>
+                <span id="totalProducts" class="stats-value">0</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Filtered:</span>
+                <span id="filteredProducts" class="stats-value">0</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Showing:</span>
+                <span id="currentRange" class="stats-value">0-0</span>
+            </div>
+        </div>
+        
+        <!-- Products table -->
+        <table id="productsTable" class="data-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th data-sort="id">ID</th>
+                    <th data-sort="vp_code">VP Code</th>
+                    <th data-sort="description">Description</th>
+                    <th data-sort="manufacturer">Manufacturer</th>
+                    <th data-sort="inventory">Inventory</th>
+                    <th data-sort="status">Status</th>
+                    <th data-sort="cost_price">Cost Price</th>
+                    <th data-sort="selling_price">Selling Price</th>
+                </tr>
+            </thead>
+            <tbody id="productsBody">
+                <!-- Table rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+        
+        <!-- Pagination controls -->
+        <div id="pagination" class="pagination" style="display: none;">
+            <!-- Pagination buttons will be inserted here dynamically -->
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        /**
+         * Product Catalog Application
+         * Fetches and displays products from the Surgimaccare API
+         */
+        
+        // Configuration
+        const CONFIG = {
+            // API endpoint for products
+            apiUrl: 'https://backend-api-4679.onrender.com/external/surgimac/products',
+            // Default page size
+            defaultPageSize: 50,
+            // Default sort configuration
+            defaultSort: { field: 'id', direction: 'asc' }
+        };
+        
+        // Application state
+        const STATE = {
+            // All products loaded from API
+            allProducts: [],
+            // Filtered products based on search/filters
+            filteredProducts: [],
+            // Current page number (1-based)
+            currentPage: 1,
+            // Number of items to display per page
+            pageSize: CONFIG.defaultPageSize,
+            // Current sort configuration
+            sort: { ...CONFIG.defaultSort }
+        };
+        
+        /**
+         * Lifecycle: Initialize the application when DOM is ready
+         */
+        document.addEventListener('DOMContentLoaded', initApp);
+        
+        /**
+         * Initialize the application
+         */
+        function initApp() {
+            // Set initial page size from select element
+            const pageSizeSelect = document.getElementById('pageSizeSelect');
+            STATE.pageSize = parseInt(pageSizeSelect.value || CONFIG.defaultPageSize);
+            
+            // Start loading products
+            fetchProducts();
+        }
+        
+        /**
+         * Fetch all products from the API
+         */
+        async function fetchProducts() {
+            try {
+                // Update loading message
+                const loading = document.getElementById('loading');
+                loading.innerHTML = '<span class="spinner"></span> Loading products... This may take some time for large catalogs.';
+                
+                // Fetch data from API
+                console.log('Fetching products from:', CONFIG.apiUrl);
+                const response = await fetch(CONFIG.apiUrl);
+                
+                // Handle error responses
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+                }
+                
+                // Parse response data
+                const responseData = await response.json();
+                console.log(`Received ${responseData.data ? responseData.data.length : 0} products`);
+                
+                // Validate response format
+                if (!responseData.data) {
+                    throw new Error('Unexpected API response format');
+                }
+                
+                // Store products in application state
+                STATE.allProducts = responseData.data;
+                STATE.filteredProducts = [...STATE.allProducts];
+                
+                // Initialize UI controls and display data
+                initializeControls();
+                updateStats();
+                displayPage(1);
+                
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                showError(`Failed to load products: ${error.message}`);
+            }
+        }
+        
+        /**
+         * Initialize UI controls and event listeners
+         */
+        function initializeControls() {
+            // Show controls panel
+            document.getElementById('controls').style.display = 'block';
+            
+            // Initialize search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            
+            searchButton.addEventListener('click', applyFilters);
+            searchInput.addEventListener('keyup', e => {
+                if (e.key === 'Enter') applyFilters();
+            });
+            
+            // Initialize table header sorting
+            initializeTableSorting();
+            
+            // Populate filter dropdowns with unique values
+            populateFilterOptions();
+            
+            // Initialize page size selector
+            const pageSizeSelect = document.getElementById('pageSizeSelect');
+            pageSizeSelect.addEventListener('change', () => {
+                STATE.pageSize = parseInt(pageSizeSelect.value);
+                displayPage(1);
+            });
+            
+            // Add filter event listeners
+            document.getElementById('statusFilter').addEventListener('change', applyFilters);
+            document.getElementById('manufacturerFilter').addEventListener('change', applyFilters);
+        }
+        
+        /**
+         * Initialize table header sorting functionality
+         */
+        function initializeTableSorting() {
+            const tableHeaders = document.querySelectorAll('th[data-sort]');
+            
+            // Add click event and visual indicators to each sortable column
+            tableHeaders.forEach(header => {
+                // Add initial sort indicator
+                header.classList.add('sort-indicator');
+                
+                // Add click event to sort
+                header.addEventListener('click', () => {
+                    const field = header.getAttribute('data-sort');
+                    
+                    // Update sort direction
+                    if (STATE.sort.field === field) {
+                        STATE.sort.direction = STATE.sort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        STATE.sort.field = field;
+                        STATE.sort.direction = 'asc';
+                    }
+                    
+                    // Update sort indicators
+                    updateSortIndicators();
+                    
+                    // Apply sorting
+                    applyFilters();
+                });
+            });
+            
+            // Set initial sort indicator
+            updateSortIndicators();
+        }
+        
+        /**
+         * Update sort indicator visuals based on current sort state
+         */
+        function updateSortIndicators() {
+            const headers = document.querySelectorAll('th[data-sort]');
+            
+            // Remove existing sort classes
+            headers.forEach(header => {
+                header.classList.remove('sort-asc', 'sort-desc');
+                header.classList.add('sort-indicator');
+            });
+            
+            // Add appropriate sort class to current sort column
+            const currentHeader = document.querySelector(`th[data-sort="${STATE.sort.field}"]`);
+            if (currentHeader) {
+                currentHeader.classList.remove('sort-indicator');
+                currentHeader.classList.add(STATE.sort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+            }
+        }
+        
+        /**
+         * Populate filter dropdowns with unique values from the data
+         */
+        function populateFilterOptions() {
+            // Get unique status values
+            const statusFilter = document.getElementById('statusFilter');
+            const uniqueStatuses = [...new Set(STATE.allProducts.map(product => product.status).filter(Boolean))];
+            
+            // Add options to status filter
+            uniqueStatuses.sort().forEach(status => {
+                const option = document.createElement('option');
+                option.value = status;
+                option.textContent = status;
+                statusFilter.appendChild(option);
+            });
+            
+            // Get unique manufacturer values
+            const manufacturerFilter = document.getElementById('manufacturerFilter');
+            const uniqueManufacturers = [...new Set(STATE.allProducts
+                .map(product => product.manufacturer)
+                .filter(Boolean))];
+            
+            // Add options to manufacturer filter
+            uniqueManufacturers.sort().forEach(manufacturer => {
+                const option = document.createElement('option');
+                option.value = manufacturer;
+                option.textContent = manufacturer;
+                manufacturerFilter.appendChild(option);
+            });
+        }
+        
+        /**
+         * Apply all filters and sorting to the product data
+         */
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const manufacturerFilter = document.getElementById('manufacturerFilter').value;
+            
+            // Filter products based on search term and filter values
+            STATE.filteredProducts = STATE.allProducts.filter(product => {
+                // Search term matching
+                const matchesSearch = !searchTerm || 
+                    (product.id && product.id.toString().toLowerCase().includes(searchTerm)) ||
+                    (product.vp_code && product.vp_code.toLowerCase().includes(searchTerm)) ||
+                    (product.manufacturer && product.manufacturer.toLowerCase().includes(searchTerm)) ||
+                    (product.status && product.status.toLowerCase().includes(searchTerm));
+                
+                // Status filter matching
+                const matchesStatus = !statusFilter || product.status === statusFilter;
+                
+                // Manufacturer filter matching
+                const matchesManufacturer = !manufacturerFilter || 
+                    product.manufacturer === manufacturerFilter;
+                
+                // Product passes filter if it matches all conditions
+                return matchesSearch && matchesStatus && matchesManufacturer;
+            });
+            
+            // Sort the filtered products
+            sortProducts();
+            
+            // Update stats and display first page of results
+            updateStats();
+            displayPage(1);
+        }
+        
+        /**
+         * Sort the filtered products based on current sort state
+         */
+        function sortProducts() {
+            STATE.filteredProducts.sort((a, b) => {
+                let valueA, valueB;
+                
+                // Handle special fields that require extraction from prices array
+                if (STATE.sort.field === 'cost_price') {
+                    valueA = getFirstPriceInfo(a, 'cost_price');
+                    valueB = getFirstPriceInfo(b, 'cost_price');
+                } else if (STATE.sort.field === 'selling_price') {
+                    valueA = getFirstPriceInfo(a, 'selling_price');
+                    valueB = getFirstPriceInfo(b, 'selling_price');
+                } else {
+                    // Normal fields on the product object
+                    valueA = a[STATE.sort.field] || '';
+                    valueB = b[STATE.sort.field] || '';
+                }
+                
+                // Convert to numbers if they are numeric
+                if (!isNaN(valueA)) valueA = Number(valueA);
+                if (!isNaN(valueB)) valueB = Number(valueB);
+                
+                // Compare values based on sort direction
+                if (valueA < valueB) return STATE.sort.direction === 'asc' ? -1 : 1;
+                if (valueA > valueB) return STATE.sort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+        
+        /**
+         * Get price information from the prices array
+         * @param {Object} product - Product object
+         * @param {string} priceType - Type of price to extract ('cost_price' or 'selling_price')
+         * @returns {string|number} - Price value or empty string if not available
+         */
+        function getFirstPriceInfo(product, priceType) {
+            if (!product.prices || product.prices.length === 0) return '';
+            
+            // Find the price with the lowest quantity value
+            const sortedPrices = [...product.prices].sort((a, b) => {
+                return parseInt(a.qty) - parseInt(b.qty);
+            });
+            
+            const firstPrice = sortedPrices[0][priceType];
+            return firstPrice || '';
+        }
+        
+        /**
+         * Update statistics display
+         */
+        function updateStats() {
+            const stats = document.getElementById('stats');
+            stats.style.display = 'flex';
+            
+            // Update counts
+            document.getElementById('totalProducts').textContent = STATE.allProducts.length;
+            document.getElementById('filteredProducts').textContent = STATE.filteredProducts.length;
+            
+            // Calculate range
+            const start = (STATE.currentPage - 1) * STATE.pageSize + 1;
+            const end = Math.min(start + STATE.pageSize - 1, STATE.filteredProducts.length);
+            
+            // Update range display
+            const rangeText = STATE.filteredProducts.length > 0 
+                ? `${start}-${end}` 
+                : '0-0';
+            document.getElementById('currentRange').textContent = rangeText;
+        }
+        
+        /**
+         * Display a specific page of results
+         * @param {number} pageNum - Page number to display (1-based)
+         */
+        function displayPage(pageNum) {
+            // Update current page
+            STATE.currentPage = pageNum;
+            
+            // Calculate slice indices
+            const start = (pageNum - 1) * STATE.pageSize;
+            const end = Math.min(start + STATE.pageSize, STATE.filteredProducts.length);
+            
+            // Get products for this page
+            const pageProducts = STATE.filteredProducts.slice(start, end);
+            
+            // Update the range display in stats
+            const rangeStart = STATE.filteredProducts.length === 0 ? 0 : start + 1;
+            const rangeEnd = end;
+            document.getElementById('currentRange').textContent = `${rangeStart}-${rangeEnd}`;
+            
+            // Render products and pagination
+            renderProducts(pageProducts);
+            renderPagination();
+        }
+        
+        /**
+         * Render products in the table
+         * @param {Array} products - Array of products to display
+         */
+        function renderProducts(products) {
+            const table = document.getElementById('productsTable');
+            const tbody = document.getElementById('productsBody');
+            const loading = document.getElementById('loading');
+            
+            // Clear existing rows
+            tbody.innerHTML = '';
+            
+            // Show table and hide loading
+            loading.style.display = 'none';
+            table.style.display = 'table';
+            
+            // Handle empty results
+            if (products.length === 0) {
+                const row = document.createElement('tr');
+                const cell = document.createElement('td');
+                cell.colSpan = 7; // Updated to match the number of columns
+                cell.className = 'empty-state';
+                cell.textContent = 'No products found matching your criteria';
+                row.appendChild(cell);
+                tbody.appendChild(row);
+                return;
+            }
+            
+            // Add products to table
+            products.forEach(product => {
+                // Get first quantity's price information
+                let costPrice = '';
+                let sellingPrice = '';
+                
+                if (product.prices && product.prices.length > 0) {
+                    // Sort prices by quantity to get the lowest quantity
+                    const sortedPrices = [...product.prices].sort((a, b) => {
+                        return parseInt(a.qty) - parseInt(b.qty);
+                    });
+                    
+                    // Get the first (lowest quantity) price
+                    const firstPrice = sortedPrices[0];
+                    costPrice = firstPrice.cost_price || '';
+                    sellingPrice = firstPrice.selling_price || '';
+                    
+                    // Format prices if they exist
+                    if (costPrice) costPrice = '$' + parseFloat(costPrice).toFixed(2);
+                    if (sellingPrice) sellingPrice = '$' + parseFloat(sellingPrice).toFixed(2);
+                }
+                
+                // Create row
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.id || ''}</td>
+                    <td>${product.vp_code || ''}</td>
+                     <td>${product.description || ''}</td>
+                    <td>${product.manufacturer || ''}</td>
+                    <td>${product.inventory || ''}</td>
+                    <td>${product.status || ''}</td>
+                    <td>${costPrice}</td>
+                    <td>${sellingPrice}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        
+        /**
+         * Render pagination controls
+         */
+        function renderPagination() {
+            const paginationDiv = document.getElementById('pagination');
+            paginationDiv.innerHTML = '';
+            
+            // Calculate total pages
+            const totalPages = Math.ceil(STATE.filteredProducts.length / STATE.pageSize);
+            
+            // Don't show pagination for empty results
+            if (totalPages === 0) {
+                paginationDiv.style.display = 'none';
+                return;
+            }
+            
+            paginationDiv.style.display = 'flex';
+            
+            // First page button
+            const firstButton = document.createElement('button');
+            firstButton.textContent = '« First';
+            firstButton.className = 'pagination-btn';
+            firstButton.disabled = STATE.currentPage === 1;
+            firstButton.onclick = () => displayPage(1);
+            paginationDiv.appendChild(firstButton);
+            
+            // Previous button
+            const prevButton = document.createElement('button');
+            prevButton.textContent = '‹ Previous';
+            prevButton.className = 'pagination-btn';
+            prevButton.disabled = STATE.currentPage === 1;
+            prevButton.onclick = () => displayPage(STATE.currentPage - 1);
+            paginationDiv.appendChild(prevButton);
+            
+            // Page info with direct input
+            const pageInfo = document.createElement('div');
+            pageInfo.className = 'pagination-info';
+            
+            if (totalPages > 1) {
+                // Create page input for easy navigation
+                const pageInput = document.createElement('input');
+                pageInput.type = 'number';
+                pageInput.min = 1;
+                pageInput.max = totalPages;
+                pageInput.value = STATE.currentPage;
+                pageInput.className = 'page-input';
+                
+                // Handle page input navigation
+                pageInput.addEventListener('keyup', e => {
+                    if (e.key === 'Enter') {
+                        const page = parseInt(pageInput.value);
+                        if (page >= 1 && page <= totalPages) {
+                            displayPage(page);
+                        }
+                    }
+                });
+                
+                // Assemble page navigation info
+                pageInfo.appendChild(document.createTextNode('Page '));
+                pageInfo.appendChild(pageInput);
+                pageInfo.appendChild(document.createTextNode(` of ${totalPages}`));
+            } else {
+                pageInfo.textContent = `Page ${STATE.currentPage} of ${totalPages}`;
+            }
+            
+            paginationDiv.appendChild(pageInfo);
+            
+            // Next button
+            const nextButton = document.createElement('button');
+            nextButton.textContent = 'Next ›';
+            nextButton.className = 'pagination-btn';
+            nextButton.disabled = STATE.currentPage === totalPages;
+            nextButton.onclick = () => displayPage(STATE.currentPage + 1);
+            paginationDiv.appendChild(nextButton);
+            
+            // Last page button
+            const lastButton = document.createElement('button');
+            lastButton.textContent = 'Last »';
+            lastButton.className = 'pagination-btn';
+            lastButton.disabled = STATE.currentPage === totalPages;
+            lastButton.onclick = () => displayPage(totalPages);
+            paginationDiv.appendChild(lastButton);
+        }
+        
+        /**
+         * Show error message
+         * @param {string} message - Error message to display
+         */
+        function showError(message) {
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            
+            // Hide loading and show error
+            loading.style.display = 'none';
+            error.style.display = 'block';
+            
+            // Set error message with debug info
+            error.innerHTML = `
+                <div>${message}</div>
+                <div class="debug-info">${message}</div>
+                <button id="retryBtn" class="btn">Retry</button>
+            `;
+            
+            // Add retry button handler
+            document.getElementById('retryBtn').addEventListener('click', () => {
+                error.style.display = 'none';
+                loading.style.display = 'block';
+                fetchProducts();
+            });
+        }
+    </script>
+</body>
+</html>

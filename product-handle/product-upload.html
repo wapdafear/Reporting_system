@@ -208,6 +208,31 @@
                     // Show file info
                     fileName.textContent = file.name;
                     fileInfo.style.display = 'block';
+                    
+                    // Add basic validation of CSV file
+                    validateCSV(file).then(validationResult => {
+                        if (validationResult.isValid) {
+                            // File looks valid
+                            uploadButton.disabled = false;
+                            errorMessage.textContent = '';
+                            
+                            if (validationResult.warnings.length > 0) {
+                                // Show warnings but still allow upload
+                                errorMessage.innerHTML = '<strong>Warnings:</strong><ul class="mt-2">' + 
+                                  validationResult.warnings.map(w => `<li>${w}</li>`).join('') + 
+                                  '</ul>';
+                            }
+                        } else {
+                            // File has issues that will likely cause upload to fail
+                            uploadButton.disabled = true;
+                            errorMessage.innerHTML = '<strong>CSV Validation Failed:</strong><ul class="mt-2">' + 
+                              validationResult.errors.map(e => `<li>${e}</li>`).join('') + 
+                              '</ul>';
+                        }
+                    }).catch(err => {
+                        console.error('CSV validation error:', err);
+                        errorMessage.textContent = 'Error validating CSV: ' + err.message;
+                    });
                 } else {
                     errorMessage.textContent = 'Please select a CSV file';
                     uploadButton.disabled = true;
@@ -240,41 +265,126 @@
                     progressBarInner.style.width = `${progress}%`;
                 }, 100);
 
-                const response = await fetch(`${API_BASE_URL}/upload-products`, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                clearInterval(progressInterval);
-                progressBarInner.style.width = '100%';
+                // Add timeout to prevent indefinite loading
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
                 
-                setTimeout(() => {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/upload-products`, {
+                        method: 'POST',
+                        body: formData,
+                        signal: controller.signal
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    clearInterval(progressInterval);
+                    progressBarInner.style.width = '100%';
+                    
+                    setTimeout(() => {
+                        progressBar.style.display = 'none';
+                    }, 500);
+                    
+                    // Try to parse the response JSON, and capture any parse errors
+                    let result;
+                    const responseText = await response.text();
+                    
+                    try {
+                        result = JSON.parse(responseText);
+                    } catch (parseError) {
+                        console.error('Error parsing JSON response:', parseError);
+                        console.log('Raw server response:', responseText);
+                        throw new Error(`Server returned invalid JSON response. Status: ${response.status} ${response.statusText}`);
+                    }
+
+                    if (response.ok) {
+                        showToast(result.message, 'success');
+                        successMessage.textContent = result.message;
+                        
+                        // Display detailed stats about what happened
+                        if (result.inserted || result.updated) {
+                            const statsMessage = `Processed: ${result.inserted + result.updated} products 
+                                (${result.inserted} new, ${result.updated} updated)`;
+                            document.getElementById('successMessage').innerHTML += `<br>${statsMessage}`;
+                        }
+                        
+                        // Display any errors that occurred during processing
+                        if (result.errors && result.errors.length > 0) {
+                            console.log('CSV processing errors:', result.errors);
+                            let errorList = '<ul class="mt-2">';
+                            result.errors.slice(0, 5).forEach(err => {
+                                errorList += `<li>${err.Sku || 'Unknown SKU'}: ${err.error || 'Unknown error'}</li>`;
+                            });
+                            
+                            if (result.errors.length > 5) {
+                                errorList += `<li>...and ${result.errors.length - 5} more errors</li>`;
+                            }
+                            
+                            errorList += '</ul>';
+                            
+                            errorMessage.innerHTML = `Some rows had errors: ${errorList}`;
+                        }
+                        
+                        // Clear file after successful upload
+                        setTimeout(() => {
+                            fileInput.value = '';
+                            fileInfo.style.display = 'none';
+                            uploadButton.disabled = true;
+                        }, 2000);
+                        
+                    } else {
+                        // For error responses, try to extract as much detail as possible
+                        console.error('Upload failed with status:', response.status, response.statusText);
+                        console.error('Error details:', result);
+                        
+                        let errorMsg = result.error || result.message || 'Upload failed';
+                        
+                        // Add HTTP status information
+                        errorMsg += ` (Status: ${response.status} ${response.statusText})`;
+                        
+                        // Add any validation errors if they exist
+                        if (result.errors && result.errors.length > 0) {
+                            errorMsg += '<ul class="mt-2">';
+                            result.errors.forEach(err => {
+                                let errorDetail = typeof err === 'string' ? err : JSON.stringify(err);
+                                errorMsg += `<li>${errorDetail}</li>`;
+                            });
+                            errorMsg += '</ul>';
+                        }
+                        
+                        showToast('Upload failed: ' + errorMsg, 'error');
+                        errorMessage.innerHTML = errorMsg;
+                    }
+                } catch (fetchError) {
+                    clearInterval(progressInterval);
                     progressBar.style.display = 'none';
-                }, 500);
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    showToast(result.message, 'success');
-                    successMessage.textContent = result.message;
-                    if (result.errors && result.errors.length > 0) {
-                        errorMessage.textContent = `Some rows had errors: ${result.errors.join(', ')}`;
+                    
+                    // Detailed fetch error handling
+                    console.error('Fetch error:', fetchError);
+                    
+                    let errorMessage = 'Error uploading file: ';
+                    
+                    if (fetchError.name === 'AbortError') {
+                        errorMessage += 'Request timed out after 30 seconds. The server might be overloaded or down.';
+                    } else if (fetchError.message.includes('NetworkError')) {
+                        errorMessage += 'Network error. Check your internet connection or the server might be down.';
+                    } else if (fetchError.message.includes('CORS')) {
+                        errorMessage += 'CORS policy error. The server is not configured to accept requests from this origin.';
+                    } else {
+                        errorMessage += fetchError.message;
                     }
                     
-                    // Clear file after successful upload
-                    setTimeout(() => {
-                        fileInput.value = '';
-                        fileInfo.style.display = 'none';
-                        uploadButton.disabled = true;
-                    }, 2000);
+                    showToast(errorMessage, 'error');
+                    document.getElementById('errorMessage').innerHTML = errorMessage;
                     
-                } else {
-                    showToast(result.error || 'Upload failed', 'error');
-                    errorMessage.textContent = result.error || 'Upload failed';
+                    // Log additional debugging information
+                    console.log('File size:', file.size, 'bytes');
+                    console.log('File type:', file.type);
+                    console.log('API URL:', `${API_BASE_URL}/upload-products`);
                 }
             } catch (error) {
-                showToast('Error uploading file: ' + error.message, 'error');
-                errorMessage.textContent = 'Error uploading file: ' + error.message;
+                console.error('General error:', error);
+                showToast('Error: ' + error.message, 'error');
+                errorMessage.textContent = 'Error: ' + error.message;
                 progressBar.style.display = 'none';
             } finally {
                 uploadButton.disabled = false;
@@ -341,6 +451,114 @@
             document.getElementById(toastId).addEventListener('hidden.bs.toast', function() {
                 this.remove();
             });
+        }
+
+        // Add utility function to analyze CSV
+        function analyzeCSV(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    try {
+                        const content = e.target.result;
+                        const lines = content.split('\n');
+                        const headers = lines[0].split(',');
+                        
+                        // Basic CSV analysis
+                        const analysis = {
+                            headers: headers,
+                            rowCount: lines.length - 1,
+                            sampleRows: []
+                        };
+                        
+                        // Get a few sample rows
+                        for (let i = 1; i < Math.min(4, lines.length); i++) {
+                            if (lines[i].trim()) {
+                                const row = {};
+                                const values = lines[i].split(',');
+                                
+                                headers.forEach((header, index) => {
+                                    row[header] = values[index];
+                                });
+                                
+                                analysis.sampleRows.push(row);
+                            }
+                        }
+                        
+                        resolve(analysis);
+                    } catch (error) {
+                        reject(error);
+                    }
+                };
+                
+                reader.onerror = reject;
+                reader.readAsText(file);
+            });
+        }
+
+        // Add CSV validation function
+        async function validateCSV(file) {
+            const result = {
+                isValid: true,
+                errors: [],
+                warnings: [],
+                analysis: null
+            };
+            
+            try {
+                // Analyze the CSV structure
+                const analysis = await analyzeCSV(file);
+                result.analysis = analysis;
+                
+                // Check for required headers
+                const requiredHeaders = ['Sku', 'Manufacturer'];
+                const missingHeaders = requiredHeaders.filter(h => !analysis.headers.includes(h));
+                
+                if (missingHeaders.length > 0) {
+                    result.isValid = false;
+                    result.errors.push(`Missing required headers: ${missingHeaders.join(', ')}`);
+                }
+                
+                // Check for empty required fields in sample rows
+                let emptySkus = 0;
+                let emptyManufacturers = 0;
+                
+                analysis.sampleRows.forEach((row, index) => {
+                    if (!row.Sku || row.Sku.trim() === '') {
+                        emptySkus++;
+                    }
+                    
+                    if (!row.Manufacturer || row.Manufacturer.trim() === '') {
+                        emptyManufacturers++;
+                    }
+                });
+                
+                if (emptySkus > 0) {
+                    result.warnings.push(`Found ${emptySkus} empty SKU values in sample rows`);
+                }
+                
+                if (emptyManufacturers > 0) {
+                    result.warnings.push(`Found ${emptyManufacturers} empty Manufacturer values in sample rows`);
+                }
+                
+                // Check file size
+                if (file.size > 1024 * 1024) { // 1MB
+                    result.warnings.push(`File size is large (${(file.size / 1024 / 1024).toFixed(2)}MB). Consider splitting into smaller files if upload fails.`);
+                }
+                
+                // Add data summary
+                result.warnings.push(`File contains ${analysis.rowCount} products with these columns: ${analysis.headers.join(', ')}`);
+                
+                // Log validation results
+                console.log('CSV Validation Results:', result);
+                
+            } catch (error) {
+                result.isValid = false;
+                result.errors.push(`Error analyzing CSV: ${error.message}`);
+                console.error('CSV validation error:', error);
+            }
+            
+            return result;
         }
     </script>
 </body>

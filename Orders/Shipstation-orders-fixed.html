@@ -689,9 +689,24 @@
     </table>
 
     <!-- Add pagination controls -->
-    <div class="pagination-controls" style="display: none;">
+    <div class="pagination-controls" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px; background-color: #1d1d1d; border-radius: 5px;">
         <div class="pagination-info" style="color: white;">
-            Showing <span id="current-range">0-0</span> of <span id="total-count">0</span> orders
+            Showing <span id="current-range">0-0</span> of <span id="total-count">0</span> orders (<span id="page-info">Page 0/0</span>)
+        </div>
+        <div class="pagination-buttons" style="display: flex; gap: 10px;">
+            <button id="first-page" class="btn btn-sm btn-outline-secondary">First</button>
+            <button id="prev-page" class="btn btn-sm btn-outline-secondary">Previous</button>
+            <button id="next-page" class="btn btn-sm btn-outline-secondary">Next</button>
+            <button id="last-page" class="btn btn-sm btn-outline-secondary">Last</button>
+        </div>
+        <div class="page-size-control" style="display: flex; align-items: center; gap: 10px;">
+            <label for="page-size" style="color: white;">Orders per page:</label>
+            <select id="page-size" class="custom-select custom-select-sm" style="width: auto;">
+                <option value="50">50</option>
+                <option value="100" selected>100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+            </select>
         </div>
     </div>
 
@@ -703,7 +718,7 @@
         
         // Add pagination variables at the top
         let currentPage = 1;
-        let ordersPerPage = 100000; // Set to a very large number to effectively display all items
+        let ordersPerPage = 100;
         let allFilteredOrders = [];
         
         // Import functions from shipstation-api.js and Brands.js
@@ -713,12 +728,6 @@
         // First, add enhanced debugging in the DOMContentLoaded event handler
         window.addEventListener('DOMContentLoaded', function() {
             console.log('DOM content loaded, initializing...');
-            
-            // Set default filters to "All Stores" option
-            const storeFilter = document.getElementById('store-filter');
-            if (storeFilter) {
-                storeFilter.selectedIndex = 0; // Set to "All Stores" by default
-            }
             
             // Show loading indicator immediately
             showLoading(true, 'Initializing and loading data');
@@ -868,6 +877,13 @@
                             console.log('All data loaded successfully, displaying results...');
                             // Process orders and display when all data is ready
                             if (orders && orders.length > 0) {
+                                // Reset pagination when new data is loaded
+                                currentPage = 1;
+                                ordersPerPage = 100;
+                                
+                                // Pre-calculate all shipping costs once
+                                precalculateAllOrderData();
+                                
                                 // Pre-process orders with shipment data for faster filtering later
                                 return preprocessOrders(orders, shipments)
                                     .then(processed => {
@@ -879,6 +895,8 @@
                                 if (tableBody) {
                                     tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders found for the selected date range</td></tr>`;
                                 }
+                                updateStatistics([]);
+                                updatePaginationInfo(0, 0, 0);
                             }
                         })
                         .finally(() => {
@@ -953,448 +971,42 @@
         let cachedShipments = [];
         let processedOrders = [];
         
-        // Show/hide custom date range based on selection
-        if (dateRangeSelect) {
-            dateRangeSelect.addEventListener('change', function() {
-                console.log("Date range changed to:", this.value);
-                if (this.value === 'custom') {
-                    customDateContainer.style.display = 'flex';
-                    
-                    // Initialize date inputs with reasonable defaults if empty
-                    if (!startDateInput.value) {
-                        const defaultStart = new Date();
-                        defaultStart.setDate(defaultStart.getDate() - 7); // Default to 7 days ago
-                        startDateInput.value = defaultStart.toISOString().split('T')[0];
-                    }
-                    
-                    if (!endDateInput.value) {
-                        const defaultEnd = new Date();
-                        endDateInput.value = defaultEnd.toISOString().split('T')[0];
-                    }
-                } else {
-                    customDateContainer.style.display = 'none';
-                }
-            });
+        // Global cache to store shipping calculations across filter operations
+        const shippingCalculationCache = {};
+        const orderMetadataCache = {};
+        
+        // Function to detect multi-label orders by counting shipments
+        function detectMultiLabelOrder(orderNumber, shipments) {
+            if (!shipments || !Array.isArray(shipments)) return false;
+            
+            const orderShipments = shipments.filter(shipment => 
+                shipment.orderNumber === orderNumber);
+            
+            return orderShipments.length > 1;
         }
         
-        // Add listeners for date inputs to trigger reload on change
-        if (startDateInput) {
-            startDateInput.addEventListener('change', function() {
-                console.log("Start date changed to:", this.value);
-                // Don't auto-reload on date input change, let user click Apply Filters
-            });
-        }
-        
-        if (endDateInput) {
-            endDateInput.addEventListener('change', function() {
-                console.log("End date changed to:", this.value);
-                // Don't auto-reload on date input change, let user click Apply Filters
-            });
-        }
-        
-        // Update the event listener for the load button to make sure it reloads data
-        const loadDataBtn = document.getElementById('load-data');
-        if (loadDataBtn) {
-            loadDataBtn.addEventListener('click', function() {
-                console.log("Load button clicked - loading data with current filters");
-                
-                // Clear existing cache to force reload when date range changes
-                cachedOrders = [];
-                cachedShipments = [];
-                
-                loadData();
-            });
-        }
-        
-        // Function to show loading indicator
-        function showLoading(show, message = 'Loading data...') {
-            const loadingIndicator = document.getElementById('loading-indicator');
-            if (loadingIndicator) {
-                loadingIndicator.innerHTML = message;
-                loadingIndicator.style.display = show ? 'flex' : 'none';
-            }
-            // Update global loading state
-            isLoading = show;
+        // Function to count shipments for an order
+        function countShipments(orderNumber, shipments) {
+            if (!shipments || !Array.isArray(shipments)) return 0;
             
-            // Disable/enable load button
-            const loadDataBtn = document.getElementById('load-data');
-            if (loadDataBtn) {
-                loadDataBtn.disabled = show;
-                loadDataBtn.innerHTML = show ? 'Loading...' : 'Apply Filters';
-            }
-        }
-        
-        // Helper function to determine store type with better error handling
-        function getStoreType(order) {
-            if (!order) return "452424"; // Default to Network if order is undefined
-            
-            try {
-            // Direct store ID check - most reliable method
-            const storeId = order.advancedOptions?.storeId;
-            
-            // If we have a valid store ID and it's one of our known IDs, use it directly
-            if (storeId) {
-                const knownIds = ["373980", "498468", "470756", "428642", "331737", "452424", "498364", "498515", "494346"];
-                if (knownIds.includes(storeId)) {
-                    return storeId;
-                }
-            }
-            
-                // Get store name from various possible locations with null checks
-                const storeName = (order.storeName || 
-                             order.advancedOptions?.storeName || 
-                                 order.store?.name || '').toLowerCase();
-            
-            // Check for marketplace-specific indicators
-            if (order.marketplaceId === "ATVPDKIKX0DER" || 
-                order.advancedOptions?.source === "amazon" ||
-                    storeName.includes("amazon")) {
-                return "373980"; // SurgiMac Amazon Store
-            } 
-            
-            if (order.advancedOptions?.source === "ebay" || 
-                order.advancedOptions?.channel === "eBay" ||
-                    storeName.includes("ebay")) {
-                    if (storeName.includes("surgimac")) {
-                    return "498468"; // SurgiMac Ebay Store
-                    } else if (storeName.includes("dd")) {
-                    return "470756"; // DD eBay Store
-                } else {
-                        return "498468"; // Default eBay store
-                }
-            } 
-            
-            if (order.advancedOptions?.source === "walmart" || 
-                order.advancedOptions?.channel === "Walmart" ||
-                    storeName.includes("walmart")) {
-                return "498364"; // New Walmart Store
-            } 
-            
-                if (storeName.includes("dental") || 
-                    storeName.includes("district")) {
-                return "428642"; // Dental District
-            } 
-            
-                if (storeName.includes("manual")) {
-                return "331737"; // Manual Orders
-            } 
-            
-                if (storeName.includes("network")) {
-                return "452424"; // Network
-            } 
-            
-                if (storeName.includes("supply") || 
-                    storeName.includes("district")) {
-                return "498515"; // Supply District
-            } 
-            
-                if (storeName.includes("surgimac")) {
-                return "494346"; // SurgiMac Store
-            }
-            
-            // Default to Network if we can't determine
-            return "452424";
-            } catch (error) {
-                console.warn('Error determining store type:', error);
-                return "452424"; // Default to Network on error
-            }
-        }
-        
-        // Function to create store badges
-        function getStoreBadge(storeId) {
-            // Default to Network if not handled
-            let badge = '<span class="store-badge" style="background-color: #4682b4; color: white;">Network</span>';
-            
-            switch(storeId) {
-                case "373980": // SurgiMac Amazon Store
-                    badge = '<span class="store-badge amazon">SurgiMac Amazon</span>';
-                    break;
-                case "498468": // SurgiMac Ebay Store
-                    badge = '<span class="store-badge ebay">SurgiMac eBay</span>';
-                    break;
-                case "470756": // DD eBay Store
-                    badge = '<span class="store-badge" style="background-color: #9370db; color: white;">DD eBay</span>';
-                    break;
-                case "428642": // Dental District
-                    badge = '<span class="store-badge" style="background-color: #3cb371; color: white;">Dental District</span>';
-                    break;
-                case "331737": // Manual Orders
-                    badge = '<span class="store-badge" style="background-color: #20b2aa; color: white;">Manual</span>';
-                    break;
-                case "452424": // Network
-                    badge = '<span class="store-badge" style="background-color: #4682b4; color: white;">Network</span>';
-                    break;
-                case "498364": // New Walmart Store
-                    badge = '<span class="store-badge walmart">Walmart</span>';
-                    break;
-                case "498515": // Supply District
-                    badge = '<span class="store-badge" style="background-color: #ff6347; color: white;">Supply</span>';
-                    break;
-                case "494346": // SurgiMac Store
-                    badge = '<span class="store-badge" style="background-color: #6a5acd; color: white;">SurgiMac</span>';
-                    break;
-            }
-            
-            return badge;
-        }
-        
-        // Function to get date range based on selection
-        function getDateRange() {
-            if (!dateRangeSelect) {
-                // If dateRangeSelect doesn't exist, return today's date range
-                const today = new Date();
-                const startDate = new Date(today);
-                startDate.setHours(0, 0, 0, 0);
-                const endDate = new Date(today);
-                endDate.setHours(23, 59, 59, 999);
-                
-                return {
-                    startDate: startDate.toISOString(),
-                    endDate: endDate.toISOString()
-                };
-            }
-            
-            const dateRangeValue = dateRangeSelect.value;
-            const today = new Date();
-            
-            let startDate, endDate;
-            
-            switch(dateRangeValue) {
-                case 'today':
-                    startDate = new Date(today);
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate = new Date(today);
-                    endDate.setHours(23, 59, 59, 999);
-                    break;
-                case 'yesterday':
-                    startDate = new Date(today);
-                    startDate.setDate(today.getDate() - 1);
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate = new Date(today);
-                    endDate.setDate(today.getDate() - 1);
-                    endDate.setHours(23, 59, 59, 999);
-                    break;
-                case 'last7':
-                    startDate = new Date(today);
-                    startDate.setDate(today.getDate() - 7);
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate = new Date(today);
-                    endDate.setHours(23, 59, 59, 999);
-                    break;
-                case 'last30':
-                    startDate = new Date(today);
-                    startDate.setDate(today.getDate() - 30);
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate = new Date(today);
-                    endDate.setHours(23, 59, 59, 999);
-                    break;
-                case 'custom':
-                    // Ensure the date inputs have values
-                    if (!startDateInput.value || !endDateInput.value) {
-                        console.warn('Custom date range selected but date inputs are empty. Defaulting to last 7 days.');
-                        
-                        // Default to last 7 days if inputs are empty
-                        startDate = new Date(today);
-                        startDate.setDate(today.getDate() - 7);
-                        startDate.setHours(0, 0, 0, 0);
-                        endDate = new Date(today);
-                        endDate.setHours(23, 59, 59, 999);
-                        
-                        // Update the inputs to reflect the default values
-                        startDateInput.value = startDate.toISOString().split('T')[0];
-                        endDateInput.value = endDate.toISOString().split('T')[0];
-                    } else {
-                        // Parse input values
-                    startDate = new Date(startDateInput.value);
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate = new Date(endDateInput.value);
-                    endDate.setHours(23, 59, 59, 999);
-                        
-                        // Validate dates
-                        if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
-                            console.error('Invalid date input. Using defaults.');
-                            startDate = new Date(today);
-                            startDate.setDate(today.getDate() - 7);
-                            startDate.setHours(0, 0, 0, 0);
-                            endDate = new Date(today);
-                            endDate.setHours(23, 59, 59, 999);
-                        }
-                        
-                        // Ensure end date is not before start date
-                        if (endDate < startDate) {
-                            console.warn('End date is before start date. Swapping dates.');
-                            const temp = startDate;
-                            startDate = endDate;
-                            endDate = temp;
-                            
-                            // Update inputs to reflect the swap
-                            startDateInput.value = startDate.toISOString().split('T')[0];
-                            endDateInput.value = endDate.toISOString().split('T')[0];
-                        }
-                    }
-                    break;
-                default:
-                    startDate = new Date(today);
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate = new Date(today);
-                    endDate.setHours(23, 59, 59, 999);
-            }
-            
-            // Log the date range for debugging
-            console.log(`Date range: ${startDate.toISOString()} to ${endDate.toISOString()}`);
-            
-            // Update the visual date range display
-            updateDateRangeDisplay(startDate, endDate);
-            
-            return {
-                startDate: startDate.toISOString(),
-                endDate: endDate.toISOString()
-            };
-        }
-        
-        // Function to update the date range display with human-readable dates
-        function updateDateRangeDisplay(startDate, endDate) {
-            const dateRangeDisplay = document.getElementById('date-range-display');
-            if (!dateRangeDisplay) return;
-            
-            const formatDate = (date) => {
-                return date.toLocaleDateString('en-US', { 
-                    month: 'short', 
-                    day: 'numeric', 
-                    year: 'numeric'
-                });
-            };
-            
-            const start = formatDate(startDate);
-            const end = formatDate(endDate);
-            
-            // Display date range
-            if (start === end) {
-                dateRangeDisplay.textContent = `Showing orders for ${start}`;
-            } else {
-                dateRangeDisplay.textContent = `Showing orders from ${start} to ${end}`;
-            }
-        }
-        
-        // Function to filter orders based on user selections
-        function filterOrders(orders) {
-            if (!storeFilter || !statusFilter) {
-                return orders;
-            }
-            
-            const storeFilterValue = storeFilter.value;
-            const orderStatus = statusFilter.value;
-            const brandFilterValue = brandFilter ? brandFilter.value : 'all';
-            const showMultiItemOnly = multiItemFilter ? multiItemFilter.checked : false;
-            
-            return orders.filter(order => {
-                // Filter by store
-                if (storeFilterValue !== 'all') {
-                    const orderStoreId = getStoreType(order);
-                    if (storeFilterValue !== orderStoreId) {
-                        return false;
-                    }
-                }
-                
-                // Filter by status
-                if (orderStatus !== 'all' && order.orderStatus !== orderStatus) {
-                    return false;
-                }
-                
-                // Filter by multi-item
-                if (showMultiItemOnly && order.items.length < 2) {
-                    return false;
-                }
-                
-                // Filter by brand if needed
-                if (brandFilterValue !== 'all') {
-                    // Check if any item in the order has the selected brand
-                    return order.items.some(item => {
-                        const productInfo = findProductCost(item.sku);
-                        const brand = productInfo.manufacturer || '';
-                        return brand && brand.toLowerCase() === brandFilterValue.toLowerCase();
-                    });
-                }
-                
-                return true;
-            });
-        }
-
-        // Enhanced findProductCost function for direct API data
-        function findProductCost(sku) {
-            if (!sku) return { manufacturer: 'Unknown', cost_price: 0 };
-            
-            try {
-                // Simple direct lookup in the cached products
-                if (!window.cachedProductsData || !Array.isArray(window.cachedProductsData)) {
-                    console.warn('Product cache not initialized or invalid:', window.cachedProductsData);
-                    return { manufacturer: 'Unknown', cost_price: 0 };
-                }
-
-                // Normalize the SKU from ShipStation for comparison
-                const skuString = String(sku).trim().toLowerCase();
-                
-                // 1. First try exact matches
-                const exactMatch = window.cachedProductsData.find(p => {
-                    if (!p) return false;
-                    
-                    // Check API data format which uses Sku field (capital S)
-                    const apiSku = p.Sku ? String(p.Sku).trim().toLowerCase() : '';
-                    return skuString === apiSku;
-                });
-                
-                if (exactMatch) {
-                    return {
-                        manufacturer: exactMatch.Manufacturer || 'Unknown',
-                        cost_price: typeof exactMatch.Cost === 'number' ? exactMatch.Cost : 
-                                   (typeof exactMatch.Cost === 'string' ? parseFloat(exactMatch.Cost) : 0)
-                    };
-                }
-                
-                // 2. If no exact match, try partial matching as fallback
-                const partialMatch = window.cachedProductsData.find(p => {
-                    if (!p || !p.Sku) return false;
-                    
-                    // API data uses Sku field (capital S)
-                    const apiSku = String(p.Sku).trim().toLowerCase();
-                    
-                    return (apiSku.includes(skuString) || skuString.includes(apiSku));
-                });
-                
-                if (partialMatch) {
-                    return {
-                        manufacturer: partialMatch.Manufacturer || 'Unknown',
-                        cost_price: typeof partialMatch.Cost === 'number' ? partialMatch.Cost : 
-                                   (typeof partialMatch.Cost === 'string' ? parseFloat(partialMatch.Cost) : 0)
-                    };
-                }
-                
-                // No match found
-                return { manufacturer: 'Unknown', cost_price: 0 };
-            } catch (error) {
-                console.error(`Error finding product for ${sku}:`, error);
-                return { manufacturer: 'Unknown', cost_price: 0 };
-            }
+            return shipments.filter(shipment => 
+                shipment.orderNumber === orderNumber).length;
         }
         
         // Function to get label cost from shipments data with improved handling
         function getLabelCost(orderNumber, shipments) {
-            if (!shipments || !Array.isArray(shipments)) return 0;
-            
-            // Special debugging for order 52698997
-            const isSpecialOrder = orderNumber === "52698997";
-            if (isSpecialOrder) {
-                console.log(`DEBUG: Getting label cost for special order ${orderNumber}`);
+            // Check cache first
+            if (shippingCalculationCache[orderNumber] && shippingCalculationCache[orderNumber].labelCost !== undefined) {
+                return shippingCalculationCache[orderNumber].labelCost;
             }
+            
+            if (!shipments || !Array.isArray(shipments)) return 0;
             
             // Find matching shipment(s) for this order number
             const orderShipments = shipments.filter(shipment => 
                 shipment.orderNumber === orderNumber);
             
             if (orderShipments.length === 0) {
-                if (isSpecialOrder) {
-                    console.log(`WARNING: No shipments found for special order ${orderNumber}`);
-                }
                 return 0;
             }
             
@@ -1408,10 +1020,16 @@
                     const shipmentCost = shipment.shipmentCost || shipment.cost || 0;
                     const cost = typeof shipmentCost === 'string' ? parseFloat(shipmentCost) || 0 : (shipmentCost || 0);
                     totalCost += cost;
-                    console.log(`Shipment ${index+1} for ${orderNumber}: Cost = $${cost.toFixed(2)}`);
                 });
                 
                 console.log(`Total label cost for order ${orderNumber}: $${totalCost.toFixed(2)}`);
+                
+                // Store in cache
+                if (!shippingCalculationCache[orderNumber]) {
+                    shippingCalculationCache[orderNumber] = {};
+                }
+                shippingCalculationCache[orderNumber].labelCost = totalCost;
+                
                 return totalCost;
             }
             
@@ -1420,56 +1038,69 @@
             const cost = shipment.shipmentCost || shipment.cost || 0;
             const finalCost = typeof cost === 'string' ? parseFloat(cost) || 0 : (cost || 0);
             
-            if (isSpecialOrder) {
-                console.log(`Single shipment found for order ${orderNumber}: Cost = $${finalCost.toFixed(2)}`);
+            // Store in cache
+            if (!shippingCalculationCache[orderNumber]) {
+                shippingCalculationCache[orderNumber] = {};
             }
+            shippingCalculationCache[orderNumber].labelCost = finalCost;
             
-            // Parse the cost if it's a string
             return finalCost;
         }
         
         // Function to calculate per-unit shipping costs safely
         function calculatePerUnitShippingCosts(totalLabelCost, totalCustomerPaidShipping, orderTotalQuantity, orderNumber, shipments) {
-            // Add detailed debugging for key orders
-            const isSpecialOrder = orderNumber === "52698997" || orderNumber === "52703353";
-            if (isSpecialOrder) {
-                console.log(`===== SHIPPING COST CALCULATION FOR ${orderNumber} =====`);
-                console.log(`Input values: totalLabelCost=$${totalLabelCost.toFixed(2)}, totalCustomerPaidShipping=$${totalCustomerPaidShipping.toFixed(2)}, orderTotalQuantity=${orderTotalQuantity}`);
+            // Check cache first
+            if (shippingCalculationCache[orderNumber] && 
+                shippingCalculationCache[orderNumber].perUnitLabelCost !== undefined &&
+                shippingCalculationCache[orderNumber].perUnitCustomerPaidShipping !== undefined) {
+                return shippingCalculationCache[orderNumber];
             }
             
             // Ensure we have valid quantities
             if (!orderTotalQuantity || orderTotalQuantity <= 0) {
                 orderTotalQuantity = 1; // Default to 1 if invalid
-                if (isSpecialOrder) {
-                    console.log(`Quantity validation: orderTotalQuantity was invalid, set to 1`);
-                }
             }
             
             // Get all orders with this order number (including parent/child)
             let totalRelatedOrderQuantity = orderTotalQuantity;
             let isParentChildOrder = false;
             
-            // Look for parent-child relationship
+            // Check for parent-child relationships in a general way
             if (cachedOrders && Array.isArray(cachedOrders)) {
-                // First, check if this is a parent or child order
+                // Get all orders with the same order number
                 const mainOrder = cachedOrders.find(o => o.orderNumber === orderNumber);
                 
                 if (mainOrder) {
                     // Check if it's part of a parent-child relationship
                     if (mainOrder.advancedOptions && 
                         ((mainOrder.advancedOptions.parentId) || 
-                         (mainOrder.advancedOptions.mergedIds && mainOrder.advancedOptions.mergedIds.length > 0))) {
+                         (mainOrder.advancedOptions.mergedIds && 
+                         mainOrder.advancedOptions.mergedIds.length > 0))) {
                         
-                        isParentChildOrder = true;
+                        // Check for true parent-child relationship (not just flags)
+                        let hasParent = false;
+                        let hasChild = false;
+                        
+                        if (mainOrder.advancedOptions.mergedIds && mainOrder.advancedOptions.mergedIds.length > 0) {
+                            // This is a parent
+                            hasParent = true;
+                            // Check if any of its children are in the cache
+                            const childIds = mainOrder.advancedOptions.mergedIds;
+                            hasChild = cachedOrders.some(o => childIds.includes(o.orderId));
+                        } else if (mainOrder.advancedOptions.parentId) {
+                            // This is a child
+                            hasChild = true;
+                            // Check if its parent is in the cache
+                            hasParent = cachedOrders.some(o => o.orderId === mainOrder.advancedOptions.parentId);
+                        }
+                        
+                        // Only consider it a parent-child order if both parent and child are present
+                        isParentChildOrder = hasParent && hasChild;
                         
                         // Find all related orders (siblings with same order number)
                         const relatedOrders = cachedOrders.filter(o => o.orderNumber === orderNumber);
                         
                         if (relatedOrders.length > 1) {
-                            if (isSpecialOrder) {
-                                console.log(`Order ${orderNumber} is part of a parent-child relationship with ${relatedOrders.length} related orders`);
-                            }
-                            
                             // Calculate total quantity across all related orders
                             totalRelatedOrderQuantity = 0;
                             relatedOrders.forEach(order => {
@@ -1477,77 +1108,67 @@
                                     totalRelatedOrderQuantity += item.quantity || 1;
                                 });
                             });
-                            
-                            if (isSpecialOrder) {
-                                console.log(`Total quantity across all related orders: ${totalRelatedOrderQuantity}`);
-                            }
                         }
                     }
                 }
             }
             
-            // STEP 1: First check for multi-label orders (highest priority)
-            let isMultiLabelOrder = false;
+            // Check for multi-label orders based on shipment count
+            let isMultiLabelOrder = detectMultiLabelOrder(orderNumber, shipments);
+            const shipmentCount = countShipments(orderNumber, shipments);
             
-            // Special handling for known multi-label orders
-            if (orderNumber === "52698997" || orderNumber === "52703353") {
-                console.log(`SPECIAL HANDLING: Order ${orderNumber} is a known multi-label order - FORCE OVERRIDE`);
-                isMultiLabelOrder = true;
-            }
-            
-            // Check for multiple shipments
-            let orderShipments = [];
-            if (shipments && Array.isArray(shipments)) {
-                orderShipments = shipments.filter(shipment => shipment.orderNumber === orderNumber);
-                if (isSpecialOrder) {
-                    console.log(`Found ${orderShipments.length} shipments for order ${orderNumber}`);
-                }
-                
-                if (orderShipments.length > 1) {
-                    isMultiLabelOrder = true;
-                    console.log(`Multi-label order detected: ${orderNumber} with ${orderShipments.length} shipments`);
-                }
-            }
-            
-            // STEP 2: If it's a multi-label order, use the multi-label calculation logic
+            // If it's a multi-label order, use the multi-label calculation logic
             if (isMultiLabelOrder) {
-                // For multi-label orders, use the total quantity across all related orders if it's a parent-child relationship
-                const quantityToUse = isParentChildOrder ? totalRelatedOrderQuantity : orderTotalQuantity;
+                // For multi-label orders, calculate per-unit costs by dividing total by quantity
+                const perUnitLabelCost = totalLabelCost / orderTotalQuantity;
+                const perUnitCustomerPaidShipping = totalCustomerPaidShipping / orderTotalQuantity;
                 
-                // Calculate the per-unit costs by dividing the total by quantity
-                const perUnitLabelCost = totalLabelCost / quantityToUse;
-                const perUnitCustomerPaidShipping = totalCustomerPaidShipping / quantityToUse;
-                
-                if (isSpecialOrder) {
-                    console.log(`Multi-label order ${orderNumber}: Total Label Cost $${totalLabelCost.toFixed(2)}, Total Related Quantity ${quantityToUse}, Per Unit Label Cost $${perUnitLabelCost.toFixed(2)}`);
-                    console.log(`Multi-label order ${orderNumber}: Total Shipping $${totalCustomerPaidShipping.toFixed(2)}, Total Related Quantity ${quantityToUse}, Per Unit Shipping $${perUnitCustomerPaidShipping.toFixed(2)}`);
+                // Create cache entry
+                if (!shippingCalculationCache[orderNumber]) {
+                    shippingCalculationCache[orderNumber] = {};
                 }
                 
-                // Return with the multi-label flag set to true
-                return {
+                // Store calculations in cache
+                const result = {
                     perUnitLabelCost: isFinite(perUnitLabelCost) ? perUnitLabelCost : 0,
                     perUnitCustomerPaidShipping: isFinite(perUnitCustomerPaidShipping) ? perUnitCustomerPaidShipping : 0,
                     isMultiLabelOrder: true,
-                    isParentChildOrder: isParentChildOrder
+                    isParentChildOrder: isParentChildOrder,
+                    shipmentCount: shipmentCount,
+                    labelCost: totalLabelCost,
+                    customerPaidShipping: totalCustomerPaidShipping
                 };
+                
+                // Update cache
+                Object.assign(shippingCalculationCache[orderNumber], result);
+                
+                return result;
             }
             
-            // STEP 3: If not a multi-label order, use the standard calculation
+            // Standard calculation for regular orders
             const perUnitLabelCost = totalLabelCost / orderTotalQuantity;
             const perUnitCustomerPaidShipping = totalCustomerPaidShipping / orderTotalQuantity;
             
-            if (isSpecialOrder) {
-                console.log(`WARNING: Special order ${orderNumber} was not detected as multi-label!`);
-                console.log(`Regular calculation: perUnitLabelCost=$${perUnitLabelCost.toFixed(2)}, perUnitCustomerPaidShipping=$${perUnitCustomerPaidShipping.toFixed(2)}`);
+            // Create cache entry
+            if (!shippingCalculationCache[orderNumber]) {
+                shippingCalculationCache[orderNumber] = {};
             }
             
-            // Ensure we don't return infinity or NaN
-            return {
+            // Store calculations in cache
+            const result = {
                 perUnitLabelCost: isFinite(perUnitLabelCost) ? perUnitLabelCost : 0,
                 perUnitCustomerPaidShipping: isFinite(perUnitCustomerPaidShipping) ? perUnitCustomerPaidShipping : 0,
                 isMultiLabelOrder: false,
-                isParentChildOrder: isParentChildOrder
+                isParentChildOrder: isParentChildOrder,
+                shipmentCount: shipmentCount,
+                labelCost: totalLabelCost,
+                customerPaidShipping: totalCustomerPaidShipping
             };
+            
+            // Update cache
+            Object.assign(shippingCalculationCache[orderNumber], result);
+            
+            return result;
         }
         
         // Function to update statistics
@@ -1636,11 +1257,11 @@
                     
                     // Calculate proportional shipping costs
                     let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for both types
+                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost Ã— quantity for both types
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
                     let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for both types
+                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost Ã— quantity for both types
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost
@@ -1801,23 +1422,56 @@
             
             tableBody.innerHTML = ""; // Clear the table
             
-            // Show all orders without pagination
+            // Calculate pagination
             const totalItems = orders.length;
+            const totalPages = Math.ceil(totalItems / ordersPerPage);
             
-            // Update info to show total count
-            updatePaginationInfo(0, totalItems, totalItems);
+            // Adjust currentPage if needed
+            if (currentPage > totalPages) {
+                currentPage = totalPages > 0 ? totalPages : 1;
+            }
+            
+            // Calculate start and end indices
+            const startIndex = (currentPage - 1) * ordersPerPage;
+            const endIndex = Math.min(startIndex + ordersPerPage, totalItems);
+            
+            // Update pagination info
+            updatePaginationInfo(startIndex, endIndex, totalItems);
             
             // If no orders to display
-            if (totalItems === 0) {
-                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders to display</td></tr>`;
+            if (startIndex >= totalItems) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders on this page</td></tr>`;
                 return;
+            }
+            
+            // Create a shipment count map for all orders
+            const orderShipmentCountMap = {};
+            if (shipments && Array.isArray(shipments)) {
+                shipments.forEach(shipment => {
+                    const orderNum = shipment.orderNumber;
+                    if (!orderShipmentCountMap[orderNum]) {
+                        orderShipmentCountMap[orderNum] = 0;
+                    }
+                    orderShipmentCountMap[orderNum]++;
+                });
+            }
+            
+            // Create a set of all parent order IDs that are actually present in the current view
+            const visibleParentIds = new Set();
+            
+            // First identify all parent orders in the current view
+            for (let i = startIndex; i < endIndex; i++) {
+                const order = orders[i];
+                if (order.advancedOptions && order.advancedOptions.mergedIds && order.advancedOptions.mergedIds.length > 0) {
+                    visibleParentIds.add(order.orderId);
+                }
             }
             
             // Group orders by orderNumber for multi-label handling
             const orderGroups = {};
             
-            // First, group orders by order number - now process all orders, not just a page
-            for (let i = 0; i < totalItems; i++) {
+            // First, group orders by order number
+            for (let i = startIndex; i < endIndex; i++) {
                 const order = orders[i];
                 if (!orderGroups[order.orderNumber]) {
                     orderGroups[order.orderNumber] = [];
@@ -1853,9 +1507,6 @@
             // Display orders for current page
             let orderProfits = [];
             
-            // Log for debugging
-            console.log("Order quantity map for calculations:", orderQuantityMap);
-            
             // Process each order group
             for (const orderNumber in orderGroups) {
                 const orderGroup = orderGroups[orderNumber];
@@ -1864,16 +1515,25 @@
                 for (let i = 0; i < orderGroup.length; i++) {
                     const order = orderGroup[i];
                     
-                    // Get store type for display
-                    const storeId = getStoreType(order);
+                    // Store/retrieve order metadata
+                    if (!orderMetadataCache[order.orderNumber]) {
+                        orderMetadataCache[order.orderNumber] = {
+                            storeType: getStoreType(order),
+                            isMultiItem: order.items.length > 1,
+                            shipmentCount: orderShipmentCountMap[order.orderNumber] || 0,
+                        };
+                    }
+                    
+                    // Get cached metadata
+                    const metadata = orderMetadataCache[order.orderNumber];
+                    const storeId = metadata.storeType;
+                    const isMultiItemOrder = metadata.isMultiItem;
+                    const shipmentCount = metadata.shipmentCount;
                     
                     // Get store badge HTML
                     const storeBadge = getStoreBadge(storeId);
                     
-                    // Check if this order has multiple items
-                    const isMultiItemOrder = order.items.length > 1;
-                    
-                    // Get label cost for the order using the shipments data
+                    // Get label cost for the order using the shipments data (will use cache if available)
                     const totalLabelCost = getLabelCost(order.orderNumber, shipments);
                     
                     // Get customer paid shipping amount
@@ -1882,12 +1542,8 @@
                     // Get the total quantity for this order for proportional distribution
                     const orderTotalQuantity = orderQuantityMap[order.orderNumber] || 1;
                     
-                    // Log for debugging
-                    console.log(`Order ${order.orderNumber} using quantity ${orderTotalQuantity} for shipping cost calculations`);
-                    console.log(`Order ${order.orderNumber} shipping amount: $${totalCustomerPaidShipping.toFixed(2)}`);
-                    
-                    // Calculate per unit shipping costs safely
-                    const { perUnitLabelCost, perUnitCustomerPaidShipping, isMultiLabelOrder } = calculatePerUnitShippingCosts(
+                    // Calculate per unit shipping costs (will use cache if available)
+                    const shippingCosts = calculatePerUnitShippingCosts(
                         totalLabelCost,
                         totalCustomerPaidShipping,
                         orderTotalQuantity,
@@ -1895,29 +1551,17 @@
                         cachedShipments
                     );
                     
+                    const { perUnitLabelCost, perUnitCustomerPaidShipping, isMultiLabelOrder } = shippingCosts;
                     
                     // Process each item in the order
                     for (let itemIndex = 0; itemIndex < order.items.length; itemIndex++) {
                         const item = order.items[itemIndex];
-                        const row = document.createElement("tr");
                         const itemQuantity = item.quantity || 1;
                         const sellingPrice = item.unitPrice * itemQuantity;
                         
                         // Calculate proportional shipping costs for this line item
-                        // Use consistent calculation logic for both multi-label and parent-child orders
-                        let proportionalLabelCost = isMultiLabelOrder ? 
-                            (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
-                            (perUnitLabelCost * itemQuantity); // Regular calculation
-                        
-                        let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                            (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
-                            (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
-                        
-                        // Special debug logging for problematic orders
-                        if (order.orderNumber === "52591824") {
-                            console.log(`Display - Item ${item.name}, Quantity ${itemQuantity}, Label Cost Calculation: ${perUnitLabelCost} × ${itemQuantity} = ${proportionalLabelCost.toFixed(2)}`);
-                            console.log(`Display - Heavy Shipping Calculation: ${perUnitCustomerPaidShipping} × ${itemQuantity} = ${proportionalCustomerPaidShipping.toFixed(2)}`);
-                        }
+                        let proportionalLabelCost = perUnitLabelCost * itemQuantity;
+                        let proportionalCustomerPaidShipping = perUnitCustomerPaidShipping * itemQuantity;
                         
                         // Find product cost and brand
                         const productInfo = findProductCost(item.sku);
@@ -1927,15 +1571,9 @@
                         // Calculate profit and other metrics
                         const feePercentage = getPlatformFeePercentage(storeId);
                         const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
-                        const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`;
                         const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
                         let Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
                         let profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
-                        
-                        // Special handling for order 52698997
-                        if (order.orderNumber === "52698997") {
-                            console.log(`Multi-label order ${order.orderNumber}: Item ${item.name}, Quantity ${itemQuantity}, Per Unit Label Cost ${perUnitLabelCost.toFixed(2)}, Proportional Label Cost ${proportionalLabelCost.toFixed(2)}`);
-                        }
                         
                         // Add to chart data
                         orderProfits.push({
@@ -1944,6 +1582,9 @@
                             store: storeId
                         });
                         
+                        // Create table row
+                        const row = document.createElement('tr');
+                        
                         // Add classes for multi-item orders
                         if (isMultiItemOrder) {
                             row.classList.add('order-group');
@@ -1951,19 +1592,41 @@
                             if (itemIndex === order.items.length - 1) row.classList.add('last-item');
                         }
                         
-                        // Add class for multi-label parent/child indication when within a group
-                        if (orderGroup.length > 1) {
+                        // Check if this order is truly a child with a parent in the current view
+                        let isChildWithVisibleParent = false;
+                        let isParentWithVisibleChildren = false;
+                        
+                        // Determine parent-child relationship based on order data
+                        if (order.advancedOptions && order.advancedOptions.parentId) {
+                            // This is a child order - check if its parent is visible
+                            isChildWithVisibleParent = visibleParentIds.has(order.advancedOptions.parentId);
+                        } else if (order.advancedOptions && order.advancedOptions.mergedIds && order.advancedOptions.mergedIds.length > 0) {
+                            // This is a parent order
+                            isParentWithVisibleChildren = true;
+                        }
+                        
+                        // Generate badge based on order type (parent-child vs multi-label)
+                        let badgeHtml = '';
+                        
+                        // Handle parent-child relationships (higher priority)
+                        if (isParentWithVisibleChildren) {
+                            badgeHtml = ' <span class="badge bg-info">Parent</span>';
                             row.classList.add('multi-label-group');
-                            if (i === 0) {
-                                row.classList.add('multi-label-parent');
-                            } else {
-                                row.classList.add('multi-label-child');
-                            }
+                            row.classList.add('multi-label-parent');
+                        } else if (isChildWithVisibleParent) {
+                            badgeHtml = ' <span class="badge bg-secondary">Child</span>';
+                            row.classList.add('multi-label-group');
+                            row.classList.add('multi-label-child');
+                        } 
+                        // Handle multi-label orders (secondary priority)
+                        else if (isMultiLabelOrder || shipmentCount > 1) {
+                            badgeHtml = ` <span class="badge bg-primary">${i+1} of ${shipmentCount}</span>`;
+                            row.classList.add('multi-shipment');
                         }
                         
                         row.innerHTML = `
                             <td>${isMultiItemOrder && itemIndex > 0 ? '' : storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length}</span>` : ''}</td>
-                            <td>${order.orderNumber || "N/A"}${orderGroup.length > 1 ? (i === 0 ? ' <span class="badge bg-info">Parent</span>' : ' <span class="badge bg-secondary">Child</span>') : ''}</td>
+                            <td>${order.orderNumber || "N/A"}${badgeHtml}</td>
                             <td>${order.orderStatus || "N/A"}</td>
                             <td>${new Date(order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
                             <td>${item.sku || "N/A"}</td>
@@ -1991,10 +1654,28 @@
         
         // Function to update pagination information
         function updatePaginationInfo(start, end, total) {
+            const currentRangeEl = document.getElementById('current-range');
             const totalCountEl = document.getElementById('total-count');
+            const pageInfoEl = document.getElementById('page-info');
             
-            if (totalCountEl) {
-                totalCountEl.textContent = total;
+            if (currentRangeEl && totalCountEl && pageInfoEl) {
+                if (total === 0) {
+                    currentRangeEl.textContent = '0-0';
+                    totalCountEl.textContent = '0';
+                    pageInfoEl.textContent = 'Page 0/0';
+                } else {
+                    currentRangeEl.textContent = `${start + 1}-${end}`;
+                    totalCountEl.textContent = total;
+                    
+                    const totalPages = Math.ceil(total / ordersPerPage);
+                    pageInfoEl.textContent = `Page ${currentPage}/${totalPages}`;
+                    
+                    // Update button states
+                    document.getElementById('first-page').disabled = currentPage === 1;
+                    document.getElementById('prev-page').disabled = currentPage === 1;
+                    document.getElementById('next-page').disabled = currentPage === totalPages;
+                    document.getElementById('last-page').disabled = currentPage === totalPages;
+                }
             }
         }
         
@@ -2002,10 +1683,42 @@
         window.addEventListener('DOMContentLoaded', function() {
             // ... existing DOMContentLoaded code ...
             
-            // Remove pagination event listeners - they're no longer needed
-            // Remove these event listeners: first-page, prev-page, next-page, last-page, page-size
+            // Add pagination event listeners
+            document.getElementById('first-page')?.addEventListener('click', function() {
+                if (currentPage !== 1) {
+                    currentPage = 1;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
             
-            // ... rest of the function remains the same ...
+            document.getElementById('prev-page')?.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('next-page')?.addEventListener('click', function() {
+                const totalPages = Math.ceil(allFilteredOrders.length / ordersPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('last-page')?.addEventListener('click', function() {
+                const totalPages = Math.ceil(allFilteredOrders.length / ordersPerPage);
+                if (currentPage !== totalPages) {
+                    currentPage = totalPages;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('page-size')?.addEventListener('change', function() {
+                ordersPerPage = parseInt(this.value);
+                currentPage = 1; // Reset to first page
+                displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+            });
         });
         
         // Helper function to get order quantity map
@@ -2135,11 +1848,11 @@
                     
                     // Calculate proportional shipping costs for this line item
                     let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label
+                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost Ã— quantity for multi-label
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
                     let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label
+                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost Ã— quantity for multi-label
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost and brand
@@ -2363,8 +2076,8 @@
         function loadData() {
             // Prevent multiple concurrent API calls
             if (isLoading) {
-                    return;
-                }
+                return;
+            }
             
             try {
                 showLoading(true, 'Loading orders and shipments data');
@@ -2385,7 +2098,7 @@
                     // Ignore storage errors
                 }
                 
-                // Reset cached data to force reload
+                // Reset cached data to force reload - use assignment, not redeclaration
                 cachedOrders = [];
                 cachedShipments = [];
                 
@@ -2396,14 +2109,14 @@
                             throw new Error('Invalid orders data received');
                         }
                 
-                // Store in global cache
+                        // Store in global cache
                         cachedOrders = orders;
                         console.log(`Loaded ${cachedOrders.length} orders for date range ${startDate} to ${endDate}`);
                 
                         // Try to cache, but handle quota errors gracefully
-                try {
-                    localStorage.setItem(`shipstation_cache_${cacheKey}`, JSON.stringify(orders));
-                } catch (e) {
+                        try {
+                            localStorage.setItem(`shipstation_cache_${cacheKey}`, JSON.stringify(orders));
+                        } catch (e) {
                             console.warn('Could not cache orders data due to quota limits. This is non-critical.');
                         }
                         
@@ -2434,10 +2147,13 @@
                     .then(([orders, shipments]) => {
                         console.log('All data loaded successfully, displaying results...');
                 
-                if (orders && orders.length > 0) {
+                        if (orders && orders.length > 0) {
                             // Reset pagination when new data is loaded
                             currentPage = 1;
-                            ordersPerPage = 500;
+                            ordersPerPage = 100;
+                            
+                            // Pre-calculate all shipping costs once
+                            precalculateAllOrderData();
                             
                             // Pre-process orders with shipment data for faster filtering later
                             return preprocessOrders(orders, shipments)
@@ -2445,17 +2161,17 @@
                                     processedOrders = processed;
                                     displayOrders(orders);
                                 });
-                } else {
-                    const tableBody = document.getElementById("shipstation-table");
-                    if (tableBody) {
-                        tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders found for the selected date range</td></tr>`;
-                    }
+                        } else {
+                            const tableBody = document.getElementById("shipstation-table");
+                            if (tableBody) {
+                                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders found for the selected date range</td></tr>`;
+                            }
                             updateStatistics([]);
                             updatePaginationInfo(0, 0, 0);
-                }
+                        }
                     })
                     .catch(error => {
-                showLoading(false);
+                        showLoading(false);
                         console.error('Error processing data:', error);
                         showError('Failed to process order data. Please try again.');
                     })
@@ -2918,13 +2634,12 @@
                     const sellingPrice = item.unitPrice * itemQuantity;
                     
                     // Calculate proportional shipping costs for this line item
-                    // FIXED: Use the same calculation logic as in displayOrdersPage function
-                    let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                    const proportionalLabelCost = isMultiLabelOrder ? 
+                        (perUnitLabelCost / order.items.length) : // Distribute evenly across all items
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
-                    let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                    const proportionalCustomerPaidShipping = isMultiLabelOrder ?
+                        (perUnitCustomerPaidShipping / order.items.length) : // Distribute evenly
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost and brand
@@ -3008,7 +2723,91 @@
             // Use the exportTableToCSV function with our filename
             exportTableToCSV(filename);
         }
+
+        // Process all orders once to build complete calculation cache
+        function precalculateAllOrderData() {
+            if (!cachedOrders || !Array.isArray(cachedOrders) || !cachedShipments) return;
+            
+            // Reset caches
+            Object.keys(shippingCalculationCache).forEach(key => delete shippingCalculationCache[key]);
+            Object.keys(orderMetadataCache).forEach(key => delete orderMetadataCache[key]);
+            
+            console.log("Pre-calculating all order data...");
+            
+            // Build quantity map once
+            const fullOrderQuantityMap = {};
+            cachedOrders.forEach(order => {
+                const orderNumber = order.orderNumber;
+                
+                if (!fullOrderQuantityMap[orderNumber]) {
+                    let totalQuantity = 0;
+                    order.items.forEach(item => {
+                        totalQuantity += item.quantity || 1;
+                    });
+                    fullOrderQuantityMap[orderNumber] = totalQuantity;
+                }
+            });
+            
+            // Pre-calculate all shipping costs
+            cachedOrders.forEach(order => {
+                // Store metadata
+                orderMetadataCache[order.orderNumber] = {
+                    storeType: getStoreType(order),
+                    isMultiItem: order.items.length > 1,
+                    shipmentCount: countShipments(order.orderNumber, cachedShipments)
+                };
+                
+                // Calculate shipping costs
+                const totalLabelCost = getLabelCost(order.orderNumber, cachedShipments);
+                const totalCustomerPaidShipping = order.shippingAmount || 0;
+                const orderTotalQuantity = fullOrderQuantityMap[order.orderNumber] || 1;
+                
+                calculatePerUnitShippingCosts(
+                    totalLabelCost,
+                    totalCustomerPaidShipping,
+                    orderTotalQuantity,
+                    order.orderNumber,
+                    cachedShipments
+                );
+            });
+            
+            console.log(`Pre-calculated data for ${Object.keys(shippingCalculationCache).length} orders`);
+        }
+
+        // ... existing code ...
+        // Function to show loading indicator
+        function showLoading(show, message = 'Loading data...') {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            if (loadingIndicator) {
+                loadingIndicator.innerHTML = message;
+                loadingIndicator.style.display = show ? 'flex' : 'none';
+            }
+            // Update global loading state
+            isLoading = show;
+            
+            // Disable/enable load button
+            const loadDataBtn = document.getElementById('load-data');
+            if (loadDataBtn) {
+                loadDataBtn.disabled = show;
+                loadDataBtn.innerHTML = show ? 'Loading...' : 'Apply Filters';
+            }
+        }
+
+        // Function to show error message
+        function showError(message) {
+            const errorContainer = document.getElementById('error-container');
+            if (errorContainer) {
+                errorContainer.textContent = message;
+                errorContainer.style.display = 'block';
+                
+                // Auto-hide after 5 seconds
+                setTimeout(() => {
+                    errorContainer.style.display = 'none';
+                }, 5000);
+            }
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
+

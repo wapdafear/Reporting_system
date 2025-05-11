@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -534,34 +534,6 @@
             background-color: #1d1d1d;
             border-bottom: 2px solid #333;
         }
-        
-        /* Multi-label order styling */
-        tr.multi-label-group {
-            background-color: rgba(52, 152, 219, 0.05) !important;
-        }
-        
-        tr.multi-label-parent {
-            border-top: 2px solid #3498db;
-        }
-        
-        tr.multi-label-child {
-            border-top: 1px dashed #3498db;
-        }
-        
-        /* Badge styling */
-        .badge {
-            padding: 3px 6px;
-            font-size: 10px;
-            border-radius: 3px;
-        }
-        
-        .bg-info {
-            background-color: #17a2b8;
-        }
-        
-        .bg-secondary {
-            background-color: #6c757d;
-        }
     </style>
 </head>
 <body>
@@ -628,10 +600,6 @@
                 <input type="checkbox" id="multi-item-filter" style="width: 20px; height: 20px; margin-right: 10px;">
                 <label for="multi-item-filter" style="color: white; margin: 0;">Show Multi-Item Orders Only</label>
             </div>
-            <div style="display: flex; align-items: center; margin-top: 10px;">
-                <input type="checkbox" id="parent-child-filter" style="width: 20px; height: 20px; margin-right: 10px;" title="Filter to show only orders with parent-child relationships or multiple labels">
-                <label for="parent-child-filter" style="color: white; margin: 0;">Show Parent-Child/Multi-Label Orders</label>
-            </div>
         </div>
         
         <div class="filter-group">
@@ -689,9 +657,24 @@
     </table>
 
     <!-- Add pagination controls -->
-    <div class="pagination-controls" style="display: none;">
+    <div class="pagination-controls" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px; background-color: #1d1d1d; border-radius: 5px;">
         <div class="pagination-info" style="color: white;">
-            Showing <span id="current-range">0-0</span> of <span id="total-count">0</span> orders
+            Showing <span id="current-range">0-0</span> of <span id="total-count">0</span> orders (<span id="page-info">Page 0/0</span>)
+        </div>
+        <div class="pagination-buttons" style="display: flex; gap: 10px;">
+            <button id="first-page" class="btn btn-sm btn-outline-secondary">First</button>
+            <button id="prev-page" class="btn btn-sm btn-outline-secondary">Previous</button>
+            <button id="next-page" class="btn btn-sm btn-outline-secondary">Next</button>
+            <button id="last-page" class="btn btn-sm btn-outline-secondary">Last</button>
+        </div>
+        <div class="page-size-control" style="display: flex; align-items: center; gap: 10px;">
+            <label for="page-size" style="color: white;">Orders per page:</label>
+            <select id="page-size" class="custom-select custom-select-sm" style="width: auto;">
+                <option value="50">50</option>
+                <option value="100" selected>100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+            </select>
         </div>
     </div>
 
@@ -703,7 +686,7 @@
         
         // Add pagination variables at the top
         let currentPage = 1;
-        let ordersPerPage = 100000; // Set to a very large number to effectively display all items
+        let ordersPerPage = 100;
         let allFilteredOrders = [];
         
         // Import functions from shipstation-api.js and Brands.js
@@ -713,12 +696,6 @@
         // First, add enhanced debugging in the DOMContentLoaded event handler
         window.addEventListener('DOMContentLoaded', function() {
             console.log('DOM content loaded, initializing...');
-            
-            // Set default filters to "All Stores" option
-            const storeFilter = document.getElementById('store-filter');
-            if (storeFilter) {
-                storeFilter.selectedIndex = 0; // Set to "All Stores" by default
-            }
             
             // Show loading indicator immediately
             showLoading(true, 'Initializing and loading data');
@@ -938,7 +915,6 @@
         const statusFilter = document.getElementById('status-filter');
         const brandFilter = document.getElementById('brand-filter');
         const multiItemFilter = document.getElementById('multi-item-filter');
-        const parentChildFilter = document.getElementById('parent-child-filter');
         const startDateInput = document.getElementById('start-date');
         const endDateInput = document.getElementById('end-date');
         
@@ -1381,22 +1357,11 @@
         function getLabelCost(orderNumber, shipments) {
             if (!shipments || !Array.isArray(shipments)) return 0;
             
-            // Special debugging for order 52698997
-            const isSpecialOrder = orderNumber === "52698997";
-            if (isSpecialOrder) {
-                console.log(`DEBUG: Getting label cost for special order ${orderNumber}`);
-            }
-            
             // Find matching shipment(s) for this order number
             const orderShipments = shipments.filter(shipment => 
                 shipment.orderNumber === orderNumber);
             
-            if (orderShipments.length === 0) {
-                if (isSpecialOrder) {
-                    console.log(`WARNING: No shipments found for special order ${orderNumber}`);
-                }
-                return 0;
-            }
+            if (orderShipments.length === 0) return 0;
             
             // For orders with multiple shipments, sum all shipment costs
             if (orderShipments.length > 1) {
@@ -1418,136 +1383,51 @@
             // For single shipment orders
             const shipment = orderShipments[0];
             const cost = shipment.shipmentCost || shipment.cost || 0;
-            const finalCost = typeof cost === 'string' ? parseFloat(cost) || 0 : (cost || 0);
-            
-            if (isSpecialOrder) {
-                console.log(`Single shipment found for order ${orderNumber}: Cost = $${finalCost.toFixed(2)}`);
-            }
             
             // Parse the cost if it's a string
-            return finalCost;
+            return typeof cost === 'string' ? parseFloat(cost) || 0 : (cost || 0);
         }
         
         // Function to calculate per-unit shipping costs safely
         function calculatePerUnitShippingCosts(totalLabelCost, totalCustomerPaidShipping, orderTotalQuantity, orderNumber, shipments) {
-            // Add detailed debugging for key orders
-            const isSpecialOrder = orderNumber === "52698997" || orderNumber === "52703353";
-            if (isSpecialOrder) {
-                console.log(`===== SHIPPING COST CALCULATION FOR ${orderNumber} =====`);
-                console.log(`Input values: totalLabelCost=$${totalLabelCost.toFixed(2)}, totalCustomerPaidShipping=$${totalCustomerPaidShipping.toFixed(2)}, orderTotalQuantity=${orderTotalQuantity}`);
-            }
-            
             // Ensure we have valid quantities
             if (!orderTotalQuantity || orderTotalQuantity <= 0) {
                 orderTotalQuantity = 1; // Default to 1 if invalid
-                if (isSpecialOrder) {
-                    console.log(`Quantity validation: orderTotalQuantity was invalid, set to 1`);
-                }
             }
             
-            // Get all orders with this order number (including parent/child)
-            let totalRelatedOrderQuantity = orderTotalQuantity;
-            let isParentChildOrder = false;
-            
-            // Look for parent-child relationship
-            if (cachedOrders && Array.isArray(cachedOrders)) {
-                // First, check if this is a parent or child order
-                const mainOrder = cachedOrders.find(o => o.orderNumber === orderNumber);
-                
-                if (mainOrder) {
-                    // Check if it's part of a parent-child relationship
-                    if (mainOrder.advancedOptions && 
-                        ((mainOrder.advancedOptions.parentId) || 
-                         (mainOrder.advancedOptions.mergedIds && mainOrder.advancedOptions.mergedIds.length > 0))) {
-                        
-                        isParentChildOrder = true;
-                        
-                        // Find all related orders (siblings with same order number)
-                        const relatedOrders = cachedOrders.filter(o => o.orderNumber === orderNumber);
-                        
-                        if (relatedOrders.length > 1) {
-                            if (isSpecialOrder) {
-                                console.log(`Order ${orderNumber} is part of a parent-child relationship with ${relatedOrders.length} related orders`);
-                            }
-                            
-                            // Calculate total quantity across all related orders
-                            totalRelatedOrderQuantity = 0;
-                            relatedOrders.forEach(order => {
-                                order.items.forEach(item => {
-                                    totalRelatedOrderQuantity += item.quantity || 1;
-                                });
-                            });
-                            
-                            if (isSpecialOrder) {
-                                console.log(`Total quantity across all related orders: ${totalRelatedOrderQuantity}`);
-                            }
-                        }
-                    }
-                }
-            }
-            
-            // STEP 1: First check for multi-label orders (highest priority)
+            // Check if this is a multi-label order
             let isMultiLabelOrder = false;
-            
-            // Special handling for known multi-label orders
-            if (orderNumber === "52698997" || orderNumber === "52703353") {
-                console.log(`SPECIAL HANDLING: Order ${orderNumber} is a known multi-label order - FORCE OVERRIDE`);
-                isMultiLabelOrder = true;
-            }
-            
-            // Check for multiple shipments
-            let orderShipments = [];
             if (shipments && Array.isArray(shipments)) {
-                orderShipments = shipments.filter(shipment => shipment.orderNumber === orderNumber);
-                if (isSpecialOrder) {
-                    console.log(`Found ${orderShipments.length} shipments for order ${orderNumber}`);
-                }
+                const orderShipments = shipments.filter(shipment => 
+                    shipment.orderNumber === orderNumber);
+                isMultiLabelOrder = orderShipments.length > 1;
                 
-                if (orderShipments.length > 1) {
-                    isMultiLabelOrder = true;
-                    console.log(`Multi-label order detected: ${orderNumber} with ${orderShipments.length} shipments`);
+                if (isMultiLabelOrder) {
+                    console.log(`Using special shipping cost calculation for multi-label order: ${orderNumber}`);
                 }
             }
             
-            // STEP 2: If it's a multi-label order, use the multi-label calculation logic
+            // Calculate different values based on whether it's a multi-label order
             if (isMultiLabelOrder) {
-                // For multi-label orders, use the total quantity across all related orders if it's a parent-child relationship
-                const quantityToUse = isParentChildOrder ? totalRelatedOrderQuantity : orderTotalQuantity;
+                // For multi-label orders, we DO NOT divide by quantity 
+                // because each label is independent of quantity
+                return {
+                    perUnitLabelCost: totalLabelCost, // Return the full label cost
+                    perUnitCustomerPaidShipping: totalCustomerPaidShipping, // Return full customer paid shipping
+                    isMultiLabelOrder: true
+                };
+            } else {
+                // Standard calculation for regular orders - divide by quantity
+                const perUnitLabelCost = totalLabelCost / orderTotalQuantity;
+                const perUnitCustomerPaidShipping = totalCustomerPaidShipping / orderTotalQuantity;
                 
-                // Calculate the per-unit costs by dividing the total by quantity
-                const perUnitLabelCost = totalLabelCost / quantityToUse;
-                const perUnitCustomerPaidShipping = totalCustomerPaidShipping / quantityToUse;
-                
-                if (isSpecialOrder) {
-                    console.log(`Multi-label order ${orderNumber}: Total Label Cost $${totalLabelCost.toFixed(2)}, Total Related Quantity ${quantityToUse}, Per Unit Label Cost $${perUnitLabelCost.toFixed(2)}`);
-                    console.log(`Multi-label order ${orderNumber}: Total Shipping $${totalCustomerPaidShipping.toFixed(2)}, Total Related Quantity ${quantityToUse}, Per Unit Shipping $${perUnitCustomerPaidShipping.toFixed(2)}`);
-                }
-                
-                // Return with the multi-label flag set to true
+                // Ensure we don't return infinity or NaN
                 return {
                     perUnitLabelCost: isFinite(perUnitLabelCost) ? perUnitLabelCost : 0,
                     perUnitCustomerPaidShipping: isFinite(perUnitCustomerPaidShipping) ? perUnitCustomerPaidShipping : 0,
-                    isMultiLabelOrder: true,
-                    isParentChildOrder: isParentChildOrder
+                    isMultiLabelOrder: false
                 };
             }
-            
-            // STEP 3: If not a multi-label order, use the standard calculation
-            const perUnitLabelCost = totalLabelCost / orderTotalQuantity;
-            const perUnitCustomerPaidShipping = totalCustomerPaidShipping / orderTotalQuantity;
-            
-            if (isSpecialOrder) {
-                console.log(`WARNING: Special order ${orderNumber} was not detected as multi-label!`);
-                console.log(`Regular calculation: perUnitLabelCost=$${perUnitLabelCost.toFixed(2)}, perUnitCustomerPaidShipping=$${perUnitCustomerPaidShipping.toFixed(2)}`);
-            }
-            
-            // Ensure we don't return infinity or NaN
-            return {
-                perUnitLabelCost: isFinite(perUnitLabelCost) ? perUnitLabelCost : 0,
-                perUnitCustomerPaidShipping: isFinite(perUnitCustomerPaidShipping) ? perUnitCustomerPaidShipping : 0,
-                isMultiLabelOrder: false,
-                isParentChildOrder: isParentChildOrder
-            };
         }
         
         // Function to update statistics
@@ -1556,55 +1436,14 @@
             let totalProfit = 0;
             let totalOrders = 0;
             
-            // First, build a map of order numbers to all related orders (for parent-child)
-            const relatedOrdersMap = {};
-            
-            // Group orders by orderNumber to handle parent-child relationships
+            // First, calculate total quantities per order for proportional distribution
+            const orderQuantityMap = {};
             orders.forEach(order => {
                 const orderNumber = order.orderNumber;
-                if (!relatedOrdersMap[orderNumber]) {
-                    relatedOrdersMap[orderNumber] = [];
-                }
-                relatedOrdersMap[orderNumber].push(order);
-            });
-            
-            // Sync shipping data between parent and child orders
-            Object.values(relatedOrdersMap).forEach(orderGroup => {
-                if (orderGroup.length > 1) {
-                    // Find the parent order (usually the first one)
-                    const parentOrder = orderGroup.find(order => 
-                        order.advancedOptions && order.advancedOptions.mergedIds && 
-                        order.advancedOptions.mergedIds.length > 0
-                    ) || orderGroup[0];
-                    
-                    // Get parent shipping amount
-                    const parentShippingAmount = parentOrder.shippingAmount || 0;
-                    
-                    // Distribute parent shipping to all orders in the group
-                    orderGroup.forEach(order => {
-                        if (order !== parentOrder && (!order.shippingAmount || order.shippingAmount === 0)) {
-                            console.log(`Transferring shipping cost from parent order ${parentOrder.orderNumber} to related order ${order.orderNumber}`);
-                            order.shippingAmount = parentShippingAmount;
-                        }
-                    });
-                }
-            });
-            
-            // Calculate total quantities per order, including related parent-child orders
-            const orderQuantityMap = {};
-            
-            // Now calculate true total quantity for each order number including parent/child relations
-            Object.keys(relatedOrdersMap).forEach(orderNumber => {
                 let totalQuantity = 0;
-                
-                // Sum quantities across all related orders (parent and children)
-                relatedOrdersMap[orderNumber].forEach(order => {
-                    order.items.forEach(item => {
-                        totalQuantity += item.quantity || 1;
-                    });
+                order.items.forEach(item => {
+                    totalQuantity += item.quantity || 1;
                 });
-                
-                console.log(`Order ${orderNumber} total quantity across all related orders: ${totalQuantity}`);
                 orderQuantityMap[orderNumber] = totalQuantity;
             });
             
@@ -1635,12 +1474,12 @@
                     const sellingPrice = item.unitPrice * itemQuantity;
                     
                     // Calculate proportional shipping costs
-                    let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for both types
+                    const proportionalLabelCost = isMultiLabelOrder ? 
+                        (perUnitLabelCost / order.items.length) : // Distribute evenly across all items
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
-                    let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for both types
+                    const proportionalCustomerPaidShipping = isMultiLabelOrder ?
+                        (perUnitCustomerPaidShipping / order.items.length) : // Distribute evenly
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost
@@ -1651,8 +1490,8 @@
                     const feePercentage = getPlatformFeePercentage(storeId);
                     const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
                     const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
-                    let Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
-                    let profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
+                    const Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
+                    const profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
                     
                     
                     totalSales += sellingPrice;
@@ -1729,60 +1568,23 @@
                 shipments = [];
             }
             
-            // Build a map of order numbers to all related orders (for parent-child)
-            const relatedOrdersMap = {};
-            
-            // Group orders by orderNumber to handle parent-child relationships
-            filteredOrders.forEach(order => {
-                const orderNumber = order.orderNumber;
-                if (!relatedOrdersMap[orderNumber]) {
-                    relatedOrdersMap[orderNumber] = [];
-                }
-                relatedOrdersMap[orderNumber].push(order);
-            });
-            
-            // Sync shipping data between parent and child orders
-            Object.values(relatedOrdersMap).forEach(orderGroup => {
-                if (orderGroup.length > 1) {
-                    // Find the parent order (usually the first one)
-                    const parentOrder = orderGroup.find(order => 
-                        order.advancedOptions && order.advancedOptions.mergedIds && 
-                        order.advancedOptions.mergedIds.length > 0
-                    ) || orderGroup[0];
-                    
-                    // Get parent shipping amount
-                    const parentShippingAmount = parentOrder.shippingAmount || 0;
-                    
-                    // Distribute parent shipping to all orders in the group
-                    orderGroup.forEach(order => {
-                        if (order !== parentOrder && (!order.shippingAmount || order.shippingAmount === 0)) {
-                            console.log(`Transferring shipping cost from parent order ${parentOrder.orderNumber} to related order ${order.orderNumber}`);
-                            order.shippingAmount = parentShippingAmount;
-                        }
-                    });
-                }
-            });
-            
-            // Calculate total quantities per order, including related parent-child orders
-            const orderQuantityMap = {};
-            
-            // Calculate true total quantity for each order number including parent/child relations
-            Object.keys(relatedOrdersMap).forEach(orderNumber => {
-                let totalQuantity = 0;
-                
-                // Sum quantities across all related orders (parent and children)
-                relatedOrdersMap[orderNumber].forEach(order => {
-                    order.items.forEach(item => {
-                        totalQuantity += item.quantity || 1;
-                    });
-                });
-                
-                console.log(`Order ${orderNumber} total quantity across all related orders: ${totalQuantity}`);
-                orderQuantityMap[orderNumber] = totalQuantity;
-            });
-            
             // Update statistics with all filtered orders
             updateStatistics(filteredOrders);
+            
+            // First, calculate total quantities per order to properly distribute shipping costs
+            const orderQuantityMap = {};
+            
+            // Step 1: Get total quantity for each order
+            filteredOrders.forEach(order => {
+                const orderNumber = order.orderNumber;
+                let totalQuantity = 0;
+                
+                order.items.forEach(item => {
+                    totalQuantity += item.quantity || 1;
+                });
+                
+                orderQuantityMap[orderNumber] = totalQuantity;
+            });
             
             // Display the current page
             displayOrdersPage(filteredOrders, orderQuantityMap, shipments);
@@ -1801,200 +1603,154 @@
             
             tableBody.innerHTML = ""; // Clear the table
             
-            // Show all orders without pagination
+            // Calculate pagination
             const totalItems = orders.length;
+            const totalPages = Math.ceil(totalItems / ordersPerPage);
             
-            // Update info to show total count
-            updatePaginationInfo(0, totalItems, totalItems);
+            // Adjust currentPage if needed
+            if (currentPage > totalPages) {
+                currentPage = totalPages > 0 ? totalPages : 1;
+            }
+            
+            // Calculate start and end indices
+            const startIndex = (currentPage - 1) * ordersPerPage;
+            const endIndex = Math.min(startIndex + ordersPerPage, totalItems);
+            
+            // Update pagination info
+            updatePaginationInfo(startIndex, endIndex, totalItems);
             
             // If no orders to display
-            if (totalItems === 0) {
-                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders to display</td></tr>`;
+            if (startIndex >= totalItems) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders on this page</td></tr>`;
                 return;
-            }
-            
-            // Group orders by orderNumber for multi-label handling
-            const orderGroups = {};
-            
-            // First, group orders by order number - now process all orders, not just a page
-            for (let i = 0; i < totalItems; i++) {
-                const order = orders[i];
-                if (!orderGroups[order.orderNumber]) {
-                    orderGroups[order.orderNumber] = [];
-                }
-                orderGroups[order.orderNumber].push(order);
-            }
-            
-            // Process shipping for parent-child orders
-            for (const orderNumber in orderGroups) {
-                const orderGroup = orderGroups[orderNumber];
-                
-                // Only process groups with multiple orders (parent-child)
-                if (orderGroup.length > 1) {
-                    // Find the parent order (usually the first one)
-                    const parentOrder = orderGroup.find(order => 
-                        order.advancedOptions && order.advancedOptions.mergedIds && 
-                        order.advancedOptions.mergedIds.length > 0
-                    ) || orderGroup[0];
-                    
-                    // Get parent shipping amount
-                    const parentShippingAmount = parentOrder.shippingAmount || 0;
-                    
-                    // Distribute parent shipping to all orders in the group
-                    orderGroup.forEach(order => {
-                        if (order !== parentOrder && (!order.shippingAmount || order.shippingAmount === 0)) {
-                            console.log(`Transferring shipping cost from parent order ${parentOrder.orderNumber} to related order ${order.orderNumber}`);
-                            order.shippingAmount = parentShippingAmount;
-                        }
-                    });
-                }
             }
             
             // Display orders for current page
             let orderProfits = [];
             
-            // Log for debugging
-            console.log("Order quantity map for calculations:", orderQuantityMap);
-            
-            // Process each order group
-            for (const orderNumber in orderGroups) {
-                const orderGroup = orderGroups[orderNumber];
+            // Process orders in the current page
+            for (let i = startIndex; i < endIndex; i++) {
+                const order = orders[i];
                 
-                // For each order in the group
-                for (let i = 0; i < orderGroup.length; i++) {
-                    const order = orderGroup[i];
+                // Get store type for display
+                const storeId = getStoreType(order);
+                
+                // Get store badge HTML
+                const storeBadge = getStoreBadge(storeId);
+                
+                // Check if this order has multiple items
+                const isMultiItemOrder = order.items.length > 1;
+                
+                // Get label cost for the order using the shipments data
+                const totalLabelCost = getLabelCost(order.orderNumber, shipments);
+                
+                // Get customer paid shipping amount
+                const totalCustomerPaidShipping = order.shippingAmount || 0;
+                
+                // Get the total quantity for this order for proportional distribution
+                const orderTotalQuantity = orderQuantityMap[order.orderNumber] || 1;
+                
+                // Calculate per unit shipping costs safely
+                const { perUnitLabelCost, perUnitCustomerPaidShipping, isMultiLabelOrder } = calculatePerUnitShippingCosts(
+                    totalLabelCost,
+                    totalCustomerPaidShipping,
+                    orderTotalQuantity,
+                    order.orderNumber,
+                    shipments
+                );
+                
+                // Process each item in the order
+                for (let itemIndex = 0; itemIndex < order.items.length; itemIndex++) {
+                    const item = order.items[itemIndex];
+                    const row = document.createElement("tr");
+                    const itemQuantity = item.quantity || 1;
+                    const sellingPrice = item.unitPrice * itemQuantity;
                     
-                    // Get store type for display
-                    const storeId = getStoreType(order);
+                    // Calculate proportional shipping costs for this line item
+                    // For multi-label orders, don't multiply by quantity again
+                    const proportionalLabelCost = isMultiLabelOrder ? 
+                        (perUnitLabelCost / order.items.length) : // Distribute evenly across all items
+                        (perUnitLabelCost * itemQuantity); // Regular calculation
                     
-                    // Get store badge HTML
-                    const storeBadge = getStoreBadge(storeId);
+                    const proportionalCustomerPaidShipping = isMultiLabelOrder ?
+                        (perUnitCustomerPaidShipping / order.items.length) : // Distribute evenly
+                        (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
-                    // Check if this order has multiple items
-                    const isMultiItemOrder = order.items.length > 1;
+                    // Find product cost and brand
+                    const productInfo = findProductCost(item.sku);
+                    const costPrice = productInfo.cost_price || 0;
+                    const manufacturer = productInfo.manufacturer || 'Unknown';
                     
-                    // Get label cost for the order using the shipments data
-                    const totalLabelCost = getLabelCost(order.orderNumber, shipments);
+                    // Calculate profit and other metrics
+                    const feePercentage = getPlatformFeePercentage(storeId);
+                    const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
+                    const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`;
+                    const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
+                    const Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
+                    const profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
                     
-                    // Get customer paid shipping amount
-                    const totalCustomerPaidShipping = order.shippingAmount || 0;
+                    // Add to chart data
+                    orderProfits.push({
+                        orderNumber: order.orderNumber,
+                        profit: profit,
+                        store: storeId
+                    });
                     
-                    // Get the total quantity for this order for proportional distribution
-                    const orderTotalQuantity = orderQuantityMap[order.orderNumber] || 1;
-                    
-                    // Log for debugging
-                    console.log(`Order ${order.orderNumber} using quantity ${orderTotalQuantity} for shipping cost calculations`);
-                    console.log(`Order ${order.orderNumber} shipping amount: $${totalCustomerPaidShipping.toFixed(2)}`);
-                    
-                    // Calculate per unit shipping costs safely
-                    const { perUnitLabelCost, perUnitCustomerPaidShipping, isMultiLabelOrder } = calculatePerUnitShippingCosts(
-                        totalLabelCost,
-                        totalCustomerPaidShipping,
-                        orderTotalQuantity,
-                        order.orderNumber,
-                        cachedShipments
-                    );
-                    
-                    
-                    // Process each item in the order
-                    for (let itemIndex = 0; itemIndex < order.items.length; itemIndex++) {
-                        const item = order.items[itemIndex];
-                        const row = document.createElement("tr");
-                        const itemQuantity = item.quantity || 1;
-                        const sellingPrice = item.unitPrice * itemQuantity;
-                        
-                        // Calculate proportional shipping costs for this line item
-                        // Use consistent calculation logic for both multi-label and parent-child orders
-                        let proportionalLabelCost = isMultiLabelOrder ? 
-                            (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
-                            (perUnitLabelCost * itemQuantity); // Regular calculation
-                        
-                        let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                            (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
-                            (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
-                        
-                        // Special debug logging for problematic orders
-                        if (order.orderNumber === "52591824") {
-                            console.log(`Display - Item ${item.name}, Quantity ${itemQuantity}, Label Cost Calculation: ${perUnitLabelCost} × ${itemQuantity} = ${proportionalLabelCost.toFixed(2)}`);
-                            console.log(`Display - Heavy Shipping Calculation: ${perUnitCustomerPaidShipping} × ${itemQuantity} = ${proportionalCustomerPaidShipping.toFixed(2)}`);
-                        }
-                        
-                        // Find product cost and brand
-                        const productInfo = findProductCost(item.sku);
-                        const costPrice = productInfo.cost_price || 0;
-                        const manufacturer = productInfo.manufacturer || 'Unknown';
-                        
-                        // Calculate profit and other metrics
-                        const feePercentage = getPlatformFeePercentage(storeId);
-                        const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
-                        const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`;
-                        const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
-                        let Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
-                        let profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
-                        
-                        // Special handling for order 52698997
-                        if (order.orderNumber === "52698997") {
-                            console.log(`Multi-label order ${order.orderNumber}: Item ${item.name}, Quantity ${itemQuantity}, Per Unit Label Cost ${perUnitLabelCost.toFixed(2)}, Proportional Label Cost ${proportionalLabelCost.toFixed(2)}`);
-                        }
-                        
-                        // Add to chart data
-                        orderProfits.push({
-                            orderNumber: order.orderNumber,
-                            profit: profit,
-                            store: storeId
-                        });
-                        
-                        // Add classes for multi-item orders
-                        if (isMultiItemOrder) {
-                            row.classList.add('order-group');
-                            if (itemIndex === 0) row.classList.add('first-item');
-                            if (itemIndex === order.items.length - 1) row.classList.add('last-item');
-                        }
-                        
-                        // Add class for multi-label parent/child indication when within a group
-                        if (orderGroup.length > 1) {
-                            row.classList.add('multi-label-group');
-                            if (i === 0) {
-                                row.classList.add('multi-label-parent');
-                            } else {
-                                row.classList.add('multi-label-child');
-                            }
-                        }
-                        
-                        row.innerHTML = `
-                            <td>${isMultiItemOrder && itemIndex > 0 ? '' : storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length}</span>` : ''}</td>
-                            <td>${order.orderNumber || "N/A"}${orderGroup.length > 1 ? (i === 0 ? ' <span class="badge bg-info">Parent</span>' : ' <span class="badge bg-secondary">Child</span>') : ''}</td>
-                            <td>${order.orderStatus || "N/A"}</td>
-                            <td>${new Date(order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
-                            <td>${item.sku || "N/A"}</td>
-                            <td>${manufacturer !== 'Unknown' ? manufacturer : '<span style="color: #ffcc00; font-weight: bold;">Unknown</span>'}</td>
-                            <td>${item.imageUrl ? `<img src="${item.imageUrl}" class="product-image" alt="Product Image" loading="lazy">` : "N/A"}</td>
-                            <td>${item.name || "N/A"}</td>
-                            <td>$${sellingPrice.toFixed(2)}</td>
-                            <td>${costPrice > 0 ? `$${costPrice.toFixed(2)}` : '<span style="color: #ff9900; font-weight: bold;">$0.00</span>'}</td>
-                            <td>${itemQuantity}</td>
-                            <td>$${marketfee.toFixed(2)}</td>
-                            <td>$${total_cost_with_quantity.toFixed(2)}</td>
-                            <td>$${proportionalLabelCost.toFixed(2)}</td>
-                            <td>$${Total_Cost.toFixed(2)}</td>
-                            <td style="color: ${profit >= 0 ? '#5cc46b' : '#ff6b6b'} !important;">$${profit.toFixed(2)}</td>
-                            <td style="color: ${proportionalCustomerPaidShipping > 0 ? '#ff9900' : 'inherit'} !important; font-weight: ${proportionalCustomerPaidShipping > 0 ? 'bold' : 'normal'};">$${proportionalCustomerPaidShipping.toFixed(2)}</td>
-                        `;
-                        tableBody.appendChild(row);
+                    // Add classes for multi-item orders
+                    if (isMultiItemOrder) {
+                        row.classList.add('order-group');
+                        if (itemIndex === 0) row.classList.add('first-item');
+                        if (itemIndex === order.items.length - 1) row.classList.add('last-item');
                     }
+                    
+                            row.innerHTML = `
+                        <td>${isMultiItemOrder && itemIndex > 0 ? '' : storeBadge}${isMultiItemOrder && itemIndex === 0 ? `<span class="item-count">${order.items.length}</span>` : ''}</td>
+                                <td>${order.orderNumber || "N/A"}</td>
+                                <td>${order.orderStatus || "N/A"}</td>
+                                <td>${new Date(order.createDate).toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true }).replace(',', '') || "N/A"}</td>
+                                <td>${item.sku || "N/A"}</td>
+                        <td>${manufacturer !== 'Unknown' ? manufacturer : '<span style="color: #ffcc00; font-weight: bold;">Unknown</span>'}</td>
+                        <td>${item.imageUrl ? `<img src="${item.imageUrl}" class="product-image" alt="Product Image" loading="lazy">` : "N/A"}</td>
+                                <td>${item.name || "N/A"}</td>
+                                <td>$${sellingPrice.toFixed(2)}</td>
+                        <td>${costPrice > 0 ? `$${costPrice.toFixed(2)}` : '<span style="color: #ff9900; font-weight: bold;">$0.00</span>'}</td>
+                        <td>${itemQuantity}</td>
+                        <td>$${marketfee.toFixed(2)}</td>
+                        <td>$${total_cost_with_quantity.toFixed(2)}</td>
+                        <td>$${proportionalLabelCost.toFixed(2)}</td>
+                        <td>$${Total_Cost.toFixed(2)}</td>
+                        <td style="color: ${profit >= 0 ? '#5cc46b' : '#ff6b6b'} !important;">$${profit.toFixed(2)}</td>
+                        <td style="color: ${proportionalCustomerPaidShipping > 0 ? '#ff9900' : 'inherit'} !important; font-weight: ${proportionalCustomerPaidShipping > 0 ? 'bold' : 'normal'};">$${proportionalCustomerPaidShipping.toFixed(2)}</td>
+                            `;
+                            tableBody.appendChild(row);
                 }
             }
-            
-            // Create the profit chart with the data
-            createProfitChart(orderProfits);
         }
         
         // Function to update pagination information
         function updatePaginationInfo(start, end, total) {
+            const currentRangeEl = document.getElementById('current-range');
             const totalCountEl = document.getElementById('total-count');
+            const pageInfoEl = document.getElementById('page-info');
             
-            if (totalCountEl) {
-                totalCountEl.textContent = total;
+            if (currentRangeEl && totalCountEl && pageInfoEl) {
+                if (total === 0) {
+                    currentRangeEl.textContent = '0-0';
+                    totalCountEl.textContent = '0';
+                    pageInfoEl.textContent = 'Page 0/0';
+                } else {
+                    currentRangeEl.textContent = `${start + 1}-${end}`;
+                    totalCountEl.textContent = total;
+                    
+                    const totalPages = Math.ceil(total / ordersPerPage);
+                    pageInfoEl.textContent = `Page ${currentPage}/${totalPages}`;
+                    
+                    // Update button states
+                    document.getElementById('first-page').disabled = currentPage === 1;
+                    document.getElementById('prev-page').disabled = currentPage === 1;
+                    document.getElementById('next-page').disabled = currentPage === totalPages;
+                    document.getElementById('last-page').disabled = currentPage === totalPages;
+                }
             }
         }
         
@@ -2002,10 +1758,42 @@
         window.addEventListener('DOMContentLoaded', function() {
             // ... existing DOMContentLoaded code ...
             
-            // Remove pagination event listeners - they're no longer needed
-            // Remove these event listeners: first-page, prev-page, next-page, last-page, page-size
+            // Add pagination event listeners
+            document.getElementById('first-page')?.addEventListener('click', function() {
+                if (currentPage !== 1) {
+                    currentPage = 1;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
             
-            // ... rest of the function remains the same ...
+            document.getElementById('prev-page')?.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('next-page')?.addEventListener('click', function() {
+                const totalPages = Math.ceil(allFilteredOrders.length / ordersPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('last-page')?.addEventListener('click', function() {
+                const totalPages = Math.ceil(allFilteredOrders.length / ordersPerPage);
+                if (currentPage !== totalPages) {
+                    currentPage = totalPages;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('page-size')?.addEventListener('change', function() {
+                ordersPerPage = parseInt(this.value);
+                currentPage = 1; // Reset to first page
+                displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+            });
         });
         
         // Helper function to get order quantity map
@@ -2036,62 +1824,7 @@
         function getAllProfitData(orders, orderQuantityMap, shipments) {
             const orderProfits = [];
             
-            // If orderQuantityMap wasn't provided with the right structure, recalculate it
-            if (!orderQuantityMap || Object.keys(orderQuantityMap).length === 0) {
-                console.log("Recalculating orderQuantityMap in getAllProfitData");
-                
-                // Build a map of order numbers to all related orders (for parent-child)
-                const relatedOrdersMap = {};
-                
-                // Group orders by orderNumber to handle parent-child relationships
-                orders.forEach(order => {
-                    const orderNumber = order.orderNumber;
-                    if (!relatedOrdersMap[orderNumber]) {
-                        relatedOrdersMap[orderNumber] = [];
-                    }
-                    relatedOrdersMap[orderNumber].push(order);
-                });
-                
-                // Share shipping costs between parent and child orders
-                Object.values(relatedOrdersMap).forEach(orderGroup => {
-                    if (orderGroup.length > 1) {
-                        // Find the parent order (usually the first one)
-                        const parentOrder = orderGroup.find(order => 
-                            order.advancedOptions && order.advancedOptions.mergedIds && 
-                            order.advancedOptions.mergedIds.length > 0
-                        ) || orderGroup[0];
-                        
-                        // Get parent shipping amount
-                        const parentShippingAmount = parentOrder.shippingAmount || 0;
-                        
-                        // Distribute parent shipping to all orders in the group
-                        orderGroup.forEach(order => {
-                            if (order !== parentOrder && (!order.shippingAmount || order.shippingAmount === 0)) {
-                                console.log(`In getAllProfitData: Transferring shipping cost from parent order ${parentOrder.orderNumber} to related order ${order.orderNumber}`);
-                                order.shippingAmount = parentShippingAmount;
-                            }
-                        });
-                    }
-                });
-                
-                // Now calculate quantities
-                Object.keys(relatedOrdersMap).forEach(orderNumber => {
-                    let totalQuantity = 0;
-                    
-                    // Sum quantities across all related orders (parent and children)
-                    relatedOrdersMap[orderNumber].forEach(order => {
-                        order.items.forEach(item => {
-                            totalQuantity += item.quantity || 1;
-                        });
-                    });
-                    
-                    orderQuantityMap[orderNumber] = totalQuantity;
-                });
-            }
-            
             for (const order of orders) {
-                const isSpecialOrder = order.orderNumber === "52698997";
-                
                 // Get store type
                 const storeId = getStoreType(order);
                 
@@ -2100,46 +1833,27 @@
                 const totalCustomerPaidShipping = order.shippingAmount || 0;
                 const orderTotalQuantity = orderQuantityMap[order.orderNumber] || 1;
                 
-                if (isSpecialOrder) {
-                    console.log(`===== PROFIT CALCULATION FOR ${order.orderNumber} =====`);
-                    console.log(`Order total quantity: ${orderTotalQuantity}`);
-                    console.log(`Total label cost: $${totalLabelCost.toFixed(2)}`);
-                    console.log(`Total customer paid shipping: $${totalCustomerPaidShipping.toFixed(2)}`);
-                }
-                
                 // Calculate per unit shipping costs safely
                 const { perUnitLabelCost, perUnitCustomerPaidShipping, isMultiLabelOrder } = calculatePerUnitShippingCosts(
                     totalLabelCost,
                     totalCustomerPaidShipping,
                     orderTotalQuantity,
                     order.orderNumber,
-                    cachedShipments
+                    shipments
                 );
-                
-                if (isSpecialOrder) {
-                    console.log(`Is multi-label order: ${isMultiLabelOrder}`);
-                    console.log(`Per unit label cost: $${perUnitLabelCost.toFixed(2)}`);
-                    console.log(`Per unit customer paid shipping: $${perUnitCustomerPaidShipping.toFixed(2)}`);
-                    console.log(`Total items in order: ${order.items.length}`);
-                    
-                    if (order.orderNumber === "52591824") {
-                        console.log(`Profit Calculation - Order ${order.orderNumber}, perUnitLabelCost=${perUnitLabelCost.toFixed(2)}, perUnitCustomerPaidShipping=${perUnitCustomerPaidShipping.toFixed(2)}`);
-                    }
-                }
                 
                 // Process each item in the order
                 for (const item of order.items) {
-                    const itemSku = item.sku || 'Unknown';
                     const itemQuantity = item.quantity || 1;
                     const sellingPrice = item.unitPrice * itemQuantity;
-                    
                     // Calculate proportional shipping costs for this line item
-                    let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label
+                    // For multi-label orders, don't multiply by quantity again
+                    const proportionalLabelCost = isMultiLabelOrder ? 
+                        (perUnitLabelCost / order.items.length) : // Distribute evenly across all items
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
-                    let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label
+                    const proportionalCustomerPaidShipping = isMultiLabelOrder ?
+                        (perUnitCustomerPaidShipping / order.items.length) : // Distribute evenly
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost and brand
@@ -2150,20 +1864,8 @@
                     const feePercentage = getPlatformFeePercentage(storeId);
                     const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
                     const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
-                    let Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
-                    let profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
-                    
-                    if (isSpecialOrder) {
-                        console.log(`------ Item: ${itemSku} ------`);
-                        console.log(`Item quantity: ${itemQuantity}`);
-                        console.log(`Selling price: $${sellingPrice.toFixed(2)}`);
-                        console.log(`Cost price: $${costPrice.toFixed(2)} per unit, total: $${total_cost_with_quantity.toFixed(2)}`);
-                        console.log(`Proportional label cost: $${proportionalLabelCost.toFixed(2)}`);
-                        console.log(`Proportional customer paid shipping: $${proportionalCustomerPaidShipping.toFixed(2)}`);
-                        console.log(`Platform fee (${feePercentage}): $${marketfee.toFixed(2)}`);
-                        console.log(`Total cost: $${Total_Cost.toFixed(2)}`);
-                        console.log(`Final profit: $${profit.toFixed(2)}`);
-                    }
+                    const Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
+                    const profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
                     
                     // Add to chart data
                     orderProfits.push({
@@ -2186,7 +1888,6 @@
             const storeFilterValue = storeFilter.value;
             const orderStatus = statusFilter.value;
             const showMultiItemOnly = multiItemFilter ? multiItemFilter.checked : false;
-            const showParentChildOnly = parentChildFilter ? parentChildFilter.checked : false;
             
             return orders.filter(order => {
                 // Filter by store
@@ -2205,28 +1906,6 @@
                 // Filter by multi-item
                 if (showMultiItemOnly && order.items.length < 2) {
                     return false;
-                }
-                
-                // Filter by parent-child or multi-label orders
-                if (showParentChildOnly) {
-                    // Check for multi-label orders (orders with multiple shipments)
-                    let isMultiLabelOrder = false;
-                    if (cachedShipments && Array.isArray(cachedShipments)) {
-                        const orderShipments = cachedShipments.filter(shipment => 
-                            shipment.orderNumber === order.orderNumber);
-                        isMultiLabelOrder = orderShipments.length > 1;
-                    }
-                    
-                    // Check for parent-child relationships
-                    const hasParentChildRelation = order.advancedOptions && 
-                        (order.advancedOptions.parentId || 
-                        (order.advancedOptions.mergedIds && 
-                         order.advancedOptions.mergedIds.length > 0));
-                    
-                    // If neither multi-label nor parent-child, filter it out
-                    if (!isMultiLabelOrder && !hasParentChildRelation) {
-                        return false;
-                    }
                 }
                 
                 return true;
@@ -2437,7 +2116,7 @@
                 if (orders && orders.length > 0) {
                             // Reset pagination when new data is loaded
                             currentPage = 1;
-                            ordersPerPage = 500;
+                            ordersPerPage = 100;
                             
                             // Pre-process orders with shipment data for faster filtering later
                             return preprocessOrders(orders, shipments)
@@ -2527,8 +2206,8 @@
                     const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
                     const feeDisplay = `${(feePercentage * 100).toFixed(0)}%`;
                     const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
-                    let Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
-                    let profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
+                    const Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
+                    const profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
                     
                     // Store processed data
                     processed.push({
@@ -2745,16 +2424,6 @@
             });
         }
         
-        if (parentChildFilter) {
-            parentChildFilter.addEventListener('change', function() {
-                if (cachedOrders && cachedOrders.length > 0) {
-                    displayOrders(cachedOrders);
-                } else {
-                    loadData();
-                }
-            });
-        }
-        
         // Function to check if cache is valid (simplified version of the one in shipstation-api.js)
         function isLocalCacheValid(cacheKey) {
             try {
@@ -2918,13 +2587,12 @@
                     const sellingPrice = item.unitPrice * itemQuantity;
                     
                     // Calculate proportional shipping costs for this line item
-                    // FIXED: Use the same calculation logic as in displayOrdersPage function
-                    let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                    const proportionalLabelCost = isMultiLabelOrder ? 
+                        (perUnitLabelCost / order.items.length) : // Distribute evenly across all items
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
-                    let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                    const proportionalCustomerPaidShipping = isMultiLabelOrder ?
+                        (perUnitCustomerPaidShipping / order.items.length) : // Distribute evenly
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost and brand
@@ -2936,8 +2604,8 @@
                     const feePercentage = getPlatformFeePercentage(storeId);
                     const marketfee = parseFloat((sellingPrice * feePercentage).toFixed(2));
                     const total_cost_with_quantity = parseFloat((costPrice * itemQuantity).toFixed(2));
-                    let Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
-                    let profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
+                    const Total_Cost = total_cost_with_quantity + marketfee + proportionalLabelCost;
+                    const profit = (sellingPrice - Total_Cost) + proportionalCustomerPaidShipping;
                     
                     // Escape function for CSV values
                     const escapeCsv = (val) => {

@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard</title>
+    
+    <!-- Tailwind CSS (required for shadcn/ui) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom shadcn-like styling -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 221.2 83.2% 53.3%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+            --radius: 0.5rem;
+            --modal-animation-duration: 0.4s;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 217.2 91.2% 59.8%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 224.3 76.3% 48%;
+        }
+        
+        * {
+            border-color: hsl(var(--border));
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+        
+        .btn-primary:hover {
+            background-color: hsl(var(--primary) / 0.9);
+        }
+        
+        .card {
+            background-color: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+        
+        .input {
+            background-color: transparent;
+            border: 1px solid hsl(var(--input));
+            border-radius: var(--radius);
+            padding: 0.5rem 0.75rem;
+            color: hsl(var(--foreground));
+        }
+        
+        /* Enhanced modal styling */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity var(--modal-animation-duration) cubic-bezier(0.16, 1, 0.3, 1), 
+                        visibility var(--modal-animation-duration) cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(0px);
+        }
+        
+        .modal-backdrop.active {
+            visibility: visible;
+            opacity: 1;
+            backdrop-filter: blur(2px);
+        }
+        
+        .modal-content {
+            background-color: hsl(var(--card));
+            border-radius: var(--radius);
+            max-width: 95%;
+            width: 900px; /* Increased from 600px */
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 
+                        0 20px 48px rgba(0, 0, 0, 0.1), 
+                        0 1px 4px rgba(0, 0, 0, 0.05);
+            transform: translateY(30px) scale(0.95);
+            opacity: 0;
+            transition: transform var(--modal-animation-duration) cubic-bezier(0.16, 1, 0.3, 1), 
+                        opacity var(--modal-animation-duration) cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .modal-backdrop.active .modal-content {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        
+        .modal-header {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        .modal-close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        
+        .modal-close-btn:hover {
+            background-color: hsl(var(--muted));
+            color: hsl(var(--foreground));
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .chart-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Rest of the styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background-color: hsl(var(--muted));
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        
+        th {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            white-space: normal;
+            vertical-align: top;
+        }
+        
+        th .date-range {
+            font-size: 0.75rem;
+            color: hsl(var(--muted-foreground));
+            display: block;
+            line-height: 1.1;
+            margin-top: 0.25rem;
+            font-weight: normal;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        tbody tr:hover {
+            background-color: hsl(var(--muted) / 0.5);
+        }
+        
+        .sku-link {
+            color: hsl(var(--primary));
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Sales Dashboard</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-2">Total SKUs</h2>
+                <p class="text-3xl font-bold" id="total-skus">0</p>
+            </div>
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-2">Total Quantity</h2>
+                <p class="text-3xl font-bold" id="total-quantity">0</p>
+            </div>
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-2">Total Orders</h2>
+                <p class="text-3xl font-bold" id="amazon-orders">0</p>
+            </div>
+        </div>
+        
+        <div class="card mb-6">
+            <div class="flex flex-col md:flex-row gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1" for="startDate">Start Date</label>
+                    <input type="date" id="startDate" class="input w-full">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1" for="endDate">End Date</label>
+                    <input type="date" id="endDate" class="input w-full">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1" for="storeFilter">Store Filter</label>
+                    <select id="storeFilter" class="input w-full">
+                        <option value="all">All Stores</option>
+                        <option value="amazon">Amazon</option>
+                        <option value="ebay">eBay</option>
+                        <option value="website">Website</option>
+                        <option value="other">Other Marketplaces</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button id="loadData" class="btn btn-primary">Load Data</button>
+                </div>
+                <div class="flex items-end">
+                    <button id="clearCache" class="btn bg-gray-200 text-gray-700 hover:bg-gray-300">Clear Cache</button>
+                </div>
+            </div>
+            
+            <div id="progress-container" style="display: none;" class="mb-4">
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Loading data...</span>
+                    <span class="text-sm font-medium" id="progress-status">Initializing...</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card overflow-hidden">
+            <h2 class="text-xl font-semibold mb-4">SKU Sales by Week</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Week 1</th>
+                            <th>Week 2</th>
+                            <th>Week 3</th>
+                            <th>Week 4</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesData">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for SKU details -->
+    <div id="sku-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-2xl font-bold" id="modal-sku-title">SKU Details</h2>
+                <button id="close-modal" class="modal-close-btn">&times;</button>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+                <div class="lg:col-span-2">
+                    <div class="card chart-card bg-gray-50">
+                        <h3 class="text-lg font-medium mb-2">Weekly Sales</h3>
+                        <div class="chart-container">
+                            <canvas id="weekly-sales-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-1">
+                    <div class="card chart-card bg-gray-50">
+                        <h3 class="text-lg font-medium mb-2">Market Share</h3>
+                        <div class="chart-container">
+                            <canvas id="sales-pie-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card chart-card bg-gray-50 mb-4">
+                <h3 class="text-lg font-medium mb-2">Sales Trend</h3>
+                <div class="chart-container">
+                    <canvas id="sales-trend-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card bg-gray-50">
+                <h3 class="text-lg font-medium mb-4">Performance Metrics</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                        <p class="text-sm text-gray-500 mb-1">Average Weekly Sales</p>
+                        <p class="text-2xl font-bold text-blue-600" id="avg-weekly-sales">0</p>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                        <p class="text-sm text-gray-500 mb-1">Growth Rate</p>
+                        <p class="text-2xl font-bold text-green-600" id="growth-rate">0%</p>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                        <p class="text-sm text-gray-500 mb-1">Best Week</p>
+                        <p class="text-2xl font-bold text-purple-600" id="best-week">Week 1</p>
+                    </div>
+                    <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                        <p class="text-sm text-gray-500 mb-1">Peak Sales</p>
+                        <p class="text-2xl font-bold text-teal-600" id="peak-sales">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { fetchShipStationOrders, fetchShipStationShipments, isAmazonOrder } from './shipstation-api.js';
+        import { 
+            destroyCharts, 
+            createWeeklySalesChart, 
+            createSalesTrendChart, 
+            createSalesPieChart,
+            calculateGrowthMetrics 
+        } from './dashboard-chart.js';
+        
+        // Cache settings
+        const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
+        const LOCAL_STORAGE_PREFIX = 'amazon_analysis_';
+        let debugEnabled = false;
+        
+        // All sales data for comparison
+        let allSalesData = [];
+        
+        // Helper function to check if cache is valid
+        function isLocalCacheValid(cacheKey) {
+            const cacheData = localStorage.getItem(`${LOCAL_STORAGE_PREFIX}${cacheKey}`);
+            if (!cacheData) return false;
+            
+            try {
+                const { timestamp } = JSON.parse(cacheData);
+                return timestamp && (Date.now() - timestamp < CACHE_DURATION);
+            } catch (error) {
+                console.error("Error reading cache:", error);
+                return false;
+            }
+        }
+
+        // Helper function to get cached data
+        function getLocalCache(cacheKey) {
+            try {
+                const cacheData = localStorage.getItem(`${LOCAL_STORAGE_PREFIX}${cacheKey}`);
+                if (!cacheData) return null;
+                
+                const { data } = JSON.parse(cacheData);
+                return data;
+            } catch (error) {
+                console.error("Error reading cache data:", error);
+                return null;
+            }
+        }
+
+        // Helper function to set cache data
+        function setLocalCache(cacheKey, data) {
+            try {
+                const cacheData = {
+                    timestamp: Date.now(),
+                    data: data
+                };
+                localStorage.setItem(`${LOCAL_STORAGE_PREFIX}${cacheKey}`, JSON.stringify(cacheData));
+                console.log(`Data cached with key: ${cacheKey}`);
+            } catch (error) {
+                console.error("Error caching data:", error);
+            }
+        }
+        
+        // Function to clear all local caches
+        function clearAllCaches() {
+            try {
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith(LOCAL_STORAGE_PREFIX) || key.startsWith('shipstation_cache_')) {
+                        keysToRemove.push(key);
+                    }
+                }
+                
+                keysToRemove.forEach(key => localStorage.removeItem(key));
+                
+                console.log(`Cleared ${keysToRemove.length} cache entries`);
+                alert(`Cache cleared successfully (${keysToRemove.length} entries)`);
+            } catch (error) {
+                console.error("Error clearing cache:", error);
+                alert("Error clearing cache: " + error.message);
+            }
+        }
+        
+        // Format date for inputs
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+        
+        // Update progress bar
+        function updateProgress(percent, statusText) {
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+            document.getElementById('progress-status').textContent = statusText;
+        }
+        
+        // Manual check for store type based on filter selection
+        function checkStoreType(shipment, storeFilter) {
+            if (!shipment) return false;
+            
+            // If "all" is selected, include all shipments
+            if (storeFilter === 'all') return true;
+            
+            // Amazon check
+            if (storeFilter === 'amazon') {
+                // Check multiple fields for Amazon indicators
+                const amazonKeywords = ['amazon', 'amz', 'prime', 'marketplace.amazon', 'amzn', 'a to z', 'fulfilled by amazon', 'fba'];
+                
+                // Check various fields that might indicate Amazon
+                const fieldsToCheck = [
+                    shipment.storeName,
+                    shipment.orderNumber,
+                    shipment.customerEmail,
+                    shipment.orderKey,
+                    shipment.shipTo?.name,
+                    shipment.shipTo?.company,
+                    shipment.customerNotes,
+                    shipment.internalNotes,
+                    shipment.serviceCode
+                ];
+                
+                for (const field of fieldsToCheck) {
+                    if (field && typeof field === 'string') {
+                        const lowerField = field.toLowerCase();
+                        for (const keyword of amazonKeywords) {
+                            if (lowerField.includes(keyword)) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                
+                // Check specific patterns in order numbers
+                if (shipment.orderNumber) {
+                    // Amazon order numbers often have these patterns
+                    if (/\d{3}-\d{7}-\d{7}/.test(shipment.orderNumber) || 
+                        /D\d{2}-\d{7}-\d{7}/.test(shipment.orderNumber) ||
+                        /P\d{2}-\d{7}-\d{7}/.test(shipment.orderNumber)) {
+                        return true;
+                    }
+                }
+            }
+            
+            // eBay check
+            if (storeFilter === 'ebay') {
+                const ebayKeywords = ['ebay', 'e-bay', 'ebaygsp'];
+                
+                const fieldsToCheck = [
+                    shipment.storeName,
+                    shipment.orderNumber,
+                    shipment.customerEmail,
+                    shipment.orderKey,
+                    shipment.shipTo?.name,
+                    shipment.shipTo?.company,
+                    shipment.customerNotes,
+                    shipment.internalNotes,
+                    shipment.serviceCode
+                ];
+                
+                for (const field of fieldsToCheck) {
+                    if (field && typeof field === 'string') {
+                        const lowerField = field.toLowerCase();
+                        for (const keyword of ebayKeywords) {
+                            if (lowerField.includes(keyword)) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Website check (adjust based on your actual website identifiers)
+            if (storeFilter === 'website') {
+                const websiteKeywords = ['surgimac', 'website', 'webstore', 'direct', 'shopify'];
+                
+                const fieldsToCheck = [
+                    shipment.storeName,
+                    shipment.orderNumber,
+                    shipment.customerEmail,
+                    shipment.orderKey,
+                    shipment.shipTo?.name,
+                    shipment.shipTo?.company,
+                    shipment.customerNotes,
+                    shipment.internalNotes,
+                    shipment.serviceCode
+                ];
+                
+                for (const field of fieldsToCheck) {
+                    if (field && typeof field === 'string') {
+                        const lowerField = field.toLowerCase();
+                        for (const keyword of websiteKeywords) {
+                            if (lowerField.includes(keyword)) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Other marketplaces (when not matching above but not "all")
+            if (storeFilter === 'other') {
+                // If it didn't match Amazon, eBay or website, it's "other"
+                // But we need to check it doesn't match those first
+                const amazonResult = checkStoreType(shipment, 'amazon');
+                const ebayResult = checkStoreType(shipment, 'ebay');
+                const websiteResult = checkStoreType(shipment, 'website');
+                
+                return !amazonResult && !ebayResult && !websiteResult;
+            }
+            
+            return false;
+        }
+
+        // Original function (keeping for compatibility)
+        function checkIfAmazonOrder(shipment) {
+            const storeFilter = document.getElementById('storeFilter').value;
+            return checkStoreType(shipment, storeFilter);
+        }
+        
+        // Initialize SKU modal and charts
+        function initializeModal() {
+            const modal = document.getElementById('sku-modal');
+            const closeButton = document.getElementById('close-modal');
+            
+            closeButton.addEventListener('click', () => {
+                modal.classList.remove('active');
+                
+                // Wait for animation to finish before destroying charts
+                setTimeout(() => {
+                    destroyCharts();
+                }, 400);
+            });
+            
+            // Click outside to close
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    
+                    // Wait for animation to finish before destroying charts
+                    setTimeout(() => {
+                        destroyCharts();
+                    }, 400);
+                }
+            });
+        }
+        
+        // Create/update charts for a specific SKU
+        function showSkuDetails(sku, skuData) {
+            const modal = document.getElementById('sku-modal');
+            document.getElementById('modal-sku-title').textContent = `SKU: ${sku}`;
+            
+            // Destroy existing charts
+            destroyCharts();
+            
+            // Calculate metrics using the utility function
+            const metrics = calculateGrowthMetrics(skuData.weeks);
+            
+            // If week label is in format "Week X: date - date", extract just the date part for best week
+            let bestWeekText = `Week ${metrics.bestWeekIndex + 1}`;
+            if (skuData.weekLabels && skuData.weekLabels[metrics.bestWeekIndex]) {
+                const bestWeekLabel = skuData.weekLabels[metrics.bestWeekIndex];
+                if (bestWeekLabel.includes(':')) {
+                    bestWeekText = bestWeekLabel;
+                }
+            }
+            
+            // Update metrics display with animated counting
+            animateCounter('avg-weekly-sales', 0, metrics.avgWeeklySales, 1000, 1);
+            animateCounter('growth-rate', 0, metrics.growthRate, 1000, 1, true);
+            document.getElementById('best-week').textContent = bestWeekText;
+            animateCounter('peak-sales', 0, metrics.peakSales, 1000, 0);
+            
+            // Create charts directly without assigning to variables (already tracked in the module)
+            createWeeklySalesChart('weekly-sales-chart', skuData.weeks, skuData.weekLabels);
+            createSalesTrendChart('sales-trend-chart', skuData.weeks, skuData.weekLabels);
+            createSalesPieChart('sales-pie-chart', skuData, allSalesData);
+            
+            // Show the modal with animation
+            modal.classList.add('active');
+        }
+        
+        // Animated counter for metrics display
+        function animateCounter(elementId, start, end, duration, decimals = 0, isPercentage = false) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            const range = end - start;
+            const increment = end > start ? 1 : -1;
+            const stepTime = Math.abs(Math.floor(duration / range));
+            const startTime = new Date().getTime();
+            const endTime = startTime + duration;
+            
+            function updateCounter() {
+                const now = new Date().getTime();
+                const remaining = Math.max((endTime - now) / duration, 0);
+                const value = Math.round(end - (remaining * range));
+                
+                // Format with appropriate decimals
+                let displayValue = value.toFixed(decimals);
+                
+                // Add percentage sign if needed
+                if (isPercentage) {
+                    displayValue += '%';
+                }
+                
+                element.textContent = displayValue;
+                
+                if (value == end) {
+                    clearInterval(counter);
+                }
+            }
+            
+            // Clear any existing timer
+            const counter = setInterval(updateCounter, stepTime);
+            updateCounter();
+        }
+        
+        // Process shipments in batches to avoid browser freezing
+        async function processBatchedShipments(shipments, startDate, endDate) {
+            updateProgress(0, 'Processing shipments...');
+            console.log(`Starting to process ${shipments.length} shipments`);
+            
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            const storeFilter = document.getElementById('storeFilter').value;
+            
+            // Calculate the total days in the range
+            const totalDays = Math.ceil((end - start) / (24 * 60 * 60 * 1000)) + 1; // +1 to include end date
+            const weeksCount = 4; // We always want 4 weeks
+            
+            // Calculate days per week (divide total days by 4)
+            const daysPerWeek = Math.ceil(totalDays / weeksCount);
+            
+            // Create week boundaries with clear date ranges
+            const weekBoundaries = [];
+            for (let i = 0; i < weeksCount; i++) {
+                const weekStart = new Date(start);
+                weekStart.setDate(start.getDate() + (i * daysPerWeek));
+                
+                const weekEnd = new Date(weekStart);
+                // For the last week, use the end date
+                if (i === weeksCount - 1) {
+                    weekEnd.setTime(end.getTime());
+                } else {
+                    weekEnd.setDate(weekStart.getDate() + daysPerWeek - 1);
+                }
+                
+                weekBoundaries.push({
+                    start: weekStart,
+                    end: weekEnd,
+                    label: `Week ${i + 1}: ${weekStart.toLocaleDateString()} - ${weekEnd.toLocaleDateString()}`
+                });
+            }
+            
+            // Log week boundaries for clarity
+            console.log("Week boundaries calculated:");
+            weekBoundaries.forEach(week => console.log(week.label));
+            
+            // Initialize sales data object
+            const salesBySku = {};
+            
+            // Process in batches of 500 to avoid UI freezing
+            const BATCH_SIZE = 500;
+            const totalBatches = Math.ceil(shipments.length / BATCH_SIZE);
+            
+            // Pre-filter shipments based on store filter
+            const filteredShipments = [];
+            let processAllShipments = storeFilter === 'all';
+            
+            updateProgress(10, `Filtering shipments by store: ${storeFilter}...`);
+            console.log(`Starting to filter shipments for store: ${storeFilter}`);
+            
+            // First identify filtered shipments
+            for (let i = 0; i < shipments.length; i++) {
+                const shipment = shipments[i];
+                // Try both the imported function and our backup
+                const matchesFilter = storeFilter === 'all' || 
+                    (storeFilter === 'amazon' && (isAmazonOrder(shipment) || checkStoreType(shipment, 'amazon'))) ||
+                    checkStoreType(shipment, storeFilter);
+                
+                if (matchesFilter) {
+                    filteredShipments.push(shipment);
+                }
+                
+                // Update progress occasionally
+                if (i % 1000 === 0) {
+                    updateProgress(10 + (i / shipments.length * 20), 
+                        `Identified ${filteredShipments.length} ${storeFilter} shipments out of ${i + 1}/${shipments.length}`);
+                }
+            }
+            
+            updateProgress(30, `Processing ${filteredShipments.length} ${storeFilter} shipments in batches...`);
+            document.getElementById('amazon-orders').textContent = filteredShipments.length;
+            console.log(`Found ${filteredShipments.length} ${storeFilter} shipments out of ${shipments.length} total`);
+            
+            // If we found very few shipments, process all shipments as a fallback
+            if (filteredShipments.length < 10 && storeFilter !== 'all') {
+                console.log(`WARNING: Very few ${storeFilter} shipments found! Processing all shipments as fallback.`);
+                processAllShipments = true;
+                filteredShipments.length = 0; // Clear the array
+                filteredShipments.push(...shipments);
+                document.getElementById('amazon-orders').textContent = `${filteredShipments.length} (all)`;
+            }
+            
+            // Keep track of total quantities
+            let totalItems = 0;
+            let itemsProcessed = 0;
+            
+            // Process filtered shipments in batches
+            for (let batchIndex = 0; batchIndex < totalBatches; batchIndex++) {
+                const startIdx = batchIndex * BATCH_SIZE;
+                const endIdx = Math.min(startIdx + BATCH_SIZE, filteredShipments.length);
+                const batch = filteredShipments.slice(startIdx, endIdx);
+                
+                updateProgress(30 + (batchIndex / totalBatches * 50), 
+                    `Processing batch ${batchIndex + 1}/${totalBatches} (${startIdx + 1}-${endIdx}/${filteredShipments.length})`);
+                
+                // Process each shipment in the current batch
+                for (const shipment of batch) {
+                    // Skip shipments without items
+                    if (!shipment.shipmentItems || shipment.shipmentItems.length === 0) {
+                        continue;
+                    }
+                    
+                    // Get the shipment date
+                    const shipDate = new Date(shipment.shipDate);
+                    
+                    // Check if the shipment date is within our range
+                    if (shipDate < start || shipDate > end) {
+                        console.log(`Skipping shipment with date outside range: ${shipment.shipDate}`);
+                        continue;
+                    }
+                    
+                    // Determine which week this shipment belongs to
+                    let weekIndex = -1;
+                    for (let i = 0; i < weekBoundaries.length; i++) {
+                        const { start: weekStart, end: weekEnd } = weekBoundaries[i];
+                        if (shipDate >= weekStart && shipDate <= weekEnd) {
+                            weekIndex = i;
+                            break;
+                        }
+                    }
+                    
+                    if (weekIndex === -1) {
+                        console.log(`Couldn't find matching week for shipment date ${shipment.shipDate}`);
+                        continue; // Skip this shipment
+                    }
+                    
+                    // Process each item in the shipment
+                    for (const item of shipment.shipmentItems) {
+                        const sku = item.sku || 'Unknown SKU';
+                        const quantity = parseInt(item.quantity) || 0;
+                        
+                        if (quantity <= 0) {
+                            continue; // Skip items with zero or negative quantity
+                        }
+                        
+                        totalItems += quantity;
+                        itemsProcessed++;
+                        
+                        // Log some sample data
+                        if (itemsProcessed <= 5 || itemsProcessed % 1000 === 0) {
+                            console.log(`Processing item #${itemsProcessed}: SKU=${sku}, Quantity=${quantity}, Week=${weekIndex + 1}`);
+                        }
+                        
+                        // Initialize SKU data if not already done
+                        if (!salesBySku[sku]) {
+                            salesBySku[sku] = {
+                                sku: sku,
+                                weeks: Array(weeksCount).fill(0),
+                                total: 0,
+                                weekLabels: weekBoundaries.map(week => week.label)
+                            };
+                        }
+                        
+                        // Add quantity to the appropriate week
+                        salesBySku[sku].weeks[weekIndex] += quantity;
+                        salesBySku[sku].total += quantity;
+                    }
+                }
+                
+                // Allow UI to update between batches
+                await new Promise(resolve => setTimeout(resolve, 0));
+            }
+            
+            updateProgress(85, 'Finalizing data...');
+            const skus = Object.keys(salesBySku);
+            console.log(`Processed ${totalItems} items (${itemsProcessed} entries) across ${skus.length} unique SKUs`);
+            
+            if (skus.length === 0) {
+                console.error('ERROR: No SKUs found in the processed data!');
+                if (processAllShipments) {
+                    console.error('Already tried processing all shipments and found no SKUs.');
+                } else {
+                    console.log('Trying again with all shipments...');
+                    return processBatchedShipments(shipments, startDate, endDate);
+                }
+            }
+            
+            // Update dashboard metrics with animation
+            animateCounter('total-quantity', 0, totalItems, 1500, 0);
+            animateCounter('total-skus', 0, skus.length, 1200, 0);
+            
+            return Object.values(salesBySku);
+        }
+        
+        // Main function to load and display sales data
+        async function loadSalesData() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const storeFilter = document.getElementById('storeFilter').value;
+            
+            if (!startDate || !endDate) {
+                alert('Please select start and end dates');
+                return;
+            }
+            
+            // Show loading and progress indicators
+            document.getElementById('progress-container').style.display = 'block';
+            document.getElementById('salesData').innerHTML = '';
+            
+            updateProgress(0, 'Starting...');
+            console.log(`Starting data load for ${startDate} to ${endDate} with store filter: ${storeFilter}`);
+            
+            const startTime = performance.now();
+            
+            try {
+                // Optimized method - use cache key based on date range and store filter for processed data
+                const cacheKey = `processed_data_${startDate}_${endDate}_${storeFilter}_weeks_v1`;
+                let salesData;
+                
+                // Check if we have cached data
+                if (isLocalCacheValid(cacheKey)) {
+                    updateProgress(30, 'Using cached data...');
+                    salesData = getLocalCache(cacheKey);
+                    console.log(`Loaded ${salesData.length} SKUs from cache`);
+                    
+                    // Store the full sales data for chart comparisons
+                    allSalesData = salesData;
+                    
+                    // Update metrics
+                    document.getElementById('total-skus').textContent = salesData.length;
+                    document.getElementById('amazon-orders').textContent = "From cache";
+                    
+                    // Calculate total quantity from cache
+                    const totalQty = salesData.reduce((sum, item) => sum + item.total, 0);
+                    document.getElementById('total-quantity').textContent = totalQty;
+                } else {
+                    updateProgress(10, 'Fetching shipments...');
+                    console.log('Fetching shipments from ShipStation API...');
+                    
+                    // Skip orders and focus only on shipments for speed
+                    const shipments = await fetchShipStationShipments(startDate, endDate);
+                    
+                    updateProgress(25, `Fetched ${shipments.length} shipments for processing`);
+                    console.log(`Fetched ${shipments.length} shipments from ShipStation`);
+                    
+                    // Process data into weekly sales with batched processing
+                    salesData = await processBatchedShipments(shipments, startDate, endDate);
+                    
+                    // Store the full sales data for chart comparisons
+                    allSalesData = salesData;
+                    
+                    // Cache the processed data
+                    updateProgress(90, 'Caching results...');
+                    setLocalCache(cacheKey, salesData);
+                }
+                
+                if (salesData && salesData.length > 0) {
+                    // Now display the data
+                    updateProgress(95, 'Rendering table...');
+                    console.log(`Rendering table with ${salesData.length} SKUs`);
+                    await displaySalesData(salesData);
+                } else {
+                    document.getElementById('salesData').innerHTML = '<tr><td colspan="6" class="text-center py-4">No data found for the selected date range</td></tr>';
+                    console.log('No sales data found');
+                }
+                
+                updateProgress(100, 'Complete!');
+                
+            } catch (error) {
+                console.error('Error loading sales data:', error);
+                document.getElementById('salesData').innerHTML = `<tr><td colspan="6" class="text-center py-4 text-red-500">Error loading data: ${error.message}</td></tr>`;
+                updateProgress(100, 'Error: ' + error.message);
+                console.log('ERROR: ' + error.message);
+                if (error.stack) console.log(error.stack);
+            } finally {
+                const endTime = performance.now();
+                console.log(`Data load time: ${Math.round(endTime - startTime)} ms`);
+                
+                // Hide progress after a short delay
+                setTimeout(() => {
+                    document.getElementById('progress-container').style.display = 'none';
+                }, 3000);
+            }
+        }
+        
+        // Display sales data in the table
+        async function displaySalesData(salesData) {
+            const tableBody = document.getElementById('salesData');
+            
+            // Clear existing content
+            tableBody.innerHTML = '';
+            
+            console.log('Display data received:', salesData.length, 'items');
+            
+            // Filter out any invalid entries
+            const validSalesData = salesData.filter(item => {
+                if (!item || !item.sku || !item.weeks || !Array.isArray(item.weeks)) {
+                    console.error('Invalid sales data item:', item);
+                    return false;
+                }
+                
+                if (item.total <= 0) {
+                    console.log('Filtering out zero-quantity SKU:', item.sku);
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            console.log('Valid sales data after filtering:', validSalesData.length, 'items');
+            
+            // Get the week labels from the first item (they should all be the same)
+            const weekLabels = validSalesData.length > 0 && validSalesData[0].weekLabels 
+                ? validSalesData[0].weekLabels 
+                : ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+            
+            // Update the table headers with the date ranges
+            updateTableHeaders(weekLabels);
+            
+            // Sort by total sales (descending)
+            validSalesData.sort((a, b) => b.total - a.total);
+            
+            // Create a document fragment for better performance
+            const fragment = document.createDocumentFragment();
+            
+            // Create rows for all SKUs
+            for (const item of validSalesData) {
+                const row = document.createElement('tr');
+                
+                // Add SKU with click handler
+                const skuCell = document.createElement('td');
+                const skuLink = document.createElement('span');
+                skuLink.textContent = item.sku;
+                skuLink.className = 'sku-link';
+                skuLink.addEventListener('click', () => showSkuDetails(item.sku, item));
+                skuCell.appendChild(skuLink);
+                row.appendChild(skuCell);
+                
+                // Add weekly sales data
+                item.weeks.forEach(weekSales => {
+                    const weekCell = document.createElement('td');
+                    weekCell.textContent = weekSales;
+                    row.appendChild(weekCell);
+                });
+                
+                // Add total
+                const totalCell = document.createElement('td');
+                totalCell.innerHTML = `<strong>${item.total}</strong>`;
+                row.appendChild(totalCell);
+                
+                fragment.appendChild(row);
+            }
+            
+            // Add all rows at once (more efficient)
+            tableBody.appendChild(fragment);
+            
+            if (validSalesData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" class="text-center py-4">No data found for the selected date range</td></tr>';
+                console.log('No sales data to display');
+            } else {
+                console.log(`Added ${validSalesData.length} rows to the table`);
+            }
+        }
+        
+        // Update table headers with date ranges
+        function updateTableHeaders(weekLabels) {
+            const headerRow = document.querySelector('table thead tr');
+            if (!headerRow) return;
+            
+            // Clear existing headers except the first one (SKU) and last one (Total)
+            while (headerRow.children.length > 2) {
+                headerRow.removeChild(headerRow.children[1]);
+            }
+            
+            // Add week headers with date ranges
+            for (let i = 0; i < weekLabels.length; i++) {
+                const th = document.createElement('th');
+                
+                if (weekLabels[i].includes(':')) {
+                    // Split into week number and date range
+                    const [weekNum, dateRange] = weekLabels[i].split(':');
+                    th.innerHTML = `${weekNum}<span class="date-range">${dateRange.trim()}</span>`;
+                } else {
+                    th.textContent = weekLabels[i];
+                }
+                
+                headerRow.insertBefore(th, headerRow.lastElementChild);
+            }
+        }
+        
+        // Set default date range and initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const thirtyDaysAgo = new Date(today);
+            thirtyDaysAgo.setDate(today.getDate() - 30);
+            
+            document.getElementById('startDate').value = formatDate(thirtyDaysAgo);
+            document.getElementById('endDate').value = formatDate(today);
+            
+            document.getElementById('loadData').addEventListener('click', loadSalesData);
+            document.getElementById('clearCache').addEventListener('click', clearAllCaches);
+            
+            // Initialize the modal for SKU details
+            initializeModal();
+        });
+    </script>
+</body>
+</html> 

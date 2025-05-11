@@ -138,6 +138,15 @@ async function fetchShipStationOrders(startDate, endDate) {
         let hasMorePages = true;
         const pageSize = 500; // Maximum page size allowed by ShipStation API
         
+        // Tracking sets for parent-child relationships
+        const allOrderIds = new Set();
+        const allOrderNumbers = new Set(); 
+        const parentIdsToFetch = new Set();
+        const childIdsToFetch = new Set();
+        const relatedOrderNumbersToFetch = new Set();
+        
+        console.log("PHASE 1: Fetching orders by date range...");
+        
         // Loop through all pages until no more results
         while (hasMorePages) {
             const apiUrl = `https://ssapi.shipstation.com/orders?createDateStart=${formattedStartDate}&createDateEnd=${formattedEndDate}&pageSize=${pageSize}&page=${page}`;
@@ -178,6 +187,27 @@ async function fetchShipStationOrders(startDate, endDate) {
             if (data.orders && data.orders.length > 0) {
                 allOrders = [...allOrders, ...data.orders];
                 
+                // Track order IDs, order numbers, and identify parent-child relationships
+                data.orders.forEach(order => {
+                    allOrderIds.add(order.orderId);
+                    allOrderNumbers.add(order.orderNumber);
+                    
+                    // Check for parent-child relationships
+                    if (order.advancedOptions) {
+                        // If this is a child order, track its parent
+                        if (order.advancedOptions.parentId) {
+                            parentIdsToFetch.add(order.advancedOptions.parentId);
+                        }
+                        
+                        // If this is a parent order, track its children
+                        if (order.advancedOptions.mergedIds && order.advancedOptions.mergedIds.length > 0) {
+                            order.advancedOptions.mergedIds.forEach(childId => {
+                                childIdsToFetch.add(childId);
+                            });
+                        }
+                    }
+                });
+                
                 // Check if we should fetch the next page
                 if (data.orders.length < pageSize) {
                     hasMorePages = false;
@@ -193,7 +223,148 @@ async function fetchShipStationOrders(startDate, endDate) {
             }
         }
         
-        console.log(`Successfully fetched ${allOrders.length} orders across ${page} page(s)`);
+        console.log(`PHASE 1 COMPLETE: Fetched ${allOrders.length} orders from date range`);
+        
+        // PHASE 2: Fetch parent and child orders that may not be in the date range
+        console.log("PHASE 2: Fetching related parent and child orders...");
+        
+        // Filter out parent and child IDs we already have
+        const missingParentIds = Array.from(parentIdsToFetch).filter(id => !allOrderIds.has(id));
+        const missingChildIds = Array.from(childIdsToFetch).filter(id => !allOrderIds.has(id));
+        
+        console.log(`Found ${missingParentIds.length} missing parent orders to fetch`);
+        console.log(`Found ${missingChildIds.length} missing child orders to fetch`);
+        
+        // Fetch missing parent orders
+        if (missingParentIds.length > 0) {
+            for (const parentId of missingParentIds) {
+                try {
+                    const apiUrl = `https://ssapi.shipstation.com/orders/${parentId}`;
+                    console.log(`Fetching parent order ID: ${parentId}`);
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Basic ${AUTH}`,
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors'
+                    });
+                    
+                    if (response.ok) {
+                        const parentOrder = await response.json();
+                        console.log(`Successfully fetched parent order ID: ${parentOrder.orderId}, Order #: ${parentOrder.orderNumber}`);
+                        
+                        // Add to our collection if we don't already have it
+                        if (!allOrderIds.has(parentOrder.orderId)) {
+                            allOrders.push(parentOrder);
+                            allOrderIds.add(parentOrder.orderId);
+                            allOrderNumbers.add(parentOrder.orderNumber);
+                            
+                            // Track order number as related for shipment fetching
+                            relatedOrderNumbersToFetch.add(parentOrder.orderNumber);
+                            
+                            // Check for more child orders we might need to fetch
+                            if (parentOrder.advancedOptions && 
+                                parentOrder.advancedOptions.mergedIds && 
+                                parentOrder.advancedOptions.mergedIds.length > 0) {
+                                
+                                parentOrder.advancedOptions.mergedIds.forEach(childId => {
+                                    if (!allOrderIds.has(childId)) {
+                                        childIdsToFetch.add(childId);
+                                    }
+                                });
+                            }
+                        }
+                    } else {
+                        console.error(`Failed to fetch parent order ID: ${parentId}, Status: ${response.status}`);
+                    }
+                    
+                    // Add a small delay to avoid rate limiting
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                } catch (error) {
+                    console.error(`Error fetching parent order ID: ${parentId}`, error);
+                }
+            }
+        }
+        
+        // Fetch missing child orders
+        // Filter the list again in case we added more child IDs from parent orders
+        const updatedMissingChildIds = Array.from(childIdsToFetch).filter(id => !allOrderIds.has(id));
+        
+        if (updatedMissingChildIds.length > 0) {
+            console.log(`Fetching ${updatedMissingChildIds.length} missing child orders...`);
+            
+            for (const childId of updatedMissingChildIds) {
+                try {
+                    const apiUrl = `https://ssapi.shipstation.com/orders/${childId}`;
+                    console.log(`Fetching child order ID: ${childId}`);
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Basic ${AUTH}`,
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        mode: 'cors'
+                    });
+                    
+                    if (response.ok) {
+                        const childOrder = await response.json();
+                        console.log(`Successfully fetched child order ID: ${childOrder.orderId}, Order #: ${childOrder.orderNumber}`);
+                        
+                        // Add to our collection if we don't already have it
+                        if (!allOrderIds.has(childOrder.orderId)) {
+                            allOrders.push(childOrder);
+                            allOrderIds.add(childOrder.orderId);
+                            allOrderNumbers.add(childOrder.orderNumber);
+                            
+                            // Track order number as related for shipment fetching
+                            relatedOrderNumbersToFetch.add(childOrder.orderNumber);
+                        }
+                    } else {
+                        console.error(`Failed to fetch child order ID: ${childId}, Status: ${response.status}`);
+                    }
+                    
+                    // Add a small delay to avoid rate limiting
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                } catch (error) {
+                    console.error(`Error fetching child order ID: ${childId}`, error);
+                }
+            }
+        }
+        
+        // PHASE 3: Find orders with the same order number but no explicit parent-child relationship
+        console.log("PHASE 3: Checking for implicit siblings by order number...");
+        
+        // Group orders by order number
+        const ordersByOrderNumber = {};
+        allOrders.forEach(order => {
+            if (!ordersByOrderNumber[order.orderNumber]) {
+                ordersByOrderNumber[order.orderNumber] = [];
+            }
+            ordersByOrderNumber[order.orderNumber].push(order);
+        });
+        
+        // Find order numbers with multiple orders
+        const orderNumbersWithMultipleOrders = Object.keys(ordersByOrderNumber)
+            .filter(orderNumber => ordersByOrderNumber[orderNumber].length > 1);
+            
+        console.log(`Found ${orderNumbersWithMultipleOrders.length} order numbers with multiple orders`);
+        
+        // Add these to our related order numbers for shipment fetching
+        orderNumbersWithMultipleOrders.forEach(orderNumber => {
+            relatedOrderNumbersToFetch.add(orderNumber);
+        });
+        
+        // Final stats
+        console.log(`FETCH COMPLETE: Total ${allOrders.length} orders fetched`);
+        console.log(`Found ${relatedOrderNumbersToFetch.size} related order numbers that need special shipment handling`);
+        
+        // Store the related order numbers as a property on the array for the shipment fetching function
+        allOrders.relatedOrderNumbers = Array.from(relatedOrderNumbersToFetch);
         
         // Cache the results
         if (allOrders.length > 0) {
@@ -240,7 +411,8 @@ async function fetchShipStationShipments(startDate, endDate) {
         
         // Loop through all pages until no more results
         while (hasMorePages) {
-            const apiUrl = `https://ssapi.shipstation.com/shipments?shipDateStart=${formattedStartDate}&shipDateEnd=${formattedEndDate}&pageSize=${pageSize}&page=${page}`;
+            // Include shipmentItems parameter to get detailed item information for each shipment
+            const apiUrl = `https://ssapi.shipstation.com/shipments?shipDateStart=${formattedStartDate}&shipDateEnd=${formattedEndDate}&pageSize=${pageSize}&page=${page}&includeShipmentItems=true`;
             console.log(`Fetching shipments page ${page}`);
             
             const response = await fetch(apiUrl, {
@@ -276,7 +448,36 @@ async function fetchShipStationShipments(startDate, endDate) {
             
             // Add shipments from this page to our collection
             if (data.shipments && data.shipments.length > 0) {
-                allShipments = [...allShipments, ...data.shipments];
+                // Process each shipment to enhance with item details
+                const enhancedShipments = await Promise.all(data.shipments.map(async shipment => {
+                    // If this shipment has no items info, try to fetch them separately
+                    if (!shipment.shipmentItems || shipment.shipmentItems.length === 0) {
+                        try {
+                            // Get the detailed shipment which should include items
+                            const detailUrl = `https://ssapi.shipstation.com/shipments/${shipment.shipmentId}?includeShipmentItems=true`;
+                            const detailResponse = await fetch(detailUrl, {
+                                method: 'GET',
+                                headers: {
+                                    'Authorization': `Basic ${AUTH}`,
+                                    'Content-Type': 'application/json'
+                                }
+                            });
+
+                            if (detailResponse.ok) {
+                                const detailData = await detailResponse.json();
+                                if (detailData.shipmentItems && detailData.shipmentItems.length > 0) {
+                                    shipment.shipmentItems = detailData.shipmentItems;
+                                    console.log(`Added ${detailData.shipmentItems.length} items to shipment ${shipment.shipmentId}`);
+                                }
+                            }
+                        } catch (itemError) {
+                            console.warn(`Couldn't fetch item details for shipment ${shipment.shipmentId}:`, itemError);
+                        }
+                    }
+                    return shipment;
+                }));
+
+                allShipments = [...allShipments, ...enhancedShipments];
                 
                 // Check if we should fetch the next page
                 if (data.shipments.length < pageSize) {
@@ -314,9 +515,35 @@ async function fetchShipStationShipments(startDate, endDate) {
 async function getLabelCost(orderNumber, shipments = null) {
     try {
         // If shipments are provided, use them instead of making an API call
-        if (shipments) {
-            const shipment = shipments.find(s => s.orderNumber === orderNumber);
-            return shipment ? shipment.shipmentCost || 0 : 0;
+        if (shipments && Array.isArray(shipments)) {
+            // Find ALL matching shipments for this order number
+            const orderShipments = shipments.filter(s => s.orderNumber === orderNumber);
+            
+            if (orderShipments.length === 0) return 0;
+            
+            // For orders with multiple shipments, sum all shipment costs
+            if (orderShipments.length > 1) {
+                console.log(`Multi-label order detected: ${orderNumber} has ${orderShipments.length} shipments`);
+                let totalCost = 0;
+                
+                // Loop through all shipments and sum the costs
+                orderShipments.forEach((shipment, index) => {
+                    const shipmentCost = shipment.shipmentCost || shipment.cost || 0;
+                    const cost = typeof shipmentCost === 'string' ? parseFloat(shipmentCost) || 0 : (shipmentCost || 0);
+                    totalCost += cost;
+                    console.log(`Shipment ${index+1} for ${orderNumber}: Cost = $${cost.toFixed(2)}`);
+                });
+                
+                console.log(`Total label cost for order ${orderNumber}: $${totalCost.toFixed(2)}`);
+                return totalCost;
+            }
+            
+            // For single shipment orders
+            const shipment = orderShipments[0];
+            const cost = shipment.shipmentCost || shipment.cost || 0;
+            
+            // Parse the cost if it's a string
+            return typeof cost === 'string' ? parseFloat(cost) || 0 : (cost || 0);
         }
 
         // Fallback to individual API call if no shipments provided
@@ -337,7 +564,15 @@ async function getLabelCost(orderNumber, shipments = null) {
 
         const data = await response.json();
         if (data.shipments && data.shipments.length > 0) {
-            return data.shipments[0].shipmentCost || 0;
+            // Sum costs of all shipments for this order
+            let totalCost = 0;
+            data.shipments.forEach((shipment, index) => {
+                const cost = shipment.shipmentCost || 0;
+                totalCost += parseFloat(cost) || 0;
+                console.log(`API Shipment ${index+1} for ${orderNumber}: Cost = $${cost}`);
+            });
+            console.log(`Total API label cost for order ${orderNumber}: $${totalCost.toFixed(2)}`);
+            return totalCost;
         }
         return 0;
     } catch (error) {

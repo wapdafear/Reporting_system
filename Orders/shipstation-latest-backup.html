@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -689,9 +689,24 @@
     </table>
 
     <!-- Add pagination controls -->
-    <div class="pagination-controls" style="display: none;">
+    <div class="pagination-controls" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 10px; background-color: #1d1d1d; border-radius: 5px;">
         <div class="pagination-info" style="color: white;">
-            Showing <span id="current-range">0-0</span> of <span id="total-count">0</span> orders
+            Showing <span id="current-range">0-0</span> of <span id="total-count">0</span> orders (<span id="page-info">Page 0/0</span>)
+        </div>
+        <div class="pagination-buttons" style="display: flex; gap: 10px;">
+            <button id="first-page" class="btn btn-sm btn-outline-secondary">First</button>
+            <button id="prev-page" class="btn btn-sm btn-outline-secondary">Previous</button>
+            <button id="next-page" class="btn btn-sm btn-outline-secondary">Next</button>
+            <button id="last-page" class="btn btn-sm btn-outline-secondary">Last</button>
+        </div>
+        <div class="page-size-control" style="display: flex; align-items: center; gap: 10px;">
+            <label for="page-size" style="color: white;">Orders per page:</label>
+            <select id="page-size" class="custom-select custom-select-sm" style="width: auto;">
+                <option value="50">50</option>
+                <option value="100" selected>100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+            </select>
         </div>
     </div>
 
@@ -703,7 +718,7 @@
         
         // Add pagination variables at the top
         let currentPage = 1;
-        let ordersPerPage = 100000; // Set to a very large number to effectively display all items
+        let ordersPerPage = 100;
         let allFilteredOrders = [];
         
         // Import functions from shipstation-api.js and Brands.js
@@ -713,12 +728,6 @@
         // First, add enhanced debugging in the DOMContentLoaded event handler
         window.addEventListener('DOMContentLoaded', function() {
             console.log('DOM content loaded, initializing...');
-            
-            // Set default filters to "All Stores" option
-            const storeFilter = document.getElementById('store-filter');
-            if (storeFilter) {
-                storeFilter.selectedIndex = 0; // Set to "All Stores" by default
-            }
             
             // Show loading indicator immediately
             showLoading(true, 'Initializing and loading data');
@@ -1445,47 +1454,6 @@
                 }
             }
             
-            // Get all orders with this order number (including parent/child)
-            let totalRelatedOrderQuantity = orderTotalQuantity;
-            let isParentChildOrder = false;
-            
-            // Look for parent-child relationship
-            if (cachedOrders && Array.isArray(cachedOrders)) {
-                // First, check if this is a parent or child order
-                const mainOrder = cachedOrders.find(o => o.orderNumber === orderNumber);
-                
-                if (mainOrder) {
-                    // Check if it's part of a parent-child relationship
-                    if (mainOrder.advancedOptions && 
-                        ((mainOrder.advancedOptions.parentId) || 
-                         (mainOrder.advancedOptions.mergedIds && mainOrder.advancedOptions.mergedIds.length > 0))) {
-                        
-                        isParentChildOrder = true;
-                        
-                        // Find all related orders (siblings with same order number)
-                        const relatedOrders = cachedOrders.filter(o => o.orderNumber === orderNumber);
-                        
-                        if (relatedOrders.length > 1) {
-                            if (isSpecialOrder) {
-                                console.log(`Order ${orderNumber} is part of a parent-child relationship with ${relatedOrders.length} related orders`);
-                            }
-                            
-                            // Calculate total quantity across all related orders
-                            totalRelatedOrderQuantity = 0;
-                            relatedOrders.forEach(order => {
-                                order.items.forEach(item => {
-                                    totalRelatedOrderQuantity += item.quantity || 1;
-                                });
-                            });
-                            
-                            if (isSpecialOrder) {
-                                console.log(`Total quantity across all related orders: ${totalRelatedOrderQuantity}`);
-                            }
-                        }
-                    }
-                }
-            }
-            
             // STEP 1: First check for multi-label orders (highest priority)
             let isMultiLabelOrder = false;
             
@@ -1511,24 +1479,20 @@
             
             // STEP 2: If it's a multi-label order, use the multi-label calculation logic
             if (isMultiLabelOrder) {
-                // For multi-label orders, use the total quantity across all related orders if it's a parent-child relationship
-                const quantityToUse = isParentChildOrder ? totalRelatedOrderQuantity : orderTotalQuantity;
-                
-                // Calculate the per-unit costs by dividing the total by quantity
-                const perUnitLabelCost = totalLabelCost / quantityToUse;
-                const perUnitCustomerPaidShipping = totalCustomerPaidShipping / quantityToUse;
+                // For multi-label orders, calculate the per-unit costs by dividing the total by quantity
+                const perUnitLabelCost = totalLabelCost / orderTotalQuantity;
+                const perUnitCustomerPaidShipping = totalCustomerPaidShipping / orderTotalQuantity;
                 
                 if (isSpecialOrder) {
-                    console.log(`Multi-label order ${orderNumber}: Total Label Cost $${totalLabelCost.toFixed(2)}, Total Related Quantity ${quantityToUse}, Per Unit Label Cost $${perUnitLabelCost.toFixed(2)}`);
-                    console.log(`Multi-label order ${orderNumber}: Total Shipping $${totalCustomerPaidShipping.toFixed(2)}, Total Related Quantity ${quantityToUse}, Per Unit Shipping $${perUnitCustomerPaidShipping.toFixed(2)}`);
+                    console.log(`Multi-label order ${orderNumber}: Total Label Cost $${totalLabelCost.toFixed(2)}, Total Quantity ${orderTotalQuantity}, Per Unit Label Cost $${perUnitLabelCost.toFixed(2)}`);
+                    console.log(`Multi-label order ${orderNumber}: Total Shipping $${totalCustomerPaidShipping.toFixed(2)}, Total Quantity ${orderTotalQuantity}, Per Unit Shipping $${perUnitCustomerPaidShipping.toFixed(2)}`);
                 }
                 
                 // Return with the multi-label flag set to true
                 return {
                     perUnitLabelCost: isFinite(perUnitLabelCost) ? perUnitLabelCost : 0,
                     perUnitCustomerPaidShipping: isFinite(perUnitCustomerPaidShipping) ? perUnitCustomerPaidShipping : 0,
-                    isMultiLabelOrder: true,
-                    isParentChildOrder: isParentChildOrder
+                    isMultiLabelOrder: true
                 };
             }
             
@@ -1545,8 +1509,7 @@
             return {
                 perUnitLabelCost: isFinite(perUnitLabelCost) ? perUnitLabelCost : 0,
                 perUnitCustomerPaidShipping: isFinite(perUnitCustomerPaidShipping) ? perUnitCustomerPaidShipping : 0,
-                isMultiLabelOrder: false,
-                isParentChildOrder: isParentChildOrder
+                isMultiLabelOrder: false
             };
         }
         
@@ -1801,23 +1764,33 @@
             
             tableBody.innerHTML = ""; // Clear the table
             
-            // Show all orders without pagination
+            // Calculate pagination
             const totalItems = orders.length;
+            const totalPages = Math.ceil(totalItems / ordersPerPage);
             
-            // Update info to show total count
-            updatePaginationInfo(0, totalItems, totalItems);
+            // Adjust currentPage if needed
+            if (currentPage > totalPages) {
+                currentPage = totalPages > 0 ? totalPages : 1;
+            }
+            
+            // Calculate start and end indices
+            const startIndex = (currentPage - 1) * ordersPerPage;
+            const endIndex = Math.min(startIndex + ordersPerPage, totalItems);
+            
+            // Update pagination info
+            updatePaginationInfo(startIndex, endIndex, totalItems);
             
             // If no orders to display
-            if (totalItems === 0) {
-                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders to display</td></tr>`;
+            if (startIndex >= totalItems) {
+                tableBody.innerHTML = `<tr><td colspan="12" style="color:orange;">No orders on this page</td></tr>`;
                 return;
             }
             
             // Group orders by orderNumber for multi-label handling
             const orderGroups = {};
             
-            // First, group orders by order number - now process all orders, not just a page
-            for (let i = 0; i < totalItems; i++) {
+            // First, group orders by order number
+            for (let i = startIndex; i < endIndex; i++) {
                 const order = orders[i];
                 if (!orderGroups[order.orderNumber]) {
                     orderGroups[order.orderNumber] = [];
@@ -1904,20 +1877,14 @@
                         const sellingPrice = item.unitPrice * itemQuantity;
                         
                         // Calculate proportional shipping costs for this line item
-                        // Use consistent calculation logic for both multi-label and parent-child orders
+                        // For multi-label orders, don't multiply by quantity again
                         let proportionalLabelCost = isMultiLabelOrder ? 
-                            (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                            (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for both types
                             (perUnitLabelCost * itemQuantity); // Regular calculation
                         
                         let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                            (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                            (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for both types
                             (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
-                        
-                        // Special debug logging for problematic orders
-                        if (order.orderNumber === "52591824") {
-                            console.log(`Display - Item ${item.name}, Quantity ${itemQuantity}, Label Cost Calculation: ${perUnitLabelCost} × ${itemQuantity} = ${proportionalLabelCost.toFixed(2)}`);
-                            console.log(`Display - Heavy Shipping Calculation: ${perUnitCustomerPaidShipping} × ${itemQuantity} = ${proportionalCustomerPaidShipping.toFixed(2)}`);
-                        }
                         
                         // Find product cost and brand
                         const productInfo = findProductCost(item.sku);
@@ -1991,10 +1958,28 @@
         
         // Function to update pagination information
         function updatePaginationInfo(start, end, total) {
+            const currentRangeEl = document.getElementById('current-range');
             const totalCountEl = document.getElementById('total-count');
+            const pageInfoEl = document.getElementById('page-info');
             
-            if (totalCountEl) {
-                totalCountEl.textContent = total;
+            if (currentRangeEl && totalCountEl && pageInfoEl) {
+                if (total === 0) {
+                    currentRangeEl.textContent = '0-0';
+                    totalCountEl.textContent = '0';
+                    pageInfoEl.textContent = 'Page 0/0';
+                } else {
+                    currentRangeEl.textContent = `${start + 1}-${end}`;
+                    totalCountEl.textContent = total;
+                    
+                    const totalPages = Math.ceil(total / ordersPerPage);
+                    pageInfoEl.textContent = `Page ${currentPage}/${totalPages}`;
+                    
+                    // Update button states
+                    document.getElementById('first-page').disabled = currentPage === 1;
+                    document.getElementById('prev-page').disabled = currentPage === 1;
+                    document.getElementById('next-page').disabled = currentPage === totalPages;
+                    document.getElementById('last-page').disabled = currentPage === totalPages;
+                }
             }
         }
         
@@ -2002,10 +1987,42 @@
         window.addEventListener('DOMContentLoaded', function() {
             // ... existing DOMContentLoaded code ...
             
-            // Remove pagination event listeners - they're no longer needed
-            // Remove these event listeners: first-page, prev-page, next-page, last-page, page-size
+            // Add pagination event listeners
+            document.getElementById('first-page')?.addEventListener('click', function() {
+                if (currentPage !== 1) {
+                    currentPage = 1;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
             
-            // ... rest of the function remains the same ...
+            document.getElementById('prev-page')?.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('next-page')?.addEventListener('click', function() {
+                const totalPages = Math.ceil(allFilteredOrders.length / ordersPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('last-page')?.addEventListener('click', function() {
+                const totalPages = Math.ceil(allFilteredOrders.length / ordersPerPage);
+                if (currentPage !== totalPages) {
+                    currentPage = totalPages;
+                    displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+                }
+            });
+            
+            document.getElementById('page-size')?.addEventListener('change', function() {
+                ordersPerPage = parseInt(this.value);
+                currentPage = 1; // Reset to first page
+                displayOrdersPage(allFilteredOrders, getOrderQuantityMap(allFilteredOrders), cachedShipments);
+            });
         });
         
         // Helper function to get order quantity map
@@ -2121,10 +2138,6 @@
                     console.log(`Per unit label cost: $${perUnitLabelCost.toFixed(2)}`);
                     console.log(`Per unit customer paid shipping: $${perUnitCustomerPaidShipping.toFixed(2)}`);
                     console.log(`Total items in order: ${order.items.length}`);
-                    
-                    if (order.orderNumber === "52591824") {
-                        console.log(`Profit Calculation - Order ${order.orderNumber}, perUnitLabelCost=${perUnitLabelCost.toFixed(2)}, perUnitCustomerPaidShipping=${perUnitCustomerPaidShipping.toFixed(2)}`);
-                    }
                 }
                 
                 // Process each item in the order
@@ -2437,7 +2450,7 @@
                 if (orders && orders.length > 0) {
                             // Reset pagination when new data is loaded
                             currentPage = 1;
-                            ordersPerPage = 500;
+                            ordersPerPage = 100;
                             
                             // Pre-process orders with shipment data for faster filtering later
                             return preprocessOrders(orders, shipments)
@@ -2918,13 +2931,12 @@
                     const sellingPrice = item.unitPrice * itemQuantity;
                     
                     // Calculate proportional shipping costs for this line item
-                    // FIXED: Use the same calculation logic as in displayOrdersPage function
-                    let proportionalLabelCost = isMultiLabelOrder ? 
-                        (perUnitLabelCost * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                    const proportionalLabelCost = isMultiLabelOrder ? 
+                        (perUnitLabelCost / order.items.length) : // Distribute evenly across all items
                         (perUnitLabelCost * itemQuantity); // Regular calculation
                     
-                    let proportionalCustomerPaidShipping = isMultiLabelOrder ?
-                        (perUnitCustomerPaidShipping * itemQuantity) : // Use per-unit cost × quantity for multi-label orders
+                    const proportionalCustomerPaidShipping = isMultiLabelOrder ?
+                        (perUnitCustomerPaidShipping / order.items.length) : // Distribute evenly
                         (perUnitCustomerPaidShipping * itemQuantity); // Regular calculation
                     
                     // Find product cost and brand
